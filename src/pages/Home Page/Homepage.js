@@ -2,11 +2,13 @@
 
 
 import React from 'react'
+import Banner from '../../components/Home components/Banner'
 
 const Homepage = () => {
   return (
     <div>
         {/* banner  */}
+        <Banner></Banner>
         {/* what are you looking */}
     </div>
 
