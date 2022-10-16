@@ -1,9 +1,5 @@
 import React from "react";
-
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
-
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // import swiper styles
@@ -40,17 +36,6 @@ const Banner = () => {
             </div>
           </div>
         </SwiperSlide>
-
-=======
-        {/* our second banner */}
-        <SwiperSlide>
-          <div>
-            <div className="scbannerbd">
-              
-            </div>
-          </div>
-        </SwiperSlide>
-
       </Swiper>
     </div>
   );
