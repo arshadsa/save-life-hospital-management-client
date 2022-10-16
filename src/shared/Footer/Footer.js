@@ -37,8 +37,8 @@ export const Footer = () => {
         "Patient Dashboard"
     ]
     return (
-        <footer className=''>
-            <section className='grid md:grid-cols-4 grid-cols-2 w-[90vw] mx-auto py-10'>
+        <footer className='bg-white'>
+            <section className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-10 md:gap-0 w-[90vw] mx-auto py-10'>
                 <div className='flex flex-col justify-items-start items-start'>
                     <img src="" alt="" />
                     <p className='text-left'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ipsa assumenda eveniet quasi, culpa dignissimos fugit molestias adipisci corporis laborum ab ipsam! Vel facere similique quos aliquam repudiandae temporibus minus?</p>
