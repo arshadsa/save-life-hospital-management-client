@@ -1,1 +1,3 @@
 thi test
+in this components folder we will create in our components that we will work such as (Home components a folder) . In to the Home components create what are you are creating Like banner What are you looking
+ 
