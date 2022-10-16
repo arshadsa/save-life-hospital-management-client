@@ -36,6 +36,14 @@ const Banner = () => {
             </div>
           </div>
         </SwiperSlide>
+        {/* our second banner */}
+        <SwiperSlide>
+          <div>
+            <div className="scbannerbd">
+              
+            </div>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </div>
   );
