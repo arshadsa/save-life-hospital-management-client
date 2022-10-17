@@ -72,7 +72,7 @@ export const Footer = () => {
             <section className='py-10'>
                 <h3 className=' w-[90vw] mx-auto text-[20px] font-[700] text-left'>Service</h3>
                 <div className='grid md:grid-cols-4 w-[90vw] mx-auto justify-items-start sm:grid-cols-1 mt-5'>
-                    {service?.map(elem => <p key={uuidv4()} className='hover:pl-5 hover:transition hover:ease-linear hover:delay-200 hover:text-blue-600'>{elem}</p>)}
+                    {service?.map(elem => <p key={uuidv4()} className='hover:pl-5 hover:transition hover:ease-linear delay-200 hover:text-blue-600 hover:duration-75'>{elem}</p>)}
                 </div>
             </section>
             <span className='px-10 inline-block w-[90vw] h-[1px] bg-slate-500 mx-auto'></span>

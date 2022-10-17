@@ -1,0 +1,11 @@
+.card{
+    border: 1px solid gray;
+}
+
+.hhh{
+   box-shadow: 1px 1px 8px gray;
+}
+.hhh:hover{
+background-color: #3e5463;
+color: white;
+}
