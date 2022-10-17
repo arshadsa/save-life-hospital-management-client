@@ -25,31 +25,31 @@ const AvailableFeatures = () => {
       <div className=" hhh mx-auto lg:max-w-lg bg-base-100 pl-8 pr-8">
   <figure><img src={medicalimage} className='w-20 mx-auto mt-12' alt="Shoes" /></figure>
   <div className="card-body">
-    <h2 className=" font-bold">Operation</h2>  
+    <h2 className=" font-bold">Medical</h2>  
   </div>
 </div>
       <div className=" hhh mx-auto lg:max-w-lg bg-base-100 pl-8 pr-8">
   <figure><img src={patientimage} className='w-20 mx-auto mt-12' alt="Shoes" /></figure>
   <div className="card-body">
-    <h2 className=" font-bold">Operation</h2>  
+    <h2 className=" font-bold">Patient Ward</h2>  
   </div>
 </div>
       <div className=" hhh mx-auto lg:max-w-lg bg-base-100 pl-8 pr-8">
   <figure><img src={testimage} className='w-20 mx-auto mt-12' alt="Shoes" /></figure>
   <div className="card-body">
-    <h2 className=" font-bold">Operation</h2>  
+    <h2 className=" font-bold">Test Room</h2>  
   </div>
 </div>
       <div className=" hhh mx-auto lg:max-w-lg bg-base-100 pl-8 pr-8">
   <figure><img src={icuimage} className='w-20 mx-auto mt-12' alt="Shoes" /></figure>
   <div className="card-body">
-    <h2 className=" font-bold">Operation</h2>  
+    <h2 className=" font-bold">ICU</h2>  
   </div>
 </div>
       <div className=" hhh mx-auto lg:max-w-lg bg-base-100 pl-8 pr-8">
   <figure><img src={labimage} className='w-20 mx-auto mt-12' alt="Shoes" /></figure>
   <div className="card-body">
-    <h2 className=" font-bold">Operation</h2>  
+    <h2 className=" font-bold">Laboratory</h2>  
   </div>
 </div>
       </div>
