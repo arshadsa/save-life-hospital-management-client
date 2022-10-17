@@ -40,7 +40,7 @@ const AvailableFeatures = () => {
     <h2 className=" font-bold">Test Room</h2>  
   </div>
 </div>
-      <div className=" hhh mx-auto lg:max-w-lg bg-base-100 pl-8 pr-8">
+      <div className=" hhh mx-auto lg:max-w-lg bg-base-100 pl-12 pr-12">
   <figure><img src={icuimage} className='w-20 mx-auto mt-12' alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className=" font-bold">ICU</h2>  
