@@ -9,6 +9,10 @@ import Services from "../../components/Home components/What are u looking fr/Ser
 
 const Homepage = () => {
   return (
+    <div id='home'>
+      {/* banner  */}
+      <Banner></Banner>
+      {/* what are you looking */}
     <div>
       {/* banner  */}
       <Banner></Banner>
