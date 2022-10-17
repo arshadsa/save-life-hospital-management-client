@@ -12,9 +12,6 @@ import "./Homecomponents.css";
 
 // image for banner
 import scbannerimage from "../../assets/Banner Image/scbi.png";
-import draw from '../../assets/Banner Image/scbgdraw.png'
-import draw2 from '../../assets/Banner Image/scbgdraw2.png'
-import draw3 from '../../assets/Banner Image/scbgdraw3.png'
 
 const Banner = () => {
   return (
@@ -31,7 +28,12 @@ const Banner = () => {
         // onSlideChange={() => console.log('slide change')}
       >
         <SwiperSlide>
-
+          <div>
+            <div className="bannerbg flex justify-end items-center">
+              <div className="flex">
+                <div className="mr-[30px] text-[33px] text-5xl text-left font-extrabold text-white uppercase ">
+                  <p>our best doctor are ready for you<br/> just make an <span className="text-[#0071DC]">appoinment </span> </p>
+                  <button className="btn btn-outline btn-primary mt-3">visit Doctors </button>
                 </div>
               </div>
             </div>
