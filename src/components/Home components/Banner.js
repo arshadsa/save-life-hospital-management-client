@@ -31,18 +31,7 @@ const Banner = () => {
         // onSlideChange={() => console.log('slide change')}
       >
         <SwiperSlide>
-          <div className="">
-            <div className="bannerbg flex justify-end items-center ">
-              <div className="flex">
-                <div className="mr-[30px] text-[33px] text-left font-extrabold text-white uppercase container p-2">
-                  <p >
-                    our best doctor are ready for you
-                    <br /> just make an{" "}
-                    <span className="text-[#0071DC]">appoinment </span>{" "}
-                  </p>
-                  <button className="btn btn-outline btn-primary mt-3">
-                    visit Doctors{" "}
-                  </button>
+
                 </div>
               </div>
             </div>
