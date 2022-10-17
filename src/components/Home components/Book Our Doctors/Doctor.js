@@ -169,8 +169,8 @@ const doctors = [
   
 
   return (
-    <div className='mt-[100px] container mx-auto px-6'>
-       <div className='mb-[70px] mt-[30px]'>
+    <div className='mt-[150px] container mx-auto px-6'>
+       <div className='mb-[100px] '>
        <p className='text-center text-4xl uppercase font-bold  '>Book Our Best Super Herros <span className='text-[#1b82e2]'> (docotrs) </span> </p>
         <p className='text-center mt-1'> Lorem ipsumaudantium saepe fuga. Veritatis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, distinctio. </p>
        </div>
@@ -178,11 +178,33 @@ const doctors = [
         <Swiper
                     modules={[Navigation, Autoplay, Pagination, Scrollbar, Zoom, A11y]}
                     spaceBetween={20}
-                    slidesPerView={3}
+                    // slidesPerView={3}
                     centeredslide="true"
                     navigation
                     key={doctors.length}
                     autoplay={true}
+                    breakpoints={{
+                        300: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                          },
+                        500: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                          },
+                        640: {
+                          slidesPerView: 2,
+                          spaceBetween: 20,
+                        },
+                        768: {
+                          slidesPerView: 2,
+                          spaceBetween: 40,
+                        },
+                        1024: {
+                          slidesPerView: 3,
+                          spaceBetween: 50,
+                        },
+                      }}
                 >
 
                     {
