@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Homepage></Homepage>
-      <AvailableFeatures></AvailableFeatures>
+      
     
     </div>
   );
