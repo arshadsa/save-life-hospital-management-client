@@ -5,10 +5,8 @@
 
 * {
   scroll-behavior: smooth;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
-
-.App {}
 
 .App-logo {
   height: 40vmin;

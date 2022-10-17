@@ -81,8 +81,10 @@ export const Footer = () => {
                 <p>© 2022 Save Life. All rights reserved.</p>
                 <p>Terms and Conditions | Policy</p>
             </div>
+            {/* Upper button Scrollbar */}
             <a href="#home" className='bg-sky-700 w-10 h-10 inline-block rounded-md fixed bottom-[10%] right-[3%] bounce2'> <BsFillArrowUpCircleFill className='text-white translate-y-3 translate-x-3' /></a>
             {/* <BsFillArrowUpCircleFill className='absolute' /> */}
+            {/* Footer End */}
         </footer>
     );
 };
