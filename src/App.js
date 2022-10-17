@@ -1,4 +1,5 @@
 import './App.css';
+import { Footer } from './shared/Footer/Footer';
 import AvailableFeatures from './components/Home components/AvailableFeatures/AvailableFeatures';
 import Doctor from './components/Home components/Book Our Doctors/Doctor';
 import Specialties from './components/Home components/Specialties/Specialties';
@@ -22,7 +23,11 @@ function App() {
       <br></br>
       <br></br>
       <Use></Use>
+<<<<<<< HEAD
       <Doctor></Doctor>
+=======
+      <Footer></Footer>
+>>>>>>> ovilash
     </div>
   );
 }

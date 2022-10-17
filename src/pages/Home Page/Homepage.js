@@ -9,6 +9,7 @@ import Services from "../../components/Home components/What are u looking fr/Ser
 
 const Homepage = () => {
   return (
+<<<<<<< HEAD
     <div>
       {/* banner  */}
       <Banner></Banner>
@@ -21,6 +22,14 @@ const Homepage = () => {
         
       </div>
       {/*  */}
+=======
+    <div id='home'>
+      {/* banner  */}
+      <Banner></Banner>
+      {/* what are you looking */}
+
+
+>>>>>>> ovilash
     </div>
   );
 };
