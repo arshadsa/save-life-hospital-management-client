@@ -28,27 +28,12 @@ const Banner = () => {
         // onSlideChange={() => console.log('slide change')}
       >
         <SwiperSlide>
-<<<<<<<<< Temporary merge branch 1
-          <div className="">
-            <div className="bannerbg flex justify-end items-center ">
-              <div className="flex">
-                <div className="mr-[30px] text-[33px] text-left font-extrabold text-white uppercase container p-2">
-                  <p >
-                    our best doctor are ready for you
-                    <br /> just make an{" "}
-                    <span className="text-[#0071DC]">appoinment </span>{" "}
-                  </p>
-                  <button className="btn btn-outline btn-primary mt-3">
-                    visit Doctors{" "}
-                  </button>
-=========
           <div>
             <div className="bannerbg flex justify-end items-center">
               <div className="flex">
                 <div className="mr-[30px] text-[33px] text-5xl text-left font-extrabold text-white uppercase ">
                   <p>our best doctor are ready for you<br/> just make an <span className="text-[#0071DC]">appoinment </span> </p>
                   <button className="btn btn-outline btn-primary mt-3">visit Doctors </button>
->>>>>>>>> Temporary merge branch 2
                 </div>
               </div>
             </div>
