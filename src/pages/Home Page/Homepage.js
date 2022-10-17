@@ -8,12 +8,12 @@ import { Use } from '../../components/Home components/use/Use'
 
 const Homepage = () => {
   return (
-    <div>
-        {/* banner  */}
-        <Banner></Banner>
-        {/* what are you looking */}
+    <div id='home'>
+      {/* banner  */}
+      <Banner></Banner>
+      {/* what are you looking */}
 
-        
+
     </div>
 
   )
