@@ -12,12 +12,9 @@
     "react-icon": "^1.0.0",
     "react-icons": "^4.6.0",
     "react-scripts": "5.0.1",
-<<<<<<< HEAD
     "tailwindcss": "^3.1.8",
     "uuid": "^9.0.0",
-=======
     "swiper": "^8.4.4",
->>>>>>> e6fdc1974b5af4846f64030c16d66a3dbd38a5bf
     "web-vitals": "^2.1.0"
   },
   "scripts": {
