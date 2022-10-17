@@ -1,3 +1,4 @@
+/* home page banner css file */
 .bannerbg{
     background-image: url(https://doccure-react.dreamguystech.com/template/d368ebab89d653715a96b31ead9de731.jpg);
     background-position: center center; 
@@ -56,4 +57,153 @@
     width: 10rem;
     height: 8rem;
     background-repeat: no-repeat;
+}
+
+
+/* ---------------------------------------- */
+/* what are you looking for services css file */
+/* ----------------------------------- */
+.featured{
+    background: #E5F1FB;
+    transition: .4s ease-out;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.featured:hover{
+    transform: translateY(5px );
+}
+
+.featured::before{
+    content: '';
+    position: absolute;
+    background-color: #0c7fdd;
+    left: 0;
+    width: 3px;
+    height: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    z-index: -1;
+    transition: ease-in .5s;
+}
+
+
+.featured:hover::before{
+    width: 100%;
+    height: 100%;
+}
+
+  .featured:hover .number{
+    color: white;
+    transition: ease-in .5s;
+}
+
+.featured:hover .explain{
+    color: white;
+    transition: ease-in .5s;
+}
+
+.featured:hover .tagline{
+    color: white;
+    transition: ease-in .5s;
+}
+
+.featured2{
+    background: #E3FFEF;;
+    transition: .4s ease-out;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.featured2:hover{
+    transform: translateY(5px );
+}
+
+.featured2::before{
+    content: '';
+    position: absolute;
+    background-color: #0c7fdd;
+    left: 0;
+    width: 3px;
+    height: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    z-index: -1;
+    transition: ease-in .5s;
+}
+
+
+.featured2:hover::before{
+    width: 100%;
+    height: 100%;
+}
+
+  .featured2:hover .number{
+    color: white;
+}
+
+.featured2:hover .explain{
+    color: white;
+    transition: ease-in .5s;
+}
+
+.featured2:hover .tagline{
+    color: white;
+    transition: ease-in .5s;
+}
+
+
+/* featured service 3 */
+
+.featured3{
+    background: #FFF3E6;
+    transition: .4s ease-out;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.featured3:hover{
+    transform: translateY(5px );
+}
+
+.featured3::before{
+    content: '';
+    position: absolute;
+    background-color: #0c7fdd;
+    left: 0;
+    width: 3px;
+    height: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    z-index: -1;
+    transition: ease-in .5s;
+}
+
+
+.featured3:hover::before{
+    width: 100%;
+    height: 100%;
+}
+
+  .featured3:hover .number{
+    color: white;
+}
+
+.featured3:hover .explain{
+    color: white;
+    transition: ease-in .5s;
+}
+
+.featured3:hover .tagline{
+    color: white;
+    transition: ease-in .5s;
 }
