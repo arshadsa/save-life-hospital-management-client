@@ -1,3 +1,4 @@
+/* home page banner css file */
 .bannerbg{
     background-image: url(https://doccure-react.dreamguystech.com/template/d368ebab89d653715a96b31ead9de731.jpg);
     background-position: center center; 
@@ -25,13 +26,252 @@
 }
 
 /* second bannert bg */
-.scbannerbd{
-    background-image: url(../../assets/scbannerbg.png);
-    background-position: center center; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+.scbgdraw {
+    background-image: url('../../assets/Banner\ Image/scbgdraw3.png');
+  
+    background-size: 7rem;
+    opacity: 1;
+    z-index: 1;
+    width: 10rem;
+    height: 5rem;
     background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: 768px;
 }
+
+.scbgdraw2{
+    background-image: url('../../assets/Banner\ Image/scbgdraw.png');
+  
+    background-size: 7rem;
+    opacity: 1;
+    z-index: 1;
+    width: 10rem;
+    height: 5rem;
+    background-repeat: no-repeat;
+}
+
+.scbgdraw3{
+    background-image: url('../../assets/Banner\ Image/scbgdraw2.png');
+    float: left;
+    background-size: 10rem;
+    opacity: 1;
+    z-index: 1;
+    width: 10rem;
+    height: 8rem;
+    background-repeat: no-repeat;
+}
+
+
+/* ---------------------------------------- */
+/* what are you looking for services css file */
+/* ----------------------------------- */
+.featured{
+    background: #E5F1FB;
+    transition: .4s ease-out;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.featured:hover{
+    transform: translateY(5px );
+}
+
+.featured::before{
+    content: '';
+    position: absolute;
+    background-color: #0c7fdd;
+    left: 0;
+    width: 3px;
+    height: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    z-index: -1;
+    transition: ease-in .5s;
+}
+
+
+.featured:hover::before{
+    width: 100%;
+    height: 100%;
+}
+
+  .featured:hover .number{
+    color: white;
+    transition: ease-in .5s;
+}
+
+.featured:hover .explain{
+    color: white;
+    transition: ease-in .5s;
+}
+
+.featured:hover .tagline{
+    color: white;
+    transition: ease-in .5s;
+}
+
+.featured2{
+    background: #E3FFEF;;
+    transition: .4s ease-out;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.featured2:hover{
+    transform: translateY(5px );
+}
+
+.featured2::before{
+    content: '';
+    position: absolute;
+    background-color: #0c7fdd;
+    left: 0;
+    width: 3px;
+    height: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    z-index: -1;
+    transition: ease-in .5s;
+}
+
+
+.featured2:hover::before{
+    width: 100%;
+    height: 100%;
+}
+
+  .featured2:hover .number{
+    color: white;
+}
+
+.featured2:hover .explain{
+    color: white;
+    transition: ease-in .5s;
+}
+
+.featured2:hover .tagline{
+    color: white;
+    transition: ease-in .5s;
+}
+
+
+/* featured service 3 */
+
+.featured3{
+    background: #FFF3E6;
+    transition: .4s ease-out;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.featured3:hover{
+    transform: translateY(5px );
+}
+
+.featured3::before{
+    content: '';
+    position: absolute;
+    background-color: #0c7fdd;
+    left: 0;
+    width: 3px;
+    height: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    z-index: -1;
+    transition: ease-in .5s;
+}
+
+
+.featured3:hover::before{
+    width: 100%;
+    height: 100%;
+}
+
+  .featured3:hover .number{
+    color: white;
+}
+
+.featured3:hover .explain{
+    color: white;
+    transition: ease-in .5s;
+}
+
+.featured3:hover .tagline{
+    color: white;
+    transition: ease-in .5s;
+}
+
+/*---------------------------------
+ Docotrs book slider Home page 
+ -----------------------------------*/
+
+ .doctors-view {
+	margin-left: -10px !important;
+	margin-right: -10px !important;
+}
+
+.swiper-wrapper {
+	width: 350px !important;
+}
+.single-doctor {
+	border-radius: 10px;
+	box-shadow: 1px 2px 9px -3px rgba(99, 99, 99, 0.45);
+	margin-bottom: 10px;
+	padding: 4px ;
+}
+.doctor-description {
+	padding: 10px 10px 20px 10px;
+}
+
+.doctor-image {
+	border-radius: 10px 10px 0px 0px;
+	width: auto;
+	height: auto;
+}
+
+
+.doctor-category {
+	color: #1b82e2;
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 0.01rem;
+}
+
+.doctor-name {
+	color: #3a4256;
+}
+
+.doctor-education {
+	font-size: 12px;
+	line-height: 1rem;
+	letter-spacing: 0.01rem;
+}
+
+.collapse-btn {
+	font-size: 13px;
+	margin-left: 5px;
+	color: #1b82e2;
+	cursor: pointer;
+}
+.department {
+	font-size: 15px;
+}
+
+.hospital {
+	font-size: 14px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	top: 200px !important;
+	color: #1b82e2 !important;
+}
+
+
