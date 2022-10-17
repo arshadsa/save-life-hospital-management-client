@@ -293,6 +293,95 @@ const Specialties = () => {
             </div>
         </div>
         </div>
+        {/* Card-Body-16  */}
+        <div className='tp-4 pt-3 pb-3 rounded-[10px] bg-white shadow ring-4 ring-gray-100 ring-offset-2 hover:bg-gray-50 hover:no-underline'>
+        <div className='tmb-5 flex space-x-4'>
+            {/* Card-img  */}
+            <div className='tmb-4 h-24 w-24 flex-shrink-0 rounded'>
+              <img src={Img15} alt="" className='h-24 w-24 object-cover'/>
+            </div>
+            {/* Card-Title  */}
+            <div className='text-left'>
+              <h3 className='text-xl tmb-2 font-bold text-gray-900'>
+               Dental Care / Dentistry</h3>
+              <p className='text-sm pt-2 m-0 pr-8 font-normal text-gray-600'>
+               Diagnosis, management, and treatment of defects and injuries related to the teeth and gums.
+              </p>
+            </div>
+        </div>
+        </div>
+
+        {/* Card-Body-17  */}
+        <div className='tp-4 pt-3 pb-3 rounded-[10px] bg-white shadow ring-4 ring-gray-100 ring-offset-2 hover:bg-gray-50 hover:no-underline'>
+        <div className='tmb-5 flex space-x-4'>
+            {/* Card-img  */}
+            <div className='tmb-4 h-24 w-24 flex-shrink-0 rounded'>
+              <img src={Img15} alt="" className='h-24 w-24 object-cover'/>
+            </div>
+            {/* Card-Title  */}
+            <div className='text-left'>
+              <h3 className='text-xl tmb-2 font-bold text-gray-900'>
+               Dental Care / Dentistry</h3>
+              <p className='text-sm pt-2 m-0 pr-8 font-normal text-gray-600'>
+               Diagnosis, management, and treatment of defects and injuries related to the teeth and gums.
+              </p>
+            </div>
+        </div>
+        </div>
+
+        {/* Card-Body-18  */}
+        <div className='tp-4 pt-3 pb-3 rounded-[10px] bg-white shadow ring-4 ring-gray-100 ring-offset-2 hover:bg-gray-50 hover:no-underline'>
+        <div className='tmb-5 flex space-x-4'>
+            {/* Card-img  */}
+            <div className='tmb-4 h-24 w-24 flex-shrink-0 rounded'>
+              <img src={Img15} alt="" className='h-24 w-24 object-cover'/>
+            </div>
+            {/* Card-Title  */}
+            <div className='text-left'>
+              <h3 className='text-xl tmb-2 font-bold text-gray-900'>
+               Dental Care / Dentistry</h3>
+              <p className='text-sm pt-2 m-0 pr-8 font-normal text-gray-600'>
+               Diagnosis, management, and treatment of defects and injuries related to the teeth and gums.
+              </p>
+            </div>
+        </div>
+        </div>
+
+        {/* Card-Body-19  */}
+        <div className='tp-4 pt-3 pb-3 rounded-[10px] bg-white shadow ring-4 ring-gray-100 ring-offset-2 hover:bg-gray-50 hover:no-underline'>
+        <div className='tmb-5 flex space-x-4'>
+            {/* Card-img  */}
+            <div className='tmb-4 h-24 w-24 flex-shrink-0 rounded'>
+              <img src={Img15} alt="" className='h-24 w-24 object-cover'/>
+            </div>
+            {/* Card-Title  */}
+            <div className='text-left'>
+              <h3 className='text-xl tmb-2 font-bold text-gray-900'>
+               Dental Care / Dentistry</h3>
+              <p className='text-sm pt-2 m-0 pr-8 font-normal text-gray-600'>
+               Diagnosis, management, and treatment of defects and injuries related to the teeth and gums.
+              </p>
+            </div>
+        </div>
+        </div>
+        
+        {/* Card-Body-20  */}
+        <div className='tp-4 pt-3 pb-3 rounded-[10px] bg-white shadow ring-4 ring-gray-100 ring-offset-2 hover:bg-gray-50 hover:no-underline'>
+        <div className='tmb-5 flex space-x-4'>
+            {/* Card-img  */}
+            <div className='tmb-4 h-24 w-24 flex-shrink-0 rounded'>
+              <img src={Img15} alt="" className='h-24 w-24 object-cover'/>
+            </div>
+            {/* Card-Title  */}
+            <div className='text-left'>
+              <h3 className='text-xl tmb-2 font-bold text-gray-900'>
+               Dental Care / Dentistry</h3>
+              <p className='text-sm pt-2 m-0 pr-8 font-normal text-gray-600'>
+               Diagnosis, management, and treatment of defects and injuries related to the teeth and gums.
+              </p>
+            </div>
+        </div>
+        </div>
      
 
       </div>
