@@ -11,7 +11,6 @@ function App() {
       <Homepage></Homepage>
       <AvailableFeatures></AvailableFeatures>
       <Specialties></Specialties>
-    
     </div>
   );
 }
