@@ -9,8 +9,10 @@ import Services from "../../components/Home components/What are u looking fr/Ser
 
 const Homepage = () => {
   return (
-<<<<<<< HEAD
-    <div>
+    <div id='home'>
+      {/* banner  */}
+      <Banner></Banner>
+      {/* what are you looking */}
       {/* banner  */}
       <Banner></Banner>
       {/* what are you looking */}
@@ -19,17 +21,14 @@ const Homepage = () => {
       </div>
       {/*Booking  Doctors  slider from doccer page (2) */}
       <div className="mt-[100px]">
-        
+
       </div>
       {/*  */}
-=======
-    <div id='home'>
-      {/* banner  */}
-      <Banner></Banner>
-      {/* what are you looking */}
-
-
->>>>>>> ovilash
+      <div id='home'>
+        {/* banner  */}
+        <Banner></Banner>
+        {/* what are you looking */}
+      </div>
     </div>
   );
 };

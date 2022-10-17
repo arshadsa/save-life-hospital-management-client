@@ -23,11 +23,8 @@ function App() {
       <br></br>
       <br></br>
       <Use></Use>
-<<<<<<< HEAD
       <Doctor></Doctor>
-=======
       <Footer></Footer>
->>>>>>> ovilash
     </div>
   );
 }
