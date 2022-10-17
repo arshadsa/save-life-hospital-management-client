@@ -3,6 +3,7 @@
 import React from "react";
 import AvailableFeatures from "../../components/Home components/AvailableFeatures/AvailableFeatures";
 import Banner from "../../components/Home components/Banner";
+import Doctor from "../../components/Home components/Book Our Doctors/Doctor";
 import { Use } from "../../components/Home components/use/Use";
 import Services from "../../components/Home components/What are u looking fr/Services";
 
@@ -15,8 +16,11 @@ const Homepage = () => {
       <div className="mt-[100px]">
         <Services></Services>
       </div>
-    {/* dffjjfj */}
-    
+      {/*Booking  Doctors  slider from doccer page (2) */}
+      <div className="mt-[100px]">
+        
+      </div>
+      {/*  */}
     </div>
   );
 };
