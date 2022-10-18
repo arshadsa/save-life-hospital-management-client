@@ -11,6 +11,7 @@
     "react-dom": "^18.2.0",
     "react-icon": "^1.0.0",
     "react-icons": "^4.6.0",
+    "react-messenger-chat-plugin": "^3.0.5",
     "react-scripts": "5.0.1",
     "swiper": "^8.4.4",
     "tailwindcss": "^3.1.8",
