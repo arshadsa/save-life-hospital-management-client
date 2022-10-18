@@ -1,5 +1,5 @@
 import React from "react";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
+import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -18,22 +18,32 @@ const Banner = () => {
     <div>
       <Swiper
         // install Swiper modules
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         // spaceBetween={50}
         // slidesPerView={3}
-        navigation
-        // pagination={{ clickable: true }}
+        // navigation
+        autoplay={true}
+        pagination={{ clickable: true }}
         // scrollbar={{ draggable: true }}
         // onSwiper={(swiper) => console.log(swiper)}
         // onSlideChange={() => console.log('slide change')}
+
+  
+
       >
         <SwiperSlide>
-          <div>
-            <div className="bannerbg flex justify-end items-center">
+        <div className="">
+            <div className="bannerbg flex justify-end items-center ">
               <div className="flex">
-                <div className="mr-[30px] text-[33px] text-5xl text-left font-extrabold text-white uppercase ">
-                  <p>our best doctor are ready for you<br/> just make an <span className="text-[#0071DC]">appoinment </span> </p>
-                  <button className="btn btn-outline btn-primary mt-3">visit Doctors </button>
+                <div className="mr-[30px] text-[33px] text-left font-extrabold text-white uppercase container p-2">
+                  <p >
+                    our best doctor are ready for you
+                    <br /> just make an{" "}
+                    <span className="text-[#0071DC]">appoinment </span>{" "}
+                  </p>
+                  <button className="btn btn-outline btn-primary mt-3">
+                    visit Doctors{" "}
+                  </button>
                 </div>
               </div>
             </div>
