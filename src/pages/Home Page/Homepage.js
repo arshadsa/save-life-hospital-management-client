@@ -11,10 +11,9 @@ const Homepage = () => {
   return (
     <div id='home'>
       <NavigationBar isHome={true} />
+
       {/* banner  */}
-      {/* what are you looking */}
-      {/* banner  */}
-      <Banner></Banner>
+      <Banner />
       {/* what are you looking */}
       <div className="mt-[100px]">
         <Services></Services>
