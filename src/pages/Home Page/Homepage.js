@@ -11,6 +11,7 @@ const Homepage = () => {
   return (
     <div id='home'>
       <NavigationBar isHome={true} />
+
       {/* banner  */}
       <Banner />
       {/* what are you looking */}
