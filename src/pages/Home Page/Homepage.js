@@ -13,22 +13,30 @@ const Homepage = () => {
       {/* banner  */}
       <Banner></Banner>
       {/* what are you looking */}
-      {/* banner  */}
-      <Banner></Banner>
-      {/* what are you looking */}
       <div className="mt-[100px]">
         <Services></Services>
       </div>
-      {/*Booking  Doctors  slider from doccer page (2) */}
+      {/* AvailableFeatures anik vai s*/}
       <div className="mt-[100px]">
 
       </div>
-      {/*  */}
-      <div id='home'>
-        {/* banner  */}
-        <Banner></Banner>
-        {/* what are you looking */}
+      {/*Specialties shamim vai  */}
+      <div className="mt-[100px]">
+
       </div>
+      {/* use part How to use */}
+      <div className="mt-[100px]">
+
+      </div>
+      {/*Booking  Doctors  slider from doccer page (2) emon */}
+      <div className="mt-[100px]">
+
+      </div>
+      {/* Newsletter yaesin*/}
+      <div className="mt-[100px]">
+
+      </div>
+
     </div>
   );
 };
