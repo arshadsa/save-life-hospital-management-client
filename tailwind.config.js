@@ -9,9 +9,9 @@ module.exports = {
           mytheme: {
             "primary": "#0071DC",
 
-            "secondary": "#F000B8",
+            "secondary": "#7FB7ED",
 
-            "accent": "#37CDBE",
+            "accent": "#7FB7ED",
 
             "neutral": "#3D4451",
 
@@ -24,6 +24,7 @@ module.exports = {
             "warning": "#FBBD23",
 
             "error": "#F87272",
+
           },
         },
       ],

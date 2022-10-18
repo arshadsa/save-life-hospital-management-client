@@ -5,6 +5,7 @@ import Doctor from './components/Home components/Book Our Doctors/Doctor';
 import Specialties from './components/Home components/Specialties/Specialties';
 import { Use } from './components/Home components/use/Use';
 import Homepage from './pages/Home Page/Homepage';
+import Chat from './components/Msngrchat/Chat';
 
 
 
@@ -24,7 +25,10 @@ function App() {
       <br></br>
       <br></br>
       <Use></Use>
-<Doctor></Doctor>
+      <Doctor></Doctor>
+      <div className='mb-[150px]'>
+        <Chat></Chat>
+      </div>
       <Footer></Footer>
     </div>
   );

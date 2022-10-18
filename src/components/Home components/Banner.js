@@ -1,5 +1,5 @@
 import React from "react";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
+import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,26 +12,27 @@ import "./Homecomponents.css";
 
 // image for banner
 import scbannerimage from "../../assets/Banner Image/scbi.png";
-import draw from '../../assets/Banner Image/scbgdraw.png'
-import draw2 from '../../assets/Banner Image/scbgdraw2.png'
-import draw3 from '../../assets/Banner Image/scbgdraw3.png'
 
 const Banner = () => {
   return (
     <div>
       <Swiper
         // install Swiper modules
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         // spaceBetween={50}
         // slidesPerView={3}
-        navigation
-        // pagination={{ clickable: true }}
+        // navigation
+        autoplay={true}
+        pagination={{ clickable: true }}
         // scrollbar={{ draggable: true }}
         // onSwiper={(swiper) => console.log(swiper)}
         // onSlideChange={() => console.log('slide change')}
+
+  
+
       >
         <SwiperSlide>
-          <div className="">
+        <div className="">
             <div className="bannerbg flex justify-end items-center ">
               <div className="flex">
                 <div className="mr-[30px] text-[33px] text-left font-extrabold text-white uppercase container p-2">
