@@ -3,10 +3,10 @@ import headpain from '../../../assets/Features-images/head_pain.png';
 import './Use.css';
 export const Use = () => {
   return (
-    <div>
+    <div className='container mx-auto px-6 mb-[130px]'>
         
 <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1'>
-<img src={headpain} className='lg:max-w-lg mx-auto'></img>
+<img src={headpain} className='lg:max-w-lg'></img>
 <div className='mr-10'>
     <h1 className='font-bold text-5xl mb-8'>When to use SaveLife.cm</h1>
     <div className='mb-5'>

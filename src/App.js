@@ -6,6 +6,7 @@ import Specialties from './components/Home components/Specialties/Specialties';
 import { Use } from './components/Home components/use/Use';
 import Homepage from './pages/Home Page/Homepage';
 import Chat from './components/Msngrchat/Chat';
+import { NewsLetter } from './components/Home components/newsletter/NewsLetter';
 
 
 
@@ -29,6 +30,7 @@ function App() {
       <div className='mb-[150px]'>
         <Chat></Chat>
       </div>
+      <NewsLetter></NewsLetter>
       <Footer></Footer>
     </div>
   );
