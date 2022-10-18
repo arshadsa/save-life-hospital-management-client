@@ -35,7 +35,7 @@ import Img26 from '../../../assets/Speciality-img/vascular.png';
 const Specialties = () => {
   return (
     <div className='tpx-4 pb-12 mx-auto max-w-lg sm:px-6 md:max-w-2xl md:px-8 lg:max-w-5xl xl:max-w-7xl 2xl:container'>
-      <h1 className='text-xl pt-20 pb-16 font-bold text-gray-900 md:text-4xl'>Please select a speciality</h1>
+      <h1 className='text-center text-xl pt-20 pb-16 font-bold text-gray-900 md:text-4xl'>Please Select a Speciality</h1>
 
       {/* Specialties Card  */}
       <div className='grid gap-9 sm:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3'>
