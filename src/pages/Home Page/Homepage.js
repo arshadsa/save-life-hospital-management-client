@@ -12,6 +12,7 @@ const Homepage = () => {
     <div id='home'>
       <NavigationBar isHome={true} />
       {/* banner  */}
+      <Banner />
       {/* what are you looking */}
       <div className="mt-[100px]">
         <Services></Services>
