@@ -7,14 +7,12 @@ import Chat from "./components/Msngrchat/Chat";
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Homepage></Homepage>}></Route>
-      </Routes>
+      
 
-      <div className="mb-[150px]">
+      {/* <div className="mb-[150px]">
         <Chat></Chat>
       </div>
-      <Footer></Footer>
+      <Footer></Footer> */}
     </div>
   );
 }
