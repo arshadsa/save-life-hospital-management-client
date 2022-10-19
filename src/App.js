@@ -3,6 +3,7 @@ import "./App.css";
 import { Footer } from "./shared/Footer/Footer";
 import Homepage from "./pages/Home Page/Homepage";
 import Chat from "./components/Msngrchat/Chat";
+import AddDoctors from "./components/adddoctors/AddDoctors";
 
 
 function App() {
@@ -11,6 +12,13 @@ function App() {
       path: "/",
       element: (
        <Homepage></Homepage>
+      ),
+    },
+
+    {
+      path: "/adddoctors",
+      element: (
+       <AddDoctors></AddDoctors>
       ),
     },
     
