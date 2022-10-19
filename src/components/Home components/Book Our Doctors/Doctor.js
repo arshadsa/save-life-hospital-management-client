@@ -1,19 +1,17 @@
-
 // .......................-------------////
 // book our doctors swiper slider  dynamic
 
-import React from 'react'
+import React from 'react';
 // swiper imports
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay, Zoom } from 'swiper';
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar, Zoom } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { Swiper, SwiperSlide } from 'swiper/react';
 // Routing page
 import Doctors from './Doctors';
 // import phto
-import docOne from '../../../assets/Doctorsdamyp/docOne.jpg'
 
 
 const Doctor = () => {
