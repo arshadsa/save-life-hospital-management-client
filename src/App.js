@@ -17,6 +17,8 @@ function App() {
         <Route path="/doctor" element={<Speciality></Speciality>}></Route>
         <Route path="/doctor/add" element={<AddDoctor></AddDoctor>}></Route>
         <Route path="/doctor/all" element={<AllDoctors></AllDoctors>}></Route>
+        <Route path="/doctor/:id" element={<AllDoctors></AllDoctors>}></Route>
+
       </Routes>
 
       <div className="mb-[150px]">
