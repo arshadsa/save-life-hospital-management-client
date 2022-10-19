@@ -7,13 +7,10 @@ import { NewsLetter } from "../../components/Home components/newsletter/NewsLett
 import Specialties from "../../components/Home components/Specialties/Specialties";
 import { Use } from "../../components/Home components/use/Use";
 import Services from "../../components/Home components/What are u looking fr/Services";
-import { NavigationBar } from '../../shared/NavigationBar/NavigationBar'
 
 const Homepage = () => {
   return (
     <div id='home'>
-      <NavigationBar isHome={true} />
-
       {/* banner  */}
       <Banner />
       {/* what are you looking */}
