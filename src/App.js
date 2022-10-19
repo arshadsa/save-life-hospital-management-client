@@ -8,20 +8,33 @@ import AddDoctors from "./components/adddoctors/AddDoctors";
 
 function App() {
   const router = createBrowserRouter([
+    { path: "/", element: (<Homepage></Homepage>),},
+    { path: "/adddoctors", element: ( <AddDoctors></AddDoctors>),},
     {
-      path: "/",
+      path: "/doctor",
       element: (
-       <Homepage></Homepage>
+        <Speciality></Speciality>
       ),
     },
-
     {
-      path: "/adddoctors",
+      path: "/doctor/add",
       element: (
        <AddDoctors></AddDoctors>
       ),
     },
-    
+    {
+      path: "/doctor/all",
+      element: (
+        <AllDoctors></AllDoctors>
+      ),
+    },
+    {
+      path: "/doctor/:id",
+      element: (
+        <AllDoctors></AllDoctors>
+      ),
+    },
+   
     
   ]);
   return (
