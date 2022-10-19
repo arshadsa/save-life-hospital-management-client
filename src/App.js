@@ -9,6 +9,7 @@ import AddDoctor from "./pages/AddDoctor/AddDoctor";
 import AllDoctors from "./pages/AllDoctors/AllDoctors";
 import { Login } from "./pages/login/Login";
 import AddDoctors from "./components/adddoctors/AddDoctors";
+import { SignUp } from "./pages/SignUp/SignUp";
 
 
 function App() {
@@ -59,15 +60,21 @@ function App() {
       element: (
         <Login />
       )
+    },
+    {
+      path: "/signup",
+      element: (
+        <SignUp />
+      )
     }
   ]);
 
   return (
-    <div className="App">
+    <div className="App bg-[#FFF]">
       <NavigationBar isHome={true} />
       <RouterProvider router={router} />
       <div className="mb-[150px]">
-        <Chat></Chat>
+        {/* <Chat></Chat> */}
       </div>
       <Footer></Footer>
     </div>
