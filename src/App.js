@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./shared/Footer/Footer";
 import Homepage from "./pages/Home Page/Homepage";
@@ -7,20 +7,57 @@ import Speciality from "./pages/Speciality/Speciality";
 import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
 import AddDoctor from "./pages/AddDoctor/AddDoctor";
 import AllDoctors from "./pages/AllDoctors/AllDoctors";
+import AddDoctors from "./components/adddoctors/AddDoctors";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+       <Homepage></Homepage>
+      ),
+    },
+
+    {
+      path: "/adddoctors",
+      element: (
+       <AddDoctors></AddDoctors>
+      ),
+    },
+
+    {
+      path: "/doctor",
+      element: (
+        <Speciality></Speciality>
+      ),
+    },
+
+    {
+      path: "/doctor/add",
+      element: (
+        <AddDoctor></AddDoctor>
+      ),
+    },
+
+    {
+      path: "/doctor/all",
+      element: (
+        <AllDoctors></AllDoctors>
+      ),
+    },
+
+    {
+      path: "/doctor/:id",
+      element: (
+        <AllDoctors></AllDoctors>
+      ),
+    }
+  ]);
+
   return (
     <div className="App">
       <NavigationBar isHome={true} />
-      <Routes>
-        <Route path="/" element={<Homepage></Homepage>}></Route>
-        <Route path="/doctor" element={<Speciality></Speciality>}></Route>
-        <Route path="/doctor/add" element={<AddDoctor></AddDoctor>}></Route>
-        <Route path="/doctor/all" element={<AllDoctors></AllDoctors>}></Route>
-        <Route path="/doctor/:id" element={<AllDoctors></AllDoctors>}></Route>
-
-      </Routes>
-
+      <RouterProvider router={router} />
       <div className="mb-[150px]">
         <Chat></Chat>
       </div>
