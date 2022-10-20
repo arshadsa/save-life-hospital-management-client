@@ -4,6 +4,7 @@ import React from "react";
 import {FaUserMd} from 'react-icons/fa'
 import {FaTablets} from "react-icons/fa"
 import {FaVial} from 'react-icons/fa'
+import { useNavigate } from "react-router-dom";
 // image import
 import svgservices from '../../../assets/Banner Image/services.png'
 
@@ -11,7 +12,7 @@ import svgservices from '../../../assets/Banner Image/services.png'
 
 const Services = () => {
 
-
+  const navigate = useNavigate()
 
   return (
     <div>
@@ -25,8 +26,10 @@ const Services = () => {
 
         <div className=" grid grid-row lg:grid-cols-3 gap-x-4 ">
 
-{/* visit doctors card Buttons  */}
-          <div className="featured h-auto lg:max-x-lg md:max-w-md sm:max-w-sm">
+{/* visit doctors card Buttons  */}   
+
+          <button>
+          <div  className="featured h-auto lg:max-x-lg md:max-w-md sm:max-w-sm">
             <div className="flex justify-center  "> 
             <i className=""> <FaUserMd className="text-7xl mt-[-35px] text-white bg-[#0071DC] rounded-[50%] p-2  "></FaUserMd> </i>
             </div>
@@ -41,9 +44,11 @@ const Services = () => {
             We hire the best specialists to deliver top-notch diagnostic services for you.
             </p>
           </div>
+          </button>
 
 {/* Find pharmacy card button */}
-          <div className="featured2  h-auto lg:max-x-lg md:max-w-md sm:max-w-sm  ">         
+         <button onClick={()=>navigate('/pharmacy')}  >
+         <div  className="featured2  h-auto lg:max-x-lg md:max-w-md sm:max-w-sm  ">         
           <div className="flex justify-center"> 
             <FaTablets className="text-7xl mt-[-35px] text-white bg-[#27AD5F] rounded-[50%] p-2"></FaTablets></div>
 
@@ -58,6 +63,7 @@ const Services = () => {
               We provide the a wide range of medical services, so every person could have the opportunity.{" "}
             </p>
           </div>
+         </button>
 
 
 {/* Find lab card button Stastci  */}

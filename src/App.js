@@ -8,7 +8,11 @@ import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
 import AddDoctor from "./pages/AddDoctor/AddDoctor";
 import AllDoctors from "./pages/AllDoctors/AllDoctors";
 import AddDoctors from "./components/adddoctors/AddDoctors";
+
 import Details from "./components/details/Details";
+
+import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
+
 
 function App() {
   const router = createBrowserRouter([
@@ -73,6 +77,12 @@ function App() {
       path: "*",
       element: (
        <div>This Route not found</div>
+      )
+      },
+{
+      path: "/pharmacy",
+      element: (
+        <Pharmacy></Pharmacy>
       ),
     }
   ]);
