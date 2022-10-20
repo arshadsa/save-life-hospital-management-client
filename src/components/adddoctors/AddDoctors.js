@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Typewriter from 'typewriter-effect';
 import './AddDoctors.css';
 
+
 const AddDoctors = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
@@ -29,9 +30,6 @@ loop: true,
 
 
 <form onSubmit={handleSubmit(onSubmit)} className='text-center'>
-  <input {...register("email",)} placeholder="Email" />
-  <br></br>
-  <br></br>
   <input {...register("displayname",)} placeholder="Name"  />
   <br></br>
   <br></br>
@@ -39,6 +37,12 @@ loop: true,
   <br></br>
   <br></br>
   <input {...register("designation",)} placeholder="Doctor Designation"/>
+  <br></br>
+  <br></br>
+  <input {...register("reviews",)} placeholder="Doctor's total Reviews"/>
+  <br></br>
+  <br></br>
+  <input {...register("category",)} placeholder="Category"/>
   <br></br>
   <br></br>
   <input {...register("education",)} placeholder=" Education"/>
@@ -53,26 +57,73 @@ loop: true,
   <input {...register("hospital",)} placeholder=" Doctor's Hospital"/>
   <br></br>
   <br></br>
-  <input {...register("Awards",)} placeholder=" Doctor's Awards"/>
+  <input {...register("Awards1",)} placeholder=" Doctor's Awards 1"/>
   <br></br>
   <br></br>
-  <input {...register("Services",)} placeholder="Doctor's Services"/>
+  <input {...register("Awards2",)} placeholder=" Doctor's Awards 2"/>
   <br></br>
   <br></br>
-  <input {...register("Specialization",)} placeholder="Doctor's Specialization"/>
+  <input {...register("Awards3",)} placeholder=" Doctor's Awards 3"/>
+  <br></br>
+  <br></br>
+  <input {...register("Services1",)} placeholder="Doctor's Services 1"/>
+  <br></br>
+  <br></br>
+  <input {...register("Services2",)} placeholder="Doctor's Services 2"/>
+  <br></br>
+  <br></br>
+  <input {...register("Services3",)} placeholder="Doctor's Services 3"/>
+  <br></br>
+  <br></br>
+  <input {...register("Services4",)} placeholder="Doctor's Services 4"/>
+  <br></br>
+  <br></br>
+  <input {...register("Services5",)} placeholder="Doctor's Services 5"/>
+  <br></br>
+  <br></br>
+  <input {...register("Services6",)} placeholder="Doctor's Services 6"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization1",)} placeholder="Doctor's Specialization 1"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization2",)} placeholder="Doctor's Specialization 2"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization3",)} placeholder="Doctor's Specialization 3"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization4",)} placeholder="Doctor's Specialization 4"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization5",)} placeholder="Doctor's Specialization 5"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization6",)} placeholder="Doctor's Specialization 6"/>
   <br></br>
   <br></br>
   <input {...register("image",)} placeholder="Doctor's Image"/>
   <br></br>
   <br></br>
   <input {...register("slot1",)} placeholder=" Available slot 1"/>
+  <br></br>
+  <br></br>
   <input {...register("slot2",)} placeholder=" Available slot 2"/>
+  <br></br>
+  <br></br>
   <input {...register("slot3",)} placeholder=" Available slot 3"/>
+  <br></br>
+  <br></br>
   <input {...register("slot4",)} placeholder=" Available slot 4"/>
+  <br></br>
+  <br></br>
   <input {...register("slot5",)} placeholder=" Available slot 5"/>
+  <br></br>
+  <br></br>
   <input {...register("slot6",)} placeholder=" Available slot 6"/>
-  
-  <button className="btn lg:max-w-lg btn-secondary">Add Doctor</button>
+  <br></br>
+  <br></br>
+  <button className="btn lg:max-w-lg btn-primary">Add Doctor</button>
 
 
 </form> 

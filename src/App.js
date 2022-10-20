@@ -56,9 +56,11 @@ function App() {
 
   return (
     <div className="App">
-      <NavigationBar isHome={true} />
+       <NavigationBar isHome={true} />
       <RouterProvider router={router} />
+      
       <div className="mb-[150px]">
+    
         <Chat></Chat>
       </div>
       <Footer></Footer>

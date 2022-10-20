@@ -10,16 +10,16 @@ import {FaRegMoneyBillAlt} from 'react-icons/fa'
 
 const Doctors = ({ doctor }) => {
   const {
-    img,
+    image,
     category,
     name,
     education,
     designation,
     department,
     hospital,
-    slots,
-    Fee,
-    available
+    slot1,
+    fees,
+    
   } = doctor;
 
   // collaps
@@ -39,17 +39,16 @@ const Doctors = ({ doctor }) => {
     <div>
       <div>
         <div className="single-doctor p-7">
-          {!doctor.image ? (
-            <img className="doctor-image" src={img} alt="doctor" />
-          ) : (
+        
             <img
-              style={{ height: "200px" }}
-              src={`data:image/png;base64,${doctor.image.img}`}
+              style={{ height: "300px" }}
+              src={image}
+              className='w-96 pt-3 pb-3'
               alt="doctor"
             />
-          )}
+       
 
-          <div className="doctor-description">
+          <div className="doctor-description ">
             <p className="doctor-category">{category}</p>
             <h4 className="doctor-name">{name}</h4>
 
@@ -82,11 +81,11 @@ const Doctors = ({ doctor }) => {
            <div className="mt-5">
             <div className="flex items-center gap-2">
             <p className="text-left text-[#757575] font-[600] "><MdOutlineWatchLater></MdOutlineWatchLater>  </p>
-            <h6 className="hospital text-[15px] font-[600]">{available}</h6>
+            <h6 className="hospital text-[15px] font-[600]">{slot1}</h6>
             </div>
             <div className="flex items-center gap-2">
                 <p className="text-left text-[#757575]  font-[600]"> <FaRegMoneyBillAlt  ></FaRegMoneyBillAlt> </p>
-                <h6 className="department  text-[15px] font-[600]"> {Fee}</h6>
+                <h6 className="department  text-[15px] font-[600]"> $ {fees}.00 </h6>
             </div>
            </div>
 
