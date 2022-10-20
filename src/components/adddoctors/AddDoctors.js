@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Typewriter from 'typewriter-effect';
 import './AddDoctors.css';
 
+
 const AddDoctors = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
@@ -29,56 +30,100 @@ loop: true,
 
 
 <form onSubmit={handleSubmit(onSubmit)} className='text-center'>
-  <input {...register("email",)} placeholder="Email" />
-  <br></br>
-  <br></br>
   <input {...register("displayname",)} placeholder="Name"  />
   <br></br>
   <br></br>
-  <input {...register("name",)} placeholder="Course Name" />
+  <input {...register("name",)} placeholder="Doctor Name" />
   <br></br>
   <br></br>
-  <input {...register("description",)} placeholder="Course Description"/>
+  <input {...register("designation",)} placeholder="Doctor Designation"/>
   <br></br>
   <br></br>
-  <input {...register("lessons",)} placeholder=" Total Lessons"/>
+  <input {...register("reviews",)} placeholder="Doctor's total Reviews"/>
   <br></br>
   <br></br>
-  <input {...register("quizes",)} placeholder=" Total Quizes"/>
+  <input {...register("category",)} placeholder="Category"/>
   <br></br>
   <br></br>
-  <input {...register("students",)} placeholder=" Total Students"/>
+  <input {...register("education",)} placeholder=" Education"/>
   <br></br>
   <br></br>
-  <input {...register("courseduration",)} placeholder=" Course Duration"/>
+  <input type="number" {...register("fees", )} placeholder="Total Fees"/>
   <br></br>
   <br></br>
-  <input {...register("skilllevel",)} placeholder=" Skill Level"/>
+  <input {...register("location",)} placeholder=" Doctor's Location"/>
   <br></br>
   <br></br>
-  <input {...register("language",)} placeholder="Language"/>
+  <input {...register("hospital",)} placeholder=" Doctor's Hospital"/>
   <br></br>
   <br></br>
-  <input {...register("instructor",)} placeholder="Instructor Name"/>
+  <input {...register("Awards1",)} placeholder=" Doctor's Awards 1"/>
   <br></br>
   <br></br>
-  <input {...register("instructorimage",)} placeholder="Instructor-Image"/>
+  <input {...register("Awards2",)} placeholder=" Doctor's Awards 2"/>
   <br></br>
   <br></br>
-  <input {...register("review",)} placeholder=" Total Review"/>
+  <input {...register("Awards3",)} placeholder=" Doctor's Awards 3"/>
   <br></br>
   <br></br>
-  <input type="number" {...register("price", )} placeholder="Course Price"/>
+  <input {...register("Services1",)} placeholder="Doctor's Services 1"/>
   <br></br>
   <br></br>
-  <input {...register("img",)} placeholder="Course Image"/>
+  <input {...register("Services2",)} placeholder="Doctor's Services 2"/>
   <br></br>
   <br></br>
-  <input {...register("video",)} placeholder="Course Video"/>
+  <input {...register("Services3",)} placeholder="Doctor's Services 3"/>
   <br></br>
   <br></br>
+  <input {...register("Services4",)} placeholder="Doctor's Services 4"/>
   <br></br>
-  <button className="btn lg:max-w-lg">Add Doctor</button>
+  <br></br>
+  <input {...register("Services5",)} placeholder="Doctor's Services 5"/>
+  <br></br>
+  <br></br>
+  <input {...register("Services6",)} placeholder="Doctor's Services 6"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization1",)} placeholder="Doctor's Specialization 1"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization2",)} placeholder="Doctor's Specialization 2"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization3",)} placeholder="Doctor's Specialization 3"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization4",)} placeholder="Doctor's Specialization 4"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization5",)} placeholder="Doctor's Specialization 5"/>
+  <br></br>
+  <br></br>
+  <input {...register("Specialization6",)} placeholder="Doctor's Specialization 6"/>
+  <br></br>
+  <br></br>
+  <input {...register("image",)} placeholder="Doctor's Image"/>
+  <br></br>
+  <br></br>
+  <input {...register("slot1",)} placeholder=" Available slot 1"/>
+  <br></br>
+  <br></br>
+  <input {...register("slot2",)} placeholder=" Available slot 2"/>
+  <br></br>
+  <br></br>
+  <input {...register("slot3",)} placeholder=" Available slot 3"/>
+  <br></br>
+  <br></br>
+  <input {...register("slot4",)} placeholder=" Available slot 4"/>
+  <br></br>
+  <br></br>
+  <input {...register("slot5",)} placeholder=" Available slot 5"/>
+  <br></br>
+  <br></br>
+  <input {...register("slot6",)} placeholder=" Available slot 6"/>
+  <br></br>
+  <br></br>
+  <button className="btn lg:max-w-lg btn-primary">Add Doctor</button>
 
 
 </form> 

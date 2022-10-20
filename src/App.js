@@ -9,8 +9,8 @@ import AddDoctor from "./pages/AddDoctor/AddDoctor";
 import AllDoctors from "./pages/AllDoctors/AllDoctors";
 import { Login } from "./pages/login/Login";
 import AddDoctors from "./components/adddoctors/AddDoctors";
-
-
+import Details from "./components/details/Details";
+import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
 function App() {
   const router = createBrowserRouter([
     {
@@ -26,6 +26,15 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
+
+    {
+      path: "/adddoctors",
+      element: (
+        <AddDoctors></AddDoctors>
+      ),
+    },
+
+
 
     {
       path: "/doctor",
@@ -55,10 +64,29 @@ function App() {
       ),
     },
     {
+
       path: "/login",
       element: (
         <Login />
       )
+    }, {
+      path: "/websitedoctors/:id",
+      element: (
+        <Details></Details>
+      ),
+    },
+
+    {
+      path: "*",
+      element: (
+        <div>This Route not found</div>
+      )
+    },
+    {
+      path: "/pharmacy",
+      element: (
+        <Pharmacy></Pharmacy>
+      ),
     }
   ]);
 
@@ -66,7 +94,9 @@ function App() {
     <div className="App">
       <NavigationBar isHome={true} />
       <RouterProvider router={router} />
+
       <div className="mb-[150px]">
+
         <Chat></Chat>
       </div>
       <Footer></Footer>
