@@ -13,6 +13,8 @@ import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
 const queryClient = new QueryClient()
+import Details from "./components/details/Details";
+import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
 function App() {
   const router = createBrowserRouter([
     {
@@ -28,6 +30,15 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
+    
+    {
+      path: "/adddoctors",
+      element: (
+       <AddDoctors></AddDoctors>
+      ),
+    },
+
+
 
     {
       path: "/doctor",
@@ -73,18 +84,34 @@ function App() {
       element: (
         <MakeAdmin />
       )
+      path: "/websitedoctors/:id",
+      element: (
+        <Details></Details>
+      ),
+    },
+    
+    {
+      path: "*",
+      element: (
+       <div>This Route not found</div>
+      )
+      },
+{
+      path: "/pharmacy",
+      element: (
+        <Pharmacy></Pharmacy>
+      ),
     }
   ]);
 
   return (
-
     <QueryClientProvider client={queryClient}>
-      <div className="App bg-[#FFF]">
+      <div className="App">
         <RouterProvider router={router} >
           <NavigationBar isHome={true} />
 
           <div className="mb-[150px]">
-            {/* <Chat></Chat> */}
+            <Chat></Chat>
           </div>
           <Footer></Footer>
         </RouterProvider >
