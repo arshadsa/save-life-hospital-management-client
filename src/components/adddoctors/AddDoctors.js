@@ -78,7 +78,7 @@ loop: true,
   <br></br>
   <br></br>
   <br></br>
-  <button className="btn lg:max-w-lg">Add Doctor</button>
+  <button className="btn lg:max-w-lg btn-secondary">Add Doctor</button>
 
 
 </form> 
