@@ -5,11 +5,13 @@ import React, { useState } from "react";
 // icon import 
 import {MdOutlineWatchLater} from 'react-icons/md'
 import {FaRegMoneyBillAlt} from 'react-icons/fa'
+import { Link } from "react-router-dom";
 
 
 
 const Doctors = ({ doctor }) => {
   const {
+    _id,
     image,
     category,
     name,
@@ -99,7 +101,10 @@ const Doctors = ({ doctor }) => {
                   <span className="text-[20px] text-white ">
                     {/* <AiFillCalendar></AiFillCalendar> */}
                   </span>{" "}
-                  <span className="mx-2 text-[16px] ">View Profile</span>{" "}
+                  <span className="mx-2 text-[16px] ">
+                    
+                  <Link to={`/websitedoctors/${_id}`}>View Profile</Link>
+                    </span>{" "}
                 </button>
 
                 {/* book now button */}

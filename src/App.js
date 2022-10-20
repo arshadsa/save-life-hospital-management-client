@@ -8,6 +8,7 @@ import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
 import AddDoctor from "./pages/AddDoctor/AddDoctor";
 import AllDoctors from "./pages/AllDoctors/AllDoctors";
 import AddDoctors from "./components/adddoctors/AddDoctors";
+import Details from "./components/details/Details";
 
 function App() {
   const router = createBrowserRouter([
@@ -24,6 +25,15 @@ function App() {
        <AddDoctors></AddDoctors>
       ),
     },
+    
+    {
+      path: "/adddoctors",
+      element: (
+       <AddDoctors></AddDoctors>
+      ),
+    },
+
+
 
     {
       path: "/doctor",
@@ -50,6 +60,19 @@ function App() {
       path: "/doctor/:id",
       element: (
         <AllDoctors></AllDoctors>
+      ),
+    },
+    {
+      path: "/websitedoctors/:id",
+      element: (
+        <Details></Details>
+      ),
+    },
+    
+    {
+      path: "*",
+      element: (
+       <div>This Route not found</div>
       ),
     }
   ]);

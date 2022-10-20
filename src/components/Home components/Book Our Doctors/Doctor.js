@@ -2,6 +2,7 @@
 // book our doctors swiper slider  dynamic
 
 import React, { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 // swiper imports
 import { A11y, Autoplay, Navigation, Pagination, Scrollbar, Zoom } from 'swiper';
 import 'swiper/css';
@@ -171,7 +172,7 @@ const [doctors,setDoctors] = useState([])
         .then(data => setDoctors(data))
     },[])
 
-  
+
 
   return (
     <div className='mt-[150px] container mx-auto px-6'>
