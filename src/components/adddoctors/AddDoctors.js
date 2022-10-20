@@ -35,49 +35,43 @@ loop: true,
   <input {...register("displayname",)} placeholder="Name"  />
   <br></br>
   <br></br>
-  <input {...register("name",)} placeholder="Course Name" />
+  <input {...register("name",)} placeholder="Doctor Name" />
   <br></br>
   <br></br>
-  <input {...register("description",)} placeholder="Course Description"/>
+  <input {...register("designation",)} placeholder="Doctor Designation"/>
   <br></br>
   <br></br>
-  <input {...register("lessons",)} placeholder=" Total Lessons"/>
+  <input {...register("education",)} placeholder=" Education"/>
   <br></br>
   <br></br>
-  <input {...register("quizes",)} placeholder=" Total Quizes"/>
+  <input type="number" {...register("fees", )} placeholder="Total Fees"/>
   <br></br>
   <br></br>
-  <input {...register("students",)} placeholder=" Total Students"/>
+  <input {...register("location",)} placeholder=" Doctor's Location"/>
   <br></br>
   <br></br>
-  <input {...register("courseduration",)} placeholder=" Course Duration"/>
+  <input {...register("hospital",)} placeholder=" Doctor's Hospital"/>
   <br></br>
   <br></br>
-  <input {...register("skilllevel",)} placeholder=" Skill Level"/>
+  <input {...register("Awards",)} placeholder=" Doctor's Awards"/>
   <br></br>
   <br></br>
-  <input {...register("language",)} placeholder="Language"/>
+  <input {...register("Services",)} placeholder="Doctor's Services"/>
   <br></br>
   <br></br>
-  <input {...register("instructor",)} placeholder="Instructor Name"/>
+  <input {...register("Specialization",)} placeholder="Doctor's Specialization"/>
   <br></br>
   <br></br>
-  <input {...register("instructorimage",)} placeholder="Instructor-Image"/>
+  <input {...register("image",)} placeholder="Doctor's Image"/>
   <br></br>
   <br></br>
-  <input {...register("review",)} placeholder=" Total Review"/>
-  <br></br>
-  <br></br>
-  <input type="number" {...register("price", )} placeholder="Course Price"/>
-  <br></br>
-  <br></br>
-  <input {...register("img",)} placeholder="Course Image"/>
-  <br></br>
-  <br></br>
-  <input {...register("video",)} placeholder="Course Video"/>
-  <br></br>
-  <br></br>
-  <br></br>
+  <input {...register("slot1",)} placeholder=" Available slot 1"/>
+  <input {...register("slot2",)} placeholder=" Available slot 2"/>
+  <input {...register("slot3",)} placeholder=" Available slot 3"/>
+  <input {...register("slot4",)} placeholder=" Available slot 4"/>
+  <input {...register("slot5",)} placeholder=" Available slot 5"/>
+  <input {...register("slot6",)} placeholder=" Available slot 6"/>
+  
   <button className="btn lg:max-w-lg btn-secondary">Add Doctor</button>
 
 
