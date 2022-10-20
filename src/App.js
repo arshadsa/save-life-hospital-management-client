@@ -8,6 +8,7 @@ import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
 import AddDoctor from "./pages/AddDoctor/AddDoctor";
 import AllDoctors from "./pages/AllDoctors/AllDoctors";
 import AddDoctors from "./components/adddoctors/AddDoctors";
+import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
 
 function App() {
   const router = createBrowserRouter([
@@ -50,6 +51,12 @@ function App() {
       path: "/doctor/:id",
       element: (
         <AllDoctors></AllDoctors>
+      ),
+    },
+    {
+      path: "/pharmacy",
+      element: (
+        <Pharmacy></Pharmacy>
       ),
     }
   ]);
