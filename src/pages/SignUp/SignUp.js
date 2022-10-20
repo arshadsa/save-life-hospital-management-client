@@ -29,21 +29,27 @@ export const SignUp = () => {
         }
     }, [error, errorGoogle])
     useEffect(() => {
-        const user = { "name": userName, "email": userInfo?.email, "role": role }
-        fetch("http://localhost:5000/api/users", {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(user)
-        }).then(res => res.json())
-            .then(data => console.log(data))
-        console.log(userInfo)
-    }, [userInfo, role, userName])
+        if (userInfo) {
+            console.log("google user", userInfo?.email);
+            fetch(`http://localhost:5000/api/user/?email=${userInfo?.email}`)
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data?.text === 'No user Found') {
+                        setIsGoogleLogin(true)
+                    } else {
+                        navigate('/')
+                    }
+                })
+        }
+    }, [userInfo, userGoogle])
 
     // Handle Sign up by user
     const handleSignUp = async (e) => {
         e.preventDefault()
         await createUserWithEmailAndPassword(e?.target?.email?.value, e?.target?.password?.value);
         if (error) return
+        if (loadingGoogle) return
         console.log("user", user)
         setUserName(e?.target?.name?.value);
         if (e.target.role[0].checked) {
@@ -59,19 +65,21 @@ export const SignUp = () => {
     const handleGoogleLogin = async () => {
         await signInWithGoogle();
         if (errorGoogle) return
-        if (userInfo) {
-            console.log("google user", userInfo?.email);
-            fetch(`http://localhost:5000/api/user/?email=${userInfo?.email}`)
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    if (data?.text === 'No user Found') {
-                        setIsGoogleLogin(true)
-                    } else {
-                        navigate('/')
-                    }
-                })
-        }
+        console.log("auth state info", userInfo?.email)
+        console.log("user infor google", userGoogle);
+        // if (userInfo) {
+        //     console.log("google user", userInfo?.email);
+        //     fetch(`http://localhost:5000/api/user/?email=${userInfo?.email}`)
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             console.log(data)
+        //             if (data?.text === 'No user Found') {
+        //                 setIsGoogleLogin(true)
+        //             } else {
+        //                 navigate('/')
+        //             }
+        //         })
+        // }
     }
     const handleRole = (e) => {
         e.preventDefault()
@@ -95,9 +103,9 @@ export const SignUp = () => {
     return (
         <div>
             <div className='flex h-[80vh] items-center justify-center pt-52'>
-                <img src="https://media.istockphoto.com/vectors/parents-visit-sick-son-in-bed-at-hospital-ward-vector-id1215582607?b=1&k=20&m=1215582607&s=170667a&w=0&h=ueFzXWP3WlCgZpyD_rZ8txBN6XFqrHwp6CK8w6FPb7E=" alt="" className='h-[67%] rounded-2xl' />
+                <img src="https://media.istockphoto.com/vectors/parents-visit-sick-son-in-bed-at-hospital-ward-vector-id1215582607?b=1&k=20&m=1215582607&s=170667a&w=0&h=ueFzXWP3WlCgZpyD_rZ8txBN6XFqrHwp6CK8w6FPb7E=" alt="" className='h-[67%] rounded-2xl lg:block hidden' />
                 <div className='app__login-form rounded-2xl shadow-2xl border-white border-2'>
-                    <form onSubmit={isGoogleLogin === false ? handleSignUp : handleRole} className='w-[500px] flex flex-col justify-center items-center '>
+                    <form onSubmit={isGoogleLogin === false ? handleSignUp : handleRole} className='md:w-[500px] w-[90vw] flex flex-col justify-center items-center '>
                         {
                             isGoogleLogin === false ? <>
                                 <p className=''>Name</p>
