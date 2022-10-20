@@ -13,6 +13,7 @@ import { SignUp } from "./pages/SignUp/SignUp";
 
 
 function App() {
+  const user = 'admin';
   const router = createBrowserRouter([
     {
       path: "/",
