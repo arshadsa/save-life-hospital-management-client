@@ -11,6 +11,10 @@ import { Login } from "./pages/login/Login";
 import AddDoctors from "./components/adddoctors/AddDoctors";
 import Details from "./components/details/Details";
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
+import { SignUp } from "./pages/SignUp/SignUp";
+import MakeAdmin from "./pages/Dashboard/MakeAdmin";
+import { QueryClient, QueryClientProvider } from "react-query";
+const queryClient = new QueryClient()
 function App() {
   const router = createBrowserRouter([
     {
@@ -87,20 +91,34 @@ function App() {
       element: (
         <Pharmacy></Pharmacy>
       ),
+    },
+    {
+      path: "/signup",
+      element: (
+        <SignUp />
+      )
+    },
+    {
+      path: "/makeAdmin",
+      element: (
+        <MakeAdmin />
+      )
     }
   ]);
 
   return (
-    <div className="App">
-      <NavigationBar isHome={true} />
-      <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <div className="App bg-[#FFF]">
+        <RouterProvider router={router} >
+          <NavigationBar isHome={true} />
 
-      <div className="mb-[150px]">
-
-        <Chat></Chat>
+          <div className="mb-[150px]">
+            {/* <Chat></Chat> */}
+          </div>
+          <Footer></Footer>
+        </RouterProvider >
       </div>
-      <Footer></Footer>
-    </div>
+    </QueryClientProvider>
   );
 }
 
