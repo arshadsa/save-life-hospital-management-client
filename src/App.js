@@ -9,15 +9,13 @@ import AddDoctor from "./pages/AddDoctor/AddDoctor";
 import AllDoctors from "./pages/AllDoctors/AllDoctors";
 import { Login } from "./pages/login/Login";
 import AddDoctors from "./components/adddoctors/AddDoctors";
-<<<<<<< HEAD
 import Details from "./components/details/Details";
-import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
-=======
->>>>>>> ovilash
+
+
 import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
-import Details from "./components/details/Details";
+
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
 const queryClient = new QueryClient()
 function App() {
@@ -42,8 +40,6 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
-
-
 
     {
       path: "/doctor",
@@ -73,16 +69,13 @@ function App() {
       ),
     },
     {
-<<<<<<< HEAD
-
-=======
->>>>>>> ovilash
       path: "/login",
       element: (
         <Login />
       )
-<<<<<<< HEAD
-    }, {
+
+    }, 
+    {
       path: "/websitedoctors/:id",
       element: (
         <Details></Details>
@@ -100,8 +93,7 @@ function App() {
       element: (
         <Pharmacy></Pharmacy>
       ),
-=======
->>>>>>> ovilash
+
     },
     {
       path: "/signup",
@@ -114,15 +106,9 @@ function App() {
       element: (
         <MakeAdmin />
       )
-<<<<<<< HEAD
-=======
+
     },
-    {
-      path: "/websitedoctors/:id",
-      element: (
-        <Details></Details>
-      ),
-    },
+   
 
     {
       path: "*",
@@ -130,13 +116,7 @@ function App() {
         <div>This Route not found</div>
       )
     },
-    {
-      path: "/pharmacy",
-      element: (
-        <Pharmacy></Pharmacy>
-      ),
->>>>>>> ovilash
-    }
+   
   ]);
 
   return (
