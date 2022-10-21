@@ -9,11 +9,16 @@ import AddDoctor from "./pages/AddDoctor/AddDoctor";
 import AllDoctors from "./pages/AllDoctors/AllDoctors";
 import { Login } from "./pages/login/Login";
 import AddDoctors from "./components/adddoctors/AddDoctors";
+<<<<<<< HEAD
 import Details from "./components/details/Details";
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
+=======
+>>>>>>> ovilash
 import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Details from "./components/details/Details";
+import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
 const queryClient = new QueryClient()
 function App() {
   const router = createBrowserRouter([
@@ -68,11 +73,15 @@ function App() {
       ),
     },
     {
+<<<<<<< HEAD
 
+=======
+>>>>>>> ovilash
       path: "/login",
       element: (
         <Login />
       )
+<<<<<<< HEAD
     }, {
       path: "/websitedoctors/:id",
       element: (
@@ -91,6 +100,8 @@ function App() {
       element: (
         <Pharmacy></Pharmacy>
       ),
+=======
+>>>>>>> ovilash
     },
     {
       path: "/signup",
@@ -103,17 +114,39 @@ function App() {
       element: (
         <MakeAdmin />
       )
+<<<<<<< HEAD
+=======
+    },
+    {
+      path: "/websitedoctors/:id",
+      element: (
+        <Details></Details>
+      ),
+    },
+
+    {
+      path: "*",
+      element: (
+        <div>This Route not found</div>
+      )
+    },
+    {
+      path: "/pharmacy",
+      element: (
+        <Pharmacy></Pharmacy>
+      ),
+>>>>>>> ovilash
     }
   ]);
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App bg-[#FFF]">
+      <div className="App">
         <RouterProvider router={router} >
           <NavigationBar isHome={true} />
 
           <div className="mb-[150px]">
-            {/* <Chat></Chat> */}
+            <Chat></Chat>
           </div>
           <Footer></Footer>
         </RouterProvider >
