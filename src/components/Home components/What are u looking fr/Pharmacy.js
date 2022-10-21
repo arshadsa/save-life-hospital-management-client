@@ -1,11 +1,22 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import Damyp from '../../../Damy Data/Damyp'
 // React Icons
 import {FcSearch} from 'react-icons/fc'
 
 
 const Pharmacy = () => {
+
+  // navigate products details
+  const navigates = useNavigate()
+
+   const [medicine , setMedicine] = useState([])
+
+   useEffect(()=> {
+    fetch("http://localhost:5000/medicine")
+    .then(res => res.json())
+    .then(data => setMedicine(data) )
+   },[])
 
 
   return (
@@ -38,9 +49,8 @@ const Pharmacy = () => {
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {Damyp.map((product) => (
+          {medicine.map((product) => (
             <div key={product.id} className="group shadow-4xl">
-              <Link to="/productDetails">
                 <div className="w-full min-h-80  aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                   <img
                     src={product.image}
@@ -70,7 +80,7 @@ const Pharmacy = () => {
                   </p>
                 </div>
 
-                {/*  wishlist, quick view, add to cart buttons */}
+                {/*   */}
                 <div className="flex justify-between my-4 px-2 items-center">
                   <div>
                 
@@ -101,13 +111,13 @@ const Pharmacy = () => {
                     </button>
                   </div>
 
-                  <Link to="/productDetails">
-                    <button className="flex py-2 px-3 text-sm rounded shadow-lg  bg-[#1b82e2] focus:outline-none active:bg-[#1b82e2] text-white transition duration-150 ease-in-out hover:bg-sky-500 hover:text-black font-bold">
+                  
+                    <button onClick={()=>navigates(`/medcheckout/${product._id}`)} className="flex py-2 px-3 text-sm rounded shadow-lg  bg-[#1b82e2] focus:outline-none active:bg-[#1b82e2] text-white transition duration-150 ease-in-out hover:bg-sky-500 hover:text-black font-bold">
                       Buy Now
                     </button>
-                  </Link>
+                  {console.log(product._id)}
                 </div>
-              </Link>
+           
             </div>
           ))}
         </div>

@@ -9,6 +9,7 @@ import AddDoctor from "./pages/AddDoctor/AddDoctor";
 import AllDoctors from "./pages/AllDoctors/AllDoctors";
 import AddDoctors from "./components/adddoctors/AddDoctors";
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
+import Phercheckout from "./components/Pharheckout/Phercheckout";
 
 function App() {
   const router = createBrowserRouter([
@@ -58,7 +59,15 @@ function App() {
       element: (
         <Pharmacy></Pharmacy>
       ),
-    }
+    },
+    {
+      path: "/medcheckout/:id",
+      element: (
+        <Phercheckout></Phercheckout>
+      ),
+    },
+
+
   ]);
 
   return (

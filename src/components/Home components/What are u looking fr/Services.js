@@ -28,7 +28,7 @@ const Services = () => {
 
 {/* visit doctors card Buttons  */}   
 
-          <button>
+          <button onClick={()=>navigate('/Doctorss')} >
           <div  className="featured h-auto lg:max-x-lg md:max-w-md sm:max-w-sm">
             <div className="flex justify-center  "> 
             <i className=""> <FaUserMd className="text-7xl mt-[-35px] text-white bg-[#0071DC] rounded-[50%] p-2  "></FaUserMd> </i>
