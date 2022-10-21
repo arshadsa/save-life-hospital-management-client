@@ -8,6 +8,7 @@ import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
 import AddDoctor from "./pages/AddDoctor/AddDoctor";
 import AllDoctors from "./pages/AllDoctors/AllDoctors";
 import AddDoctors from "./components/adddoctors/AddDoctors";
+import SpecialistDoctors from "./pages/SpecialistDoctors/SpecialistDoctors";
 
 function App() {
   const router = createBrowserRouter([
@@ -26,13 +27,6 @@ function App() {
     },
 
     {
-      path: "/doctor",
-      element: (
-        <Speciality></Speciality>
-      ),
-    },
-
-    {
       path: "/doctor/add",
       element: (
         <AddDoctor></AddDoctor>
@@ -40,9 +34,23 @@ function App() {
     },
 
     {
-      path: "/doctor/all",
+      path: "/doctor",
+      element: (
+        <Speciality></Speciality>
+      ),
+    },   
+
+    {
+      path: "/doctors/all",
       element: (
         <AllDoctors></AllDoctors>
+      ),
+    },
+
+    {
+      path: "/doctors/:speciality",
+      element: (
+        <SpecialistDoctors></SpecialistDoctors>
       ),
     },
 

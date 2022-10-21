@@ -1,23 +1,49 @@
 import React from "react";
 
-const DoctorListItem = ({img, doctor}) => {
+const DoctorListItem = ({ img, doctor }) => {
   return (
-    <li class="border-gray-400 flex flex-row mb-2">
-      <div class="shadow border select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
-        <div class="flex flex-col w-10 h-10 justify-center items-center mr-4">
-          <a href="#" class="block relative">
+    <li class="border-gray-400 flex flex-row mb-8">
+      <a href={`/doctor/${doctor._id}`}>
+      <div class="shadow-lg border select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
+        {/* profile image */}
+        <div class="flex flex-col justify-center items-center mr-4">
+          {/* <a href={`/doctor/${doctor._id}`} class="block relative" className="w-[15vw]"> */}
+          <a class="block relative" className="w-[15vw]">
             <img
               alt="profil"
               src={img}
-              class="mx-auto object-cover rounded-full h-10 w-10 "
+              class="mx-auto object-contain rounded-3 "
             />
           </a>
         </div>
+
+        {/* Name and Speciality */}
         <div class="flex-1 pl-1 md:mr-16">
-          <div class="font-medium dark:text-white">Jean Marc</div>
-          <div class="text-gray-600 dark:text-gray-200 text-sm">Developer</div>
+          <p class="font-bold dark:text-white text-xl">{doctor.name}</p>
+          <p class="text-gray-600 dark:text-gray-200">Developer</p>
+          <br />
+          <p class="text-slate-400 dark:text-gray-200">Specialities</p>
+          <p class="text-slate-600 dark:text-gray-200">{doctor.speciality}</p>
         </div>
-        <div class="text-gray-600 dark:text-gray-200 text-xs">6:00 AM</div>
+
+        {/* Second Column for working hours */}
+        <div class="text-gray-600 dark:text-gray-200">
+          <p>Working in</p>
+          <h1 className="font-bold">Doctors Point Hospital</h1>
+          <br />
+          <p>Total Experience</p>
+          <h1>9+ Years</h1>
+        </div>
+
+        <div className="ml-14">
+          <div>
+            <span className="text-4xl font-bold text-blue-600">৳ 150</span>
+            <span className="ml-3">(inc. VAT)</span>
+          </div>
+          <p>Per consultation</p>
+        </div>
+
+        {/* Button */}
         <button class="w-24 text-right flex justify-end">
           <svg
             width="12"
@@ -31,6 +57,7 @@ const DoctorListItem = ({img, doctor}) => {
           </svg>
         </button>
       </div>
+      </a>
     </li>
   );
 };
