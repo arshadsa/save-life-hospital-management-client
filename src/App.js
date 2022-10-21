@@ -12,9 +12,9 @@ import AddDoctors from "./components/adddoctors/AddDoctors";
 import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
-const queryClient = new QueryClient()
 import Details from "./components/details/Details";
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
+const queryClient = new QueryClient()
 function App() {
   const router = createBrowserRouter([
     {
@@ -30,11 +30,11 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
-    
+
     {
       path: "/adddoctors",
       element: (
-       <AddDoctors></AddDoctors>
+        <AddDoctors></AddDoctors>
       ),
     },
 
@@ -84,19 +84,21 @@ function App() {
       element: (
         <MakeAdmin />
       )
+    },
+    {
       path: "/websitedoctors/:id",
       element: (
         <Details></Details>
       ),
     },
-    
+
     {
       path: "*",
       element: (
-       <div>This Route not found</div>
+        <div>This Route not found</div>
       )
-      },
-{
+    },
+    {
       path: "/pharmacy",
       element: (
         <Pharmacy></Pharmacy>
