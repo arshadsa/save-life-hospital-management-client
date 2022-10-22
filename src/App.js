@@ -106,52 +106,52 @@ function App() {
         <MakeAdmin />
       )
     },
-    {
-      path: "/websitedoctors/:id",
-      element: (
-        <Details></Details>
-      ),
-    },
-    {
-      path: "*",
-      element: (
-        <div>This Route not found</div>
-      )
-    },
-    {
-      path: "/pharmacy",
-      element: (
-        <Pharmacy></Pharmacy>
-      ),
-    },
-    {
-      path: "/signup",
-      element: (
-        <SignUp />
-      )
-    },
-    {
-      path: "/makeAdmin",
-      element: (
-        <MakeAdmin />
-      )
+    // {
+    //   path: "/websitedoctors/:id",
+    //   element: (
+    //     <Details></Details>
+    //   ),
+    // },
+    // {
+    //   path: "*",
+    //   element: (
+    //     <div>This Route not found</div>
+    //   )
+    // },
+    // {
+    //   path: "/pharmacy",
+    //   element: (
+    //     <Pharmacy></Pharmacy>
+    //   ),
+    // },
+    // {
+    //   path: "/signup",
+    //   element: (
+    //     <SignUp />
+    //   )
+    // },
+    // {
+    //   path: "/makeAdmin",
+    //   element: (
+    //     <MakeAdmin />
+    //   )
 
-    },
-    {
-      path: "/websitedoctors/:id",
-      element: (
-        <Details></Details>
-      ),
+    // },
+    // {
+    //   path: "/websitedoctors/:id",
+    //   element: (
+    //     <Details></Details>
+    //   ),
 
-    },
+    // },
 
 
-    {
-      path: "*",
-      element: (
-        <div>This Route not found</div>
-      )
-    },
+    // {
+    //   path: "*",
+    //   element: (
+    //     <div>This Route not found</div>
+    //   )
+    // },
   ]);
 
   return (
