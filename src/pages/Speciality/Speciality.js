@@ -3,7 +3,8 @@ import DoctorCard from "../../components/DoctorCard/DoctorCard";
 import useSpecialities from "../../hooks/useSpeciality";
 
 const Speciality = () => {
-  const [specialities, setSpecialities] = useSpecialities();
+  const [specialities] = useSpecialities();
+  
   return (
     <div className="mt-[150px] container mx-auto">
       <h1 className="font-extrabold text-4xl">Please select a speciality</h1>

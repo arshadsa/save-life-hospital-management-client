@@ -16,118 +16,81 @@ import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
 import SpecialistDoctors from "./pages/SpecialistDoctors/SpecialistDoctors";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        <Homepage></Homepage>
-      ),
+      element: <Homepage></Homepage>,
     },
 
     {
       path: "/adddoctors",
-      element: (
-        <AddDoctors></AddDoctors>
-      ),
+      element: <AddDoctors></AddDoctors>,
     },
 
     {
       path: "/doctor/add",
-      element: (
-        <AddDoctor></AddDoctor>
-      ),
+      element: <AddDoctor></AddDoctor>,
     },
 
     {
       path: "/doctor",
-      element: (
-        <Speciality></Speciality>
-      ),
-    },   
+      element: <Speciality></Speciality>,
+    },
 
     {
       path: "/doctors/all",
-      element: (
-        <AllDoctors></AllDoctors>
-      ),
+      element: <AllDoctors></AllDoctors>,
     },
 
     {
       path: "/doctors/:speciality",
-      element: (
-        <SpecialistDoctors></SpecialistDoctors>
-      ),
+      element: <SpecialistDoctors></SpecialistDoctors>,
     },
 
     {
       path: "/doctor/:id",
-      element: (
-        <AllDoctors></AllDoctors>
-      ),
+      element: <AllDoctors></AllDoctors>,
     },
     {
       path: "/login",
-      element: (
-        <Login />
-      )
+      element: <Login />,
+    },
 
-    }, 
-  
-
-   
     {
       path: "/pharmacy",
-      element: (
-        <Pharmacy></Pharmacy>
-      ),
-
+      element: <Pharmacy></Pharmacy>,
     },
     {
       path: "/signup",
-      element: (
-        <SignUp />
-      )
+      element: <SignUp />,
     },
     {
       path: "/makeAdmin",
-      element: (
-        <MakeAdmin />
-      )
-
+      element: <MakeAdmin />,
     },
     {
       path: "/websitedoctors/:id",
-      element: (
-        <Details></Details>
-      ),
-
+      element: <Details></Details>,
     },
-   
 
     {
       path: "*",
-      element: (
-        <div>This Route not found</div>
-      )
+      element: <div>This Route not found</div>,
     },
-
-    
-
   ]);
 
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <RouterProvider router={router} >
+        <RouterProvider router={router}>
           <NavigationBar isHome={true} />
-
-          <div className="mb-[150px]">
-            <Chat></Chat>
-          </div>
-          <Footer></Footer>
-        </RouterProvider >
+        </RouterProvider>
+        <div className="mb-[150px]">
+          <Chat></Chat>
+        </div>
+        <Footer></Footer>
       </div>
     </QueryClientProvider>
   );
