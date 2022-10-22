@@ -60,6 +60,17 @@ const handleChange = event => {
 <h1><i class="fa-solid fa-location-pin"></i> {docs.location}</h1>
            </div>
         </div>
+     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
+         
+           <div className=''>
+
+
+({docs.reviews})
+
+<h1><i class="fa-solid fa-location-pin"></i> {docs.location}</h1>
+           </div>
+        </div>
+    
      </div>
         
 
