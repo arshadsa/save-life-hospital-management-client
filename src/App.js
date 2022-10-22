@@ -14,6 +14,12 @@ import Pharmacy from "./components/Home components/What are u looking fr/Pharmac
 import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
+// import Details from "./components/details/Details";
+// import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy"
+// import { SignUp } from "./pages/SignUp/SignUp";
+// import MakeAdmin from "./pages/Dashboard/MakeAdmin";
+// import { QueryClient, QueryClientProvider } from "react-query";
+// import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
 const queryClient = new QueryClient()
 function App() {
   const router = createBrowserRouter([
@@ -37,8 +43,6 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
-
-
 
     {
       path: "/doctor",
@@ -73,6 +77,9 @@ function App() {
         <Login />
       )
     }, {
+
+    },
+    {
       path: "/websitedoctors/:id",
       element: (
         <Details></Details>
@@ -109,6 +116,7 @@ function App() {
         <Details></Details>
       ),
     },
+
 
     {
       path: "*",
