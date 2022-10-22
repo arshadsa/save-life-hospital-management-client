@@ -14,6 +14,7 @@ import Pharmacy from "./components/Home components/What are u looking fr/Pharmac
 import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
+
 // import Details from "./components/details/Details";
 // import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy"
 // import { SignUp } from "./pages/SignUp/SignUp";
@@ -37,12 +38,7 @@ function App() {
       ),
     },
 
-    {
-      path: "/adddoctors",
-      element: (
-        <AddDoctors></AddDoctors>
-      ),
-    },
+
 
     {
       path: "/doctor",
@@ -116,8 +112,6 @@ function App() {
         <Details></Details>
       ),
     },
-
-
     {
       path: "*",
       element: (
@@ -129,7 +123,35 @@ function App() {
       element: (
         <Pharmacy></Pharmacy>
       ),
-    }
+    },
+    {
+      path: "/signup",
+      element: (
+        <SignUp />
+      )
+    },
+    {
+      path: "/makeAdmin",
+      element: (
+        <MakeAdmin />
+      )
+
+    },
+    {
+      path: "/websitedoctors/:id",
+      element: (
+        <Details></Details>
+      ),
+
+    },
+
+
+    {
+      path: "*",
+      element: (
+        <div>This Route not found</div>
+      )
+    },
   ]);
 
   return (
