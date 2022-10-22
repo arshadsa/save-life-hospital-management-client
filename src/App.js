@@ -10,12 +10,22 @@ import AllDoctors from "./pages/AllDoctors/AllDoctors";
 import { Login } from "./pages/login/Login";
 import AddDoctors from "./components/adddoctors/AddDoctors";
 import Details from "./components/details/Details";
+<<<<<<< HEAD
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
 import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
 // import Details from "./components/details/Details";
 // import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
+=======
+
+
+import { SignUp } from "./pages/SignUp/SignUp";
+import MakeAdmin from "./pages/Dashboard/MakeAdmin";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
+>>>>>>> 06dab0301e398414f4415d570de6557dc48ce221
 const queryClient = new QueryClient()
 function App() {
   const router = createBrowserRouter([
@@ -39,8 +49,6 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
-
-
 
     {
       path: "/doctor",
@@ -74,7 +82,13 @@ function App() {
       element: (
         <Login />
       )
+<<<<<<< HEAD
     }, {
+=======
+
+    }, 
+    {
+>>>>>>> 06dab0301e398414f4415d570de6557dc48ce221
       path: "/websitedoctors/:id",
       element: (
         <Details></Details>
@@ -92,6 +106,10 @@ function App() {
       element: (
         <Pharmacy></Pharmacy>
       ),
+<<<<<<< HEAD
+=======
+
+>>>>>>> 06dab0301e398414f4415d570de6557dc48ce221
     },
     {
       path: "/signup",
@@ -104,13 +122,18 @@ function App() {
       element: (
         <MakeAdmin />
       )
+<<<<<<< HEAD
     },
     {
       path: "/websitedoctors/:id",
       element: (
         <Details></Details>
       ),
+=======
+
+>>>>>>> 06dab0301e398414f4415d570de6557dc48ce221
     },
+   
 
     {
       path: "*",
@@ -118,12 +141,16 @@ function App() {
         <div>This Route not found</div>
       )
     },
+<<<<<<< HEAD
     {
       path: "/pharmacy",
       element: (
         <Pharmacy></Pharmacy>
       ),
     }
+=======
+   
+>>>>>>> 06dab0301e398414f4415d570de6557dc48ce221
   ]);
 
   return (
