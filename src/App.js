@@ -9,16 +9,13 @@ import AddDoctor from "./pages/AddDoctor/AddDoctor";
 import AllDoctors from "./pages/AllDoctors/AllDoctors";
 import { Login } from "./pages/login/Login";
 import AddDoctors from "./components/adddoctors/AddDoctors";
-<<<<<<< HEAD
 import Details from "./components/details/Details";
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
-=======
->>>>>>> ovilash
 import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
-import Details from "./components/details/Details";
-import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
+// import Details from "./components/details/Details";
+// import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
 const queryClient = new QueryClient()
 function App() {
   const router = createBrowserRouter([
@@ -73,15 +70,10 @@ function App() {
       ),
     },
     {
-<<<<<<< HEAD
-
-=======
->>>>>>> ovilash
       path: "/login",
       element: (
         <Login />
       )
-<<<<<<< HEAD
     }, {
       path: "/websitedoctors/:id",
       element: (
@@ -100,8 +92,6 @@ function App() {
       element: (
         <Pharmacy></Pharmacy>
       ),
-=======
->>>>>>> ovilash
     },
     {
       path: "/signup",
@@ -114,8 +104,6 @@ function App() {
       element: (
         <MakeAdmin />
       )
-<<<<<<< HEAD
-=======
     },
     {
       path: "/websitedoctors/:id",
@@ -135,7 +123,6 @@ function App() {
       element: (
         <Pharmacy></Pharmacy>
       ),
->>>>>>> ovilash
     }
   ]);
 
