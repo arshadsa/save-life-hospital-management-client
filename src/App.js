@@ -156,7 +156,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App">
+      <div className="App bg-white">
         <RouterProvider router={router} >
           <NavigationBar isHome={true} />
 
