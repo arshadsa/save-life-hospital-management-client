@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DoctorListItem from "../../components/DoctorListItem/DoctorListItem";
 import doctorSampleImage from "../../assets/Doctorsdamyp/docOne.jpg";
 import useDoctor from "../../hooks/useDoctors";
+import { useParams } from "react-router-dom";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 
-const AllDoctors = () => {
+const SpecialistDoctors = () => {
+  const { speciality } = useParams();
   const [doctor, setDoctor] = useDoctor();
 
   return (
@@ -13,12 +15,14 @@ const AllDoctors = () => {
       <div className="mt-[200px]">
         <div class="container flex flex-col mx-auto w-full items-center justify-center">
           <ul class="flex flex-col">
-            {doctor.map((doctor) => (
-              <DoctorListItem
-                doctor={doctor}
-                img={doctorSampleImage}
-              ></DoctorListItem>
-            ))}
+            {doctor
+              .filter((doctor) => doctor.speciality === speciality)
+              .map((doctor) => (
+                <DoctorListItem
+                  doctor={doctor}
+                  img={doctorSampleImage}
+                ></DoctorListItem>
+              ))}
           </ul>
         </div>
       </div>
@@ -26,4 +30,4 @@ const AllDoctors = () => {
   );
 };
 
-export default AllDoctors;
+export default SpecialistDoctors;
