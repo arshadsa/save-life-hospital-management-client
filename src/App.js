@@ -15,17 +15,13 @@ import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
 import SpecialistDoctors from "./pages/SpecialistDoctors/SpecialistDoctors";
-
-<<<<<<< HEAD
-import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
 import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
 import News from "./components/news/News";
 import  NewsDetails  from "./components/newsdetails/NewsDetails";
-const queryClient = new QueryClient()
-=======
+
 const queryClient = new QueryClient();
->>>>>>> 8527d77ee7bee6e4a1ea4da09a755df97439b8a8
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -89,7 +85,7 @@ function App() {
       path: "/websitedoctors/:id",
       element: <Details></Details>,
     },
-<<<<<<< HEAD
+
     {
       path: "/appointment",
       element: (
@@ -111,10 +107,7 @@ function App() {
       )
 
     },
-   
-=======
->>>>>>> 8527d77ee7bee6e4a1ea4da09a755df97439b8a8
-
+  
     {
       path: "*",
       element: <div>This Route not found</div>,
