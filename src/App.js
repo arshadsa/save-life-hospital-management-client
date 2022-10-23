@@ -17,6 +17,10 @@ import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
+import Appointment from "./components/appointment/Appointment";
+import AddNews from "./components/addnews/AddNews";
+import News from "./components/news/News";
+import  NewsDetails  from "./components/newsdetails/NewsDetails";
 const queryClient = new QueryClient()
 function App() {
   const router = createBrowserRouter([
@@ -81,6 +85,12 @@ function App() {
         <Details></Details>
       ),
     },
+    {
+      path: "/news/:id",
+      element: (
+        <NewsDetails></NewsDetails>
+      ),
+    },
 
     {
       path: "*",
@@ -105,6 +115,27 @@ function App() {
       path: "/makeAdmin",
       element: (
         <MakeAdmin />
+      )
+
+    },
+    {
+      path: "/appointment",
+      element: (
+       <Appointment></Appointment>
+      )
+
+    },
+    {
+      path: "/addnews",
+      element: (
+       <AddNews></AddNews>
+      )
+
+    },
+    {
+      path: "/news",
+      element: (
+       <News></News>
       )
 
     },

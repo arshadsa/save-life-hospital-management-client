@@ -6,6 +6,7 @@ import Typewriter from 'typewriter-effect';
 import { useForm } from "react-hook-form";
 
 import './Details.css';
+import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
 const Details = () => {
    
     const {id} = useParams();
@@ -19,19 +20,7 @@ const Details = () => {
      },[])
      const { register, handleSubmit, reset } = useForm();
 
-    //  const onSubmit = data =>{
-    //     console.log(data);
-    //     axios.post("https://dry-brook-75772.herokuapp.com/booking",data)
-    //     .then(res=>{
-    //         if(res.data.insertedId){
-    //            alert("Added Successfully.")
-    //             reset();
-               
-                
-    //         }
-    //     })
-    // } 
-
+  
     
 const handleChange = event => {
     const disable = event.target.value;
@@ -41,15 +30,16 @@ const handleChange = event => {
 
   return (
    <div>
+      <NavigationBar></NavigationBar>
      <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
      <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
            <div className=''>
 <img src={docs.image} className='w-48 mx-28 mt-36'></img>
            </div>
            <div className=''>
-<h1 className='mt-36 font-bold text-2xl'>{docs.name}</h1>
+<h1 className='mt-36 font-bold text-2xl text-primary'>{docs.name}</h1>
 <h1 className=''>{docs.category}</h1>
-<h1 className=''><i class="fa-solid fa-user-doctor"></i>  {docs.designation}</h1>
+<h1 className='mt-5 mb-1'><i class="fa-solid fa-user-doctor"></i>  {docs.designation}</h1>
 <i class="fa-solid fa-star"></i>
 <i class="fa-solid fa-star"></i>
 <i class="fa-solid fa-star"></i>
@@ -57,22 +47,57 @@ const handleChange = event => {
 <i class="fa-solid fa-star"></i>
 ({docs.reviews})
 
-<h1><i class="fa-solid fa-location-pin"></i> {docs.location}</h1>
+<h1 className='mt-1'><i class="fa-solid fa-location-pin"></i> {docs.location}</h1>
            </div>
         </div>
-     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
-         
-           <div className=''>
+
+     <div className=''>
+          
+           <div className='ml-96'>
+<h1 className='mt-36 mb-1'><i class="fa-regular fa-thumbs-up"></i> 99%</h1>
+<h1 className='mb-1'><i class="fa-regular fa-comment"></i> 35 feedback</h1>
+<h1 className='mb-1'><i class="fa-solid fa-location-pin"></i> {docs.location}</h1>
+<h1><i class="fa-regular fa-money-bill"></i> {docs.fees}</h1>
 
 
-({docs.reviews})
 
-<h1><i class="fa-solid fa-location-pin"></i> {docs.location}</h1>
+
            </div>
         </div>
     
+    
      </div>
         
+        <br></br>
+        <br></br>
+        <br></br>
+       <h1 className='text-2xl text-center text-primary'>Available Slots</h1>
+        {/* slots */}
+        <div className="overflow-x-auto">
+  <table className="table w-full text-center mt-5">
+  
+   
+    <tbody>
+    
+      <tr>
+        
+        <td>{docs.slot1}</td>
+        <td>{docs.slot2}</td>
+        <td>{docs.slot3}</td>
+      </tr>
+    
+      <tr>
+        
+        <td>{docs.slot4}</td>
+        <td>{docs.slot5}</td>
+        <td>{docs.slot6}</td>
+      </tr>
+      
+     
+    </tbody>
+  </table>
+  <Link to='/appointment'><button className='btn btn-primary ml-96 mt-5'>Book Appointment</button></Link>
+</div>
 
         <div>
 
