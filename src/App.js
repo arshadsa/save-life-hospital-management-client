@@ -17,11 +17,15 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import SpecialistDoctors from "./pages/SpecialistDoctors/SpecialistDoctors";
 
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
+
 import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
 import News from "./components/news/News";
 import  NewsDetails  from "./components/newsdetails/NewsDetails";
-const queryClient = new QueryClient()
+
+
+const queryClient = new QueryClient();
+
 
 function App() {
   const router = createBrowserRouter([
@@ -86,6 +90,9 @@ function App() {
       path: "/websitedoctors/:id",
       element: <Details></Details>,
     },
+
+
+
     {
       path: "/appointment",
       element: (
