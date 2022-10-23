@@ -22,7 +22,9 @@ import AddNews from "./components/addnews/AddNews";
 import News from "./components/news/News";
 import  NewsDetails  from "./components/newsdetails/NewsDetails";
 
+
 const queryClient = new QueryClient();
+
 
 function App() {
   const router = createBrowserRouter([
@@ -88,6 +90,8 @@ function App() {
       element: <Details></Details>,
     },
 
+
+
     {
       path: "/appointment",
       element: (
@@ -109,6 +113,7 @@ function App() {
       )
 
     },
+
     {
       path: "*",
       element: <div>This Route not found</div>,
