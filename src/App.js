@@ -80,7 +80,6 @@ function App() {
       element: <div>This Route not found</div>,
     },
   ]);
-
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
