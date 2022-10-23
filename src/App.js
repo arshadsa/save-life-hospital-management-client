@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Footer } from "./shared/Footer/Footer";
 import Homepage from "./pages/Home Page/Homepage";
 import Chat from "./components/Msngrchat/Chat";
@@ -107,7 +109,6 @@ function App() {
       )
 
     },
-  
     {
       path: "*",
       element: <div>This Route not found</div>,
@@ -124,6 +125,7 @@ function App() {
         </div>
         <Footer></Footer>
       </div>
+      <ToastContainer></ToastContainer>
     </QueryClientProvider>
   );
 }
