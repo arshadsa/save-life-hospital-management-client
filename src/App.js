@@ -15,6 +15,7 @@ import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
 import SpecialistDoctors from "./pages/SpecialistDoctors/SpecialistDoctors";
+import Phercheckout from "./components/Pharheckout/Phercheckout";
 
 const queryClient = new QueryClient();
 function App() {
@@ -75,10 +76,16 @@ function App() {
       element: <Details></Details>,
     },
 
+      {
+        path: "/medcheckout/:id",
+        element: <Phercheckout></Phercheckout>
+      },
+
     {
       path: "*",
       element: <div>This Route not found</div>,
     },
+
   ]);
   return (
     <QueryClientProvider client={queryClient}>
