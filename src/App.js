@@ -62,6 +62,7 @@ function App() {
       path: "/doctor/:id",
       element: <AllDoctors></AllDoctors>,
     },
+    
     {
       path: "/login",
       element: <Login />,

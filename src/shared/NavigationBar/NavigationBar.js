@@ -9,7 +9,6 @@ export const NavigationBar = ({ isHome }) => {
     const navigate = useNavigate()
     const [userInfo, loading] = useAuthState(auth);
     const role = useRole(userInfo?.email)
-    console.log(role);
     if (loading) return
     const handleLogout = () => {
         signOut(auth)
