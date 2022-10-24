@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import DoctorListItem from "../../components/DoctorListItem/DoctorListItem";
-import doctorSampleImage from "../../assets/Doctorsdamyp/docOne.jpg";
 import useDoctor from "../../hooks/useDoctors";
 import { useParams } from "react-router-dom";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
@@ -26,7 +25,6 @@ const SpecialistDoctors = () => {
               .map((doctor) => (
                 <DoctorListItem
                   doctor={doctor}
-                  img={doctorSampleImage}
                 ></DoctorListItem>
               ))}
           </ul>

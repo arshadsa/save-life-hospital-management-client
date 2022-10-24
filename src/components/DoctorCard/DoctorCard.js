@@ -25,7 +25,6 @@ const DoctorCard = ({speciality, specialitiesDef}) => {
       <Link to={`/doctors/${speciality.replace(/\s+/g, '')}`}>
         <div class="cursor-pointer p-4 flex max-w-md bg-white shadow-xl rounded-lg overflow-hidden">
           <div class="w-1/3 bg-cover bg-landscape flex align-items-center">
-            {/* <img className="w-full" src="../../assets/Speciality-img/gastroenterology.png" alt="" /> */}
             <img className="w-full p-4" src={getImg()} alt="" />
           </div>
           <div class="w-2/3 p-4 mb-2">
