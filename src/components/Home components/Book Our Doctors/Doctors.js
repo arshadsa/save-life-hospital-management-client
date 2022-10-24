@@ -17,11 +17,11 @@ const Doctors = ({ doctor }) => {
     name,
     location,
     education,
-reviews,
+    reviews,
     designation,
     department,
     hospital,
-    slot1,
+    slots,
     fees,
     
   } = doctor;
@@ -61,25 +61,10 @@ reviews,
             <h4 className="doctor-name">{name}</h4>
 
             <span className="doctor-education">
-              {descriptionCollapse ? education.slice(0, 80) : education}
+              {education}
             </span>
 
-            {education.length > 80 ? (
-              descriptionCollapse ? (
-                <span
-                  onClick={showLess}
-                  className="collapse-btn font-bold text-primary  "
-                >
-                  see more
-                </span>
-              ) : (
-                <span onClick={showMore} className="collapse-btn">
-                  See lesse
-                </span>
-              )
-            ) : (
-              <span> </span>
-            )}
+           
 
             {/* <h6 className="mt-4">{designation}</h6>
             <h6 className="department">{department}</h6>
@@ -91,8 +76,7 @@ reviews,
             <h6 className="hospital text-[15px] font-[600]"><i class="fa-solid fa-location-pin text-primary"></i>  {location}</h6>
             </div>
             <div className="flex items-center gap-2">
-            <p className="text-left text-primary"><MdOutlineWatchLater></MdOutlineWatchLater>  </p>
-            <h6 className="hospital text-[15px] font-[600]">{slot1}</h6>
+            <h6 className="hospital text-[15px] font-[600]"><i class="fa-solid fa-dollar-sign text-primary"></i> {fees}.00</h6>
             </div>
             {/* <div className="flex items-center gap-2">
                 <p className="text-left text-[#757575]  font-[600]"> <FaRegMoneyBillAlt  ></FaRegMoneyBillAlt> </p>

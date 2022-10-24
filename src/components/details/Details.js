@@ -13,7 +13,7 @@ const Details = () => {
     const [docs,setDocs] = useState({})
     const [disable, setDisable] = useState(false);
      useEffect(()=>{
-         fetch(`http://localhost:5000/websitedoctors/${id}`)
+         fetch(`http://localhost:5000/hospitaldoctors/${id}`)
        .then(res=>res.json())
         .then(data=>setDocs(data))
 
@@ -71,31 +71,8 @@ const handleChange = event => {
         <br></br>
         <br></br>
         <br></br>
-       <h1 className='text-2xl text-center text-primary'>Available Slots</h1>
-        {/* slots */}
-        <div className="overflow-x-auto">
-  <table className="table w-full text-center mt-5">
-  
-   
-    <tbody>
-    
-      <tr>
-        
-        <td>{docs.slot1}</td>
-        <td>{docs.slot2}</td>
-        <td>{docs.slot3}</td>
-      </tr>
-    
-      <tr>
-        
-        <td>{docs.slot4}</td>
-        <td>{docs.slot5}</td>
-        <td>{docs.slot6}</td>
-      </tr>
       
-     
-    </tbody>
-  </table>
+        <div className="overflow-x-auto">
   <Link to='/appointment'><button className='btn btn-primary ml-96 mt-5'>Book Appointment</button></Link>
 </div>
 

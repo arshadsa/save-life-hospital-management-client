@@ -1,6 +1,36 @@
 [
     { 
-      "name": "Teeth Orthodontics",
+      "name": "Dr. Md. Firoj Hossain",
+      "designation":"Assistant Professor",
+      "reviews":43,
+      "category":"Medicine, Diabetes, Thyroid & Hormone",
+      "education":"MBBS, FCPS (Medicine), DEM (BIRDEM), MD (Endocrinology), MACE (USA), MACP (USA)",
+      "fees":19,
+      "location":"California,USA",
+      "hospital":"Mugda Medical College & Hospital",
+      "department":"Department of Endocrinology",
+      "image":"https://doccure-react.dreamguystech.com/template/82a70aca5403c6ff499b0ac2a729e670.jpg",
+      "awards": [
+        "Humanitarian Award",
+        "Certificate For International Volunteer Service",
+        "The Dental Professional of The Year Award"
+      ],
+      "services": [
+        "Tooth cleaning",
+        "Root Canal Therapy",
+        "Implants",
+        "Composite Bonding",
+        "Fissure Sealants",
+        "Surgical Extractions"
+      ],
+      "specialization": [
+        "Children Care",
+        "Dental Care",
+        "Oral and Maxillofacial Surgery",
+        "Orthodontist",
+        "Periodontist",
+        "Prosthodontics"
+      ],
       "slots": [
         "08.00 AM - 08.30 AM",
         "08.30 AM - 09.00 AM",
@@ -11,28 +41,39 @@
       ]
     },
     { 
-      "name": "Cosmetic Dentistry",
+      "name": "Ms. Jayoti Mukherjee",
+      "designation":"Senior Nutrition Consultant",
+      "reviews":63,
+      "category":"Diet & Nutrition Consultant",
+      "education":"B.Sc & M.Sc in Nutrition Science (DU), Trained in BIRDEM, 10+ Years Experience in Weight Management",
+      "fees":25,
+      "location":"Newyork, USA",
+      "hospital":"Ex- VLCC Healthcare & VIBES Healthcare",
+      "department":"Surecell Medical BD",
+      "image":"https://doccure-react.dreamguystech.com/template/e7c74a698df7da05026e7a78cfe2eb75.jpg",
+      "awards": [
+        "Humanitarian Award",
+        "Certificate For International Volunteer Service",
+        "The Dental Professional of The Year Award"
+      ],
+      "services": [
+        "Tooth cleaning",
+        "Root Canal Therapy",
+        "Implants",
+        "Composite Bonding",
+        "Fissure Sealants",
+        "Surgical Extractions"
+      ],
+      "specialization": [
+        "Children Care",
+        "Dental Care",
+        "Oral and Maxillofacial Surgery",
+        "Orthodontist",
+        "Periodontist",
+        "Prosthodontics"
+      ],
       "slots": [
-        "09.00 AM - 9.30 AM",
-        "09.30 AM - 10.00 AM",
-        "10.00 AM - 10.30 AM",
-        "10.30 AM - 11.00 AM"
-      ]
-    },
-    {
-      "name": "Teeth Cleaning",
-      "slots": []
-    },
-    {
-      "name": "Cavity Protection",
-      "slots": [
-        "10.00 AM - 10.30 AM",
-        "10.30 AM - 11.00 AM"
-      ]
-    },
-    {
-      "name": "Pediatric Dental",
-      "slots": [
+        "08.00 AM - 08.30 AM",
         "08.30 AM - 09.00 AM",
         "09.00 AM - 9.30 AM",
         "09.30 AM - 10.00 AM",
@@ -40,12 +81,168 @@
         "10.30 AM - 11.00 AM"
       ]
     },
-    {
-      "name": "Oral Surgery",
+    { 
+      "name": "Dr. Rajib Kumar Saha",
+      "designation":"Consultant",
+      "reviews":20,
+      "category":"Medicine & Chest Specialist (Pulmonologist)",
+      "education":"MBBS(Dhaka), MRCP(UK), MCPS(Medicine), MD(Chest), MACP (USA)",
+      "fees":30,
+      "location":"California,USA",
+      "hospital":"ASGAR ALI HOSPITAL",
+      "department":"Department of Respiratory Medicine",
+      "image":"https://doccure-react.dreamguystech.com/template/81f237c60c9af3153ecf4340f772db98.jpg",
+      "awards": [
+        "Humanitarian Award",
+        "Certificate For International Volunteer Service",
+        "The Dental Professional of The Year Award"
+      ],
+      "services": [
+        "Tooth cleaning",
+        "Root Canal Therapy",
+        "Implants",
+        "Composite Bonding",
+        "Fissure Sealants",
+        "Surgical Extractions"
+      ],
+      "specialization": [
+        "Children Care",
+        "Dental Care",
+        "Oral and Maxillofacial Surgery",
+        "Orthodontist",
+        "Periodontist",
+        "Prosthodontics"
+      ],
       "slots": [
+        "08.00 AM - 08.30 AM",
+        "08.30 AM - 09.00 AM",
+        "09.00 AM - 9.30 AM",
         "09.30 AM - 10.00 AM",
         "10.00 AM - 10.30 AM",
         "10.30 AM - 11.00 AM"
       ]
-    }
+    },
+    { 
+      "name": "Dr. Salahuddin Mahmud",
+      "designation":"Associate Professor",
+      "reviews":36,
+      "category":"Neonate & Child Specialist",
+      "education":"Fellow in Pediatric Nutrition, Boston University (USA), MBBS (Dhaka), MD (Pediatrics), Fellow in Pediatric Nutrition, Boston University (USA), MBBS (Dhaka), MD (Pediatrics) & Sanjay Gandhi Postgraduate Institute, Lucknow (India)",
+      "fees":21,
+      "location":"California,USA",
+      "hospital":"Dhaka Shishu (Children) Hospital",
+      "department":"Department of Pediatric  Gastroenterology",
+      "image":"https://doccure-react.dreamguystech.com/template/4c4edf4d3fc07e7acd8f249becdbcc04.jpg",
+      "awards": [
+        "Humanitarian Award",
+        "Certificate For International Volunteer Service",
+        "The Dental Professional of The Year Award"
+      ],
+      "services": [
+        "Tooth cleaning",
+        "Root Canal Therapy",
+        "Implants",
+        "Composite Bonding",
+        "Fissure Sealants",
+        "Surgical Extractions"
+      ],
+      "specialization": [
+        "Children Care",
+        "Dental Care",
+        "Oral and Maxillofacial Surgery",
+        "Orthodontist",
+        "Periodontist",
+        "Prosthodontics"
+      ],
+      "slots": [
+        "08.00 AM - 08.30 AM",
+        "08.30 AM - 09.00 AM",
+        "09.00 AM - 9.30 AM",
+        "09.30 AM - 10.00 AM",
+        "10.00 AM - 10.30 AM",
+        "10.30 AM - 11.00 AM"
+      ]
+    }, 
+    { 
+      "name": "Dr. Humaira Afreen",
+      "designation":"Assistant Professor",
+      "reviews":72,
+      "category":"Dermatologist (Skin, Allergy, Hair, Sex)",
+      "education":"MBBS (DMC), BCS (Health), FCPS (Dermatology and Venereology)",
+      "fees":40,
+      "location":"California,USA",
+      "hospital":"SSMC Mitford Hospital, Dhaka",
+      "department":"Skin & VD Department",
+      "image":"https://doccure-react.dreamguystech.com/template/9109ec39a7b4d06af126b0d5cec32273.jpg",
+      "awards": [
+        "Humanitarian Award",
+        "Certificate For International Volunteer Service",
+        "The Dental Professional of The Year Award"
+      ],
+      "services": [
+        "Tooth cleaning",
+        "Root Canal Therapy",
+        "Implants",
+        "Composite Bonding",
+        "Fissure Sealants",
+        "Surgical Extractions"
+      ],
+      "specialization": [
+        "Children Care",
+        "Dental Care",
+        "Oral and Maxillofacial Surgery",
+        "Orthodontist",
+        "Periodontist",
+        "Prosthodontics"
+      ],
+      "slots": [
+        "08.00 AM - 08.30 AM",
+        "08.30 AM - 09.00 AM",
+        "09.00 AM - 9.30 AM",
+        "09.30 AM - 10.00 AM",
+        "10.00 AM - 10.30 AM",
+        "10.30 AM - 11.00 AM"
+      ]
+    },
+    { 
+      "name": "Dr. Rashedul Hasan",
+      "designation":"Consultant",
+      "reviews":16,
+      "category":"Ears, Nose and Throat (ENT) Specialist",
+      "education":"MBBS, MSc (London), Specialty: Vertigo, Tinnitus, Hearing loss & ENT diseas",
+      "fees":20,
+      "location":"California,USA",
+      "hospital":"Prescription Point, Banani",
+      "department":"Department of Ears, Nose and Throat",
+      "image":"https://doccure-react.dreamguystech.com/template/4c4edf4d3fc07e7acd8f249becdbcc04.jpg",
+      "awards": [
+        "Humanitarian Award",
+        "Certificate For International Volunteer Service",
+        "The Dental Professional of The Year Award"
+      ],
+      "services": [
+        "Tooth cleaning",
+        "Root Canal Therapy",
+        "Implants",
+        "Composite Bonding",
+        "Fissure Sealants",
+        "Surgical Extractions"
+      ],
+      "specialization": [
+        "Children Care",
+        "Dental Care",
+        "Oral and Maxillofacial Surgery",
+        "Orthodontist",
+        "Periodontist",
+        "Prosthodontics"
+      ],
+      "slots": [
+        "08.00 AM - 08.30 AM",
+        "08.30 AM - 09.00 AM",
+        "09.00 AM - 9.30 AM",
+        "09.30 AM - 10.00 AM",
+        "10.00 AM - 10.30 AM",
+        "10.30 AM - 11.00 AM"
+      ]
+    } 
   ]
