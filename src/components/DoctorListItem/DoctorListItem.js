@@ -3,7 +3,7 @@ import React from "react";
 const DoctorListItem = ({ img, doctor }) => {
   return (
     <li class="border-gray-400 flex flex-row mb-8">
-      <a href={`/doctor/${doctor._id}`}>
+      <a href={`/websitedoctors/${doctor._id}`}>
       <div class="shadow-lg border select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
         {/* profile image */}
         <div class="flex flex-col justify-center items-center mr-4">

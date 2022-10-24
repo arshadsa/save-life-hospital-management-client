@@ -72,7 +72,6 @@ function App() {
         <NewsDetails></NewsDetails>
       ),
     },
-
     {
       path: "/pharmacy",
       element: <Pharmacy></Pharmacy>,
@@ -89,9 +88,6 @@ function App() {
       path: "/websitedoctors/:id",
       element: <Details></Details>,
     },
-
-
-
     {
       path: "/appointment",
       element: (

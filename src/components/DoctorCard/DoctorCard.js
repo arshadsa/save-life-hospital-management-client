@@ -2,9 +2,10 @@ import React from "react";
 import operationimage from "../../assets/Features-images/img7.svg";
 
 const DoctorCard = ({speciality}) => {
+  console.log(speciality.trim());
   return (
     <div>
-      <a href={`/doctors/${speciality}`}>
+      <a href={`/doctors/${speciality.replace(/\s+/g, '')}`}>
         <div class="cursor-pointer p-4 flex max-w-md bg-white shadow-xl rounded-lg overflow-hidden">
           <div class="w-1/3 bg-cover bg-landscape flex align-items-center">
             {/* <img className="w-full" src="../../assets/Speciality-img/gastroenterology.png" alt="" /> */}

@@ -8,7 +8,6 @@ import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 const SpecialistDoctors = () => {
   const { speciality } = useParams();
   const [doctor, setDoctor] = useDoctor();
-
   return (
     <>
       <NavigationBar isHome={true} />
@@ -16,7 +15,14 @@ const SpecialistDoctors = () => {
         <div class="container flex flex-col mx-auto w-full items-center justify-center">
           <ul class="flex flex-col">
             {doctor
-              .filter((doctor) => doctor.speciality === speciality)
+              .filter((doctor) => {
+                const specialization = doctor.specialization.map(
+                  (specialization) => specialization.replace(/\s+/g, "")
+                );
+                if (specialization.includes(speciality) === true) {
+                  return doctor;
+                }
+              })
               .map((doctor) => (
                 <DoctorListItem
                   doctor={doctor}
