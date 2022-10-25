@@ -10,7 +10,6 @@ import RouteAthenication from '../../HOC/RouteAthenication';
 const MakeAdmin = () => {
     const [userInfo] = useAuthState(auth)
     const role = useRole(userInfo?.email);
-
     const { isLoading, error, data, refetch } = useQuery('alluser', () =>
         fetch('http://localhost:5000/api/allUsers').then(res =>
             res.json()
@@ -51,7 +50,7 @@ const MakeAdmin = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                        data.map((elem, index) => <tr key={uuidv4}>
+                                        data.map((elem, index) => <tr key={uuidv4()}>
                                             <th key={uuidv4()}>{index + 1}</th>
                                             <td key={uuidv4()}>{elem?.name}</td>
                                             <td key={uuidv4()}>{elem?.email}</td>

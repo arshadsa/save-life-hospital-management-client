@@ -14,6 +14,10 @@ import Pharmacy from "./components/Home components/What are u looking fr/Pharmac
 import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
+import ZOOM from "./pages/ZOOM/ZOOM";
+import BloodDoner from "./pages/BloodDoner/BloodDoner";
+import BloodDonerList from "./pages/BloodDonerList/BloodDonerList";
+import BloodBank from "./pages/BloodBank/BloodBank";
 
 // import Details from "./components/details/Details";
 // import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy"
@@ -106,6 +110,30 @@ function App() {
         <MakeAdmin />
       )
     },
+    {
+      path: "/bloodDoner",
+      element: (
+        <BloodDoner />
+      )
+    },
+    {
+      path: "/bloodDonerList",
+      element: (
+        <BloodDonerList />
+      )
+    },
+    {
+      path: "/bloodBank",
+      element: (
+        <BloodBank />
+      )
+    },
+    // {
+    //   path: "/zoom",
+    //   element: (
+    //     <ZOOM />
+    //   )
+    // },
     // {
     //   path: "/websitedoctors/:id",
     //   element: (
