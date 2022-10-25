@@ -50,7 +50,7 @@ const BloodBank = () => {
                         <tbody>
 
                             {
-                                filteredList?.isFilter === true ? filteredList?.data?.map((elem, index) => <tr key={uuidv4()}>
+                                filteredList?.isFilter === true ? filteredList?.data?.length !== 0 ? filteredList?.data?.map((elem, index) => <tr key={uuidv4()}>
                                     <th key={uuidv4()}>{index + 1}</th>
                                     <td key={uuidv4()}>{elem?.name}</td>
                                     <td key={uuidv4()}>{elem?.email}</td>
@@ -58,7 +58,7 @@ const BloodBank = () => {
                                     <td key={uuidv4()}>{elem?.phone}</td>
                                     <td key={uuidv4()}>{elem?.address}</td>
                                     <td key={uuidv4()}>{elem?.age}</td>
-                                </tr>) : donerList.map((elem, index) => <tr key={uuidv4()}>
+                                </tr>) : <p className='flex justify-center items-center w-[100%] relative left-[236%]'>No Group Found</p> : donerList.map((elem, index) => <tr key={uuidv4()}>
                                     <th key={uuidv4()}>{index + 1}</th>
                                     <td key={uuidv4()}>{elem?.name}</td>
                                     <td key={uuidv4()}>{elem?.email}</td>

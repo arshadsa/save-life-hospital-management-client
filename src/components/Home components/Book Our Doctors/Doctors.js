@@ -15,12 +15,15 @@ const Doctors = ({ doctor }) => {
     image,
     category,
     name,
+    location,
     education,
+    reviews,
     designation,
     department,
     hospital,
-    slot1,
+    slots,
     fees,
+    specialization
     
   } = doctor;
 
@@ -45,50 +48,44 @@ const Doctors = ({ doctor }) => {
             <img
               style={{ height: "300px" }}
               src={image}
-              className='w-96 pt-3 pb-3'
+              className='w-96 mx-auto pt-3 pb-3'
               alt="doctor"
             />
        
 
           <div className="doctor-description ">
-            <p className="doctor-category">{category}</p>
+          <i class="fa-solid fa-star mr-2 text-orange-400	"></i>
+<i class="fa-solid fa-star mr-2 text-orange-400	"></i>
+<i class="fa-solid fa-star mr-2 text-orange-400	"></i>
+<i class="fa-solid fa-star text-orange-400	"></i> <b>({reviews})</b>
+            <p className="doctor-category">{specialization}</p>
             <h4 className="doctor-name">{name}</h4>
 
             <span className="doctor-education">
-              {descriptionCollapse ? education.slice(0, 80) : education}
+              {hospital}
             </span>
-
-            {education.length > 80 ? (
-              descriptionCollapse ? (
-                <span
-                  onClick={showLess}
-                  className="collapse-btn font-bold text-primary  "
-                >
-                  see more
-                </span>
-              ) : (
-                <span onClick={showMore} className="collapse-btn">
-                  See lesse
-                </span>
-              )
-            ) : (
-              <span> </span>
-            )}
-
-            <h6 className="mt-4">{designation}</h6>
+            {/* <h6 className="mt-4">{designation}</h6>
             <h6 className="department">{department}</h6>
-            <h6 className="hospital">{hospital}</h6>
+            <h6 className="hospital">{hospital}</h6> */}
 
 
-           <div className="mt-5">
+           <div className="mt-5 grid lg:grid-cols-3 sm:grid-cols-1">
+           <div className="flex items-center gap-2">
+            <h6 className="hospital text-[15px] font-[600]"><i class="fa-solid fa-user text-primary"></i> {designation}</h6>
+            </div>
+         
             <div className="flex items-center gap-2">
-            <p className="text-left text-[#757575] font-[600] "><MdOutlineWatchLater></MdOutlineWatchLater>  </p>
-            <h6 className="hospital text-[15px] font-[600]">{slot1}</h6>
+            
+            <h6 className="hospital text-[15px] font-[600]"><i class="fa-solid fa-location-pin text-primary"></i>  {location}</h6>
             </div>
             <div className="flex items-center gap-2">
+            <h6 className="hospital text-[15px] font-[600]"><i class="fa-solid fa-dollar-sign text-primary"></i> {fees}.00</h6>
+            </div>
+            
+            {/* <div className="flex items-center gap-2">
                 <p className="text-left text-[#757575]  font-[600]"> <FaRegMoneyBillAlt  ></FaRegMoneyBillAlt> </p>
                 <h6 className="department  text-[15px] font-[600]"> $ {fees}.00 </h6>
-            </div>
+            </div> */}
            </div>
 
             <div className="text-center"> 
@@ -101,21 +98,21 @@ const Doctors = ({ doctor }) => {
                   <span className="text-[20px] text-white ">
                     {/* <AiFillCalendar></AiFillCalendar> */}
                   </span>{" "}
-                  <span className="mx-2 text-[16px] ">
+                  <span className="mx-2 text-[16px]  ">
                     
-                  <Link to={`/websitedoctors/${_id}`}>View Profile</Link>
+                  <Link to={`/websitedoctors/${_id}`}><i class="fa-solid fa-eye"></i> View Profile</Link>
                     </span>{" "}
                 </button>
 
                 {/* book now button */}
                 {/* use useNavigaein this buttton where you wanna go*/}
-                <button class="text-1xl mt-4 mx-5 bg-[#0DE0FE]
+                <button class="text-1xl mt-4 mx-5 bg-[#4506cb]
                 w-[130px] h-[50px]  rounded-lg text-black font-[600] transition ease-in-out delay-100 ">
                   {" "}
                   <span className="text-[20px] text-white ">
                     {/* <AiFillCalendar></AiFillCalendar> */}
                   </span>{" "}
-                  <span className="mx-2 text-[16px] "> Book Now</span>{" "}
+                  <span className="mx-2 text-[16px] text-white "> <i class="fa-regular fa-calendar-check"></i> Book Now</span>{" "}
                 </button>
                </div>
               

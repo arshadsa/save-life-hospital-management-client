@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Footer } from "./shared/Footer/Footer";
 import Homepage from "./pages/Home Page/Homepage";
 import Chat from "./components/Msngrchat/Chat";
@@ -19,14 +21,20 @@ import BloodDoner from "./pages/BloodDoner/BloodDoner";
 import BloodDonerList from "./pages/BloodDonerList/BloodDonerList";
 import BloodBank from "./pages/BloodBank/BloodBank";
 import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute";
-const queryClient = new QueryClient()
+import SpecialistDoctors from "./pages/SpecialistDoctors/SpecialistDoctors";
+import Phercheckout from "./components/Pharheckout/Phercheckout";
+import Appointment from "./components/appointment/Appointment";
+import AddNews from "./components/addnews/AddNews";
+import News from "./components/news/News";
+import NewsDetails from "./components/newsdetails/NewsDetails";
+
+const queryClient = new QueryClient();
+
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        <Homepage></Homepage>
-      ),
+      element: <Homepage></Homepage>,
     },
 
     {
@@ -35,43 +43,46 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
-
-
-
     {
       path: "/doctor",
       element: (
         <Speciality></Speciality>
       ),
     },
-
     {
       path: "/doctor/add",
-      element: (
-        <AddDoctor></AddDoctor>
-      ),
+      element: <AddDoctor></AddDoctor>,
     },
 
     {
-      path: "/doctor/all",
-      element: (
-        <AllDoctors></AllDoctors>
-      ),
+      path: "/doctor",
+      element: <Speciality></Speciality>,
+    },
+
+    {
+      path: "/doctors/all",
+      element: <AllDoctors></AllDoctors>,
+    },
+
+    {
+      path: "/doctors/:speciality",
+      element: <SpecialistDoctors></SpecialistDoctors>,
     },
 
     {
       path: "/doctor/:id",
-      element: (
-        <AllDoctors></AllDoctors>
-      ),
+      element: <AllDoctors></AllDoctors>,
     },
+
     {
       path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/news/:id",
       element: (
-        <Login />
-      )
-    }, {
-
+        <NewsDetails></NewsDetails>
+      ),
     },
     {
       path: "/websitedoctors/:id",
@@ -90,13 +101,11 @@ function App() {
       path: "/pharmacy",
       element: (
         <Pharmacy></Pharmacy>
-      ),
+      )
     },
     {
       path: "/signup",
-      element: (
-        <SignUp />
-      )
+      element: <SignUp />,
     },
     {
       path: "/makeAdmin",
@@ -124,20 +133,48 @@ function App() {
         <BloodBank />
       )
     },
-  ]);
+    {
+      path: "/websitedoctors/:id",
+      element: <Details></Details>,
+    },
+    {
+      path: "/appointment",
+      element: (
+        <Appointment></Appointment>
+      )
+    },
+    {
+      path: "/addnews",
+      element: (
+        <AddNews></AddNews>
+      )
+    },
+    {
+      path: "/news",
+      element: (
+        <News></News>
+      )
+    },
+    {
+      path: "/medcheckout/:id",
+      element: (<Phercheckout></Phercheckout>)
+    },
 
+    // {
+    //   path: "/medcheckout/:id",
+    //   element: <Phercheckout></Phercheckout>
+    // },
+  ]);
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App bg-white">
-        <RouterProvider router={router} >
-          <NavigationBar isHome={true} />
-
-          <div className="mb-[150px]">
-            <Chat></Chat>
-          </div>
-          <Footer></Footer>
-        </RouterProvider >
+      <div className="App">
+        <RouterProvider router={router} />
+        {/* <NavigationBar isHome={true} /> */}
+        <div className="mb-[150px]">
+          <Chat></Chat>
+        </div>
       </div>
+      <ToastContainer></ToastContainer>
     </QueryClientProvider>
   );
 }

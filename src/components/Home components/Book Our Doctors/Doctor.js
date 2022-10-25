@@ -167,7 +167,7 @@ const Doctor = () => {
 
 const [doctors,setDoctors] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/websitedoctors')
+        fetch('http://localhost:5000/hospitaldoctors')
         .then(res => res.json())
         .then(data => setDoctors(data))
     },[])
