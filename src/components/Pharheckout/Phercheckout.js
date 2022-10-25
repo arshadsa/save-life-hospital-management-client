@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
+import Purchase from './Purchase'
 
 
 const Phercheckout = () => {
@@ -11,7 +12,7 @@ const Phercheckout = () => {
     const [medicine , setMedicine] = useState({})
     // useffecrt handel
     useEffect(()=> {
-      const url = `http://localhost:8000/medicine/${id}`
+      const url = `http://localhost:3000/medicine/${id}`
       console.log(url, "aa")
       fetch(url)
       .then(res =>  res.json())
@@ -67,10 +68,11 @@ const Phercheckout = () => {
      </div>
      <div className='mt-[70px]'>
       <hr className='container mx-auto px-6 p-3' />
-      <div>
-        
+      <div className='container mx-auto p-3 px-6'>
+        <Purchase amount={medicine} ></Purchase>
       </div>
      </div>
+  
     </div>
   )
 }
