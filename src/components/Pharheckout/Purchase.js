@@ -77,7 +77,7 @@ const Purchase = () => {
             </div>
 
             
-               { price.length > 0 &&
+            { price.length > 0 &&
                 price?.map(taka => 
 
 <div className="lg:px-2 lg:w-1/2">
