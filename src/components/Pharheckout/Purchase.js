@@ -33,7 +33,7 @@ const Purchase = () => {
             
 
               <div className="p-3 bg-teal-50 rounded-full my-3">
-                <h1 className="ml-2 font-semibold text-teal-600 uppercase">
+                <h1 className="ml-2 font-semibold text-[#1b82e2] uppercase">
                   Enter Shipping Info
                 </h1>
               </div>
@@ -48,28 +48,29 @@ const Purchase = () => {
                   <input
                     type="text"
                     placeholder="Name"
-                    className="px-3 py-4 my-1 border-white border-b-teal-300 placeholder-gray-500 text-blueGray-600 relative  rounded-lg bg-white text-base shadow-md outline-none focus:outline-none focus:shadow-outline w-full "
+                    className="px-3 py-4 my-1 border-white border-b-sky-300 placeholder-gray-500 text-blueGray-600 relative  rounded-lg bg-white text-base shadow-md outline-none focus:outline-none focus:shadow-outline w-full "
                   />
                 </div>
                 <div className="mb-3 pt-0">
                   <input
                     type="text"
                     placeholder="Email"
-                    className=" border-white px-3 py-4 my-1  border-b-teal-300 placeholder-gray-500 text-blueGray-600 relative  rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full"
+                    className=" border-white px-3 py-4 my-1  border-b-sky-300 placeholder-gray-500 text-blueGray-600 relative  rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full"
                   />
                 </div>
                 <div className="mb-3 pt-0">
                   <input
                     type="text"
                     placeholder="Phone"
-                    className="px-3 py-4 my-1 border-white border-b-teal-300 placeholder-gray-500 text-blueGray-600 relative  rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full"
+                    className="px-3 py-4 my-1 border-white border-b-sky-300 placeholder-gray-500 text-blueGray-600 relative  rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full"
                   />
                 </div>
+              
                 <div className="mb-3 pt-0">
                   <input
                     type="text"
                     placeholder="Address"
-                    className="px-3 py-4 my-1 border-white border-b-teal-300 placeholder-gray-500 text-blueGray-600 relative  rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full"
+                    className="px-3 py-4 my-1 border-white border-b-sky-300 placeholder-gray-500 text-blueGray-600 relative  rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full"
                   />
                 </div>
               </form>
@@ -85,7 +86,7 @@ const Purchase = () => {
               </div>
 
               <div className="p-3 bg-teal-50 rounded-full">
-                <h1 className="ml-2 font-semibold text-teal-600 uppercase">
+                <h1 className="ml-2 font-semibold text-[#1b82e2] uppercase">
                   Order Details
                 </h1>
               </div>
@@ -96,7 +97,7 @@ const Purchase = () => {
                 </p>
                
                 <div className="flex justify-between pt-2 border-b">
-                  <div className="flex lg:px-4 lg:py-2 m-1 text-lg lg:text-xl font-medium text-teal-500">
+                  <div className="flex lg:px-4 lg:py-2 m-1 text-lg lg:text-xl font-medium text-sky-500">
                     <form action="" method="POST">
                       <button type="submit" className="mr-2 lg:mt-1">
                         <svg
@@ -145,7 +146,7 @@ const Purchase = () => {
                   </div>
                 </div>
                 <a href="#0">
-                  <Link to="/orderHistory" className="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-teal-500 rounded-full shadow item-center hover:bg-teal-700 focus:shadow-outline focus:outline-none">
+                  <Link to="/o" className="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-[#1b82e2]  rounded-full shadow item-center hover:bg-sky-500 focus:shadow-outline focus:outline-none">
                     <svg
                       aria-hidden="true"
                       data-prefix="far"
