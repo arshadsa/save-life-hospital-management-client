@@ -63,9 +63,9 @@ const Pharmacy = () => {
                 <div className="mt-4 flex justify-between px-2">
                   <div>
                     <h3 className="text-md text-gray-900 font-display tracking-wide">
-                      <a href={product.href}>
-                        <span aria-hidden="true" className="inset-0" />
-                        {product.name}
+                      <a  className="text-[#1b82e2] font-bold " >
+                        <span aria-hidden="true" className="inset-0 text-[#1b82e2] " />
+                        {product.name} 
                       </a>
                     </h3>
                   </div>

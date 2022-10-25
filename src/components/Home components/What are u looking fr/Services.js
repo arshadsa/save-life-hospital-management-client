@@ -20,7 +20,7 @@ const Services = () => {
 
        <div className="flex justify-center mb-[120px] items-center gap-5 ">
         <img className="hidden md:block w-[66px] h-[25px]" src={svgservices} alt="" />
-        <p className="font-bold text-[#242424] text-4xl"> What are you looking for ? </p>
+        <p className="font-bold  text-4xl"> What are you <span className='text-[#1b82e2]'>looking</span> for ? </p>
         <img className="hidden md:block w-[66px] h-[25px]" src={svgservices} alt="" />
        </div>
 
@@ -37,10 +37,10 @@ const Services = () => {
             <p className="pt-3 px-5 text-[40px] font-[600] text-[#545767] number ">
               01
             </p>
-            <p className="px-5 mt-2 text-[20px] common font-extrabold text-[#063B6F] tagline ">
+            <p className="px-5 mt-2 text-[20px] common font-extrabold text-primary ">
               visit doctor
             </p>
-            <p className="px-5 mt-3 pb-5 font-[600] explain ">
+            <p className="px-5 mt-3 pb-5  explain ">
             We hire the best specialists to deliver top-notch diagnostic services for you.
             </p>
           </div>
@@ -55,10 +55,10 @@ const Services = () => {
             <p className="number pt-3 px-5 text-[40px] font-[600] text-[#545767]  ">
               02
             </p>
-            <p className="px-5 mt-2 text-[20px] common font-extrabold text-[#063B6F] tagline  ">
+            <p className="px-5 mt-2 text-[20px] common font-extrabold text-primary ">
             Find a Pharmacy
             </p>
-            <p className="px-5 mt-3 pb-5 font-[600] explain">
+            <p className="px-5 mt-3 pb-5 ] explain">
               {" "}
               We provide the a wide range of medical services, so every person could have the opportunity.{" "}
             </p>
@@ -74,10 +74,10 @@ const Services = () => {
             <p className="number pt-3 px-5 text-[40px] font-[600] text-[#545767]  ">
               03
             </p>
-            <p className="px-5 mt-2 text-[20px] common font-extrabold text-[#063B6F]  tagline ">
+            <p className="px-5 mt-2 text-[20px] common font-extrabold text-primary  tagline ">
             Find a Lab
             </p>
-            <p className="px-5 mt-3 pb-5 font-[600] explain">
+            <p className="px-5 mt-3 pb-5  explain">
               {" "}
               We use the first-class medical equipment for timely diagnostics of various diseases timely diagnostics of various diseases diseases timely diagnostics of various diseases.{" "}
             </p>

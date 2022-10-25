@@ -4002,6 +4002,11 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
+date-fns@^2.29.3:
+  version "2.29.3"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
+  integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
+
 debug@2.6.9, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz"
@@ -7964,6 +7969,11 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
+react-day-picker@^8.3.5:
+  version "8.3.5"
+  resolved "https://registry.yarnpkg.com/react-day-picker/-/react-day-picker-8.3.5.tgz#db00f7657e71f697055dcecbe2d9e91f84e4b026"
+  integrity sha512-cSMNjbn5IKZLVgfvPopbg+Dk5qQPesi2prlxXBrXlCODUThk5Zyu5fDn7njZt3y7ih65gWbZId0D0lnhyiF1GQ==
+
 react-dev-utils@^12.0.1:
   version "12.0.1"
   resolved "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-12.0.1.tgz"
@@ -8133,7 +8143,7 @@ react-scripts@5.0.1:
 
 react-toastify@^9.0.8:
   version "9.0.8"
-  resolved "https://registry.npmjs.org/react-toastify/-/react-toastify-9.0.8.tgz"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-9.0.8.tgz#3876c89fc6211a29027b3075010b5ec39ebe4f7e"
   integrity sha512-EwM+teWt49HSHx+67qI08yLAW1zAsBxCXLCsUfxHYv1W7/R3ZLhrqKalh7j+kjgPna1h5LQMSMwns4tB4ww2yQ==
   dependencies:
     clsx "^1.1.1"

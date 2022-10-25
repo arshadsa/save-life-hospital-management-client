@@ -1,5 +1,8 @@
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Footer } from "./shared/Footer/Footer";
 import Homepage from "./pages/Home Page/Homepage";
 import Chat from "./components/Msngrchat/Chat";
@@ -16,8 +19,15 @@ import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
 import SpecialistDoctors from "./pages/SpecialistDoctors/SpecialistDoctors";
 import Phercheckout from "./components/Pharheckout/Phercheckout";
+import Appointment from "./components/appointment/Appointment";
+import AddNews from "./components/addnews/AddNews";
+import News from "./components/news/News";
+import  NewsDetails  from "./components/newsdetails/NewsDetails";
+
 
 const queryClient = new QueryClient();
+
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -54,11 +64,17 @@ function App() {
       path: "/doctor/:id",
       element: <AllDoctors></AllDoctors>,
     },
+    
     {
       path: "/login",
       element: <Login />,
     },
-
+    {
+      path: "/news/:id",
+      element: (
+        <NewsDetails></NewsDetails>
+      ),
+    },
     {
       path: "/pharmacy",
       element: <Pharmacy></Pharmacy>,
@@ -75,6 +91,32 @@ function App() {
       path: "/websitedoctors/:id",
       element: <Details></Details>,
     },
+    {
+      path: "/appointment",
+      element: (
+       <Appointment></Appointment>
+      )
+
+    },
+    {
+      path: "/addnews",
+      element: (
+       <AddNews></AddNews>
+      )
+
+    },
+    {
+      path: "/news",
+      element: (
+       <News></News>
+      )
+
+    },
+
+     {
+      path: "/medcheckout/:id",
+      element : (<Phercheckout></Phercheckout>)
+     },
 
       {
         path: "/medcheckout/:id",
@@ -98,6 +140,7 @@ function App() {
         </div>
         <Footer></Footer>
       </div>
+      <ToastContainer></ToastContainer>
     </QueryClientProvider>
   );
 }

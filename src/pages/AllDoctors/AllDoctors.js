@@ -1,6 +1,5 @@
 import React from "react";
 import DoctorListItem from "../../components/DoctorListItem/DoctorListItem";
-import doctorSampleImage from "../../assets/Doctorsdamyp/docOne.jpg";
 import useDoctor from "../../hooks/useDoctors";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 
@@ -16,7 +15,6 @@ const AllDoctors = () => {
             {doctor.map((doctor) => (
               <DoctorListItem
                 doctor={doctor}
-                img={doctorSampleImage}
               ></DoctorListItem>
             ))}
           </ul>
