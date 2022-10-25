@@ -18,11 +18,11 @@ import { SignUp } from "./pages/SignUp/SignUp";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
 import SpecialistDoctors from "./pages/SpecialistDoctors/SpecialistDoctors";
+import Phercheckout from "./components/Pharheckout/Phercheckout";
 import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
 import News from "./components/news/News";
 import  NewsDetails  from "./components/newsdetails/NewsDetails";
-import Phercheckout from "./components/Pharheckout/Phercheckout";
 
 
 const queryClient = new QueryClient();
@@ -118,10 +118,16 @@ function App() {
       element : (<Phercheckout></Phercheckout>)
      },
 
+      {
+        path: "/medcheckout/:id",
+        element: <Phercheckout></Phercheckout>
+      },
+
     {
       path: "*",
       element: <div>This Route not found</div>,
     },
+
   ]);
   return (
     <QueryClientProvider client={queryClient}>

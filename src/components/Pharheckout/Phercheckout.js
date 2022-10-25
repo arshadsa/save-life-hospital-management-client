@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
+import Purchase from './Purchase'
 
 
 const Phercheckout = () => {
@@ -21,7 +22,7 @@ const Phercheckout = () => {
 
 
   return (
-    <div>Phercheckout sss
+    <div className='mt-[70px]'>
      <div>
      <div>
         {medicine.length > 0 &&
@@ -29,12 +30,12 @@ const Phercheckout = () => {
             <div className="container px-6 mx-auto flex flex-wrap justify-between">
       <img
         alt="ecommerce"
-        className="lg:w-1/3 w-full lg:h-auto h-64 object-cover object-center rounded"
+        className="lg:w-1/3 w-full h-auto  object-cover object-center rounded"
         src={med.image}
       />
       <div className="lg:w-2/3 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-        <h1 className="text-teal-500 text-3xl font-display title-font font-medium mb-2">
-          The Catcher in the Rye
+        <h1 className="text-[#1b82e2]  text-3xl font-display title-font font-medium mb-2">
+          {med.name}
         </h1>
         <h2 className="text-sm title-font text-gray-800 tracking-widest mb-2">
           Brand: {med.brand}
@@ -53,11 +54,11 @@ const Phercheckout = () => {
         <div className="flex flex-wrap gap-3 align-center">
      
 
-          <Link to="checkout">
+          {/* <Link to="checkout">
             <button class="flex flex-wrap items-center py-2 px-4 text-lg rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
-              <i class="fas fa-cart-plus"></i> &nbsp; Add To Cart
+              <i class="fas fa-cart-plus"></i> &nbsp; 
             </button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
@@ -67,10 +68,11 @@ const Phercheckout = () => {
      </div>
      <div className='mt-[70px]'>
       <hr className='container mx-auto px-6 p-3' />
-      <div>
-        
+      <div className='container mx-auto p-3 px-6'>
+        <Purchase  ></Purchase>
       </div>
      </div>
+  
     </div>
   )
 }
