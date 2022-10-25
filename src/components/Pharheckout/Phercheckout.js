@@ -12,7 +12,7 @@ const Phercheckout = () => {
     const [medicine , setMedicine] = useState({})
     // useffecrt handel
     useEffect(()=> {
-      const url = `http://localhost:3000/medicine/${id}`
+      const url = `http://localhost:8000/medicine/${id}`
       console.log(url, "aa")
       fetch(url)
       .then(res =>  res.json())
