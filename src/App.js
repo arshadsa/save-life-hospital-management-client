@@ -1,3 +1,4 @@
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import { ToastContainer } from 'react-toastify';
@@ -21,6 +22,7 @@ import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
 import News from "./components/news/News";
 import  NewsDetails  from "./components/newsdetails/NewsDetails";
+import Phercheckout from "./components/Pharheckout/Phercheckout";
 
 
 const queryClient = new QueryClient();
@@ -110,6 +112,11 @@ function App() {
       )
 
     },
+
+     {
+      path: "/medcheckout/:id",
+      element : (<Phercheckout></Phercheckout>)
+     },
 
     {
       path: "*",
