@@ -18,13 +18,7 @@ import ZOOM from "./pages/ZOOM/ZOOM";
 import BloodDoner from "./pages/BloodDoner/BloodDoner";
 import BloodDonerList from "./pages/BloodDonerList/BloodDonerList";
 import BloodBank from "./pages/BloodBank/BloodBank";
-
-// import Details from "./components/details/Details";
-// import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy"
-// import { SignUp } from "./pages/SignUp/SignUp";
-// import MakeAdmin from "./pages/Dashboard/MakeAdmin";
-// import { QueryClient, QueryClientProvider } from "react-query";
-// import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
+import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute";
 const queryClient = new QueryClient()
 function App() {
   const router = createBrowserRouter([
@@ -113,7 +107,9 @@ function App() {
     {
       path: "/bloodDoner",
       element: (
-        <BloodDoner />
+        <ProtectedRoute>
+          <BloodDoner />
+        </ProtectedRoute>
       )
     },
     {
@@ -128,58 +124,6 @@ function App() {
         <BloodBank />
       )
     },
-    // {
-    //   path: "/zoom",
-    //   element: (
-    //     <ZOOM />
-    //   )
-    // },
-    // {
-    //   path: "/websitedoctors/:id",
-    //   element: (
-    //     <Details></Details>
-    //   ),
-    // },
-    // {
-    //   path: "*",
-    //   element: (
-    //     <div>This Route not found</div>
-    //   )
-    // },
-    // {
-    //   path: "/pharmacy",
-    //   element: (
-    //     <Pharmacy></Pharmacy>
-    //   ),
-    // },
-    // {
-    //   path: "/signup",
-    //   element: (
-    //     <SignUp />
-    //   )
-    // },
-    // {
-    //   path: "/makeAdmin",
-    //   element: (
-    //     <MakeAdmin />
-    //   )
-
-    // },
-    // {
-    //   path: "/websitedoctors/:id",
-    //   element: (
-    //     <Details></Details>
-    //   ),
-
-    // },
-
-
-    // {
-    //   path: "*",
-    //   element: (
-    //     <div>This Route not found</div>
-    //   )
-    // },
   ]);
 
   return (
