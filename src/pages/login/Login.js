@@ -7,7 +7,7 @@ import './Login.css'
 import { FcGoogle } from "react-icons/fc";
 import { async } from '@firebase/util';
 import { Link, useNavigate } from 'react-router-dom';
-export const Login = () => {
+const Login = () => {
   const navigate = useNavigate()
   const [
     signInWithEmailAndPassword,
@@ -138,3 +138,4 @@ export const Login = () => {
     </div>
   )
 }
+export default Login;

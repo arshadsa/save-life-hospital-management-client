@@ -3,33 +3,32 @@ import "./App.css";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Footer } from "./shared/Footer/Footer";
-import Homepage from "./pages/Home Page/Homepage";
 import Chat from "./components/Msngrchat/Chat";
-import Speciality from "./pages/Speciality/Speciality";
 import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
-import AddDoctor from "./pages/AddDoctor/AddDoctor";
-import AllDoctors from "./pages/AllDoctors/AllDoctors";
-import { Login } from "./pages/login/Login";
 import AddDoctors from "./components/adddoctors/AddDoctors";
 import Details from "./components/details/Details";
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
-import { SignUp } from "./pages/SignUp/SignUp";
-import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import { QueryClient, QueryClientProvider } from "react-query";
 import ZOOM from "./pages/ZOOM/ZOOM";
-import BloodDoner from "./pages/BloodDoner/BloodDoner";
-import BloodDonerList from "./pages/BloodDonerList/BloodDonerList";
-import BloodBank from "./pages/BloodBank/BloodBank";
-import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute";
-import SpecialistDoctors from "./pages/SpecialistDoctors/SpecialistDoctors";
 import Phercheckout from "./components/Pharheckout/Phercheckout";
 import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
 import News from "./components/news/News";
 import NewsDetails from "./components/newsdetails/NewsDetails";
-
+import { lazy, Suspense } from "react";
 const queryClient = new QueryClient();
-
+const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
+const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
+const AllDoctors = lazy(() => import("./pages/AllDoctors/AllDoctors"));
+const Speciality = lazy(() => import("./pages/Speciality/Speciality"));
+const BloodDoner = lazy(() => import("./pages/BloodDoner/BloodDoner"));
+const Login = lazy(() => import("./pages/login/Login"));
+const SignUp = lazy(() => import("./pages/SignUp/SignUp"));
+const MakeAdmin = lazy(() => import("./pages/Dashboard/MakeAdmin"));
+const BloodDonerList = lazy(() => import("./pages/BloodDonerList/BloodDonerList"));
+const BloodBank = lazy(() => import("./pages/BloodBank/BloodBank"));
+const ProtectedRoute = lazy(() => import("./pages/ProtectedRoute/ProtectedRoute"));
+const SpecialistDoctors = lazy(() => import("./pages/SpecialistDoctors/SpecialistDoctors"));
 function App() {
   const router = createBrowserRouter([
     {
@@ -105,7 +104,7 @@ function App() {
     },
     {
       path: "/signup",
-      element: <SignUp />,
+      element: (<SignUp />),
     },
     {
       path: "/makeAdmin",
@@ -166,16 +165,18 @@ function App() {
     // },
   ]);
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="App">
-        <RouterProvider router={router} />
-        {/* <NavigationBar isHome={true} /> */}
-        <div className="mb-[150px]">
-          <Chat></Chat>
+    <Suspense fallback={<div>Loading...</div>}>
+      <QueryClientProvider client={queryClient}>
+        <div className="App">
+          <RouterProvider router={router} />
+          {/* <NavigationBar isHome={true} /> */}
+          <div className="mb-[150px]">
+            <Chat></Chat>
+          </div>
         </div>
-      </div>
-      <ToastContainer></ToastContainer>
-    </QueryClientProvider>
+        <ToastContainer></ToastContainer>
+      </QueryClientProvider>
+    </Suspense>
   );
 }
 

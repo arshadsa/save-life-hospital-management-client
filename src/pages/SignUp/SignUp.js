@@ -4,7 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './SignUp.css'
-export const SignUp = () => {
+const SignUp = () => {
     const [
         createUserWithEmailAndPassword,
         user,
@@ -141,3 +141,4 @@ export const SignUp = () => {
         </div>
     );
 };
+export default SignUp;
