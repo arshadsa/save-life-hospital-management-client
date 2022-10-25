@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useAuthState } from 'react-firebase-hooks/auth';
 import { FcGoogle } from 'react-icons/fc';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './SignUp.css'
-export const SignUp = () => {
+const SignUp = () => {
     const [
         createUserWithEmailAndPassword,
         user,
@@ -129,6 +129,7 @@ export const SignUp = () => {
 
                         <small className='text-red-500'>{errorText}</small>
                     </form>
+                    <Link to="/login" className='block mx-auto text-center text-blue-500'>Already have an account?</Link>
                     {
 
                         isGoogleLogin === false ? <button className='w-40 block mx-auto' onClick={handleGoogleLogin}><FcGoogle className='inline-block' />Sign with Google</button> : null
@@ -140,3 +141,4 @@ export const SignUp = () => {
         </div>
     );
 };
+export default SignUp;
