@@ -31,46 +31,65 @@ const handleChange = event => {
   return (
    <div>
       <NavigationBar></NavigationBar>
-     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
-     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
-           <div className=''>
-<img src={docs.image} className='w-48 mx-28 mt-36'></img>
-           </div>
-           <div className=''>
-<h1 className='mt-36 font-bold text-2xl text-primary'>{docs.name}</h1>
-<h1 className=''>{docs.category}</h1>
-<h1 className='mt-5 mb-1'><i class="fa-solid fa-user-doctor"></i>  {docs.designation}</h1>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-<i class="fa-solid fa-star"></i>
-({docs.reviews})
-
-<h1 className='mt-1'><i class="fa-solid fa-location-pin"></i> {docs.location}</h1>
-           </div>
-        </div>
-
-     <div className=''>
-          
-           <div className='ml-96'>
-<h1 className='mt-36 mb-1'><i class="fa-regular fa-thumbs-up"></i> 99%</h1>
-<h1 className='mb-1'><i class="fa-regular fa-comment"></i> 35 feedback</h1>
-<h1 className='mb-1'><i class="fa-solid fa-location-pin"></i> {docs.location}</h1>
-<h1><i class="fa-regular fa-money-bill"></i> {docs.fees}</h1>
-
-
-
-
-           </div>
-        </div>
+     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mt-[50px] container mx-auto px-6'>
     
-    
-     </div>
-        
-        <br></br>
-        <br></br>
-        <br></br>
+           <div className=''>
+<img src={docs.image} className='lg:max-w-lg'></img>
+           </div>
+           <div className='ml-32 ml-[-40px]'>
+<h1 className='font-bold text-6xl text-primary'>{docs.name}</h1>
+<h1 className='text-2xl text-center mt-4'>{docs.category}</h1>
+<div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
+<h1 className='mt-3 mb-1'><i class="fa-solid fa-user-doctor text-3xl"></i>{docs.designation}</h1>
+<h1 className='mb-1 mt-5'><i class="fa-solid fa-star"></i>({docs.reviews} reviews)</h1>
+<h1 className=' mt-5'><i class="fa-solid fa-location-pin"></i> {docs.location}</h1>
+</div>
+<div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
+<h1 className='mt-3 mb-1 ml-2'><i class="fa-solid fa-graduation-cap text-3xl"></i><br></br>{docs.education}</h1>
+<h1 className='mb-1 mt-5'><i class="fa-solid fa-hospital text-3xl"></i><br></br>{docs.hospital}</h1>
+</div>
+
+           </div>  
+
+     </div> 
+       
+     <table className="table w-full">
+  <thead>
+    <tr>
+      <td className='text-center'></td>
+      <td className='text-xl text-primary'><u>Available Slots</u></td>
+      <td className='text-center'></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{docs.slots[0]}</td>
+      <td>{docs.slots[1]}</td>
+      <td>{docs.slots[2]}</td>
+    </tr>
+    <tr>
+      <td>{docs.slots[3]}</td>
+      <td>{docs.slots[4]}</td>
+      <td>{docs.slots[5]}</td>
+    </tr>
+    <tr>
+      <td>{docs.slots[6]}</td>
+      <td>{docs.slots[7]}</td>
+      <td>{docs.slots[8]}</td>
+    </tr>
+    <tr>
+      <td>{docs.slots[9]}</td>
+      <td>{docs.slots[10]}</td>
+      <td>{docs.slots[11]}</td>
+    </tr>
+    <tr>
+      <td>{docs.slots[12]}</td>
+      <td>{docs.slots[13]}</td>
+      <td>{docs.slots[14]}</td>
+    </tr>
+  </tbody>
+</table>
+       
       
         <div className="overflow-x-auto">
   <Link to='/appointment'><button className='btn btn-primary ml-96 mt-5'>Book Appointment</button></Link>
