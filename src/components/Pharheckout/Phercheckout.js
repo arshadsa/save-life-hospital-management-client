@@ -48,7 +48,7 @@ const Phercheckout = () => {
         </p>
         <div className="flex mt-4 items-center pb-4 border-b-2 border-gray-100 mb-4">
           <span className="title-font font-medium text-2xl text-gray-900">
-            ৳ 58.00
+          ৳ {med.price}
           </span>
         </div>
         <div className="flex flex-wrap gap-3 align-center">

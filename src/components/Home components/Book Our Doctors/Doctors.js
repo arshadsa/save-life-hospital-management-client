@@ -23,6 +23,7 @@ const Doctors = ({ doctor }) => {
     hospital,
     slots,
     fees,
+    specialization
     
   } = doctor;
 
@@ -57,27 +58,30 @@ const Doctors = ({ doctor }) => {
 <i class="fa-solid fa-star mr-2 text-orange-400	"></i>
 <i class="fa-solid fa-star mr-2 text-orange-400	"></i>
 <i class="fa-solid fa-star text-orange-400	"></i> <b>({reviews})</b>
-            <p className="doctor-category">{category}</p>
+            <p className="doctor-category">{specialization}</p>
             <h4 className="doctor-name">{name}</h4>
 
             <span className="doctor-education">
-              {education}
+              {hospital}
             </span>
-
-           
-
             {/* <h6 className="mt-4">{designation}</h6>
             <h6 className="department">{department}</h6>
             <h6 className="hospital">{hospital}</h6> */}
 
 
-           <div className="mt-5 grid lg:grid-cols-2 sm:grid-cols-1">
+           <div className="mt-5 grid lg:grid-cols-3 sm:grid-cols-1">
+           <div className="flex items-center gap-2">
+            <h6 className="hospital text-[15px] font-[600]"><i class="fa-solid fa-user text-primary"></i> {designation}</h6>
+            </div>
+         
             <div className="flex items-center gap-2">
+            
             <h6 className="hospital text-[15px] font-[600]"><i class="fa-solid fa-location-pin text-primary"></i>  {location}</h6>
             </div>
             <div className="flex items-center gap-2">
             <h6 className="hospital text-[15px] font-[600]"><i class="fa-solid fa-dollar-sign text-primary"></i> {fees}.00</h6>
             </div>
+            
             {/* <div className="flex items-center gap-2">
                 <p className="text-left text-[#757575]  font-[600]"> <FaRegMoneyBillAlt  ></FaRegMoneyBillAlt> </p>
                 <h6 className="department  text-[15px] font-[600]"> $ {fees}.00 </h6>
