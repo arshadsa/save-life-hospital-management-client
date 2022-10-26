@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const DoctorListItem = ({ doctor }) => {
   return (
     <li class="border-gray-400 flex flex-row mb-8">
       <a href={`/websitedoctors/${doctor._id}`}>
         <div class="shadow-lg border select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 items-center p-4">
-          
           {/* profile image */}
           <div class="flex flex-col justify-center items-center mr-4">
             {/* <a href={`/doctor/${doctor._id}`} class="block relative" className="w-[15vw]"> */}
@@ -25,7 +25,9 @@ const DoctorListItem = ({ doctor }) => {
 
             <br />
 
-            <p class="text-slate-600 dark:text-gray-200">{doctor.education.toString().substring(0, 100).concat('...')}</p>
+            <p class="text-slate-600 dark:text-gray-200">
+              {doctor.education.toString().substring(0, 100).concat("...")}
+            </p>
           </div>
 
           {/* Second Column for working hours */}
@@ -46,18 +48,9 @@ const DoctorListItem = ({ doctor }) => {
           </div>
 
           {/* Button */}
-          <button class="w-24 text-right flex justify-end">
-            <svg
-              width="12"
-              fill="currentColor"
-              height="12"
-              class="hover:text-gray-800 dark:hover:text-white dark:text-gray-200 text-gray-500"
-              viewBox="0 0 1792 1792"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"></path>
-            </svg>
-          </button>
+          <Link to={`/doctor/edit/${doctor._id}`}>
+            <button class="w-24 h-12 rounded-lg text-center bg-blue-600 text-white text-lg">Edit</button>
+          </Link>
         </div>
       </a>
     </li>
