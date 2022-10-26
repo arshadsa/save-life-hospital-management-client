@@ -25,7 +25,7 @@ const DoctorListItem = ({ doctor }) => {
 
             <br />
 
-            <p class="text-slate-600 dark:text-gray-200">{doctor.education}</p>
+            <p class="text-slate-600 dark:text-gray-200">{doctor.education.toString().substring(0, 100).concat('...')}</p>
           </div>
 
           {/* Second Column for working hours */}

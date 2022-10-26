@@ -21,6 +21,7 @@ import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
 import News from "./components/news/News";
 import  NewsDetails  from "./components/newsdetails/NewsDetails";
+import EditDoctor from "./pages/EditDoctor/EditDoctor";
 
 
 const queryClient = new QueryClient();
@@ -39,13 +40,18 @@ function App() {
     },
 
     {
+      path: "/doctor",
+      element: <Speciality></Speciality>,
+    },
+
+    {
       path: "/doctor/add",
       element: <AddDoctor></AddDoctor>,
     },
 
     {
-      path: "/doctor",
-      element: <Speciality></Speciality>,
+      path: "/doctor/edit/:id",
+      element: <EditDoctor/>,
     },
 
     {
@@ -54,13 +60,13 @@ function App() {
     },
 
     {
-      path: "/doctors/:speciality",
-      element: <SpecialistDoctors></SpecialistDoctors>,
+      path: "/doctor/:id",
+      element: <Details></Details>,
     },
 
     {
-      path: "/doctor/:id",
-      element: <AllDoctors></AllDoctors>,
+      path: "/doctors/:speciality",
+      element: <SpecialistDoctors></SpecialistDoctors>,
     },
     
     {
