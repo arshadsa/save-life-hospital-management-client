@@ -6,8 +6,8 @@ import auth from '../../firebase.init'
 import './Login.css'
 import { FcGoogle } from "react-icons/fc";
 import { async } from '@firebase/util';
-import { useNavigate } from 'react-router-dom';
-export const Login = () => {
+import { Link, useNavigate } from 'react-router-dom';
+const Login = () => {
   const navigate = useNavigate()
   const [
     signInWithEmailAndPassword,
@@ -128,6 +128,7 @@ export const Login = () => {
 
           <small className='text-red-500'>{errorText}</small>
         </form>
+        <Link to={'/signup'} className='block mx-auto text-center text-blue-500'>Don't have an account? Sign Up</Link>
         {
           isGoogleLogin === false ? <button className='w-40 block mx-auto' onClick={handleGoogleLogin}><FcGoogle className='inline-block' />Sign with Google</button> : null
         }
@@ -137,3 +138,4 @@ export const Login = () => {
     </div>
   )
 }
+export default Login;
