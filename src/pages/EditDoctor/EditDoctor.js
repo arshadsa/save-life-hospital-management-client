@@ -1,33 +1,76 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate, useParams } from "react-router-dom";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 
-const AddDoctor = () => {
+const EditDoctor = () => {
   const { register, handleSubmit } = useForm();
-
-  const [doctorForm, SetDoctorForm] = useState({
+  const { id } = useParams();
+  const navigate= useNavigate();
+  const [doctorForm, SetDoctorForm] = useState({    
     name: "",
     designation: "",
-    reviews:'',
-    education:[],
-    experience:[],
-    training:[],
-    books:[],
+    reviews: "",
+    education: [],
+    experience: [],
+    training: [],
+    books: [],
     fees: "",
-    location:'',
+    location: "",
     hospital: "",
     department: "",
-    image:'',
-    specialization:'',
-    slots:[]
+    image: "",
+    specialization: "",
+    slots: [],
   });
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/hospitaldoctors/${id}`)
+      .then((res) => res.json())
+      .then(data=>
+        { 
+          SetDoctorForm({    
+          name: data.name,
+          designation: data.designation,
+          reviews: data.reviews,
+          education: data?.education,
+          experience: data?.experience,
+          training: data?.training,
+          books: data?.books,
+          fees: data?.fees,
+          location: data?.location,
+          hospital: data?.hospital,
+          department: data?.department,
+          image: data?.image,
+          specialization: data?.specialization,
+          slots: data?.slots
+        })}
+    )
+    },[]); 
 
   const inputClass =
     "rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparenta";
-    
+
+  const onDelete = () => {
+    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/doctors/${id}`;
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        navigate('/', { replace: true })
+      });
+      
+  }
+
   const onSubmit = () => {
-    console.log({...doctorForm, edititem: true});
-    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/doctors`;
+    console.log({ ...doctorForm, edititem: true });
+    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/doctors/${id}`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -37,7 +80,7 @@ const AddDoctor = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         // navigate(from);
       });
   };
@@ -48,7 +91,7 @@ const AddDoctor = () => {
       <div className="mt-[150px] container mx-auto">
         <div class="relative mx-auto w-[50vw]">
           <h1 className="text-4xl font-extrabold py-10">
-            Register as a Doctor
+            Edit a Doctor's Details
           </h1>
 
           <form
@@ -95,7 +138,10 @@ const AddDoctor = () => {
                 aria-describedby="basic-addon3"
                 value={doctorForm.reviews}
                 onChange={(e) => {
-                  SetDoctorForm({ ...doctorForm, reviews: parseInt(e.target.value) });
+                  SetDoctorForm({
+                    ...doctorForm,
+                    reviews: parseInt(e.target.value),
+                  });
                 }}
               />
             </div>
@@ -108,9 +154,12 @@ const AddDoctor = () => {
                 type="text"
                 className={`form-control ${inputClass}`}
                 aria-describedby="basic-addon3"
-                value={doctorForm.education.join(', ').toString()}
+                value={doctorForm.education?.join(", ").toString()}
                 onChange={(e) => {
-                  SetDoctorForm({ ...doctorForm, education: e.target.value.split(',').map(s=>s.trim()) });
+                  SetDoctorForm({
+                    ...doctorForm,
+                    education: e.target.value.split(",").map((s) => s.trim()),
+                  });
                 }}
               />
             </div>
@@ -123,9 +172,12 @@ const AddDoctor = () => {
                 type="text"
                 className={`form-control ${inputClass}`}
                 aria-describedby="basic-addon3"
-                value={doctorForm.experience.join(', ').toString()}
+                value={doctorForm.experience?.join(", ").toString()}
                 onChange={(e) => {
-                  SetDoctorForm({ ...doctorForm, experience: e.target.value.split(',').map(s=>s.trim()) });
+                  SetDoctorForm({
+                    ...doctorForm,
+                    experience: e.target.value.split(",").map((s) => s.trim()),
+                  });
                 }}
               />
             </div>
@@ -138,9 +190,12 @@ const AddDoctor = () => {
                 type="text"
                 className={`form-control ${inputClass}`}
                 aria-describedby="basic-addon3"
-                value={doctorForm.training.join(', ').toString()}
+                value={doctorForm.training?.join(", ").toString()}
                 onChange={(e) => {
-                  SetDoctorForm({ ...doctorForm, training: e.target.value.split(',').map(s=>s.trim()) });
+                  SetDoctorForm({
+                    ...doctorForm,
+                    training: e.target.value.split(",").map((s) => s.trim()),
+                  });
                 }}
               />
             </div>
@@ -153,9 +208,12 @@ const AddDoctor = () => {
                 type="text"
                 className={`form-control ${inputClass}`}
                 aria-describedby="basic-addon3"
-                value={doctorForm.books.join(', ').toString()}
+                value={doctorForm.books?.join(", ").toString()}
                 onChange={(e) => {
-                  SetDoctorForm({ ...doctorForm, books: e.target.value.split(',').map(s=>s.trim()) });
+                  SetDoctorForm({
+                    ...doctorForm,
+                    books: e.target.value.split(",").map((s) => s.trim()),
+                  });
                 }}
               />
             </div>
@@ -170,7 +228,10 @@ const AddDoctor = () => {
                 aria-describedby="basic-addon3"
                 value={doctorForm.fees}
                 onChange={(e) => {
-                  SetDoctorForm({ ...doctorForm, fees: parseInt(e.target.value) });
+                  SetDoctorForm({
+                    ...doctorForm,
+                    fees: parseInt(e.target.value),
+                  });
                 }}
               />
             </div>
@@ -189,7 +250,7 @@ const AddDoctor = () => {
                 }}
               />
             </div>
-            
+
             <div className="mb-3">
               <label for="name-with-label" class="text-gray-700 me-4">
                 Hospital
@@ -245,7 +306,10 @@ const AddDoctor = () => {
                 aria-describedby="basic-addon3"
                 value={doctorForm.specialization}
                 onChange={(e) => {
-                  SetDoctorForm({ ...doctorForm, specialization: e.target.value });
+                  SetDoctorForm({
+                    ...doctorForm,
+                    specialization: e.target.value,
+                  });
                 }}
               />
             </div>
@@ -258,9 +322,12 @@ const AddDoctor = () => {
                 type="text"
                 className={`form-control ${inputClass}`}
                 aria-describedby="basic-addon3"
-                value={doctorForm.slots.join(', ').toString()}
+                value={doctorForm.slots?.join(", ").toString()}
                 onChange={(e) => {
-                  SetDoctorForm({ ...doctorForm, slots: e.target.value.split(',').map(s=>s.trim()) });
+                  SetDoctorForm({
+                    ...doctorForm,
+                    slots: e.target.value.split(",").map((s) => s.trim()),
+                  });
                 }}
               />
             </div>
@@ -275,6 +342,15 @@ const AddDoctor = () => {
               >
                 Submit
               </button>
+              <button
+                href="#!"
+                type="button"
+                className="btn bg-red-500 ml-2 hover:bg-yellow-600"
+                onClick={()=>(onDelete())}
+                value="Add Product"
+              >
+                Delete
+              </button>
             </div>
           </form>
         </div>
@@ -283,4 +359,4 @@ const AddDoctor = () => {
   );
 };
 
-export default AddDoctor;
+export default EditDoctor;

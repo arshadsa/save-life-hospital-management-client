@@ -69,4 +69,4 @@ const BookingModal = ({treatment,date,setTreatment}) => {
     </div>
   )
 }
-export default BookingModal
+export default BookingModal;
