@@ -1,8 +1,10 @@
 // here we will add all of our home page components file if you cannot understand please read our componennts text.txt file
 import React from "react";
+import DoctorCard from "../../components/DoctorCard/DoctorCard";
 import AvailableFeatures from "../../components/Home components/AvailableFeatures/AvailableFeatures";
 import Banner from "../../components/Home components/Banner";
 import Doctor from "../../components/Home components/Book Our Doctors/Doctor";
+import Doctors from "../../components/Home components/Book Our Doctors/Doctors";
 import { NewsLetter } from "../../components/Home components/newsletter/NewsLetter";
 import Specialties from "../../components/Home components/Specialties/Specialties";
 import { Use } from "../../components/Home components/use/Use";
@@ -12,6 +14,7 @@ import News from "../../components/news/News";
 import { UseWebsite } from "../../components/usewebsite/UseWebsite";
 import { Footer } from "../../shared/Footer/Footer";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
+import Speciality from "../Speciality/Speciality";
 
 const Homepage = () => {
   return (
@@ -25,7 +28,7 @@ const Homepage = () => {
       </div>
       {/*Specialties shamim vai  */}
       <div className="mt-[100px]">
-        <Specialties></Specialties>
+      <Speciality></Speciality>
       </div>
       {/* use part How to use */}
       <div className="mt-[100px]">

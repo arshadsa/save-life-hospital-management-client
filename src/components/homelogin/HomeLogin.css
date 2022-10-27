@@ -1,3 +1,7 @@
 .home-login{
-    background-color: #063b6f;
+  border: 1px solid lightblue;
+  color: black;
+}
+.log-img{
+    border: 1px solid white;
 }

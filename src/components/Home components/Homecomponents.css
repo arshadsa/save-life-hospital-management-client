@@ -1,6 +1,18 @@
 /* home page banner css file */
 .bannerbg{
-    background-image: url(https://doccure-react.dreamguystech.com/template/d368ebab89d653715a96b31ead9de731.jpg);
+    background-image: url('https://doccure-react.dreamguystech.com/template/d368ebab89d653715a96b31ead9de731.jpg');
+    background-position: center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 768px;
+    
+    
+}
+.bannerbg1{
+    background-image: url('https://medical-clinic.cmsmasters.net/wp-content/uploads/2016/09/bg-1.jpg');
     background-position: center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -15,7 +27,7 @@
 
 @media only screen and (max-width: 600px) {
     .bannerbg{
-        background-image: url(https://doccure-react.dreamguystech.com/template/d368ebab89d653715a96b31ead9de731.jpg);
+        background-image: url('https://doccure-react.dreamguystech.com/template/d368ebab89d653715a96b31ead9de731.jpg');
         background-position: center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -27,7 +39,7 @@
 
 /* second bannert bg */
 .scbgdraw {
-    background-image: url('../../assets/Banner\ Image/scbgdraw3.png');
+    background-image: url('https://medical-clinic.cmsmasters.net/wp-content/uploads/2016/09/bg-1.jpg');
   
     background-size: 7rem;
     opacity: 1;
@@ -38,7 +50,7 @@
 }
 
 .scbgdraw2{
-    background-image: url('../../assets/Banner\ Image/scbgdraw.png');
+    background-image: url('https://medical-clinic.cmsmasters.net/wp-content/uploads/2016/09/bg-1.jpg');
   
     background-size: 7rem;
     opacity: 1;
@@ -49,7 +61,7 @@
 }
 
 .scbgdraw3{
-    background-image: url('../../assets/Banner\ Image/scbgdraw2.png');
+    background-image: url('https://medical-clinic.cmsmasters.net/wp-content/uploads/2016/09/bg-1.jpg');
     float: left;
     background-size: 10rem;
     opacity: 1;
