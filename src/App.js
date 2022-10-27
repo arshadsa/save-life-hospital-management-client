@@ -9,13 +9,13 @@ import AddDoctors from "./components/adddoctors/AddDoctors";
 import Details from "./components/details/Details";
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
 import { QueryClient, QueryClientProvider } from "react-query";
-import ZOOM from "./pages/ZOOM/ZOOM";
 import Phercheckout from "./components/Pharheckout/Phercheckout";
 import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
 import News from "./components/news/News";
 import NewsDetails from "./components/newsdetails/NewsDetails";
 import { lazy, Suspense } from "react";
+import VideoCall from "./pages/VideoCall/VideoCall";
 const queryClient = new QueryClient();
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
@@ -158,6 +158,10 @@ function App() {
       path: "/medcheckout/:id",
       element: (<Phercheckout></Phercheckout>)
     },
+    {
+      path: "/videoCall",
+      element: (<VideoCall />)
+    }
 
     // {
     //   path: "/medcheckout/:id",
@@ -167,7 +171,7 @@ function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <QueryClientProvider client={queryClient}>
-        <div className="App">
+        <div className="App bg-white">
           <RouterProvider router={router} />
           {/* <NavigationBar isHome={true} /> */}
           <div className="mb-[150px]">

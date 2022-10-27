@@ -78,7 +78,22 @@ export const NavigationBar = ({ isHome }) => {
                             </a>
                             <ul className="p-2 z-50 bg-slate-100 drop-shadow-2xl shadow-zinc-900 border-black">
                                 {
-                                    role === "Admin" ? <li><Link to="/makeAdmin">Make Admin</Link></li> : null
+                                    role === "Admin" ? <>
+                                        {/* Put all other route using Link inside li */}
+                                        <li><Link to="/makeAdmin">Make Admin</Link></li>
+                                    </> : null
+                                }
+                                {
+                                    role === "Doctor" ? <>
+                                        {/* Put all other route using Link inside li */}
+                                        <li><Link to="/makeAdmin"></Link></li>
+                                    </> : null
+                                }
+                                {
+                                    role === "Patient" ? <>
+                                        {/* Put all other route using Link inside li */}
+                                        <li><Link to="/makeAdmin">Make Admin</Link></li>
+                                    </> : null
                                 }
                                 <li><a>Submenu 2</a></li>
                             </ul>
@@ -131,7 +146,7 @@ export const NavigationBar = ({ isHome }) => {
                     </li>
                     <li tabIndex={4}>
                         <a className="justify-between">
-                         Blogs
+                            Blogs
                             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                         </a>
                         <ul className="p-2 z-50 bg-slate-100 drop-shadow-2xl shadow-zinc-900 border-black">
@@ -146,7 +161,22 @@ export const NavigationBar = ({ isHome }) => {
                         </a>
                         <ul className="p-2 z-50 bg-slate-100 drop-shadow-2xl shadow-zinc-900 border-black">
                             {
-                                role === "Admin" ? <li><Link to="/makeAdmin">Make Admin</Link></li> : null
+                                role === "Admin" ? <>
+                                    {/* Put all other route using Link inside li */}
+                                    <li><Link to="/makeAdmin">Make Admin</Link></li>
+                                </> : null
+                            }
+                            {
+                                role === "Doctor" ? <>
+                                    {/* Put all other route using Link inside li */}
+                                    <li><Link to="/makeAdmin"></Link></li>
+                                </> : null
+                            }
+                            {
+                                role === "Patient" ? <>
+                                    {/* Put all other route using Link inside li */}
+                                    <li><Link to="/makeAdmin">Make Admin</Link></li>
+                                </> : null
                             }
                             <li><a>Submenu 2</a></li>
                         </ul>
