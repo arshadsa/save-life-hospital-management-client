@@ -52,7 +52,7 @@ const Banner = () => {
 
         
         {/* our second banner */}
-        <SwiperSlide className="bg-[#E5F1FB]">
+        {/* <SwiperSlide className="bg-[#E5F1FB]">
           <div className="flex justify-between pt-3">
             <div className="scbgdraw" >  </div>
             <div className="scbgdraw2 mt-10 " > </div>
@@ -60,7 +60,7 @@ const Banner = () => {
             </div>
           <div className="flex flex-col md:flex-row items-center ">
             <div className="w-1/2">
-              <img className="" src={scbannerimage} alt="" />
+              <img className="" src='https://medical-clinic.cmsmasters.net/wp-content/uploads/2016/09/bg-1.jpg' alt="" />
             </div>
             <div className="flex w-1/2 justify-end mt-5 md:mt-0" >
               <div> 
@@ -75,7 +75,7 @@ const Banner = () => {
              
             </div>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
 
 
 
