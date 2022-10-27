@@ -28,12 +28,12 @@ const DoctorCard = ({speciality, specialitiesDef}) => {
             <img className="w-full p-4" src={getImg()} alt="" />
           </div>
           <div class="w-2/3 p-4 mb-2">
-            <h1 class="text-gray-900 font-bold text-2xl">{speciality}</h1>
-            <p class="mt-2 text-gray-600 text-sm">
-              {def["0"]?.Description}
-            </p>
+            <h1 class="text-[#1b82e2] font-bold text-xl">{speciality}</h1>
+            <i class="fa-solid fa-arrow-right text-[#1b82e2] font-bold text-xl ml-56"></i>
           </div>
+         
         </div>
+       
       </Link>
     </div>
   );

@@ -2,9 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Footer } from "./shared/Footer/Footer";
 import Chat from "./components/Msngrchat/Chat";
-import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
 import AddDoctors from "./components/adddoctors/AddDoctors";
 import Details from "./components/details/Details";
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
@@ -14,9 +12,9 @@ import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
 import News from "./components/news/News";
 import NewsDetails from "./components/newsdetails/NewsDetails";
+import EditDoctor from "./pages/EditDoctor/EditDoctor";
 import { lazy, Suspense } from "react";
 import VideoCall from "./pages/VideoCall/VideoCall";
-const queryClient = new QueryClient();
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
 const AllDoctors = lazy(() => import("./pages/AllDoctors/AllDoctors"));
@@ -42,20 +40,20 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
+
     {
       path: "/doctor",
-      element: (
-        <Speciality></Speciality>
-      ),
+      element: <Speciality></Speciality>,
     },
+
     {
       path: "/doctor/add",
       element: <AddDoctor></AddDoctor>,
     },
 
     {
-      path: "/doctor",
-      element: <Speciality></Speciality>,
+      path: "/doctor/edit/:id",
+      element: <EditDoctor />,
     },
 
     {
@@ -64,18 +62,31 @@ function App() {
     },
 
     {
+      path: "/doctor/:id",
+      element: <Details></Details>,
+    },
+
+    {
+      path: "/doctor/:id",
+      element: <Details></Details>,
+    },
+
+    {
       path: "/doctors/:speciality",
       element: <SpecialistDoctors></SpecialistDoctors>,
     },
 
     {
-      path: "/doctor/:id",
-      element: <AllDoctors></AllDoctors>,
-    },
-
-    {
       path: "/login",
-      element: <Login />,
+      element: (
+        <Login />
+      )
+    },
+    {
+      path: "/websitedoctors/:id",
+      element: (
+        <Details></Details>
+      ),
     },
     {
       path: "/news/:id",
@@ -161,7 +172,15 @@ function App() {
     {
       path: "/videoCall",
       element: (<VideoCall />)
-    }
+    },
+    {
+      path: "/medcheckout/:id",
+      element: <Phercheckout></Phercheckout>
+    },
+    {
+      path: "/medcheckout/:id",
+      element: (<Phercheckout></Phercheckout>)
+    },
 
     // {
     //   path: "/medcheckout/:id",
@@ -170,16 +189,14 @@ function App() {
   ]);
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <QueryClientProvider client={queryClient}>
-        <div className="App bg-white">
-          <RouterProvider router={router} />
-          {/* <NavigationBar isHome={true} /> */}
-          <div className="mb-[150px]">
-            <Chat></Chat>
-          </div>
+      <div className="App bg-white">
+        <RouterProvider router={router} />
+        {/* <NavigationBar isHome={true} /> */}
+        <div className="mb-[150px]">
+          <Chat></Chat>
         </div>
-        <ToastContainer></ToastContainer>
-      </QueryClientProvider>
+      </div>
+      <ToastContainer></ToastContainer>
     </Suspense>
   );
 }

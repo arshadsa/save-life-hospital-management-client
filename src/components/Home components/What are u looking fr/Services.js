@@ -28,7 +28,7 @@ const Services = () => {
 
 {/* visit doctors card Buttons  */}   
 
-          <button onClick={()=>navigate('/Doctorss')} >
+          <button onClick={()=>navigate('/doctor')} >
           <div  className="featured h-auto lg:max-x-lg md:max-w-md sm:max-w-sm">
             <div className="flex justify-center  "> 
             <i className=""> <FaUserMd className="text-7xl mt-[-35px] text-white bg-[#0071DC] rounded-[50%] p-2  "></FaUserMd> </i>
@@ -37,7 +37,7 @@ const Services = () => {
             <p className="pt-3 px-5 text-[40px] font-[600] text-[#545767] number ">
               01
             </p>
-            <p className="px-5 mt-2 text-[20px] common font-extrabold text-primary ">
+            <p className="px-5 mt-2 text-[20px] text-[#1b82e2] common font-extrabold text-primary ">
               visit doctor
             </p>
             <p className="px-5 mt-3 pb-5  explain ">
@@ -55,7 +55,7 @@ const Services = () => {
             <p className="number pt-3 px-5 text-[40px] font-[600] text-[#545767]  ">
               02
             </p>
-            <p className="px-5 mt-2 text-[20px] common font-extrabold text-primary ">
+            <p className="px-5 mt-2 text-[20px] common font-extrabold text-[#1b82e2] ">
             Find a Pharmacy
             </p>
             <p className="px-5 mt-3 pb-5 ] explain">
@@ -74,7 +74,7 @@ const Services = () => {
             <p className="number pt-3 px-5 text-[40px] font-[600] text-[#545767]  ">
               03
             </p>
-            <p className="px-5 mt-2 text-[20px] common font-extrabold text-primary  tagline ">
+            <p className="px-5 mt-2 text-[20px] common font-extrabold text-[#1b82e2]  tagline ">
             Find a Lab
             </p>
             <p className="px-5 mt-3 pb-5  explain">
