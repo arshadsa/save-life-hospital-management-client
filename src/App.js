@@ -15,6 +15,7 @@ import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
 import News from "./components/news/News";
 import NewsDetails from "./components/newsdetails/NewsDetails";
+import EditDoctor from "./pages/EditDoctor/EditDoctor";
 import { lazy, Suspense } from "react";
 const queryClient = new QueryClient();
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
@@ -42,20 +43,20 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
+
     {
       path: "/doctor",
-      element: (
-        <Speciality></Speciality>
-      ),
+      element: <Speciality></Speciality>,
     },
+
     {
       path: "/doctor/add",
       element: <AddDoctor></AddDoctor>,
     },
 
     {
-      path: "/doctor",
-      element: <Speciality></Speciality>,
+      path: "/doctor/edit/:id",
+      element: <EditDoctor/>,
     },
 
     {
@@ -64,13 +65,18 @@ function App() {
     },
 
     {
-      path: "/doctors/:speciality",
-      element: <SpecialistDoctors></SpecialistDoctors>,
+      path: "/doctor/:id",
+      element: <Details></Details>,
     },
 
     {
       path: "/doctor/:id",
-      element: <AllDoctors></AllDoctors>,
+      element: <Details></Details>,
+    },
+
+    {
+      path: "/doctors/:speciality",
+      element: <SpecialistDoctors></SpecialistDoctors>,
     },
 
     {

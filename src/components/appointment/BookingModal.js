@@ -22,7 +22,7 @@ const BookingModal = ({treatment,date,setTreatment}) => {
 
         }
 
-        fetch('http://localhost:5000/hospitaldoctorsbooking',{
+        fetch('http://localhost:8000/hospitaldoctorsbooking',{
           method: 'POST',
           headers:{
             'content-type': 'application/json'
@@ -69,4 +69,4 @@ const BookingModal = ({treatment,date,setTreatment}) => {
     </div>
   )
 }
-export default BookingModal
+export default BookingModal;

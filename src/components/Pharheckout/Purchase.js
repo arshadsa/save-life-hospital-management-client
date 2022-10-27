@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Purchase = () => {
 
@@ -9,7 +10,7 @@ const Purchase = () => {
   const [price, setPrice] = useState({});
   // useffecrt handel
   useEffect(() => {
-    const url = `http://localhost:8000/medicine/${id}`;
+    const url = `http://localhost:5000/medicine/${id}`;
     console.log(url, "aa");
     fetch(url)
       .then((res) => res.json())
@@ -26,7 +27,7 @@ const Purchase = () => {
   // place order button handel
   const placeorder = (event) => {
     event.preventDefault()
-    const data = {
+    const customerdata = {
       name : event.target.name.value,
       email : event.target.email.value,
       phone : event.target.phone.value,
@@ -34,7 +35,31 @@ const Purchase = () => {
       price : event.target.price.value,
       totalprice : event.target.totalprice.value,
     }
-    console.log(data, "got from here")
+    console.log(customerdata, "got from here")
+
+    const url = // here add your api shamim vai
+        console.log(url);
+        fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+              },
+            // body: JSON.stringify(customerdata), if add authenticaion just remove the comment
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Medicine buying successfully',
+                    text: 'Hope will come again ',
+                    
+                  })
+            }
+            console.log(data)})
+        console.log(customerdata);
+
+
   }
 
 
