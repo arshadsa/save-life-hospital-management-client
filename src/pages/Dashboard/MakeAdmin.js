@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     const [userInfo] = useAuthState(auth)
     const role = useRole(userInfo?.email);
     const { isLoading, error, data, refetch } = useQuery('alluser', () =>
-        fetch('http://localhost:8000/api/allUsers').then(res =>
+        fetch('http://localhost:5000/api/allUsers').then(res =>
             res.json()
         )
     )
@@ -19,7 +19,7 @@ const MakeAdmin = () => {
     if (isLoading) return 'Loading...'
     console.log(data)
     const handleMakeAdmin = (email) => {
-        const url = `http://localhost:8000/api/allUsers/?email=${email}`
+        const url = `http://localhost:5000/api/allUsers/?email=${email}`
         fetch(url, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },

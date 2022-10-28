@@ -9,7 +9,7 @@ const AddNews = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:8000/news',data)
+        axios.post('http://localhost:5000/news',data)
         .then(res=>{
            if(res.data.insertedId){
                alert('Added Successfully');

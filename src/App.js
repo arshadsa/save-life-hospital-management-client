@@ -162,6 +162,12 @@ function App() {
       )
     },
     {
+      path: "/blog",
+      element: (
+        <News></News>
+      )
+    },
+    {
       path: "/news",
       element: (
         <News></News>
