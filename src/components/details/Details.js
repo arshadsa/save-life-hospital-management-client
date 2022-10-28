@@ -9,7 +9,7 @@ const Details = () => {
     const [docs,setDocs] = useState({})
     const [disable, setDisable] = useState(false);
      useEffect(()=>{
-         fetch(`http://localhost:8000/hospitaldoctors/${id}`)
+         fetch(`http://localhost:5000/hospitaldoctors/${id}`)
        .then(res=>res.json())
         .then(data=>setDocs(data))
      },[])
