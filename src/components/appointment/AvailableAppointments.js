@@ -7,6 +7,12 @@ import BookingModal from './BookingModal';
  const AvailableAppointments = ({date,setDate}) => {
     // const [services, setServices] = useState([]);
     const [treatment, setTreatment] = useState(null);
+    useEffect(()=>{
+        fetch('http://localhost:8000/hospitaldoctors')
+        .then(res => res.json())
+        .then(data => setServices(data))
+    },[])
+
 
     const formattedDate = format(date, 'PP');
     const { isLoading, error, data:services,refetch } = useQuery(['available', formattedDate], () =>

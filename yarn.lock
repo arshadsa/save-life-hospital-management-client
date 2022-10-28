@@ -7832,7 +7832,11 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
+<<<<<<< HEAD
+prop-types@^15.6.2, prop-types@^15.8.1:
+=======
 prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.8.1:
+>>>>>>> 3fffa6ebd9747be0bf411a14695fd1e1b3858e6f
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -8057,6 +8061,8 @@ react-messenger-chat-plugin@^3.0.5:
   resolved "https://registry.npmjs.org/react-messenger-chat-plugin/-/react-messenger-chat-plugin-3.0.5.tgz"
   integrity sha512-393uI68xyWLElbIYZknOb+zeb8onxIi6ZxmyhsJT76ct6yu/S2Jv7H1eKeB6BqG+vLHST3PrUlTL8gauZdoYIg==
 
+<<<<<<< HEAD
+=======
 react-messenger-customer-chat@^0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/react-messenger-customer-chat/-/react-messenger-customer-chat-0.8.0.tgz#c0696af9f71d5804a1b1149ae67d672802dee15d"
@@ -8064,6 +8070,7 @@ react-messenger-customer-chat@^0.8.0:
   dependencies:
     prop-types "^15.6.0"
 
+>>>>>>> 3fffa6ebd9747be0bf411a14695fd1e1b3858e6f
 react-query@^3.39.2:
   version "3.39.2"
   resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.39.2.tgz#9224140f0296f01e9664b78ed6e4f69a0cc9216f"
@@ -8991,11 +8998,14 @@ svgo@^2.7.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
+<<<<<<< HEAD
+=======
 sweetalert2@^11.6.2:
   version "11.6.2"
   resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.6.2.tgz#282e01bf0c4a70bda5c6dc00e384ee85c228e9c3"
   integrity sha512-FAyAddpbcpEawDNFZDoO9XFFOc0ulECgQcadMJpsjMjrlqG7svar+ZGG3qddYYi8MZwUULrOxbtQj98EMIbH8w==
 
+>>>>>>> 3fffa6ebd9747be0bf411a14695fd1e1b3858e6f
 swiper@^8.4.4:
   version "8.4.4"
   resolved "https://registry.npmjs.org/swiper/-/swiper-8.4.4.tgz"
