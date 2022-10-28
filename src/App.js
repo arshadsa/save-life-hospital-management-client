@@ -33,7 +33,6 @@ function App() {
       path: "/",
       element: <Homepage></Homepage>,
     },
-
     {
       path: "/adddoctors",
       element: (
@@ -157,6 +156,12 @@ function App() {
       path: "/addnews",
       element: (
         <AddNews></AddNews>
+      )
+    },
+    {
+      path: "/blog",
+      element: (
+        <News></News>
       )
     },
     {
