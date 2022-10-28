@@ -72,10 +72,12 @@ export const NavigationBar = ({ isHome }) => {
                             </ul>
                         </li>
                         <li tabIndex={5}>
-                            <a className="justify-between">
-                                Dashboard
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                            </a>
+                            {
+                                role === "Admin" ? <Link to={"/dashboard/makeadmin"}>
+                                    Dashboard
+                                    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+                                </Link> : null
+                            }
                             <ul className="p-2 z-50 bg-slate-100 drop-shadow-2xl shadow-zinc-900 border-black">
                                 {
                                     role === "Admin" ? <>
@@ -155,10 +157,17 @@ export const NavigationBar = ({ isHome }) => {
                         </ul>
                     </li>
                     <li tabIndex={5}>
-                        <a className="justify-between">
+                        {/* Make the default route for differnt Role */}
+                        {
+                            role === "Admin" ? <Link to={"/dashboard/makeadmin"}>
+                                Dashboard
+                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+                            </Link> : null
+                        }
+                        {/* <Link to={"/dashboard/makeadmin"}>
                             Dashboard
                             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                        </a>
+                        </Link> */}
                         <ul className="p-2 z-50 bg-slate-100 drop-shadow-2xl shadow-zinc-900 border-black">
                             {
                                 role === "Admin" ? <>

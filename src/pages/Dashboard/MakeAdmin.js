@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RouteAthenication from '../../HOC/RouteAthenication';
+import Dashboard from './Dashboard';
 const MakeAdmin = () => {
     const [userInfo] = useAuthState(auth)
     const role = useRole(userInfo?.email);
@@ -69,4 +70,4 @@ const MakeAdmin = () => {
     );
 };
 
-export default RouteAthenication(MakeAdmin, "Admin");
+export default RouteAthenication(MakeAdmin, 'Admin');

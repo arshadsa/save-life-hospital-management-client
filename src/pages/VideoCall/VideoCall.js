@@ -84,6 +84,9 @@ const VideoCall = () => {
         peer.on("stream", (stream) => {
             userVideo.current.srcObject = stream
         })
+        // peer.on('close', () => {
+        //     peer.removeAllListeners('close')
+        // })
 
         peer.signal(callerSignal)
         connectionRef.current = peer
@@ -92,6 +95,10 @@ const VideoCall = () => {
     const leaveCall = () => {
         setCallEnded(true)
         connectionRef.current.destroy()
+        userVideo.current.srcObject = null
+        myVideo.current.srcObject = null
+        // userVideo.current.srcObject.active = false
+        console.log(userVideo.current.srcObject);
     }
     function stopVideoOnly(stream) {
         stream.getTracks().forEach(function (track) {
@@ -99,6 +106,9 @@ const VideoCall = () => {
                 track.stop();
             }
         });
+        // connectionRef.current = peer
+
+
     }
 
     return (
