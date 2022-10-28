@@ -9,7 +9,7 @@ import { NavigationBar } from '../shared/NavigationBar/NavigationBar';
 const RouteAthenication = (ChildComponent, givenRole) => function HOC() {
     const [userInfo, loading] = useAuthState(auth);
     const currentRole = useRole(userInfo?.email);
-    if (loading) return
+    if (loading || (currentRole === null)) return
     return (
         <>
             {

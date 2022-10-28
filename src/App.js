@@ -15,6 +15,11 @@ import NewsDetails from "./components/newsdetails/NewsDetails";
 import EditDoctor from "./pages/EditDoctor/EditDoctor";
 import { lazy, Suspense } from "react";
 import VideoCall from "./pages/VideoCall/VideoCall";
+import VideoPlayer from "./pages/VideoCall/VideoPlayer";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./firebase.init";
+import useRole from "./hooks/useRole";
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
 const AllDoctors = lazy(() => import("./pages/AllDoctors/AllDoctors"));
@@ -28,6 +33,8 @@ const BloodBank = lazy(() => import("./pages/BloodBank/BloodBank"));
 const ProtectedRoute = lazy(() => import("./pages/ProtectedRoute/ProtectedRoute"));
 const SpecialistDoctors = lazy(() => import("./pages/SpecialistDoctors/SpecialistDoctors"));
 function App() {
+  const [userInfo] = useAuthState(auth);
+  const role = useRole(userInfo?.email);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -116,20 +123,20 @@ function App() {
       path: "/signup",
       element: (<SignUp />),
     },
-    {
-      path: "/makeAdmin",
-      element: (
-        <MakeAdmin />
-      )
-    },
-    {
-      path: "/bloodDoner",
-      element: (
-        <ProtectedRoute>
-          <BloodDoner />
-        </ProtectedRoute>
-      )
-    },
+    // {
+    //   path: "/makeAdmin",
+    //   element: (
+    //     <MakeAdmin />
+    //   )
+    // },
+    // {
+    //   path: "/bloodDoner",
+    //   element: (
+    //     <ProtectedRoute>
+    //       <BloodDoner />
+    //     </ProtectedRoute>
+    //   )
+    // },
     {
       path: "/bloodDonerList",
       element: (
@@ -185,6 +192,28 @@ function App() {
     {
       path: "/medcheckout/:id",
       element: (<Phercheckout></Phercheckout>)
+    },
+    {
+      path: "dashboard",
+      element: (<Dashboard />),
+      children: [
+        {
+          path: "makeAdmin",
+          element: <MakeAdmin />,
+        },
+        {
+          path: "bloodDoner",
+          element: (
+            <ProtectedRoute>
+              <BloodDoner />
+            </ProtectedRoute>
+          ),
+        },
+        // {
+        //   path: "logout",
+        //   action: logoutUser,
+        // },
+      ],
     },
 
     // {
