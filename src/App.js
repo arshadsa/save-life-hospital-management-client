@@ -36,7 +36,6 @@ function App() {
       path: "/",
       element: <Homepage></Homepage>,
     },
-
     {
       path: "/adddoctors",
       element: (
