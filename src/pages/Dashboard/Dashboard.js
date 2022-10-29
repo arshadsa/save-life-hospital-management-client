@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -9,6 +10,9 @@ import MakeAdmin from './MakeAdmin';
 
 const Dashboard = () => {
     const [userInfo, loading] = useAuthState(auth);
+    useEffect(() => {
+        if (loading) return
+    }, [userInfo?.email])
     const role = useRole(userInfo?.email);
     return (
         <div className="drawer drawer-mobile">
