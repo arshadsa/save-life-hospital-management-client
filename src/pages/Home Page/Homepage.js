@@ -1,5 +1,6 @@
 // here we will add all of our home page components file if you cannot understand please read our componennts text.txt file
 import React from "react";
+import Ambulance from "../../components/Home components/AmbulanceService/Ambulance";
 import AvailableFeatures from "../../components/Home components/AvailableFeatures/AvailableFeatures";
 import Banner from "../../components/Home components/Banner";
 import Doctor from "../../components/Home components/Book Our Doctors/Doctor";
@@ -55,6 +56,11 @@ const Homepage = () => {
         <UseWebsite></UseWebsite>
       </div>
 
+
+    {/* Ambulance Car Shamim*/}
+    <div className="mt-[100px]">
+        <Ambulance></Ambulance>
+      </div>
      
       {/* Newsletter yaesin*/}
       <div className="mt-[100px]">
