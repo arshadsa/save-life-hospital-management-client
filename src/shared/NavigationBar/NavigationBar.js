@@ -9,8 +9,10 @@ export const NavigationBar = ({ isHome }) => {
     const navigate = useNavigate()
     const [userInfo, loading] = useAuthState(auth);
     console.log(userInfo?.email);
+    useEffect(() => {
+        if (loading) return
+    }, [userInfo?.email])
     const role = useRole(userInfo?.email)
-    if (loading) return
     const handleLogout = () => {
         signOut(auth)
         navigate('/')
@@ -94,17 +96,12 @@ export const NavigationBar = ({ isHome }) => {
                                 </Link>
                             </li>
                             <li tabIndex={2}>
-                                <Link to='/nurse' className="justify-between">
-                                    Nurse
-                                </Link>
-                            </li>
-                            <li tabIndex={3}>
                                 <Link to='/blog' className="justify-between">
                                     Blog
                                 </Link>
                             </li>
 
-                            <li tabIndex={4}>
+                            <li tabIndex={3}>
                                 {/* Make the default route for differnt Role */}
                                 {
                                     role === "Admin" ? <Link to={"/dashboard/makeadmin"}>
