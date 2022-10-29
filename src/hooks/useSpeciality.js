@@ -5,7 +5,7 @@ const useSpecialities = () => {
   const [specialitiesDef, setSpecialitiesDef] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/doctors/specialities`)
+    fetch(`http://localhost:5000/doctors/specialities`)
       .then((res) => res.json())
       .then((data) => {
         setSpecialities(data);
@@ -13,7 +13,7 @@ const useSpecialities = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/doctors/specialitiesDef`)
+    fetch(`http://localhost:5000/doctors/specialitiesDef`)
       .then((res) => res.json())
       .then((data) => {
         console.log()

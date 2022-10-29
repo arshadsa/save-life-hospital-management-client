@@ -7,17 +7,20 @@ import { v4 as uuidv4 } from 'uuid';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RouteAthenication from '../../HOC/RouteAthenication';
+import Dashboard from './Dashboard';
 const MakeAdmin = () => {
-    const [userInfo] = useAuthState(auth)
+    const [userInfo, userLoading] = useAuthState(auth);
     const role = useRole(userInfo?.email);
+    console.log(role)
     const { isLoading, error, data, refetch } = useQuery('alluser', () =>
         fetch('http://localhost:5000/api/allUsers').then(res =>
             res.json()
         )
     )
 
-    if (isLoading) return 'Loading...'
-    console.log(data)
+    if (isLoading || userLoading) return 'Loading...'
+
+
     const handleMakeAdmin = (email) => {
         const url = `http://localhost:5000/api/allUsers/?email=${email}`
         fetch(url, {
@@ -69,4 +72,4 @@ const MakeAdmin = () => {
     );
 };
 
-export default RouteAthenication(MakeAdmin, "Admin");
+export default RouteAthenication(MakeAdmin, 'Admin');
