@@ -10,15 +10,9 @@ const Purchase = () => {
   // usestate handel
   const [price, setPrice] = useState({});
   // useffecrt handel
-<<<<<<< HEAD
   useEffect(()=> {
     const url = `http://localhost:3000/medicine/${id}`
     console.log(url, "aa")
-=======
-  useEffect(() => {
-    const url = `http://localhost:8000/api/medicine/${id}`;
-    console.log(url, "aa");
->>>>>>> 471504c0d28061b259d614688bfe5d59afbd5aa1
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPrice(data, "got it"));
