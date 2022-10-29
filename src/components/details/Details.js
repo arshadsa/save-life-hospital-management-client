@@ -9,7 +9,7 @@ const Details = () => {
     const [docs,setDocs] = useState({})
     const [disable, setDisable] = useState(false);
      useEffect(()=>{
-         fetch(`http://localhost:8000/hospitaldoctors/${id}`)
+         fetch(`http://localhost:5000/hospitaldoctors/${id}`)
        .then(res=>res.json())
         .then(data=>setDocs(data))
      },[])
@@ -25,7 +25,7 @@ const handleChange = event => {
      <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mt-[10px] container mx-auto px-6'>
     
            <div className='text-d'>
-<img src={docs.image} className='w-96 ml-14 rounded-full'></img>
+<img src={docs.image} className='flex-shrink-0 rounded-[50%] w-[55%] mx-14'></img>
 <h1 className='font-bold text-primary ml-20 mt-5 text-3xl'>{docs.name}</h1>
 <ul className='list-t'>
   <li className='text-t ml-24'><b>Designation:</b> {docs.designation}</li>

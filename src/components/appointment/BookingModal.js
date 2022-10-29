@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
-const BookingModal = ({treatment,date,setTreatment}) => {
+const BookingModal = ({treatment,date,setTreatment,refetch}) => {
     const {_id,name, slots} = treatment;
     const [userInfo] = useAuthState(auth);
     const formatedDate = format(date,'PP');
@@ -22,7 +22,7 @@ const BookingModal = ({treatment,date,setTreatment}) => {
 
         }
 
-        fetch('http://localhost:8000/hospitaldoctorsbooking',{
+        fetch('http://localhost:5000/hospitaldoctorsbooking',{
           method: 'POST',
           headers:{
             'content-type': 'application/json'
@@ -38,6 +38,7 @@ const BookingModal = ({treatment,date,setTreatment}) => {
           else{
             toast.error(`You already have an ppointment on,${data.booking?.date} at ${data.booking?.slot}`)
           }
+          refetch();
           setTreatment(null);
         })
       
