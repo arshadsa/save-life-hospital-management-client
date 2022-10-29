@@ -13,11 +13,11 @@ const RouteAthenication = (ChildComponent, givenRole) => function HOC() {
     return (
         <>
             {
-                currentRole !== null ? currentRole === givenRole ? <>
+                currentRole === givenRole ? <>
                     <NavigationBar isHome={true} />
                     <ChildComponent />
                     <Footer />
-                </> : <NotAuthorized /> : <p>Loading</p>
+                </> : <NotAuthorized />
             }
         </>
     );

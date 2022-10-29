@@ -17,6 +17,7 @@ const MakeAdmin = () => {
             res.json()
         )
     )
+
     if (isLoading || userLoading) return 'Loading...'
 
 
