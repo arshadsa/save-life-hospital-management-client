@@ -2,14 +2,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Footer } from "./shared/Footer/Footer";
 import Chat from "./components/Msngrchat/Chat";
-import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
 import AddDoctors from "./components/adddoctors/AddDoctors";
 import Details from "./components/details/Details";
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
 import { QueryClient, QueryClientProvider } from "react-query";
-import ZOOM from "./pages/ZOOM/ZOOM";
 import Phercheckout from "./components/Pharheckout/Phercheckout";
 import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
@@ -17,7 +14,18 @@ import News from "./components/news/News";
 import NewsDetails from "./components/newsdetails/NewsDetails";
 import EditDoctor from "./pages/EditDoctor/EditDoctor";
 import { lazy, Suspense } from "react";
-const queryClient = new QueryClient();
+import AddNurse from "./pages/Nurse/AddNurse";
+import EditNurse from "./pages/Nurse/EditNurse";
+import ShowAllNurse from "./pages/Nurse/ShowAllNurse";
+import ShowStaffsByDepartment from "./pages/Staffs/ShowStaffsByDepartment";
+import ShowNurseByDepartment from "./pages/Nurse/ShowNurseByDepartment";
+import ShowNurseDepartments from "./pages/Nurse/ShowNurseDepartments";
+import VideoCall from "./pages/VideoCall/VideoCall";
+import VideoPlayer from "./pages/VideoCall/VideoPlayer";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./firebase.init";
+import useRole from "./hooks/useRole";
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
 const AllDoctors = lazy(() => import("./pages/AllDoctors/AllDoctors"));
@@ -31,6 +39,8 @@ const BloodBank = lazy(() => import("./pages/BloodBank/BloodBank"));
 const ProtectedRoute = lazy(() => import("./pages/ProtectedRoute/ProtectedRoute"));
 const SpecialistDoctors = lazy(() => import("./pages/SpecialistDoctors/SpecialistDoctors"));
 function App() {
+  const [userInfo] = useAuthState(auth);
+  const role = useRole(userInfo?.email);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -55,7 +65,7 @@ function App() {
 
     {
       path: "/doctor/edit/:id",
-      element: <EditDoctor/>,
+      element: <EditDoctor />,
     },
 
     {
@@ -119,20 +129,20 @@ function App() {
       path: "/signup",
       element: (<SignUp />),
     },
-    {
-      path: "/makeAdmin",
-      element: (
-        <MakeAdmin />
-      )
-    },
-    {
-      path: "/bloodDoner",
-      element: (
-        <ProtectedRoute>
-          <BloodDoner />
-        </ProtectedRoute>
-      )
-    },
+    // {
+    //   path: "/makeAdmin",
+    //   element: (
+    //     <MakeAdmin />
+    //   )
+    // },
+    // {
+    //   path: "/bloodDoner",
+    //   element: (
+    //     <ProtectedRoute>
+    //       <BloodDoner />
+    //     </ProtectedRoute>
+    //   )
+    // },
     {
       path: "/bloodDonerList",
       element: (
@@ -177,7 +187,10 @@ function App() {
       path: "/medcheckout/:id",
       element: (<Phercheckout></Phercheckout>)
     },
-
+    {
+      path: "/videoCall",
+      element: (<VideoCall />)
+    },
     {
       path: "/medcheckout/:id",
       element: <Phercheckout></Phercheckout>
@@ -186,24 +199,67 @@ function App() {
       path: "/medcheckout/:id",
       element: (<Phercheckout></Phercheckout>)
     },
+    {
+      path: "dashboard",
+      element: (<Dashboard />),
+      children: [
+        {
+          path: "makeAdmin",
+          element: <MakeAdmin />,
+        },
+        {
+          path: "bloodDoner",
+          element: (
+            <ProtectedRoute>
+              <BloodDoner />
+            </ProtectedRoute>
+          ),
+        },
+        // {
+        //   path: "logout",
+        //   action: logoutUser,
+        // },
+      ],
+    },
 
     // {
     //   path: "/medcheckout/:id",
     //   element: <Phercheckout></Phercheckout>
     // },
+
+    {
+      path: "/nurse",
+      element: (<ShowNurseDepartments/>)
+    },
+    {
+      path: "/nurse/all",
+      element: (<ShowAllNurse/>)
+    },
+    {
+      path: "/nurse/department/:department",
+      element: (<ShowNurseByDepartment/>)
+    },
+    {
+      path: "/nurse/add",
+      element: (<AddNurse/>)
+    },
+    {
+      path: "/nurse/edit/:id",
+      element: (<EditNurse/>)
+    },
+
+    
   ]);
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <QueryClientProvider client={queryClient}>
-        <div className="App">
-          <RouterProvider router={router} />
-          {/* <NavigationBar isHome={true} /> */}
-          <div className="mb-[150px]">
-            <Chat></Chat>
-          </div>
+      <div className="App bg-white">
+        <RouterProvider router={router} />
+        {/* <NavigationBar isHome={true} /> */}
+        <div className="mb-[150px]">
+          <Chat></Chat>
         </div>
-        <ToastContainer></ToastContainer>
-      </QueryClientProvider>
+      </div>
+      <ToastContainer></ToastContainer>
     </Suspense>
   );
 }

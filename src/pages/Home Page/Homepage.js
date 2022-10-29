@@ -55,12 +55,11 @@ const Homepage = () => {
         <UseWebsite></UseWebsite>
       </div>
 
-      {/* Newsletter added by anik*/}
+     
+      {/* Newsletter yaesin*/}
       <div className="mt-[100px]">
         <NewsLetter></NewsLetter>
       </div>
-
-       {/* Blogs added by anik*/}
       <div className="mt-[100px]">
         <News></News>
       </div>
