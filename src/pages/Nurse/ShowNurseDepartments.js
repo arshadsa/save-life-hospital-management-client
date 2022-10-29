@@ -1,10 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import DepartmentCard from '../../components/Nurse/DepartmentCard';
 import useNurseByDepartment from '../../hooks/useNurseByDepartment';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
 
 const ShowNurseDepartments = () => {
   const [nurseByDepartment] = useNurseByDepartment();
+  const navigate = useNavigate();
+  const onNew = () => {
+    navigate("/nurse/add", { replace: true });
+  };
   return (
     <>
       <NavigationBar isHome={true} />
@@ -19,6 +24,17 @@ const ShowNurseDepartments = () => {
             ></DepartmentCard>
           ))}
         </div>
+        <button
+            href="#!"
+            type="button"
+            className="btn bg-blue-500 ml-2 hover:bg-yellow-600"
+            onClick={() => {
+              onNew();
+            }}
+            value="Add Product"
+          >
+            New
+          </button>
       </div>
     </>
   );

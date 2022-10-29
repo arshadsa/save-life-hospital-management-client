@@ -1,24 +1,41 @@
-import React from 'react';
-import DepartmentCard from '../../components/Nurse/DepartmentCard';
-import useNurseByDepartment from '../../hooks/useNurseByDepartment';
-import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
+import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import NurseListItem from "../../components/Nurse/NurseListItem";
+import useNurse from "../../hooks/useNurse";
+import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 
 const ShowNurseByDepartment = () => {
-  const [nurseByDepartment] = useNurseByDepartment();
+  const [nurse, setNurse] = useNurse();
+  const { department } = useParams();
+  const navigate = useNavigate();
+  const onNew = () => {
+    navigate("/nurse/add", { replace: true });
+  };
   return (
     <>
       <NavigationBar isHome={true} />
-      <div className="mt-[150px] container mx-auto">
-        <h1 className="font-extrabold text-4xl text-center">
-          Select a <span className="text-[#1b82e2]">Department</span>
-        </h1>
-        <div className="mt-[50px] grid grid-cols-3 gap-6">
-          {nurseByDepartment.map((department) => (
-            <DepartmentCard
-            department={department}
-            ></DepartmentCard>
-          ))}
+      <div className="mt-[200px]">
+        <div class="container flex flex-col mx-auto w-full items-center justify-center">
+          <ul class="flex flex-col">
+            {nurse
+              .filter((nurse) => nurse.Department === department)
+              .map((nurse) => (
+                <NurseListItem nurse={nurse}></NurseListItem>
+              ))}
+          </ul>
+          
         </div>
+        <button
+            href="#!"
+            type="button"
+            className="btn bg-blue-500 ml-2 hover:bg-yellow-600"
+            onClick={() => {
+              onNew();
+            }}
+            value="Add Product"
+          >
+            New
+          </button>
       </div>
     </>
   );

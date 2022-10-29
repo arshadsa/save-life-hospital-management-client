@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 
 const AddNurse = () => {
@@ -17,10 +18,11 @@ const AddNurse = () => {
 
   const inputClass =
     "rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparenta";
-    
+    const navigate= useNavigate();
   const onSubmit = () => {
     console.log({...nurseForm, edititem: true});
     const url = `${process.env.REACT_APP_SERVER_BASE_URL}/nurse`;
+    
     fetch(url, {
       method: "POST",
       headers: {
@@ -31,7 +33,7 @@ const AddNurse = () => {
       .then((res) => res.json())
       .then((result) => {
         // console.log(result);
-        // navigate(from);
+        navigate('/');
       });
   };
 

@@ -195,11 +195,11 @@ function App() {
 
     {
       path: "/nurse",
-      element: (<ShowAllNurse/>)
+      element: (<ShowNurseDepartments/>)
     },
     {
-      path: "/nurse/byDepartment",
-      element: (<ShowNurseDepartments/>)
+      path: "/nurse/all",
+      element: (<ShowAllNurse/>)
     },
     {
       path: "/nurse/department/:department",
