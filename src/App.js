@@ -17,6 +17,12 @@ import News from "./components/news/News";
 import NewsDetails from "./components/newsdetails/NewsDetails";
 import EditDoctor from "./pages/EditDoctor/EditDoctor";
 import { lazy, Suspense } from "react";
+import AddNurse from "./pages/Nurse/AddNurse";
+import EditNurse from "./pages/Nurse/EditNurse";
+import ShowAllNurse from "./pages/Nurse/ShowAllNurse";
+import ShowStaffsByDepartment from "./pages/Staffs/ShowStaffsByDepartment";
+import ShowNurseByDepartment from "./pages/Nurse/ShowNurseByDepartment";
+import ShowNurseDepartments from "./pages/Nurse/ShowNurseDepartments";
 const queryClient = new QueryClient();
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
@@ -186,6 +192,29 @@ function App() {
     //   path: "/medcheckout/:id",
     //   element: <Phercheckout></Phercheckout>
     // },
+
+    {
+      path: "/nurse",
+      element: (<ShowAllNurse/>)
+    },
+    {
+      path: "/nurse/byDepartment",
+      element: (<ShowNurseDepartments/>)
+    },
+    {
+      path: "/nurse/department/:department",
+      element: (<ShowNurseByDepartment/>)
+    },
+    {
+      path: "/nurse/add",
+      element: (<AddNurse/>)
+    },
+    {
+      path: "/nurse/edit/:id",
+      element: (<EditNurse/>)
+    },
+
+    
   ]);
   return (
     <Suspense fallback={<div>Loading...</div>}>
