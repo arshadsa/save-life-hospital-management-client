@@ -29,7 +29,7 @@ const Reviewda = () => {
     {
       quote:
         "I was extremely impressed with him at my first appointment because he cared!  In addition to being a great doctor, he is kind, compassionate and down to earth. I would recommend him to anyone who is suffering from headaches like I was.",
-      name: "Syed Asif Ahmed",
+      name: "Syed  Ahmed Molla",
       from: "Rajshahi",
       img: "https://i.ibb.co/8x9xK4H/team.jpg",
     },

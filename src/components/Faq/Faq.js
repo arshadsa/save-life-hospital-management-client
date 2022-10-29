@@ -28,7 +28,7 @@ const Faq = () => {
 		  </section>
 		  <section id="blog">
 		      <h2><a href="#blog">going well</a></h2>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id lobortis massa. Nunc viverra velit leo, sit amet elementum mi. Fusce posuere nunc a mi tempus malesuada. Curabitur facilisis rhoncus eros eget placerat. Aliquam semper mauris sit amet justo tempor nec lacinia magna molestie. Etiam placerat congue dolor vitae adipiscing. Aliquam ac erat lorem, ut iaculis justo. Etiam mattis dignissim gravida. Aliquam nec justo ante, non semper mi. Nulla consectetur interdum massa, vel porta enim vulputate sed. Maecenas elit quam, egestas eget placerat non, fringilla vel eros. Nam vehicula elementum nulla sed consequat. Phasellus eu erat enim. Praesent at magna non massa dapibus scelerisque in eu lorem.</p>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id lobortis massa. Nunc viverra velit leo, sit amet elementum mi. Fusce posuere nunc a mi tempus malesuada. Curabitur facilisis rhoncus eros eget placerat. Aliquam semper mauris sit amet justo tempor nec lacinia magna molestie. Etiam placerat congue dolor vitae adipiscing. Aliquam ac erat lorem, ut iaculis justo. Etiam mattis dignissim gravida. Aliquam nec justo ante, non semper mi. Nulla consectetur interdum massa, vel porta enim vulputate sed. Mue in eu lorem.</p>
 		  </section>
 		  <section id="portfolio">
 		      <h2><a href="#portfolio">no problem ssss</a></h2>
@@ -49,7 +49,7 @@ const Faq = () => {
     <div class="acord">
         <label for="tb-one" class="bg-one">
          
-          acord one
+          can i access from any where
         </label>
         <input type="checkbox" name="mytabs" id="tb-one"/>
         <i class="fa fa-chevron-circle-down"></i>
