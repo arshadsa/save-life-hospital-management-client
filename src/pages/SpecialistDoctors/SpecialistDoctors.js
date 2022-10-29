@@ -15,9 +15,7 @@ const SpecialistDoctors = () => {
           <ul class="flex flex-col">
             {doctor
               .filter((doctor) => {
-                const specialization = doctor.specialization.map(
-                  (specialization) => specialization.replace(/\s+/g, "")
-                );
+                const specialization = doctor.specialization.replace(/\s+/g, "");
                 if (specialization.includes(speciality) === true) {
                   return doctor;
                 }

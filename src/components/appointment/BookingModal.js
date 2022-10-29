@@ -3,8 +3,10 @@ import { format } from 'date-fns';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
-const BookingModal = ({treatment,date,setTreatment}) => {
-    const {_id,name, slots} = treatment;
+import { Navigate, useNavigate } from 'react-router-dom';
+const BookingModal = ({treatment,date,setTreatment,refetch}) => {
+    const {_id,name,fees, slots} = treatment;
+    const Navigate = useNavigate();
     const [userInfo] = useAuthState(auth);
     const formatedDate = format(date,'PP');
     const handleBooking = event => {
@@ -15,6 +17,7 @@ const BookingModal = ({treatment,date,setTreatment}) => {
           treatmentId:_id,
           treatment:name,
           date:formatedDate,
+          fees:fees,
           slot,
           patient:userInfo.email,
           patientName:userInfo.displayName,
@@ -33,11 +36,13 @@ const BookingModal = ({treatment,date,setTreatment}) => {
         .then(data => {
           console.log(data);
           if(data.success){
+            Navigate('/dashboard/adddoctor');
             toast(`Appointment is set,${formatedDate} at ${slot}`)
           }
           else{
             toast.error(`You already have an ppointment on,${data.booking?.date} at ${data.booking?.slot}`)
           }
+          refetch();
           setTreatment(null);
         })
       
@@ -58,6 +63,7 @@ const BookingModal = ({treatment,date,setTreatment}) => {
   }
   
 </select>
+    <input type="number" name='fees' className="input input-bordered w-full max-w-xs" defaultValue={fees} />
     <input type="text" name='name' className="input input-bordered w-full max-w-xs" defaultValue={userInfo.displayName} />
     <input type="email" name='email' placeholder='Email Address' className="input input-bordered w-full max-w-xs" defaultValue={userInfo.email} />
     <input type="text" name='phone' placeholder="Phone" className="input input-bordered w-full max-w-xs" />
@@ -69,4 +75,4 @@ const BookingModal = ({treatment,date,setTreatment}) => {
     </div>
   )
 }
-export default BookingModal
+export default BookingModal;
