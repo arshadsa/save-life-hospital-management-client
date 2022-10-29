@@ -10,7 +10,7 @@ import BookingModal from './BookingModal';
     useEffect(()=>{
         fetch('http://localhost:8000/hospitaldoctors')
         .then(res => res.json())
-        .then(data => setServices(data))
+        .then(data => setTreatment(data))
     },[])
 
 

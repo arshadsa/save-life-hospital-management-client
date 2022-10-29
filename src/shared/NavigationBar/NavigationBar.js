@@ -15,7 +15,8 @@ export const NavigationBar = ({ isHome }) => {
         navigate('/')
     }
     return (
-        <div className={`${isHome === true ? 'md:w-[80vw] md:rounded-full md:absolute md:top-[6%] md:left-[10%] ' : "w-screen "}navbar w-screen text-black bg-slate-100  mx-auto z-50 h-[60px]`} >
+        // {`${isHome === true ? 'md:w-[80vw] md:rounded-full md:absolute md:top-[6%] md:left-[10%] ' : "w-screen "}navbar w-screen text-black bg-slate-100  mx-auto z-50 h-[60px]`}
+        <div className= "md:w-[78vw] md:rounded-full md:absolute md:top-[6%] md:left-[10%]  w-[100%] text-black bg-slate-100  mx-auto z-50 h-[60px] navbar p-[0px] mr-[0px]" >
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
