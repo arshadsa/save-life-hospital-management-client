@@ -5,16 +5,16 @@ import "./Details.css";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 
 const Details = () => {
-  const { id } = useParams();
-  const [docs, setDocs] = useState({});
-  const [disable, setDisable] = useState(false);
-  useEffect(() => {
-    fetch(`http://localhost:8000/hospitaldoctors/${id}`)
-      .then((res) => res.json())
-      .then((data) => setDocs(data));
-  }, []);
-  const { register, handleSubmit, reset } = useForm();
-  const handleChange = (event) => {
+    const {id} = useParams();
+    const [docs,setDocs] = useState({})
+    const [disable, setDisable] = useState(false);
+     useEffect(()=>{
+         fetch(`http://localhost:8000/hospitaldoctors/${id}`)
+       .then(res=>res.json())
+        .then(data=>setDocs(data))
+     },[])
+     const { register, handleSubmit, reset } = useForm();    
+const handleChange = event => {
     const disable = event.target.value;
     setDisable(disable);
   };
