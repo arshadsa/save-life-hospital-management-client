@@ -26,6 +26,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import useRole from "./hooks/useRole";
+import MyAppointment from "./components/appointment/MyAppointment";
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
 const AllDoctors = lazy(() => import("./pages/AllDoctors/AllDoctors"));
@@ -206,6 +207,14 @@ function App() {
         {
           path: "makeAdmin",
           element: <MakeAdmin />,
+        },
+        {
+          path: "adddoctor",
+          element: <AddDoctor></AddDoctor>,
+        },
+        {
+          path: "myappointments",
+          element: <MyAppointment></MyAppointment>,
         },
         {
           path: "bloodDoner",

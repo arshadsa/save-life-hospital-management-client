@@ -13,7 +13,7 @@ const Dashboard = () => {
     return (
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center justify-center">
+            <div className="drawer-content ">
                 <Outlet />
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
             </div>
@@ -23,12 +23,18 @@ const Dashboard = () => {
                     {/* <!-- Sidebar content here --> */}
                     {
                         role === "Admin" ? <><li>
-                            <Link to={`/dashboard/makeadmin`}>Make Admin</Link></li>
+                            <Link to={`/dashboard/makeadmin`}>Make Admin</Link>
+                            <Link to={`/dashboard/adddoctor`}>Add Doctor</Link>
+                            <Link to={`/dashboard/myappointments`}>My Appointment</Link>
+                            
+                            
+                            </li>
                         </> : null
                     }
                     {/* Do the code here */}
                     {
                         role === "Doctor" ? <><li>
+                            <Link to={`/dashboard/myappointments`}>My Appointment</Link>
                             <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link></li>
 
                         </> : null

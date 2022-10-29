@@ -45,7 +45,7 @@ const AddDoctor = () => {
   return (
     <>
       <NavigationBar isHome={true} />
-      <div className="mt-[150px] container mx-auto">
+      <div className="mt-[100px] container mx-auto">
         <div class="relative mx-auto w-[50vw]">
           <h1 className="text-4xl font-extrabold py-10">
             Register as a Doctor
