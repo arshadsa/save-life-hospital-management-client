@@ -4,12 +4,14 @@ const useRole = (email) => {
     const [role, setRole] = React.useState("")
     const [isLoading, setIsLoading] = React.useState(true)
     useEffect(() => {
-        fetch(`http://localhost:5000/api/user/?email=${email}`)
-            .then(res => res.json())
-            .then(data => {
-                setIsLoading(false)
-                setRole(data?.role)
-            })
+        if (email) {
+            fetch(`http://localhost:5000/api/user/?email=${email}`)
+                .then(res => res.json())
+                .then(data => {
+                    setIsLoading(false)
+                    setRole(data?.role)
+                })
+        }
     }, [email])
     if (isLoading === true) {
         return null
