@@ -14,12 +14,19 @@ import News from "./components/news/News";
 import NewsDetails from "./components/newsdetails/NewsDetails";
 import EditDoctor from "./pages/EditDoctor/EditDoctor";
 import { lazy, Suspense } from "react";
+import AddNurse from "./pages/Nurse/AddNurse";
+import EditNurse from "./pages/Nurse/EditNurse";
+import ShowAllNurse from "./pages/Nurse/ShowAllNurse";
+import ShowStaffsByDepartment from "./pages/Staffs/ShowStaffsByDepartment";
+import ShowNurseByDepartment from "./pages/Nurse/ShowNurseByDepartment";
+import ShowNurseDepartments from "./pages/Nurse/ShowNurseDepartments";
 import VideoCall from "./pages/VideoCall/VideoCall";
 import VideoPlayer from "./pages/VideoCall/VideoPlayer";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import useRole from "./hooks/useRole";
+import MyAppointment from "./components/appointment/MyAppointment";
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
 const AllDoctors = lazy(() => import("./pages/AllDoctors/AllDoctors"));
@@ -202,6 +209,14 @@ function App() {
           element: <MakeAdmin />,
         },
         {
+          path: "adddoctor",
+          element: <AddDoctor></AddDoctor>,
+        },
+        {
+          path: "myappointments",
+          element: <MyAppointment></MyAppointment>,
+        },
+        {
           path: "bloodDoner",
           element: (
             <ProtectedRoute>
@@ -220,6 +235,29 @@ function App() {
     //   path: "/medcheckout/:id",
     //   element: <Phercheckout></Phercheckout>
     // },
+
+    {
+      path: "/nurse",
+      element: (<ShowNurseDepartments/>)
+    },
+    {
+      path: "/nurse/all",
+      element: (<ShowAllNurse/>)
+    },
+    {
+      path: "/nurse/department/:department",
+      element: (<ShowNurseByDepartment/>)
+    },
+    {
+      path: "/nurse/add",
+      element: (<AddNurse/>)
+    },
+    {
+      path: "/nurse/edit/:id",
+      element: (<EditNurse/>)
+    },
+
+    
   ]);
   return (
     <Suspense fallback={<div>Loading...</div>}>
