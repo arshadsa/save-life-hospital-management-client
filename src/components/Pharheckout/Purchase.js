@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 
 const Purchase = () => {
 
@@ -66,6 +67,7 @@ const Purchase = () => {
 
   return (
     <div>
+      
       <div>
         <form onSubmit={placeorder} action="" className="my-4 mt-6 -mx-2 lg:flex">
 

@@ -37,7 +37,7 @@ const Services = () => {
             <p className="pt-3 px-5 text-[40px] font-[600] text-[#545767] number ">
               01
             </p>
-            <p className="px-5 mt-2 text-[20px] text-[#1b82e2] common font-extrabold text-primary ">
+            <p className="px-5 mt-2 text-[20px]  common font-extrabold text-primary tagline">
               visit doctor
             </p>
             <p className="px-5 mt-3 pb-5  explain ">
@@ -55,7 +55,7 @@ const Services = () => {
             <p className="number pt-3 px-5 text-[40px] font-[600] text-[#545767]  ">
               02
             </p>
-            <p className="px-5 mt-2 text-[20px] common font-extrabold text-[#1b82e2] ">
+            <p className="px-5 mt-2 text-[20px] common font-extrabold text-[#1b82e2] tagline">
             Find a Pharmacy
             </p>
             <p className="px-5 mt-3 pb-5 ] explain">

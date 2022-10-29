@@ -11,9 +11,11 @@ const  AppointmentBanner = ({date,setDate}) => {
   
   return (
     <div>
+  <div className='navbar'>
   <NavigationBar></NavigationBar>
+  </div>
 
-    <div className=' grid lg:grid-cols-2 sm:grid-cols-1'>
+    <div className=' grid lg:grid-cols-2 sm:grid-cols-1 mt-[80px]'>
      <div className='mx-auto mt-24 w-96'>
      <DayPicker 
     mode="single"

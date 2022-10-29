@@ -62,8 +62,8 @@ const AvailableFeatures = () => {
 //       </div>
 //     </div>
 <div>
-<div className='text-4xl font-bold text-center justify-center pb-14'>
-<h1>Available <span className='text-[#1b82e2]'> Features </span> in Our Clinic</h1>
+<div className='text-4xl font-bold text-center justify-center pb-14 uppercase'>
+<h1>Available <span className='text-[#1b82e2]'> (Features) </span> in Our Clinic</h1>
 
       </div>
 <div className='grid lg:grid-cols-2 sm:grid-cols-1 container mx-auto px-6 mb-[130px]'>
