@@ -8,8 +8,10 @@ import { signOut } from 'firebase/auth';
 export const NavigationBar = ({ isHome }) => {
     const navigate = useNavigate()
     const [userInfo, loading] = useAuthState(auth);
+    useEffect(() => {
+        if (loading) return
+    }, [userInfo?.email])
     const role = useRole(userInfo?.email)
-    if (loading) return
     const handleLogout = () => {
         signOut(auth)
         navigate('/')
