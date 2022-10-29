@@ -54,6 +54,23 @@ const EditNurse = () => {
         // navigate(from);
       });
   };
+
+  const onDelete = () => {
+    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/nurse/${id}`;
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        navigate('/', { replace: true })
+      });
+      
+  }
   
   return (
     <>
@@ -183,6 +200,15 @@ const EditNurse = () => {
                 value="Add Product"
               >
                 Submit
+              </button>
+              <button
+                href="#!"
+                type="button"
+                className="btn bg-red-500 ml-2 hover:bg-yellow-600"
+                onClick={()=>(onDelete())}
+                value="Add Product"
+              >
+                Delete
               </button>
             </div>
           </form>

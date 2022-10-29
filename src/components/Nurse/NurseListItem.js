@@ -20,8 +20,8 @@ const NurseListItem = ({ nurse }) => {
 
           {/* Name and Speciality */}
           <div class="flex-1 pl-1 md:mr-16">
-            <p class="text-gray-600 dark:text-gray-200">{nurse.Designation}</p>
             <p class="font-bold dark:text-white text-xl">{nurse.name}</p>
+            <p class="text-gray-600 dark:text-gray-200">{nurse.Designation}</p>
 
             <br />
 
@@ -35,8 +35,6 @@ const NurseListItem = ({ nurse }) => {
             <p>Working in</p>
             <h1 className="font-bold">{nurse.Department}</h1>
             <br />
-            <p>Total Experience</p>
-            <h1>9+ Years</h1>
           </div>
 
           <div className="ml-14">

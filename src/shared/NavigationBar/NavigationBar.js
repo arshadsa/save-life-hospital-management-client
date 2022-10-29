@@ -94,12 +94,17 @@ export const NavigationBar = ({ isHome }) => {
                                 </Link>
                             </li>
                             <li tabIndex={2}>
+                                <Link to='/nurse' className="justify-between">
+                                    Nurse
+                                </Link>
+                            </li>
+                            <li tabIndex={3}>
                                 <Link to='/blog' className="justify-between">
                                     Blog
                                 </Link>
                             </li>
 
-                            <li tabIndex={3}>
+                            <li tabIndex={4}>
                                 {/* Make the default route for differnt Role */}
                                 {
                                     role === "Admin" ? <Link to={"/dashboard/makeadmin"}>
