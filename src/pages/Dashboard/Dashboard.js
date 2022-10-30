@@ -35,7 +35,7 @@ const Dashboard = () => {
                             <Link to={`/dashboard/addambulance`}>Add Ambulance</Link>
                             <Link to={`/dashboard/addnurse`}>Add Nurse</Link>
                             <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link>
-                            {/* <Link to={`/dashboard/myappointments`}>My Appointment</Link> */}
+                             <Link to={`/dashboard/myappointments`}>My Appointment</Link> 
                             
                             
                             </li>

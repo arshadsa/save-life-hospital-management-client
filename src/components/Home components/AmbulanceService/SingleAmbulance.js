@@ -40,7 +40,7 @@ import { toast } from 'react-toastify';
   <div className="modal-box relative">
     <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
     <form onSubmit={handleSubmit(onSubmit)} className="bg-details text-center w-75 mx-auto pt-5 pb-5  pe-5 mb-5">
-      <h1 className='font-bold text-2xl mb-1 text-title'>Please Make a Enrollment: </h1>
+      <h1 className='font-bold text-2xl mb-1 text-primary'>Please Make a Booking: </h1>
          <input  {...register("email", { required: true, maxLength: 120 })} placeholder="email" className='input input-bordered w-full max-w-xs drop-shadow-md text-black mb-1'  />
         
      
@@ -65,7 +65,7 @@ import { toast } from 'react-toastify';
     
          
        
-         <input type="submit" className='w-80 btn btn-course shadow-banner' value='Book Enrollment' />
+         <input type="submit" className='w-80 btn btn-primary shadow-banner' value='Book Ambulance' />
        </form>
   </div>
 </div>

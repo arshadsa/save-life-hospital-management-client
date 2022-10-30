@@ -84,6 +84,11 @@ const handleChange = event => {
              <button className="btn btn-primary">Book Appointment</button>
             
           </Link>
+            <Link to="/videocall" className="ml-12">
+              
+             <button className="btn btn-secondary">Make Video Calling</button>
+            
+          </Link>
           </div>
         </div>
       </div>
