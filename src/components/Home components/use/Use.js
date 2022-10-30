@@ -8,7 +8,7 @@ export const Use = () => {
 <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1'>
 <img src={headpain} className='lg:max-w-lg'></img>
 <div className='mr-10'>
-    <h1 className='font-bold text-4xl mb-8'>When to use <span className='text-[#1b82e2]'> SaveLife.com </span></h1>
+    <h1 className='font-bold text-4xl mb-8 uppercase'>When to use <span className='text-[#1b82e2]'> SaveLife </span></h1>
     <div className='mb-5'>
         <h2 className='text-xl mb-2 text-[#1b82e2] font-bold'>Common health issue</h2>
         <p>Ask anything you would normally ask your GP. You can have an instant video with one of our GPs via a digital consultation from anywhere, at any time of day.</p>

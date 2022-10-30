@@ -22,14 +22,20 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
             </div>
             <div className="drawer-side">
+                
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                
+                <ul className="menu p-4 overflow-y-auto w-60 mt-40 bg-base-100 text-xl  text-base-content">
+                    <button className='btn btn-primary'>Go to Home</button>
                     {/* <!-- Sidebar content here --> */}
                     {
                         role === "Admin" ? <><li>
-                            <Link to={`/dashboard/makeadmin`}>Make Admin</Link>
+                            <Link to={`/dashboard/makeadmin`} className>Make Admin</Link>
                             <Link to={`/dashboard/adddoctor`}>Add Doctor</Link>
-                            <Link to={`/dashboard/myappointments`}>My Appointment</Link>
+                            <Link to={`/dashboard/addambulance`}>Add Ambulance</Link>
+                            <Link to={`/dashboard/addnurse`}>Add Nurse</Link>
+                            <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link>
+                             <Link to={`/dashboard/myappointments`}>My Appointment</Link> 
                             
                             
                             </li>
@@ -38,14 +44,16 @@ const Dashboard = () => {
                     {/* Do the code here */}
                     {
                         role === "Doctor" ? <><li>
-                            <Link to={`/dashboard/myappointments`}>My Appointment</Link>
+                           
                             <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link></li>
+                           
 
                         </> : null
                     }
                     {
                         role === "Patient" ? <><li>
 
+                            <Link to={`/dashboard/myappointments`}>My Appointment</Link>
                             <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link></li>
 
                         </> : null

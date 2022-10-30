@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import useRole from '../../hooks/useRole';
 import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import Dashboard from '../../pages/Dashboard/Dashboard';
 export const NavigationBar = ({ isHome }) => {
     const navigate = useNavigate()
     const [userInfo, loading] = useAuthState(auth);
@@ -41,6 +42,11 @@ export const NavigationBar = ({ isHome }) => {
                                 <li tabIndex={2}>
                                     <Link to='/blog' className="justify-between">
                                         Blog
+                                    </Link>
+                                </li>
+                                <li tabIndex={2}>
+                                    <Link to='/dashboard' className="justify-between">
+                                        <Dashboard></Dashboard>
                                     </Link>
                                 </li>
 
@@ -98,6 +104,11 @@ export const NavigationBar = ({ isHome }) => {
                             <li tabIndex={2}>
                                 <Link to='/blog' className="justify-between">
                                     Blog
+                                </Link>
+                            </li>
+                            <li tabIndex={2}>
+                                <Link to='/dashboard' className="justify-between">
+                                    Dashboard
                                 </Link>
                             </li>
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
+import { NavigationBar } from '../../shared/NavigationBar/NavigationBar'
 import Purchase from './Purchase'
 
 
@@ -12,7 +13,7 @@ const Phercheckout = () => {
     const [medicine , setMedicine] = useState({})
     // useffecrt handel
     useEffect(()=> {
-      const url = `http://localhost:5000/medicine/${id}`
+      const url = `http://localhost:5000/api/medicine/${id}`
       console.log(url, "aa")
       fetch(url)
       .then(res =>  res.json())
@@ -22,8 +23,11 @@ const Phercheckout = () => {
 
 
   return (
-    <div className='mt-[70px]'>
-     <div>
+    <div >
+      <div className=' navbar px-2 pr-3'>
+        <NavigationBar></NavigationBar>
+      </div>
+     <div className='mt-[70px]'>
      <div>
         {medicine.length > 0 &&
          medicine.map(med => <div>

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Damyp from '../../../Damy Data/Damyp'
 // React Icons
 import {FcSearch} from 'react-icons/fc'
+import { NavigationBar } from '../../../shared/NavigationBar/NavigationBar'
 
 
 const Pharmacy = () => {
@@ -13,7 +14,7 @@ const Pharmacy = () => {
    const [medicine , setMedicine] = useState([])
 
    useEffect(()=> {
-    fetch("http://localhost:5000/medicine")
+    fetch('http://localhost:5000/api/medicines')
     .then(res => res.json())
     .then(data => setMedicine(data) )
    },[])
@@ -21,11 +22,14 @@ const Pharmacy = () => {
 
   return (
     <div> 
+      <div className='px-2 pr-3 navbar'>
+        <NavigationBar></NavigationBar>
+      </div>
       <div className="bg-white mt-[130px] ">
       <div className="max-w-2xl mx-auto pb-10 px-4 sm:px-6 lg:max-w-7xl lg:px-8 pt-10 sm:pt-10">
         <div className="flex justify-between align-center">
-          <h2 className="text-2xl font-display font-semibold tracking-wide text-teal-700">
-          Common Products That can need any time
+          <h2 className="text-2xl font-display font-semibold tracking-wide text-teal-700 uppercase">
+Some Rare products
           </h2>
 
           <div className="col-12 align-middle justify-content-center flex">
