@@ -7,10 +7,17 @@ import React, { useEffect, useRef, useState } from "react"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import Peer from "simple-peer"
 import io from "socket.io-client"
+<<<<<<< HEAD
 import useRole from '../../hooks/useRole'
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 const socket = io.connect('http://localhost:8000')
+=======
+
+
+
+const socket = io.connect('http://localhost:5000')
+>>>>>>> anik
 const VideoCall = () => {
     const [me, setMe] = useState("")
     const [stream, setStream] = useState()

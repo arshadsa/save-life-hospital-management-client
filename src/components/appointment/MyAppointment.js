@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import RouteAthenication from '../../HOC/RouteAthenication';
 
@@ -36,6 +37,7 @@ const MyAppointment = () => {
               </tr>
             </thead>
 
+<<<<<<< HEAD
             <tbody>
               {
                 appointments?.map((a, index) => <tr>
@@ -51,6 +53,25 @@ const MyAppointment = () => {
           </table>
         </div>
       </section>
+=======
+    <tbody>
+        {
+            appointments.map((a, index) => <tr>
+            <th>{index + 1}</th>
+            <td>{a.treatment}</td>
+            <td>{a.date}</td>
+            <td>{a.slot}</td>
+            <td>{a.fees}</td>
+            <td className='text-center'>
+            {(a.fees && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-course text-light-400'>Pay</button></Link>}
+            {(a.fees && a.paid) && <p className='text-green-400'>Paid</p>}
+            </td>
+          </tr> )
+        }
+    </tbody>
+  </table>
+</div>
+>>>>>>> anik
     </div>
   )
 }

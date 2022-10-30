@@ -26,8 +26,15 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import useRole from "./hooks/useRole";
 import MyAppointment from "./components/appointment/MyAppointment";
+import Payment from "./components/appointment/Payment";
+import { CheckoutForm } from "./components/appointment/CheckoutForm";
 import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
+<<<<<<< HEAD
 import Notfound from "./Loadandnotf/Notfound";
+=======
+import AddAmbulance from "./components/addambulance/AddAmbulance";
+
+>>>>>>> anik
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
 const AllDoctors = lazy(() => import("./pages/AllDoctors/AllDoctors"));
@@ -54,7 +61,7 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
-
+   
     {
       path: "/doctor",
       element: <Speciality></Speciality>,
@@ -161,12 +168,7 @@ function App() {
       path: "/websitedoctors/:id",
       element: <Details></Details>,
     },
-    {
-      path: "/appointment",
-      element: (
-        <Appointment></Appointment>
-      )
-    },
+    
     {
       path: "/addnews",
       element: (
@@ -202,12 +204,30 @@ function App() {
       element: (<Phercheckout></Phercheckout>)
     },
     {
+      path: "/appointment",
+      element: (<Appointment></Appointment>)
+    },
+
+   
+    {
       path: "dashboard",
       element: (<Dashboard />),
       children: [
         {
           path: "makeAdmin",
           element: <MakeAdmin />,
+        },
+        {
+          path: "addnurse",
+          element: (<AddNurse/>)
+        },
+        {
+          path: "addambulance",
+          element: <AddAmbulance></AddAmbulance>,
+        },
+        {
+          path: "payment/:id",
+          element: <Payment></Payment>,
         },
         {
           path: "adddoctor",
@@ -242,6 +262,10 @@ function App() {
       element: (<ShowNurseDepartments />)
     },
     {
+      path: "/checkout",
+      element: (<Payment></Payment>)
+    },
+    {
       path: "/nurse/all",
       element: (<ShowAllNurse />)
     },
@@ -249,10 +273,14 @@ function App() {
       path: "/nurse/department/:department",
       element: (<ShowNurseByDepartment />)
     },
+<<<<<<< HEAD
     {
       path: "/nurse/add",
       element: (<AddNurse />)
     },
+=======
+   
+>>>>>>> anik
     {
       path: "/nurse/edit/:id",
       element: (<EditNurse />)
