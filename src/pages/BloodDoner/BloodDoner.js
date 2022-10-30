@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
+import { Footer } from '../../shared/Footer/Footer';
 
 const BloodDoner = () => {
     const bloodGroup = ["A+", "A-", "O+", "O-", "AB-", "AB+", "B+", "B-"];

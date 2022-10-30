@@ -2,7 +2,6 @@
 import React from "react";
 import DoctorCard from "../../components/DoctorCard/DoctorCard";
 import Faq from "../../components/Faq/Faq";
-
 import Ambulance from "../../components/Home components/AmbulanceService/Ambulance";
 import AvailableFeatures from "../../components/Home components/AvailableFeatures/AvailableFeatures";
 import Banner from "../../components/Home components/Banner";
@@ -35,10 +34,10 @@ const Homepage = () => {
 
       {/*Specialties added by arshad  */}
       <div className="mt-[100px]">
-      <Speciality></Speciality>
+        <Speciality></Speciality>
       </div>
 
-       {/* Use added by anik*/}
+      {/* Use added by anik*/}
       <div className="mt-[100px]">
         <Use></Use>
       </div>
@@ -51,8 +50,8 @@ const Homepage = () => {
         <Doctor></Doctor>
       </div>
 
-  {/* AvailableFeatures added by anik*/}
- <div className="mt-[100px]">
+      {/* AvailableFeatures added by anik*/}
+      <div className="mt-[100px]">
         <AvailableFeatures></AvailableFeatures>
       </div>
 
@@ -60,13 +59,11 @@ const Homepage = () => {
       <div className="mt-[100px]">
         <UseWebsite></UseWebsite>
       </div>
-
-
-    {/* Ambulance Car Shamim*/}
-    <div className="mt-[100px]">
+      {/* Ambulance Car Shamim*/}
+      <div className="mt-[100px]">
         <Ambulance></Ambulance>
       </div>
-     
+
       {/* Newsletter yaesin*/}
       <div className="mt-[100px]">
         <NewsLetter></NewsLetter>
@@ -81,7 +78,7 @@ const Homepage = () => {
         <Faq></Faq>
       </div>
       <Footer />
-      
+
     </div>
   );
 };
