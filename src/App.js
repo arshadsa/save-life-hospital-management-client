@@ -29,6 +29,7 @@ import useRole from "./hooks/useRole";
 import MyAppointment from "./components/appointment/MyAppointment";
 import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
 import Notfound from "./Loadandnotf/Notfound";
+import Loading from "./Loadandnotf/Loading";
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
 const AllDoctors = lazy(() => import("./pages/AllDoctors/AllDoctors"));
@@ -263,6 +264,10 @@ function App() {
     {
       path: "/not",
       element : ( <Notfound></Notfound> )
+    },
+    {
+      path: "/load",
+      element : (<Loading></Loading>)
     }
     
   ]);

@@ -1,6 +1,7 @@
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react'
 import { useQuery } from 'react-query';
+import Loading from '../../Loadandnotf/Loading';
 import AppointmentService from '../AppointmentService';
 import BookingModal from './BookingModal';
 
@@ -20,7 +21,7 @@ import BookingModal from './BookingModal';
       .then(res => res.json())
   )
   if (isLoading) {
-    return <p>Loading</p>
+    return <Loading> </Loading>
   }
   // useEffect(()=>{
   //     fetch(`http://localhost:5000/available?date=${formattedDate}`)
