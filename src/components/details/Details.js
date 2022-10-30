@@ -9,7 +9,7 @@ const Details = () => {
     const [docs,setDocs] = useState({})
     const [disable, setDisable] = useState(false);
      useEffect(()=>{
-         fetch(`http://localhost:8000/hospitaldoctors/${id}`)
+         fetch(`http://localhost:5000/hospitaldoctors/${id}`)
        .then(res=>res.json())
         .then(data=>setDocs(data))
      },[])
@@ -52,11 +52,7 @@ const handleChange = event => {
             <li className="text-t ml-24">
               <b>Location:</b> {docs.location}
             </li>
-            <Link to="/appointment">
-              <button className="btn btn-primary ml-20 mt-5">
-                Book Appointment
-              </button>
-            </Link>
+            
           </ul>
         </div>
         <div className="mt-[30px] md:mt-0">
@@ -79,10 +75,21 @@ const handleChange = event => {
               Books Authored/Research Papers published
             </h1>
             <p>{docs.books}</p>
+<br></br>
+<br></br>
+<br></br>
+
+            <Link to="/appointment">
+              
+             <button className="btn btn-primary">Book Appointment</button>
+            
+          </Link>
           </div>
         </div>
       </div>
-      <div></div>
+      <div>
+     
+      </div>
     </div>
   );
 };
