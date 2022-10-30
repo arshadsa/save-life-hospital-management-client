@@ -28,6 +28,7 @@ import auth from "./firebase.init";
 import useRole from "./hooks/useRole";
 import MyAppointment from "./components/appointment/MyAppointment";
 import Payment from "./components/appointment/Payment";
+import { CheckoutForm } from "./components/appointment/CheckoutForm";
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
 const AllDoctors = lazy(() => import("./pages/AllDoctors/AllDoctors"));
@@ -245,6 +246,10 @@ function App() {
     {
       path: "/nurse",
       element: (<ShowNurseDepartments/>)
+    },
+    {
+      path: "/checkout",
+      element: (<Payment></Payment>)
     },
     {
       path: "/nurse/all",

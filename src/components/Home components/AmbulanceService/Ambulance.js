@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Ambulance1 from '../../../assets/Ambulance-images/ambulance1.jpg';
 import Ambulance2 from '../../../assets/Ambulance-images/ambulance2.jpg';
 import Ambulance3 from '../../../assets/Ambulance-images/ambulance3.jpg';
@@ -42,10 +43,7 @@ const Ambulance = () => {
           <h3 className='text-xl tmb-2 mt-5 mb-5 font-bold text-primary'>Medical Flight Services</h3>
           <p className='text-semibold pr-10 mb-5'>Curabitur lectus velit, pulvinar vitae elementum vitae, pharetra in mi.</p>
           <div className='text-primary'>
-          <a className='flex gap-2 cursor-pointer'>READ MORE
-            <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg></span>
-         </a>
+         <Link to='/checkout'>Book</Link>
           </div>
         </div>
         </div>

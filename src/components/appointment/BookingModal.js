@@ -36,7 +36,7 @@ const BookingModal = ({treatment,date,setTreatment,refetch}) => {
         .then(data => {
           console.log(data);
           if(data.success){
-            Navigate('/dashboard/adddoctor');
+            Navigate('/dashboard/myappointments');
             toast(`Appointment is set,${formatedDate} at ${slot}`)
           }
           else{
