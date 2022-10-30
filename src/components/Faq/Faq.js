@@ -19,24 +19,24 @@ const Faq = () => {
       <div className="hidden md:block ">
       <div class="accordion horizontal">
 		  <section id="about">
-		      <h2><a href="#about">lorem 12</a></h2>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id lobortis massa. Nunc viverra velit leo, sit amet elementum mi. Fusce posuere nunc a mi tempus malesuada. Curabitur facilisis rhoncus eros eget placerat. Aliquam semper mauris sit amet justo tempor nec lacinia magna molestie. Etiam placerat congue dolor vitae adipiscing. Aliquam ac erat lorem, ut iaculis justo. Etiam mattis dignissim gravida. Aliquam nec justo ante, non semper mi. Nulla consectetur interdum massa, vel porta enim vulputate sed. Maecenas elit quam, egestas eget placerat non, fringilla vel eros. Nam vehicula elementum nulla sed consequat. Phasellus eu erat enim. Praesent at magna non massa dapibus scelerisque in eu lorem.</p>
+		      <h2><a href="#about">can i join from any where? </a></h2>
+		      <p>Yeas from any where you can join . with android or ios </p>
 		  </section>
 		  <section id="services">
-		      <h2><a href="#services">okay a</a></h2>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id lobortis massa. Nunc viverra velit leo, sit amet elementum mi. Fusce posuere nunc a mi tempus malesuada. Curabitur facilisis rhoncus eros eget placerat. Aliquam semper mauris sit amet justo tempor nec lacinia magna molestie. Etiam placerat congue dolor vitae adipiscing. Aliquam ac erat lorem, ut iaculis justo. Etiam mattis dignissim gravida. Aliquam nec justo ante, non semper mi. Nulla consectetur interdum massa, vel porta enim vulputate sed. Maecenas elit quam, egestas eget placerat non, fringilla vel eros. Nam vehicula elementum nulla sed consequat. Phasellus eu erat enim. Praesent at magna non massa dapibus scelerisque in eu lorem.</p>
+		      <h2><a href="#services"> is doctros are good ?</a></h2>
+		      <p> obviusly good, before accessing doctor service. At first read doctor designation clearly and carefully </p>
 		  </section>
 		  <section id="blog">
-		      <h2><a href="#blog">going well</a></h2>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id lobortis massa. Nunc viverra velit leo, sit amet elementum mi. Fusce posuere nunc a mi tempus malesuada. Curabitur facilisis rhoncus eros eget placerat. Aliquam semper mauris sit amet justo tempor nec lacinia magna molestie. Etiam placerat congue dolor vitae adipiscing. Aliquam ac erat lorem, ut iaculis justo. Etiam mattis dignissim gravida. Aliquam nec justo ante, non semper mi. Nulla consectetur interdum massa, vel porta enim vulputate sed. Mue in eu lorem.</p>
+		      <h2><a href="#blog">money back guarantee </a></h2>
+		      <p>L no please before booking doctor.read carefully doctor designation as well every details</p>
 		  </section>
 		  <section id="portfolio">
-		      <h2><a href="#portfolio">no problem ssss</a></h2>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id lobortis massa. Nunc viverra velit leo, sit amet elementum mi. Fusce posuere nunc a mi tempus malesuada. Curabitur facilisis rhoncus eros eget placerat. Aliquam semper mauris sit amet justo tempor nec lacinia magna molestie. Etiam placerat congue dolor vitae adipiscing. Aliquam ac erat lorem, ut iaculis justo. Etiam mattis dignissim gravida. Aliquam nec justo ante, non semper mi. Nulla consectetur interdum massa, vel porta enim vulputate sed. Maecenas elit quam, egestas eget placerat non, fringilla vel eros. Nam vehicula elementum nulla sed consequat. Phasellus eu erat enim. Praesent at magna non massa dapibus scelerisque in eu lorem.</p>
+		      <h2><a href="#portfolio">is service are free?</a></h2>
+		      <p>no .But there you will get precious.DOctor's tips Please subscribe our newsleter for and read blog carefully  </p>
 		  </section>
 		  <section id="contact">
-		      <h2><a href="#contact">Cssssss</a></h2>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id lobortis massa. Nunc viverra velit leo, sit amet elementum mi. Fusce posuere nunc a mi tempus malesuada. Curabitur facilisis rhoncus eros eget placerat. Aliquam semper mauris sit amet justo tempor nec lacinia magna molestie. Etiam placerat congue dolor vitae adipiscing. Aliquam ac erat lorem, ut iaculis justo. Etiam mattis dignissim gravida. Aliquam nec justo ante, non semper mi. Nulla consectetur interdum massa, vel porta enim vulputate sed. Maecenas elit quam, egestas eget placerat non, fringilla vel eros. Nam vehicula elementum nulla sed consequat. Phasellus eu erat enim. Praesent at magna non massa dapibus scelerisque in eu lorem.</p>
+		      <h2><a href="#contact"> I have another query </a></h2>
+		      <p> Okay no problem just ask our messenger chat</p>
 		  </section>
 		 </div>
       </div>
@@ -49,40 +49,40 @@ const Faq = () => {
     <div class="acord">
         <label for="tb-one" class="bg-one">
          
-          can i access from any where
+        is service are free?
         </label>
         <input type="checkbox" name="mytabs" id="tb-one"/>
         <i class="fa fa-chevron-circle-down"></i>
         <div class="content" >
   <span class="square"></span>
 
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  No .But there you will get precious.DOctor's tips Please subscribe our newsleter for and read blog carefully
         </div>
     </div>
 
     <div class="acord">
         <label for="tb-two"  class="bg-two">
         
-          acord two
+        money back guarantee
         </label>
         <input type="checkbox" name="mytabs" id="tb-two"/>
         <i class="fa fa-chevron-circle-down"></i>
         <div class="content">
           <span class="square"></span>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          no please before booking doctor.read carefully doctor designation as well every details
         </div>
     </div>
 
     <div class="acord">
         <label for="tb-three"  class="bg-three">
        
-          acord three
+        is doctros are good ?
         </label>
         <input type="checkbox" name="mytabs" id="tb-three"/>
         <i class="fa fa-chevron-circle-down"></i>
         <div class="content">
           <span class="square"></span>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          obviusly good, before accessing doctor service. At first read doctor designation clearly and carefully 
         </div>
     </div>
 
@@ -90,26 +90,26 @@ const Faq = () => {
     <div class="acord">
         <label for="tb-four"  class="bg-four">
           
-          acord four
+        can i join from any where?
         </label>
         <input type="checkbox" name="mytabs" id="tb-four"/>
         <i class="fa fa-chevron-circle-down"></i>
         <div class="content">
           <span class="square"></span>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          Yeas from any where you can join . with android or ios
         </div>
     </div>
 
     <div class="acord">
         <label for="tb-five"  class="bg-five">
          
-          acord five
+        I have another query
         </label>
         <input type="checkbox" name="mytabs" id="tb-five"/>
         <i class="fa fa-chevron-circle-down"></i>
         <div class="content">
           <span class="square"></span>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          Okay no problem just ask our messenger chat
         </div>
     </div>
 

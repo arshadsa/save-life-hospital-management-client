@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
 import { Footer } from '../../shared/Footer/Footer';
 
+
 const News = () => {
   const [tools, setTools] = useState([])
   useEffect(() => {
@@ -16,6 +17,7 @@ const News = () => {
       .then(res => res.json())
       .then(data => setTools(data))
   }, [])
+
   return (
     <>
       <NavigationBar isHome={true} />
