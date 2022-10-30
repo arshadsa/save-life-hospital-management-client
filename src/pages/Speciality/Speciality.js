@@ -7,7 +7,6 @@ const Speciality = () => {
   const [specialities, specialitiesDef] = useSpecialities();
   return (
     <>
-   
       <div className="mt-[150px] container mx-auto">
         <h1 className="font-extrabold text-4xl text-center uppercase">
           Select a <span className="text-[#1b82e2]">(Speciality)</span> for you

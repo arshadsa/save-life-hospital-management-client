@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
 import { v4 as uuidv4 } from 'uuid';
+import { Footer } from '../../shared/Footer/Footer';
 const BloodDonerList = () => {
     const [donerList, setDonerList] = React.useState([])
     useEffect(() => {
@@ -41,6 +42,7 @@ const BloodDonerList = () => {
                     </table>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 };

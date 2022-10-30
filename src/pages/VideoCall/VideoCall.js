@@ -7,9 +7,9 @@ import React, { useEffect, useRef, useState } from "react"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import Peer from "simple-peer"
 import io from "socket.io-client"
-
-
-
+import useRole from '../../hooks/useRole'
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
 const socket = io.connect('http://localhost:8000')
 const VideoCall = () => {
     const [me, setMe] = useState("")
@@ -22,6 +22,8 @@ const VideoCall = () => {
     const [callEnded, setCallEnded] = useState(false)
     const [name, setName] = useState("")
     const [isVideoOn, setIsVideoOn] = useState(true)
+    const [user, loading] = useAuthState(auth)
+    const role = useRole(user?.email)
     const myVideo = useRef()
     const userVideo = useRef()
     const connectionRef = useRef()
@@ -110,7 +112,10 @@ const VideoCall = () => {
 
 
     }
-
+    const handleSend = (e) => {
+        e.preventDefault()
+        console.log(e.target.value);
+    }
     return (
         <>
             <h1 style={{ textAlign: "center", color: '#fff' }}>Save Life</h1>
@@ -171,6 +176,10 @@ const VideoCall = () => {
                         </div>
                     ) : null}
                 </div>
+                <form onSubmit={handleSend}>
+                    <input type="text" name="id" id="id" className="rounded-3xl" />
+                    <input type="submit" value="Submit" className="btn" />
+                </form>
                 <button onClick={() => stopVideoOnly(stream)}>mute </button>
             </div>
         </>

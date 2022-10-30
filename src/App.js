@@ -21,7 +21,6 @@ import ShowStaffsByDepartment from "./pages/Staffs/ShowStaffsByDepartment";
 import ShowNurseByDepartment from "./pages/Nurse/ShowNurseByDepartment";
 import ShowNurseDepartments from "./pages/Nurse/ShowNurseDepartments";
 import VideoCall from "./pages/VideoCall/VideoCall";
-import VideoPlayer from "./pages/VideoCall/VideoPlayer";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
@@ -241,35 +240,35 @@ function App() {
 
     {
       path: "/nurse",
-      element: (<ShowNurseDepartments/>)
+      element: (<ShowNurseDepartments />)
     },
     {
       path: "/nurse/all",
-      element: (<ShowAllNurse/>)
+      element: (<ShowAllNurse />)
     },
     {
       path: "/nurse/department/:department",
-      element: (<ShowNurseByDepartment/>)
+      element: (<ShowNurseByDepartment />)
     },
     {
       path: "/nurse/add",
-      element: (<AddNurse/>)
+      element: (<AddNurse />)
     },
     {
       path: "/nurse/edit/:id",
-      element: (<EditNurse/>)
+      element: (<EditNurse />)
     },
-
-
     {
       path: "/not",
+
       element : ( <Notfound></Notfound> )
     },
     {
       path: "/load",
       element : (<Loading></Loading>)
+
     }
-    
+
   ]);
   return (
     <Suspense fallback={<div>Loading...</div>}>

@@ -29,12 +29,13 @@ import BookingModal from './BookingModal';
   //     .then(data => setServices(data))
   // },[formattedDate])
 
+
   return (
     <div>
       <h1 className=' text-center text-2xl mt-12 mb-12'>Available Appointments on {format(date, 'PP')} </h1>
       <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4 mx-auto container'>
         {
-          data.map(service => <AppointmentService
+          services.map(service => <AppointmentService
             key={service._id}
             service={service}
             setTreatment={setTreatment}
@@ -44,7 +45,7 @@ import BookingModal from './BookingModal';
           </AppointmentService>)
         }
       </div>
-      {treatment && <BookingModal treatment={treatment}  setTreatment={setTreatment} date={date} refetch={refetch}></BookingModal>}
+      {treatment && <BookingModal treatment={treatment} setTreatment={setTreatment} date={date}></BookingModal>}
     </div>
   )
 }
