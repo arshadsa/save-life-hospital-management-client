@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 
 const Purchase = () => {
 
@@ -69,6 +70,7 @@ const handlePlace = () => {
 }
   return (
     <div>
+      
       <div>
         <form onSubmit={placeorder} action="" className="my-4 mt-6 -mx-2 lg:flex">
 

@@ -1,5 +1,8 @@
 // here we will add all of our home page components file if you cannot understand please read our componennts text.txt file
 import React from "react";
+import DoctorCard from "../../components/DoctorCard/DoctorCard";
+import Faq from "../../components/Faq/Faq";
+
 import Ambulance from "../../components/Home components/AmbulanceService/Ambulance";
 import AvailableFeatures from "../../components/Home components/AvailableFeatures/AvailableFeatures";
 import Banner from "../../components/Home components/Banner";
@@ -9,10 +12,12 @@ import { Use } from "../../components/Home components/use/Use";
 import Services from "../../components/Home components/What are u looking fr/Services";
 import HomeLogin from "../../components/homelogin/HomeLogin";
 import News from "../../components/news/News";
+import Reviewda from "../../components/Review/Reviewda";
 import { UseWebsite } from "../../components/usewebsite/UseWebsite";
 import { Footer } from "../../shared/Footer/Footer";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 import Speciality from "../Speciality/Speciality";
+
 
 const Homepage = () => {
   return (
@@ -69,8 +74,12 @@ const Homepage = () => {
       <div className="mt-[100px]">
         <News></News>
       </div>
-
-      {/* footer added by ovilash */}
+      <div className="mt-[70px]" >
+        <Reviewda></Reviewda>
+      </div>
+      <div className="mt-[100px]">
+        <Faq></Faq>
+      </div>
       <Footer />
       
     </div>
