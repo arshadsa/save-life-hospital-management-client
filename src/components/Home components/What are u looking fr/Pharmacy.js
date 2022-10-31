@@ -13,11 +13,19 @@ const Pharmacy = () => {
 
   const [medicine, setMedicine] = useState([])
 
+<<<<<<< HEAD
   useEffect(() => {
     fetch(`http://localhost:8000/api/medicines`)
       .then(res => res.json())
       .then(data => setMedicine(data))
   }, [])
+=======
+   useEffect(()=> {
+    fetch('http://localhost:5000/api/medicines')
+    .then(res => res.json())
+    .then(data => setMedicine(data) )
+   },[])
+>>>>>>> 761e71530d354399ab7009d0e2b6db3876ca4182
 
 
   return (

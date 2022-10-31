@@ -23,6 +23,32 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
       patientName: userInfo.displayName,
       phone: event.target.phone.value
 
+<<<<<<< HEAD
+=======
+        }
+
+        fetch('http://localhost:5000/hospitaldoctorsbooking',{
+          method: 'POST',
+          headers:{
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(booking)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if(data.success){
+            Navigate('/dashboard/myappointments');
+            toast(`Appointment is set,${formatedDate} at ${slot}`)
+          }
+          else{
+            toast.error(`You already have an ppointment on,${data.booking?.date} at ${data.booking?.slot}`)
+          }
+          refetch();
+          setTreatment(null);
+        })
+      
+>>>>>>> 761e71530d354399ab7009d0e2b6db3876ca4182
     }
 
     fetch(`http://localhost:5000/hospitaldoctorsbooking`, {
