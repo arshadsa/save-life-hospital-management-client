@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     const [userInfo, userLoading] = useAuthState(auth);
     // console.log(role)
     const { isLoading, error, data, refetch } = useQuery('alluser', () =>
-        fetch('http://localhost:5000/api/allUsers').then(res =>
+        fetch(`http://localhost:5000/api/allUsers`).then(res =>
             res.json()
         )
     )
