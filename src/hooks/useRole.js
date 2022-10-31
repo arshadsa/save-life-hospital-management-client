@@ -5,7 +5,7 @@ const useRole = (email) => {
     const [isLoading, setIsLoading] = React.useState(true)
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/api/user/?email=${email}`)
+            fetch(`${process.env.REACT_APP_BASE_URL}/api/user/?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     setIsLoading(false)

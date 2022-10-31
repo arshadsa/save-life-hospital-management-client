@@ -12,7 +12,7 @@ import { Footer } from '../../shared/Footer/Footer';
 const News = () => {
   const [tools, setTools] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:5000/news`)
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/news`)
       .then(res => res.json())
       .then(data => setTools(data))
   }, [])

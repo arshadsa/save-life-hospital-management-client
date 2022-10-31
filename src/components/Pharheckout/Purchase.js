@@ -12,7 +12,7 @@ const Purchase = () => {
   const [price, setPrice] = useState({});
   // useffecrt handel
   useEffect(() => {
-    const url = `http://localhost:5000/medicine/${id}`;
+    const url = `${process.env.REACT_APP_BASE_URL}/medicine/${id}`;
     console.log(url, "aa");
     fetch(url)
       .then((res) => res.json())
@@ -65,12 +65,12 @@ const Purchase = () => {
 
   }
 
-const handlePlace = () => {
-  toast('Payment Successful')
-}
+  const handlePlace = () => {
+    toast('Payment Successful')
+  }
   return (
     <div>
-      
+
       <div>
         <form onSubmit={placeorder} action="" className="my-4 mt-6 -mx-2 lg:flex">
 

@@ -6,8 +6,8 @@ import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 const EditDoctor = () => {
   const { register, handleSubmit } = useForm();
   const { id } = useParams();
-  const navigate= useNavigate();
-  const [doctorForm, SetDoctorForm] = useState({    
+  const navigate = useNavigate();
+  const [doctorForm, SetDoctorForm] = useState({
     name: "",
     designation: "",
     reviews: "",
@@ -25,11 +25,10 @@ const EditDoctor = () => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:5000/hospitaldoctors/${id}`)
+    fetch(`${process.env.REACT_APP_BASE_URL}/hospitaldoctors/${id}`)
       .then((res) => res.json())
-      .then(data=>
-        { 
-          SetDoctorForm({    
+      .then(data => {
+        SetDoctorForm({
           name: data.name,
           designation: data.designation,
           reviews: data.reviews,
@@ -44,9 +43,10 @@ const EditDoctor = () => {
           image: data?.image,
           specialization: data?.specialization,
           slots: data?.slots
-        })}
-    )
-    },[]); 
+        })
+      }
+      )
+  }, []);
 
   const inputClass =
     "rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparenta";
@@ -65,7 +65,7 @@ const EditDoctor = () => {
         console.log(result);
         navigate('/', { replace: true })
       });
-      
+
   }
 
   const onSubmit = () => {
@@ -346,7 +346,7 @@ const EditDoctor = () => {
                 href="#!"
                 type="button"
                 className="btn bg-red-500 ml-2 hover:bg-yellow-600"
-                onClick={()=>(onDelete())}
+                onClick={() => (onDelete())}
                 value="Add Product"
               >
                 Delete

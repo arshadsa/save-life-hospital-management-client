@@ -9,7 +9,7 @@ const AddNews = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post(`http://localhost:5000/news`, data)
+        axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/news`, data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added Successfully');

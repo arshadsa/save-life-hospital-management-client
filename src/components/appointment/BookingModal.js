@@ -24,7 +24,7 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
       phone: event.target.phone.value
     }
 
-    fetch(`http://localhost:5000/hospitaldoctorsbooking`, {
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

@@ -11,7 +11,7 @@ const MyAppointment = () => {
   const [userInfo, loading] = useAuthState(auth);
   useEffect(() => {
 
-    fetch(`http://localhost:5000/hospitaldoctorsbooking?patient=${userInfo.email}`)
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking?patient=${userInfo.email}`)
       .then(res => res.json())
       .then(data => setAppointments(data))
 
@@ -51,23 +51,23 @@ const MyAppointment = () => {
           </table>
         </div>
       </section>
-    <tbody>
+      <tbody>
         {
-            appointments.map((a, index) => <tr>
+          appointments.map((a, index) => <tr>
             <th>{index + 1}</th>
             <td>{a.treatment}</td>
             <td>{a.date}</td>
             <td>{a.slot}</td>
             <td>{a.fees}</td>
             <td className='text-center'>
-            {(a.fees && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-course text-light-400'>Pay</button></Link>}
-            {(a.fees && a.paid) && <p className='text-green-400'>Paid</p>}
+              {(a.fees && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-course text-light-400'>Pay</button></Link>}
+              {(a.fees && a.paid) && <p className='text-green-400'>Paid</p>}
             </td>
-          </tr> )
+          </tr>)
         }
-    </tbody>
-</div>
-   
+      </tbody>
+    </div>
+
   )
 }
 export default MyAppointment;
