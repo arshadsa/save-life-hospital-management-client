@@ -36,8 +36,6 @@ const MyAppointment = () => {
                 <th>Pay</th>
               </tr>
             </thead>
-
-<<<<<<< HEAD
             <tbody>
               {
                 appointments?.map((a, index) => <tr>
@@ -53,7 +51,6 @@ const MyAppointment = () => {
           </table>
         </div>
       </section>
-=======
     <tbody>
         {
             appointments.map((a, index) => <tr>
@@ -69,10 +66,8 @@ const MyAppointment = () => {
           </tr> )
         }
     </tbody>
-  </table>
 </div>
->>>>>>> anik
-    </div>
+   
   )
 }
 export default MyAppointment;

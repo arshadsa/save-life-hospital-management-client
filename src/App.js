@@ -29,12 +29,9 @@ import MyAppointment from "./components/appointment/MyAppointment";
 import Payment from "./components/appointment/Payment";
 import { CheckoutForm } from "./components/appointment/CheckoutForm";
 import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
-<<<<<<< HEAD
 import Notfound from "./Loadandnotf/Notfound";
-=======
 import AddAmbulance from "./components/addambulance/AddAmbulance";
 
->>>>>>> anik
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
 const AllDoctors = lazy(() => import("./pages/AllDoctors/AllDoctors"));
@@ -273,14 +270,11 @@ function App() {
       path: "/nurse/department/:department",
       element: (<ShowNurseByDepartment />)
     },
-<<<<<<< HEAD
     {
       path: "/nurse/add",
       element: (<AddNurse />)
     },
-=======
-   
->>>>>>> anik
+
     {
       path: "/nurse/edit/:id",
       element: (<EditNurse />)
