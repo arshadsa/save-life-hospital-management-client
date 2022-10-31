@@ -167,7 +167,7 @@ const Doctor = () => {
 
   const [doctors, setDoctors] = useState([])
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BASE_URL}/hospitaldoctors`)
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctors`)
       .then(res => res.json())
       .then(data => setDoctors(data))
   }, [])

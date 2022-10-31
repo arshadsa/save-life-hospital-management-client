@@ -27,7 +27,7 @@ const BloodDoner = () => {
             age: e?.target?.age?.value,
         }
         console.log(donerInfo)
-        fetch(`${process.env.REACT_APP_BASE_URL}/bloodDoner`, {
+        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/bloodDoner`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

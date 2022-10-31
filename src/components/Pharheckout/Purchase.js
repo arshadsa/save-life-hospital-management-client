@@ -12,7 +12,7 @@ const Purchase = () => {
   const [price, setPrice] = useState({});
   // useffecrt handel
   useEffect(() => {
-    const url = `${process.env.REACT_APP_BASE_URL}/medicine/${id}`;
+    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/medicine/${id}`;
     console.log(url, "aa");
     fetch(url)
       .then((res) => res.json())

@@ -7,9 +7,8 @@ import React, { useEffect, useRef, useState } from "react"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import Peer from "simple-peer"
 import io from "socket.io-client"
-import useRole from '../../hooks/useRole'
-import auth from '../../firebase.init';
-import { useAuthState } from 'react-firebase-hooks/auth';
+
+
 
 const socket = io.connect('http://localhost:8000')
 const VideoCall = () => {
@@ -22,9 +21,6 @@ const VideoCall = () => {
     const [idToCall, setIdToCall] = useState("")
     const [callEnded, setCallEnded] = useState(false)
     const [name, setName] = useState("")
-    const [isVideoOn, setIsVideoOn] = useState(true)
-    const [user, loading] = useAuthState(auth)
-    const role = useRole(user?.email)
     const myVideo = useRef()
     const userVideo = useRef()
     const connectionRef = useRef()
@@ -87,9 +83,6 @@ const VideoCall = () => {
         peer.on("stream", (stream) => {
             userVideo.current.srcObject = stream
         })
-        // peer.on('close', () => {
-        //     peer.removeAllListeners('close')
-        // })
 
         peer.signal(callerSignal)
         connectionRef.current = peer
@@ -98,29 +91,12 @@ const VideoCall = () => {
     const leaveCall = () => {
         setCallEnded(true)
         connectionRef.current.destroy()
-        userVideo.current.srcObject = null
-        myVideo.current.srcObject = null
-        // userVideo.current.srcObject.active = false
-        console.log(userVideo.current.srcObject);
     }
-    function stopVideoOnly(stream) {
-        stream.getTracks().forEach(function (track) {
-            if (track.readyState == 'live' && track.kind === 'video') {
-                track.stop();
-            }
-        });
-        // connectionRef.current = peer
 
-
-    }
-    const handleSend = (e) => {
-        e.preventDefault()
-        console.log(e.target.value);
-    }
     return (
         <>
-            <h1 style={{ textAlign: "center", color: '#fff' }}>Save Life</h1>
-            <div className="container flex flex-col justify-center items-center h-[98vh]">
+            <h1 style={{ textAlign: "center", color: '#fff' }}>Zoomish</h1>
+            <div className="container">
                 <div className="video-container">
                     <div className="video">
                         {stream && <video playsInline muted ref={myVideo} autoPlay style={{ width: "300px" }} />}
@@ -161,7 +137,6 @@ const VideoCall = () => {
                         ) : (
                             <IconButton color="primary" aria-label="call" onClick={() => callUser(idToCall)}>
                                 <PhoneIcon fontSize="large" />
-                                Click Here To Call
                             </IconButton>
                         )}
                         {idToCall}
@@ -177,11 +152,6 @@ const VideoCall = () => {
                         </div>
                     ) : null}
                 </div>
-                <form onSubmit={handleSend}>
-                    <input type="text" name="id" id="id" className="rounded-3xl" />
-                    <input type="submit" value="Submit" className="btn" />
-                </form>
-                <button onClick={() => stopVideoOnly(stream)}>mute </button>
             </div>
         </>
     )

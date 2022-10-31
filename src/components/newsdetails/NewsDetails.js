@@ -11,7 +11,7 @@ const NewsDetails = () => {
   const [parts, setParts] = useState({})
   const [disable, setDisable] = useState(false);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BASE_URL}/news/${id}`)
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/news/${id}`)
       .then(res => res.json())
       .then(data => setParts(data))
 

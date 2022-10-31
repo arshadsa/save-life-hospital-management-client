@@ -18,7 +18,7 @@ const EditNurse = () => {
   });
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BASE_URL}/nurse/${id}`)
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/nurse/${id}`)
       .then((res) => res.json())
       .then(data => {
         SetNurseForm({

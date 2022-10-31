@@ -9,7 +9,7 @@ const AddAmbulance = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post(`${process.env.REACT_APP_BASE_URL}/ambulance`, data)
+        axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/ambulance`, data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added Successfully');

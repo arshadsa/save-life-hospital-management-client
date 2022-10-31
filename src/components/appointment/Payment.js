@@ -10,7 +10,7 @@ import { CheckoutForm } from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51KrL8sH9U1rucFvVxdtUNWHMaDPPIT6mfxHqfV3OQ6U0yofozFclZc1gmS3VbwMGTwBluXRI3biFxPikM7eJ7dU0004eYdGiJq');
 const Payment = () => {
   const { id } = useParams();
-  const url = `${process.env.REACT_APP_BASE_URL}/hospitaldoctorsbooking/${id}`;
+  const url = `${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking/${id}`;
   const { data: coursebooking, isLoading } = useQuery(['hospitaldoctorsbooking', id], () => fetch(url).then(res => res.json()))
 
   if (isLoading) {

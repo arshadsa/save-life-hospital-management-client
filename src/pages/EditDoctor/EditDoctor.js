@@ -25,7 +25,7 @@ const EditDoctor = () => {
   });
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BASE_URL}/hospitaldoctors/${id}`)
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctors/${id}`)
       .then((res) => res.json())
       .then(data => {
         SetDoctorForm({

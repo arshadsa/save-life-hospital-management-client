@@ -6,7 +6,7 @@ import SingleAmbulance from './SingleAmbulance';
 const Ambulance = () => {
   const [ambulance, setAmbulance] = useState([])
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BASE_URL}/ambulance`)
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/ambulance`)
       .then(res => res.json())
       .then(data => setAmbulance(data))
   }, [])
