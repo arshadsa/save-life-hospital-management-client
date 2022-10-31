@@ -9,7 +9,7 @@ const SingleAmbulance = ({ ambulances }) => {
 
   const onSubmit = data => {
     console.log(data);
-    axios.post("${process.env.REACT_APP_BASE_URL}/ambooking", data)
+    axios.post(`${process.env.REACT_APP_BASE_URL}/ambooking`, data)
       .then(res => {
 
         toast('Added Ambulance Successfully')
