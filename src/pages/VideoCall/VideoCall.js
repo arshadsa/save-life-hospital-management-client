@@ -11,7 +11,7 @@ import useRole from '../../hooks/useRole'
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
-const socket = io.connect('http://localhost:5000')
+const socket = io.connect('http://localhost:8000')
 const VideoCall = () => {
     const [me, setMe] = useState("")
     const [stream, setStream] = useState()
