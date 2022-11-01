@@ -12,7 +12,7 @@ const AppointmentBanner = ({ date, setDate }) => {
   return (
     <div>
       <div className='navbar'>
-        <NavigationBar></NavigationBar>
+        <NavigationBar isHome={true}></NavigationBar>
       </div>
 
       <div className=' grid lg:grid-cols-2 sm:grid-cols-1 mt-[80px]'>

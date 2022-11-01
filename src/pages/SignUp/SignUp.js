@@ -90,7 +90,7 @@ const SignUp = () => {
             role = "Patient"
         }
         const user = { "name": userInfo?.displayName, "email": userInfo?.email, "role": role }
-        fetch("${process.env.REACT_APP_SERVER_BASE_URL}/api/users", {
+        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/users`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)

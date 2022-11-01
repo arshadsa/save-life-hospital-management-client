@@ -19,7 +19,7 @@ const AddNews = () => {
     };
     return (
         <div>
-            <NavigationBar></NavigationBar>
+            <NavigationBar isHome={true}></NavigationBar>
             <h1 className='text-center text-4xl  mb-4  text-primary'>  <Typewriter
                 options={{
                     strings: [' Please add a Blog with Details : '],

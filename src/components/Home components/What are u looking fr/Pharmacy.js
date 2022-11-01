@@ -23,7 +23,7 @@ const Pharmacy = () => {
   return (
     <div>
       <div className='px-2 pr-3 navbar'>
-        <NavigationBar></NavigationBar>
+        <NavigationBar isHome={true}></NavigationBar>
       </div>
       <div className="bg-white mt-[130px] ">
         <div className="max-w-2xl mx-auto pb-10 px-4 sm:px-6 lg:max-w-7xl lg:px-8 pt-10 sm:pt-10">

@@ -25,7 +25,7 @@ const Phercheckout = () => {
   return (
     <div >
       <div className=' navbar px-2 pr-3'>
-        <NavigationBar></NavigationBar>
+        <NavigationBar isHome={true}></NavigationBar>
       </div>
       <div className='mt-[70px]'>
         <div>

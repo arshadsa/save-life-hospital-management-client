@@ -152,9 +152,7 @@ export const NavigationBar = ({ isHome }) => {
                             {
                                 role === "Patient" ? <>
                                     {/* Put all other route using Link inside li */}
-                                    <li><Link to="/makeAdmin">Make Admin</Link></li>
                                     <li>
-
                                         <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link></li>
                                 </> : null
                             }

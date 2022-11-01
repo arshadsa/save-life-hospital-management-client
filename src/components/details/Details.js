@@ -22,7 +22,7 @@ const Details = () => {
   return (
     <div className="">
       <div className="navbar ">
-        <NavigationBar></NavigationBar>
+        <NavigationBar isHome={true}></NavigationBar>
       </div>
       <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mt-[100px] container mx-auto p-3 px-6 ">
         <div className="text-d">
