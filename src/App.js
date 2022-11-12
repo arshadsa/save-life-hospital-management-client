@@ -58,7 +58,7 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
-   
+
     {
       path: "/doctor",
       element: <Speciality></Speciality>,
@@ -165,7 +165,7 @@ function App() {
       path: "/websitedoctors/:id",
       element: <Details></Details>,
     },
-    
+
     {
       path: "/addnews",
       element: (
@@ -202,10 +202,10 @@ function App() {
     },
     {
       path: "/appointment",
-      element: (<Appointment></Appointment>)
+      element: (<ProtectedRoute><Appointment></Appointment></ProtectedRoute>)
     },
 
-   
+
     {
       path: "dashboard",
       element: (<Dashboard />),
@@ -216,7 +216,7 @@ function App() {
         },
         {
           path: "addnurse",
-          element: (<AddNurse/>)
+          element: (<AddNurse />)
         },
         {
           path: "addambulance",
