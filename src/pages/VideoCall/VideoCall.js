@@ -10,7 +10,7 @@ import io from "socket.io-client"
 
 
 
-const socket = io.connect('http://localhost:5000')
+const socket = io.connect('https://powerful-woodland-71455.herokuapp.com/')
 const VideoCall = () => {
     const [me, setMe] = useState("")
     const [stream, setStream] = useState()
@@ -21,7 +21,6 @@ const VideoCall = () => {
     const [idToCall, setIdToCall] = useState("")
     const [callEnded, setCallEnded] = useState(false)
     const [name, setName] = useState("")
-    const [isVideoOn, setIsVideoOn] = useState(true)
     const myVideo = useRef()
     const userVideo = useRef()
     const connectionRef = useRef()
@@ -84,9 +83,6 @@ const VideoCall = () => {
         peer.on("stream", (stream) => {
             userVideo.current.srcObject = stream
         })
-        // peer.on('close', () => {
-        //     peer.removeAllListeners('close')
-        // })
 
         peer.signal(callerSignal)
         connectionRef.current = peer
@@ -95,26 +91,12 @@ const VideoCall = () => {
     const leaveCall = () => {
         setCallEnded(true)
         connectionRef.current.destroy()
-        userVideo.current.srcObject = null
-        myVideo.current.srcObject = null
-        // userVideo.current.srcObject.active = false
-        console.log(userVideo.current.srcObject);
-    }
-    function stopVideoOnly(stream) {
-        stream.getTracks().forEach(function (track) {
-            if (track.readyState == 'live' && track.kind === 'video') {
-                track.stop();
-            }
-        });
-        // connectionRef.current = peer
-
-
     }
 
     return (
         <>
-            <h1 style={{ textAlign: "center", color: '#fff' }}>Save Life</h1>
-            <div className="container flex flex-col justify-center items-center h-[98vh]">
+            <h1 style={{ textAlign: "center", color: '#fff' }}>Zoomish</h1>
+            <div className="container">
                 <div className="video-container">
                     <div className="video">
                         {stream && <video playsInline muted ref={myVideo} autoPlay style={{ width: "300px" }} />}
@@ -155,7 +137,6 @@ const VideoCall = () => {
                         ) : (
                             <IconButton color="primary" aria-label="call" onClick={() => callUser(idToCall)}>
                                 <PhoneIcon fontSize="large" />
-                                Click Here To Call
                             </IconButton>
                         )}
                         {idToCall}
@@ -171,7 +152,6 @@ const VideoCall = () => {
                         </div>
                     ) : null}
                 </div>
-                <button onClick={() => stopVideoOnly(stream)}>mute </button>
             </div>
         </>
     )

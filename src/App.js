@@ -21,7 +21,6 @@ import ShowStaffsByDepartment from "./pages/Staffs/ShowStaffsByDepartment";
 import ShowNurseByDepartment from "./pages/Nurse/ShowNurseByDepartment";
 import ShowNurseDepartments from "./pages/Nurse/ShowNurseDepartments";
 import VideoCall from "./pages/VideoCall/VideoCall";
-import VideoPlayer from "./pages/VideoCall/VideoPlayer";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
@@ -30,6 +29,7 @@ import MyAppointment from "./components/appointment/MyAppointment";
 import Payment from "./components/appointment/Payment";
 import { CheckoutForm } from "./components/appointment/CheckoutForm";
 import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
+import Notfound from "./Loadandnotf/Notfound";
 import AddAmbulance from "./components/addambulance/AddAmbulance";
 
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
@@ -58,7 +58,7 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
-   
+
     {
       path: "/doctor",
       element: <Speciality></Speciality>,
@@ -165,7 +165,7 @@ function App() {
       path: "/websitedoctors/:id",
       element: <Details></Details>,
     },
-    
+
     {
       path: "/addnews",
       element: (
@@ -202,10 +202,10 @@ function App() {
     },
     {
       path: "/appointment",
-      element: (<Appointment></Appointment>)
+      element: (<ProtectedRoute><Appointment></Appointment></ProtectedRoute>)
     },
 
-   
+
     {
       path: "dashboard",
       element: (<Dashboard />),
@@ -216,7 +216,7 @@ function App() {
         },
         {
           path: "addnurse",
-          element: (<AddNurse/>)
+          element: (<AddNurse />)
         },
         {
           path: "addambulance",
@@ -256,7 +256,7 @@ function App() {
 
     {
       path: "/nurse",
-      element: (<ShowNurseDepartments/>)
+      element: (<ShowNurseDepartments />)
     },
     {
       path: "/checkout",
@@ -264,19 +264,26 @@ function App() {
     },
     {
       path: "/nurse/all",
-      element: (<ShowAllNurse/>)
+      element: (<ShowAllNurse />)
     },
     {
       path: "/nurse/department/:department",
-      element: (<ShowNurseByDepartment/>)
+      element: (<ShowNurseByDepartment />)
     },
-   
     {
-      path: "/nurse/edit/:id",
-      element: (<EditNurse/>)
+      path: "/nurse/add",
+      element: (<AddNurse />)
     },
 
-    
+    {
+      path: "/nurse/edit/:id",
+      element: (<EditNurse />)
+    },
+    {
+      path: "/not",
+      element: (<Notfound></Notfound>)
+    }
+
   ]);
   return (
     <Suspense fallback={<div>Loading...</div>}>

@@ -14,7 +14,7 @@ const RouteAthenication = (ChildComponent, givenRole) => function HOC() {
     // }, [loading, userInfo.email])
     console.log("currentRole", currentRole);
     console.log("givenRole", givenRole);
-    if (loading === true || (currentRole === null)) {
+    if (loading === true) {
         return
     }
     return (

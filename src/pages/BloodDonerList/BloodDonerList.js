@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
 import { v4 as uuidv4 } from 'uuid';
+import { Footer } from '../../shared/Footer/Footer';
 const BloodDonerList = () => {
     const [donerList, setDonerList] = React.useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/bloodDonerList")
+        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/bloodDonerList`)
             .then(res => res.json())
             .then(data => setDonerList(data))
     }, [])
@@ -41,6 +42,7 @@ const BloodDonerList = () => {
                     </table>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 };
