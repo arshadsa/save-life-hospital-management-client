@@ -21,7 +21,7 @@ const MyAppointment = () => {
   }
   return (
     <div>
-      <section className='md:mx-10 pt-60 pb-10'>
+      <section className='md:mx-10'>
         <h1>My Appointments: {appointments.length}</h1>
         <div className="overflow-x-auto">
           <table className="table w-full">
@@ -44,28 +44,17 @@ const MyAppointment = () => {
                   <td>{a.date}</td>
                   <td>{a.slot}</td>
                   <td>{a.fees}</td>
-                  <td>Pay</td>
+                  <td className='text-center'>
+            {(a.fees && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn bg-blue-500 text-light-400'>Pay</button></Link>}
+            {(a.fees && a.paid) && <p className='text-green-400'>Paid</p>}
+            </td>
                 </tr>)
               }
             </tbody>
           </table>
         </div>
       </section>
-      <tbody>
-        {
-          appointments.map((a, index) => <tr>
-            <th>{index + 1}</th>
-            <td>{a.treatment}</td>
-            <td>{a.date}</td>
-            <td>{a.slot}</td>
-            <td>{a.fees}</td>
-            <td className='text-center'>
-              {(a.fees && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-course text-light-400'>Pay</button></Link>}
-              {(a.fees && a.paid) && <p className='text-green-400'>Paid</p>}
-            </td>
-          </tr>)
-        }
-      </tbody>
+     
     </div>
 
   )

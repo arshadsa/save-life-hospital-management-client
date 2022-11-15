@@ -22,7 +22,7 @@ const Homepage = () => {
   return (
     <div id='home'>
       {/* navbar added by ovilash */}
-      <NavigationBar isHome={true} />
+    
 
       {/* banner added by forhad & anik */}
       <Banner />
