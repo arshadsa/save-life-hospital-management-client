@@ -4,8 +4,9 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import { Navigate, useNavigate } from 'react-router-dom';
-const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
+const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
   const { _id, name, fees, slots } = treatment;
+  console.log("doctor name", name)
   const Navigate = useNavigate();
   const [userInfo] = useAuthState(auth);
   const formatedDate = format(date, 'PP');
@@ -15,13 +16,14 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
     console.log(_id, name, slot);
     const booking = {
       treatmentId: _id,
-      treatment: name,
+      doctorName: name,
       date: formatedDate,
       fees: fees,
       slot,
       patient: userInfo.email,
       patientName: userInfo.displayName,
-      phone: event.target.phone.value
+      phone: event.target.phone.value,
+      paymentStatus: "unpaid"
     }
 
     fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking`, {
