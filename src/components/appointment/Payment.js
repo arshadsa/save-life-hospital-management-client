@@ -26,7 +26,7 @@ const Payment = () => {
             paymentStatus: "paid",
             serviceId: serviceId
           }
-          fetch(`http://localhost:5000/updatepayment`, {
+          fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/updatepayment`, {
             method: 'PUT',
             headers: {
               'content-type': 'application/json'

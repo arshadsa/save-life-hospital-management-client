@@ -61,7 +61,7 @@ export default function CheckoutForm({ serviceId }) {
 
                 // ================================
                 // Make sure to change this to your payment completion page
-                return_url: "http://localhost:3000/dashboard/myappointments",
+                return_url: "https://hospital-management-syst-79467.web.app/dashboard/myappointments",
             },
         });
 
