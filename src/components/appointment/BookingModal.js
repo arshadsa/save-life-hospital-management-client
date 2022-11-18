@@ -4,8 +4,9 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import { Navigate, useNavigate } from 'react-router-dom';
+import moment from 'moment';
 const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
-  const { _id, name, fees, slots } = treatment;
+  const { _id, name, fees, availableSlots } = treatment;
   console.log("doctor name", name)
   const Navigate = useNavigate();
   const [userInfo] = useAuthState(auth);
@@ -48,7 +49,8 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
       })
 
   }
-
+  // date ------
+  let d = moment(date).format('l')
   return (
     <div>
 
@@ -61,7 +63,7 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
             <input type="text" value={format(date, 'PP')} disabled className="input input-bordered w-full max-w-xs" />
             <select name="slot" className="select select-bordered w-full max-w-xs">
               {
-                slots.map(slot => <option value={slot}>{slot}</option>)
+                availableSlots[d].map(slot => <option value={slot}>{slot}</option>)
               }
 
             </select>
