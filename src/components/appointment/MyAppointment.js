@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import RouteAthenication from '../../HOC/RouteAthenication';
 
@@ -10,7 +11,7 @@ const MyAppointment = () => {
   const [userInfo, loading] = useAuthState(auth);
   useEffect(() => {
 
-    fetch(`http://localhost:5000/hospitaldoctorsbooking?patient=${userInfo.email}`)
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking?patient=${userInfo.email}`)
       .then(res => res.json())
       .then(data => setAppointments(data))
 
@@ -20,7 +21,7 @@ const MyAppointment = () => {
   }
   return (
     <div>
-      <section className='md:mx-10 pt-60 pb-10'>
+      <section className='md:mx-10'>
         <h1>My Appointments: {appointments.length}</h1>
         <div className="overflow-x-auto">
           <table className="table w-full">
@@ -35,23 +36,27 @@ const MyAppointment = () => {
                 <th>Pay</th>
               </tr>
             </thead>
-
             <tbody>
               {
                 appointments?.map((a, index) => <tr>
                   <th>{index + 1}</th>
-                  <td>{a.treatment}</td>
+                  <td>{a.doctorName}</td>
                   <td>{a.date}</td>
                   <td>{a.slot}</td>
                   <td>{a.fees}</td>
-                  <td>Pay</td>
+                  <td className='text-center'>
+                    {(a.paymentStatus === "unpaid") && <Link to={`/dashboard/payment/${a._id}`}><button className='btn bg-blue-500 text-light-400'>Pay</button></Link>}
+                    {(a.paymentStatus === "paid") && <p className='text-green-400'>Paid</p>}
+                  </td>
                 </tr>)
               }
             </tbody>
           </table>
         </div>
       </section>
+
     </div>
+
   )
 }
 export default MyAppointment;
