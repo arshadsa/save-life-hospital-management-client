@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import './UseWebsite.css';
 export const UseWebsite = () => {
   return (
@@ -13,9 +13,8 @@ export const UseWebsite = () => {
 <img src='https://i.ibb.co/47PwHqK/xxinf-MFk1xal-Wu454xt8-Yt1t-VFat-PI1-Gg1b90-Hom.png' className='w-12 ml-24'></img>
     </div>
    
-<p className='text-xl'><b>$ 114</b>
-/
-monthly</p>
+<p className='text-2xl'><b className='text-extrabold'>$ 150</b>
+/ monthly</p>
 <p className='mb-5'>For 1 adult
 
 </p>
@@ -38,9 +37,8 @@ monthly</p>
 <img src='https://i.ibb.co/47PwHqK/xxinf-MFk1xal-Wu454xt8-Yt1t-VFat-PI1-Gg1b90-Hom.png' className='w-12 ml-24'></img>
     </div>
    
-<p className='text-xl'><b>$ 200</b>
-/
-monthly</p>
+   <p className='text-2xl'><b className='text-extrabold'>$ 200</b>
+/ monthly</p>
 <p className='mb-5'>For 1 adult
 
 </p>
@@ -63,9 +61,8 @@ monthly</p>
 <img src='https://i.ibb.co/47PwHqK/xxinf-MFk1xal-Wu454xt8-Yt1t-VFat-PI1-Gg1b90-Hom.png' className='w-12 ml-24'></img>
     </div>
    
-<p className='text-xl'><b>$ 309</b>
-/
-monthly</p>
+    <p className='text-2xl'><b className='text-extrabold'>$ 309</b>
+/ monthly</p>
 <p className='mb-5'>For 1 adult
 
 </p>
@@ -88,9 +85,8 @@ monthly</p>
 <img src='https://i.ibb.co/47PwHqK/xxinf-MFk1xal-Wu454xt8-Yt1t-VFat-PI1-Gg1b90-Hom.png' className='w-12 ml-24'></img>
     </div>
    
-<p className='text-xl'><b>$ 451</b>
-/
-monthly</p>
+    <p className='text-2xl'><b className='text-extrabold'>$ 451</b>
+/ monthly</p>
 <p className='mb-5'>For 1 adult
 
 </p>
@@ -105,6 +101,31 @@ monthly</p>
   </div>
  
 </div>
+
+    <div className="card w-96 use-image ">
+  <div className="card-body">
+    <div className='grid lg:grid-cols-2 sm:grid-cols-2'>
+    <h2 className="text-2xl text-primary font-bold">Normal Care
+</h2>
+<img src='https://i.ibb.co/47PwHqK/xxinf-MFk1xal-Wu454xt8-Yt1t-VFat-PI1-Gg1b90-Hom.png' className='w-12 ml-24'></img>
+    </div>
+   
+    <p className='text-2xl'><b className='text-extrabold'>$ 110</b>
+/ monthly</p>
+<p className='mb-5'>For 1 adult
+
+</p>
+    <ul>
+      <li className='mb-5'> <i class="fa-solid fa-check"></i> Unlimited consultations with our experienced on duty General Physician & Gynaecology Doctors</li>
+      <li className='mb-5'> <i class="fa-solid fa-check"></i> Upto 40% discount on home diagnostic tests.</li>
+      <li> <i class="fa-solid fa-check"></i> $ 40,000 cashback on health & life insurance.</li>
+    </ul>
+    <div className="card-actions">
+      <button className="btn btn-primary"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
+    </div>
+  </div>
+    </div>
+
     <div className="card w-96 use-image ">
   <div className="card-body">
     <div className='grid lg:grid-cols-2 sm:grid-cols-2'>
@@ -129,7 +150,7 @@ monthly</p>
     </div>
   </div>
  
-</div>
+    </div>
  
    
     </div>

@@ -1,6 +1,5 @@
-import React from 'react'
-import BookingModal from './BookingModal';
-import moment from "moment"
+import moment from "moment";
+import React from 'react';
 const AppointmentService = ({ service, setTreatment, date }) => {
   const { name, availableSlots } = service;
   console.log("selected date", moment(date).format('l'));
