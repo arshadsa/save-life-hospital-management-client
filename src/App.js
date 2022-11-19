@@ -21,11 +21,17 @@ import ShowStaffsByDepartment from "./pages/Staffs/ShowStaffsByDepartment";
 import ShowNurseByDepartment from "./pages/Nurse/ShowNurseByDepartment";
 import ShowNurseDepartments from "./pages/Nurse/ShowNurseDepartments";
 import VideoCall from "./pages/VideoCall/VideoCall";
-import VideoPlayer from "./pages/VideoCall/VideoPlayer";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import useRole from "./hooks/useRole";
+import MyAppointment from "./components/appointment/MyAppointment";
+import Payment from "./components/appointment/Payment";
+import { CheckoutForm } from "./components/appointment/CheckoutForm";
+import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
+import Notfound from "./Loadandnotf/Notfound";
+import AddAmbulance from "./components/addambulance/AddAmbulance";
+
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
 const AllDoctors = lazy(() => import("./pages/AllDoctors/AllDoctors"));
@@ -159,12 +165,7 @@ function App() {
       path: "/websitedoctors/:id",
       element: <Details></Details>,
     },
-    {
-      path: "/appointment",
-      element: (
-        <Appointment></Appointment>
-      )
-    },
+
     {
       path: "/addnews",
       element: (
@@ -200,12 +201,38 @@ function App() {
       element: (<Phercheckout></Phercheckout>)
     },
     {
+      path: "/appointment",
+      element: (<ProtectedRoute><Appointment></Appointment></ProtectedRoute>)
+    },
+
+
+    {
       path: "dashboard",
       element: (<Dashboard />),
       children: [
         {
           path: "makeAdmin",
           element: <MakeAdmin />,
+        },
+        {
+          path: "addnurse",
+          element: (<AddNurse />)
+        },
+        {
+          path: "addambulance",
+          element: <AddAmbulance></AddAmbulance>,
+        },
+        {
+          path: "payment/:id",
+          element: <Payment></Payment>,
+        },
+        {
+          path: "adddoctor",
+          element: <AddDoctor></AddDoctor>,
+        },
+        {
+          path: "myappointments",
+          element: <MyAppointment></MyAppointment>,
         },
         {
           path: "bloodDoner",
@@ -229,26 +256,34 @@ function App() {
 
     {
       path: "/nurse",
-      element: (<ShowNurseDepartments/>)
+      element: (<ShowNurseDepartments />)
+    },
+    {
+      path: "/checkout",
+      element: (<Payment></Payment>)
     },
     {
       path: "/nurse/all",
-      element: (<ShowAllNurse/>)
+      element: (<ShowAllNurse />)
     },
     {
       path: "/nurse/department/:department",
-      element: (<ShowNurseByDepartment/>)
+      element: (<ShowNurseByDepartment />)
     },
     {
       path: "/nurse/add",
-      element: (<AddNurse/>)
-    },
-    {
-      path: "/nurse/edit/:id",
-      element: (<EditNurse/>)
+      element: (<AddNurse />)
     },
 
-    
+    {
+      path: "/nurse/edit/:id",
+      element: (<EditNurse />)
+    },
+    {
+      path: "/not",
+      element: (<Notfound></Notfound>)
+    }
+
   ]);
   return (
     <Suspense fallback={<div>Loading...</div>}>

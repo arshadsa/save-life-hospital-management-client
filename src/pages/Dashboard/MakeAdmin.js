@@ -8,21 +8,25 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RouteAthenication from '../../HOC/RouteAthenication';
 import Dashboard from './Dashboard';
+import { useEffect } from 'react';
 const MakeAdmin = () => {
     const [userInfo, userLoading] = useAuthState(auth);
-    const role = useRole(userInfo?.email);
-    console.log(role)
+    // console.log(role)
     const { isLoading, error, data, refetch } = useQuery('alluser', () =>
-        fetch('http://localhost:5000/api/allUsers').then(res =>
+        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/allUsers`).then(res =>
             res.json()
         )
     )
 
+    useEffect(() => {
+    }, [isLoading, userInfo.email, userLoading])
+    const role = useRole(userInfo?.email);
     if (isLoading || userLoading) return 'Loading...'
 
 
+
     const handleMakeAdmin = (email) => {
-        const url = `http://localhost:5000/api/allUsers/?email=${email}`
+        const url = `${process.env.REACT_APP_SERVER_BASE_URL}/api/allUsers/?email=${email}`
         fetch(url, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },

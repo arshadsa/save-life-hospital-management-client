@@ -31,7 +31,7 @@ const SignUp = () => {
     useEffect(() => {
         if (userInfo) {
             console.log("google user", userInfo?.email);
-            fetch(`http://localhost:5000/api/user/?email=${userInfo?.email}`)
+            fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/user/?email=${userInfo?.email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
@@ -69,7 +69,7 @@ const SignUp = () => {
         console.log("user infor google", userGoogle);
         // if (userInfo) {
         //     console.log("google user", userInfo?.email);
-        //     fetch(`http://localhost:5000/api/user/?email=${userInfo?.email}`)
+        //     fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/user/?email=${userInfo?.email}`)
         //         .then(res => res.json())
         //         .then(data => {
         //             console.log(data)
@@ -90,7 +90,7 @@ const SignUp = () => {
             role = "Patient"
         }
         const user = { "name": userInfo?.displayName, "email": userInfo?.email, "role": role }
-        fetch("http://localhost:5000/api/users", {
+        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/users`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)

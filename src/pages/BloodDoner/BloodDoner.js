@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
+import { Footer } from '../../shared/Footer/Footer';
 
 const BloodDoner = () => {
     const bloodGroup = ["A+", "A-", "O+", "O-", "AB-", "AB+", "B+", "B-"];
@@ -26,7 +27,7 @@ const BloodDoner = () => {
             age: e?.target?.age?.value,
         }
         console.log(donerInfo)
-        fetch('http://localhost:5000/bloodDoner', {
+        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/bloodDoner`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
