@@ -1,5 +1,5 @@
 import React from "react";
-import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,7 +11,6 @@ import "swiper/css/scrollbar";
 import "./Homecomponents.css";
 
 // image for banner
-import scbannerimage from "../../assets/Banner Image/scbi.png";
 
 const Banner = () => {
   return (
