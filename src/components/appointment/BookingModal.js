@@ -6,11 +6,16 @@ import { toast } from 'react-toastify';
 import { Navigate, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
-  const { _id, name, fees, availableSlots } = treatment;
+  const { _id, name, fees, availableSlots, email } = treatment;
   console.log("doctor name", name)
+  console.log("avaialble slots from the modal", availableSlots);
   const Navigate = useNavigate();
   const [userInfo] = useAuthState(auth);
-  const formatedDate = format(date, 'PP');
+  const formatedDate = moment(date).format('L');
+  console.log("formatedDate", formatedDate);
+  const availableAppointments = availableSlots[formatedDate].filter(elem => elem !== formatedDate);
+  console.log("avaiable", availableSlots[formatedDate]);
+  console.log("availableAppointments", availableAppointments);
   const handleBooking = event => {
     event.preventDefault();
     const slot = event.target.slot.value;
@@ -19,6 +24,7 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
       treatmentId: _id,
       doctorName: name,
       date: formatedDate,
+      doctorEmail: email,
       fees: fees,
       slot,
       patient: userInfo.email,
@@ -26,7 +32,6 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
       phone: event.target.phone.value,
       paymentStatus: "unpaid"
     }
-
     fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking`, {
       method: 'POST',
       headers: {
@@ -44,6 +49,20 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
         else {
           toast.error(`You already have an ppointment on,${data.booking?.date} at ${data.booking?.slot}`)
         }
+        // Update doctors aviablable slots here
+        const availableAppointments = availableSlots[formatedDate].filter(elem => elem !== slot);
+        console.log("availableAppointments", availableAppointments);
+        // delete treatment[_id]
+        const newDocotor = { ...treatment, availableAppointments }
+        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/updatedoctoravailableslots?date=${formatedDate}&email=${email}`, {
+          method: 'PUT',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(newDocotor)
+        })
+          .then(res => res.json())
+          .then(data => console.log(data))
         refetch();
         setTreatment(null);
       })
@@ -61,7 +80,7 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
           <h3 className="font-bold text-lg">Booking for {name}</h3>
           <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
             <input type="text" value={format(date, 'PP')} disabled className="input input-bordered w-full max-w-xs" />
-            <select name="slot" className="select select-bordered w-full max-w-xs">
+            <select name="slot" className="select select-bordered w-full max-w-xs" required>
               {
                 availableSlots[d].map(slot => <option value={slot}>{slot}</option>)
               }

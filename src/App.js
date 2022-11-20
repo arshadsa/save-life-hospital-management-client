@@ -31,6 +31,7 @@ import { CheckoutForm } from "./components/appointment/CheckoutForm";
 import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
 import Notfound from "./Loadandnotf/Notfound";
 import AddAmbulance from "./components/addambulance/AddAmbulance";
+import DoctorAppointment from "./components/appointment/DoctorAppointment";
 
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
@@ -101,24 +102,11 @@ function App() {
       )
     },
     {
-      path: "/websitedoctors/:id",
-      element: (
-        <Details></Details>
-      ),
-    },
-    {
       path: "/news/:id",
       element: (
         <NewsDetails></NewsDetails>
       ),
     },
-    {
-      path: "/websitedoctors/:id",
-      element: (
-        <Details></Details>
-      ),
-    },
-
     {
       path: "*",
       element: (
@@ -163,7 +151,7 @@ function App() {
     },
     {
       path: "/websitedoctors/:id",
-      element: <Details></Details>,
+      element: <ProtectedRoute><Details></Details></ProtectedRoute>,
     },
 
     {
@@ -233,6 +221,10 @@ function App() {
         {
           path: "myappointments",
           element: <MyAppointment></MyAppointment>,
+        },
+        {
+          path: "doctorAppointment",
+          element: <DoctorAppointment />,
         },
         {
           path: "bloodDoner",
