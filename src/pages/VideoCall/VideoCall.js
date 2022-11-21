@@ -12,7 +12,7 @@ const VideoCall = () => {
     const handleVideoCall = (e) => {
         e.preventDefault();
         console.log(e?.target?.meeting?.value);
-        fetch(`http://localhost:5000/get-token?channelName=` + e?.target?.meeting?.value)
+        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/get-token?channelName=` + e?.target?.meeting?.value)
             .then(res => res.json())
             .then(data => {
                 const rtcProps = {

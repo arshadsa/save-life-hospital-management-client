@@ -52,12 +52,20 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
         // Update doctors aviablable slots here
         const availableAppointments = availableSlots[formatedDate].filter(elem => elem !== slot);
         console.log("availableAppointments", availableAppointments);
-        // delete treatment[_id]
-        const newDocotor = { ...treatment, availableAppointments }
+        const newDocotor = {
+          ...treatment,
+          availableSlots: { ...availableSlots, [formatedDate]: availableAppointments }
+        }
+
+        // const treatment[availableSlots]={...treatment[availableSlots],`${formatedDate}`:availableAppointments}
+        // delete newDocotor[_id]
+        // const newDocotor = { ...treatment, treatment[formatedDate]: availableAppointments }
+        // console.log("new updated docotr ", newDocotor);
         fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/updatedoctoravailableslots?date=${formatedDate}&email=${email}`, {
           method: 'PUT',
           headers: {
             'content-type': 'application/json',
+            id: _id
           },
           body: JSON.stringify(newDocotor)
         })
