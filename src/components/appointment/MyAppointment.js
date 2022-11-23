@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import RouteAthenication from '../../HOC/RouteAthenication';
+import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
 
 const MyAppointment = () => {
   const [appointments, setAppointments] = useState([]);
@@ -21,7 +22,8 @@ const MyAppointment = () => {
   }
   return (
     <div>
-      <section className='md:mx-10'>
+      <NavigationBar isHome={true} />
+      <section className='md:mx-10 mt-[100px] mb-10'>
         <h1>My Appointments: {appointments.length}</h1>
         <div className="overflow-x-auto">
           <table className="table w-full">
@@ -38,15 +40,24 @@ const MyAppointment = () => {
             </thead>
             <tbody>
               {
-                appointments?.map((a, index) => <tr>
+                appointments?.map((a, index) => <tr key={a?._id}>
                   <th>{index + 1}</th>
                   <td>{a.doctorName}</td>
                   <td>{a.date}</td>
                   <td>{a.slot}</td>
                   <td>{a.fees}</td>
                   <td className='text-center'>
-                    {(a.paymentStatus === "unpaid") && <Link to={`/dashboard/payment/${a._id}`}><button className='btn bg-blue-500 text-light-400'>Pay</button></Link>}
-                    {(a.paymentStatus === "paid") && <p className='text-green-400'>Paid</p>}
+                    {
+                      (a?.token && a?.channelName) ? <Link to={`/videocall/${a._id}`} className="ml-12">
+                        <button className="btn btn-secondary">Start VideoCall</button>
+                      </Link> : <>
+                        {a.paymentStatus === "unpaid" ? <Link to={`/dashboard/payment/${a._id}`}><button className='btn bg-blue-500 text-light-400'>Pay</button></Link> :
+                          <div>
+                            <p className='text-green-400'>Paid</p>
+                            <p className='text-green-400'>Wait for your doctor to create videoCall</p>
+                          </div>
+                        }</>
+                    }
                   </td>
                 </tr>)
               }

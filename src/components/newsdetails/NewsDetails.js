@@ -5,6 +5,8 @@ import Typewriter from 'typewriter-effect';
 
 import { useForm } from "react-hook-form";
 import './NewsDetails.css';
+import { Footer } from '../../shared/Footer/Footer';
+import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
 const NewsDetails = () => {
 
   const { id } = useParams();
@@ -29,8 +31,8 @@ const NewsDetails = () => {
 
   return (
     <div className=''>
-
-      <div className='grid lg:grid-cols-1 sm:grid-cols-1 '>
+      <NavigationBar isHome={true} />
+      <div className='grid lg:grid-cols-1 sm:grid-cols-1 mt-[100] mb-10'>
         <img src='https://weblearnbd.net/wp/epora/wp-content/uploads/2022/07/breadcrumb-bg-1.jpg' className='mx-auto mt-5'></img>
         <h1 className='font-bold text-center text-3xl mt-5 text-title pb-2'>
 
@@ -131,7 +133,7 @@ const NewsDetails = () => {
       <br></br>
       <br></br>
 
-
+      <Footer />
     </div>
   )
 }

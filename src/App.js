@@ -6,7 +6,6 @@ import Chat from "./components/Msngrchat/Chat";
 import AddDoctors from "./components/adddoctors/AddDoctors";
 import Details from "./components/details/Details";
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
-import { QueryClient, QueryClientProvider } from "react-query";
 import Phercheckout from "./components/Pharheckout/Phercheckout";
 import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
@@ -20,7 +19,6 @@ import ShowAllNurse from "./pages/Nurse/ShowAllNurse";
 import ShowStaffsByDepartment from "./pages/Staffs/ShowStaffsByDepartment";
 import ShowNurseByDepartment from "./pages/Nurse/ShowNurseByDepartment";
 import ShowNurseDepartments from "./pages/Nurse/ShowNurseDepartments";
-import VideoCall from "./pages/VideoCall/VideoCall";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
@@ -45,6 +43,7 @@ const BloodDonerList = lazy(() => import("./pages/BloodDonerList/BloodDonerList"
 const BloodBank = lazy(() => import("./pages/BloodBank/BloodBank"));
 const ProtectedRoute = lazy(() => import("./pages/ProtectedRoute/ProtectedRoute"));
 const SpecialistDoctors = lazy(() => import("./pages/SpecialistDoctors/SpecialistDoctors"));
+const VideoCall = lazy(() => import("./pages/VideoCall/VideoCall"));
 function App() {
   const [userInfo] = useAuthState(auth);
   const role = useRole(userInfo?.email);
@@ -123,20 +122,6 @@ function App() {
       path: "/signup",
       element: (<SignUp />),
     },
-    // {
-    //   path: "/makeAdmin",
-    //   element: (
-    //     <MakeAdmin />
-    //   )
-    // },
-    // {
-    //   path: "/bloodDoner",
-    //   element: (
-    //     <ProtectedRoute>
-    //       <BloodDoner />
-    //     </ProtectedRoute>
-    //   )
-    // },
     {
       path: "/bloodDonerList",
       element: (
@@ -177,7 +162,7 @@ function App() {
       element: (<Phercheckout></Phercheckout>)
     },
     {
-      path: "/videoCall",
+      path: "/videoCall/:id",
       element: (<VideoCall />)
     },
     {
@@ -192,8 +177,6 @@ function App() {
       path: "/appointment",
       element: (<ProtectedRoute><Appointment></Appointment></ProtectedRoute>)
     },
-
-
     {
       path: "dashboard",
       element: (<Dashboard />),
@@ -234,18 +217,8 @@ function App() {
             </ProtectedRoute>
           ),
         },
-        // {
-        //   path: "logout",
-        //   action: logoutUser,
-        // },
       ],
     },
-
-    // {
-    //   path: "/medcheckout/:id",
-    //   element: <Phercheckout></Phercheckout>
-    // },
-
     {
       path: "/nurse",
       element: (<ShowNurseDepartments />)

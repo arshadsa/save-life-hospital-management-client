@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import { Footer } from '../../shared/Footer/Footer';
+import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
 
 const DoctorAppointment = () => {
     const [appointments, setAppointments] = useState([]);
@@ -17,8 +19,9 @@ const DoctorAppointment = () => {
     if (loading === true) {
         return
     }
-    return (
-        <section className='md:mx-10'>
+    return (<>
+        <NavigationBar isHome={true} />
+        <section className='md:mx-10 mt-[100] mb-8'>
             <h1>My Appointments: {appointments.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table w-full">
@@ -44,7 +47,7 @@ const DoctorAppointment = () => {
                                 <td>{a.patient}</td>
                                 <td className='text-center'>
                                     {(a.paymentStatus === "unpaid") && <p className='btn bg-blue-500 text-light-400'>Unpaid</p>}
-                                    {(a.paymentStatus === "paid") && <Link to="/videocall" className="ml-12">
+                                    {(a.paymentStatus === "paid") && <Link to={`/videocall/${a._id}`} className="ml-12">
                                         <button className="btn btn-secondary">Start VideoCall</button>
                                     </Link>}
                                 </td>
@@ -54,8 +57,8 @@ const DoctorAppointment = () => {
                 </table>
             </div>
         </section>
-
-    );
+        <Footer />
+    </>);
 };
 
 export default DoctorAppointment;

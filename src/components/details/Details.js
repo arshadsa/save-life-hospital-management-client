@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./Details.css";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
+import { Footer } from "../../shared/Footer/Footer";
 
 const Details = () => {
   const { id } = useParams();
@@ -87,9 +88,7 @@ const Details = () => {
           </div>
         </div>
       </div>
-      <div>
-
-      </div>
+      <Footer />
     </div>
   );
 };

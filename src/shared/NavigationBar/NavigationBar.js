@@ -74,17 +74,26 @@ export const NavigationBar = ({ isHome }) => {
                                 {
                                     role === "Doctor" ? <>
                                         {/* Put all other route using Link inside li */}
-                                        <li><Link to="/makeAdmin"></Link></li>
+                                        <li><Link to={`/dashboard/doctorAppointment`}>Patient Visit</Link></li>
+                                        <li><Link to={`/dashboard/bloodDoner`}>Donate Blood</Link></li>
                                     </> : null
                                 }
                                 {
                                     role === "Patient" ? <>
                                         {/* Put all other route using Link inside li */}
-                                        <li><Link to="/makeAdmin">Make Admin</Link></li>
+                                        <li>
+                                            <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link>
+                                            <Link to={`/dashboard/myappointments`}>My Appointment</Link>
+                                        </li>
                                     </> : null
                                 }
                                 <li><a>Submenu 2</a></li>
                             </ul>
+                        </li>
+                        <li tabIndex={4}>
+                            <Link to='/bloodBank' className="justify-between">
+                                Blood Bank
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -145,7 +154,7 @@ export const NavigationBar = ({ isHome }) => {
                                     {/* Put all other route using Link inside li */}
 
                                     <li>
-                                        <Link to={`/dashboard/myappointments`}>My Appointment</Link></li>
+                                        <Link to={`/dashboard/doctorAppointment`}>Patient Visit</Link></li>
                                     <li>  <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link></li>
                                 </> : null
                             }
@@ -153,10 +162,17 @@ export const NavigationBar = ({ isHome }) => {
                                 role === "Patient" ? <>
                                     {/* Put all other route using Link inside li */}
                                     <li>
-                                        <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link></li>
+                                        <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link>
+                                        <Link to={`/dashboard/myappointments`}>My Appointment</Link>
+                                    </li>
                                 </> : null
                             }
                         </ul>
+                    </li>
+                    <li tabIndex={4}>
+                        <Link to='/bloodBank' className="justify-between">
+                            Blood Bank
+                        </Link>
                     </li>
                 </ul>
             </div>

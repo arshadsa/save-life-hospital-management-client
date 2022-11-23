@@ -179,7 +179,7 @@ const Doctor = () => {
     <div className='mt-[150px] container mx-auto px-6'>
       <div className='mb-[100px] '>
         <p className='text-center text-4xl uppercase font-bold  '>Book Our Best Super Herros <span className='text-[#1b82e2]'> (docotrs) </span> </p>
-        <p className='text-center mt-1'> Lorem ipsumaudantium saepe fuga. Veritatis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, distinctio. </p>
+        {/* <p className='text-center mt-1'> Lorem ipsumaudantium saepe fuga. Veritatis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, distinctio. </p> */}
       </div>
       <div>
         <Swiper
