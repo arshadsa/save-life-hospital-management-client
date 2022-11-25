@@ -1,7 +1,7 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { Footer } from '../../shared/Footer/Footer';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
-import { v4 as uuidv4 } from 'uuid';
 const BloodBank = () => {
     const bloodGroup = ["A+", "A-", "O+", "O-", "AB-", "AB+", "B+", "B-", "ALL"];
     const [filteredList, setFilteredList] = React.useState({
