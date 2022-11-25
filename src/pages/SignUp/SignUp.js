@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useAuthState } from 'react-firebase-hooks/auth';
+import { Helmet } from 'react-helmet';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -102,6 +103,11 @@ const SignUp = () => {
     }
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Sign Up</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className='flex h-[80vh] items-center justify-center pt-52'>
                 <img src="https://media.istockphoto.com/vectors/parents-visit-sick-son-in-bed-at-hospital-ward-vector-id1215582607?b=1&k=20&m=1215582607&s=170667a&w=0&h=ueFzXWP3WlCgZpyD_rZ8txBN6XFqrHwp6CK8w6FPb7E=" alt="" className='h-[67%] rounded-2xl lg:block hidden' />
                 <div className='app__login-form rounded-2xl shadow-2xl border-white border-2'>

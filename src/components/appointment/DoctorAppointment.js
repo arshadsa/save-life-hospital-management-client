@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { Footer } from '../../shared/Footer/Footer';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
-
+import { Helmet } from "react-helmet";
 const DoctorAppointment = () => {
     const [appointments, setAppointments] = useState([]);
     const [userInfo, loading] = useAuthState(auth);
@@ -20,6 +20,11 @@ const DoctorAppointment = () => {
         return
     }
     return (<>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>Doctor Appointment</title>
+            <link rel="canonical" href="http://mysite.com/example" />
+        </Helmet>
         <NavigationBar isHome={true} />
         <section className='md:mx-10 mt-[100] mb-8'>
             <h1>My Appointments: {appointments.length}</h1>
@@ -58,7 +63,7 @@ const DoctorAppointment = () => {
             </div>
         </section>
         <Footer />
-    </>);
+    </>)
 };
 
 export default DoctorAppointment;

@@ -4,6 +4,7 @@ import useRole from '../../hooks/useRole';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const VideoCall = () => {
     const [user, loading] = useAuthState(auth);
@@ -45,10 +46,20 @@ const VideoCall = () => {
 
     return token !== null ? (
         <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Video Call</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <AgoraUIKit rtcProps={token} callbacks={callbacks} />
         </div>
     ) : (
         role === "Doctor" ? <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Video Call</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <form onSubmit={handleVideoCall}>
                 <input type="text" placeholder="Enter the meeting name" id="meeting" name='meeting' />
                 <input type="submit" value="Submit" />

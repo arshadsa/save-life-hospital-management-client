@@ -2,6 +2,7 @@ import React from 'react';
 import { Footer } from '../../shared/Footer/Footer';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
 import { v4 as uuidv4 } from 'uuid';
+import { Helmet } from 'react-helmet';
 const BloodBank = () => {
     const bloodGroup = ["A+", "A-", "O+", "O-", "AB-", "AB+", "B+", "B-", "ALL"];
     const [filteredList, setFilteredList] = React.useState({
@@ -29,6 +30,11 @@ const BloodBank = () => {
     }
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Blood Bank</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <NavigationBar isHome={true} />
             <div className='flex absolute top-[18%] md:left-[23%] flex-wrap justify-center'>
                 {bloodGroup.map(elem => <button className='btn md:mx-5' onClick={() => handleFilter(elem)} key={uuidv4()}>{elem}</button>)}

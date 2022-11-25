@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Helmet } from 'react-helmet';
 import { ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import { Footer } from '../../shared/Footer/Footer';
@@ -40,6 +41,11 @@ const BloodDoner = () => {
     console.log(userBloodGroup);
     return (
         <div className='flex h-[80vh] flex-col lg:flex-row items-center justify-center pt-52'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Bloodn Donate Form</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <img src="https://www.seekpng.com/png/detail/21-214042_for-developers-blood-clipart-blood-donation-png.png" alt="" className='h-[67%] rounded-2xl lg:block hidden' />
             <form onSubmit={isBloodGroupSelect === false ? handleBloodGroup : handleBloodDonerInfo} className="md:w-[500px] w-[90vw] flex flex-col justify-center items-center app__login-form rounded">
                 {

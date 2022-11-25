@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import RouteAthenication from '../../HOC/RouteAthenication';
@@ -22,6 +23,11 @@ const MyAppointment = () => {
   }
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Patient Appointment</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <NavigationBar isHome={true} />
       <section className='md:mx-10 mt-[100px] mb-10'>
         <h1>My Appointments: {appointments.length}</h1>
