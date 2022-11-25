@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { signOut } from 'firebase/auth';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init'
-import './Login.css'
+import React, { useEffect, useState } from 'react';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { FcGoogle } from "react-icons/fc";
-import { async } from '@firebase/util';
 import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import './Login.css';
 const Login = () => {
   const navigate = useNavigate()
   const [
@@ -128,9 +125,9 @@ const Login = () => {
 
           <small className='text-red-500'>{errorText}</small>
         </form>
-        <Link to={'/signup'} className='block mx-auto text-center text-blue-500'>Don't have an account? Sign Up</Link>
+        <Link to={'/signup'} className='block mx-auto text-center text-blue-500 text-xl mb-5 mt-3'>Don't have an account? Sign Up</Link>
         {
-          isGoogleLogin === false ? <button className='w-40 block mx-auto' onClick={handleGoogleLogin}><FcGoogle className='inline-block' />Sign with Google</button> : null
+          isGoogleLogin === false ? <button className='w-30 text-lg block mx-auto' onClick={handleGoogleLogin}><FcGoogle className='inline-block' />Sign with Google</button> : null
         }
         <br />
         {/* <button onClick={() => signOut(auth)}>Sign out</button> */}
