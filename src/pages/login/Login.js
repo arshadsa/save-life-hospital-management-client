@@ -95,17 +95,17 @@ const Login = () => {
   }
   console.log("google error", errorGoogle)
   return (
-    <div className='flex h-[80vh] flex-col lg:flex-row items-center justify-center pt-52'>
-      <img src="https://media.istockphoto.com/vectors/parents-visit-sick-son-in-bed-at-hospital-ward-vector-id1215582607?b=1&k=20&m=1215582607&s=170667a&w=0&h=ueFzXWP3WlCgZpyD_rZ8txBN6XFqrHwp6CK8w6FPb7E=" alt="" className='h-[67%] rounded-2xl lg:block hidden' />
+    <div className='flex h-[80vh] flex-col lg:flex-row items-center justify-center pt-52 gap-20'>
+      <img src="https://media.istockphoto.com/vectors/parents-visit-sick-son-in-bed-at-hospital-ward-vector-id1215582607?b=1&k=20&m=1215582607&s=170667a&w=0&h=ueFzXWP3WlCgZpyD_rZ8txBN6XFqrHwp6CK8w6FPb7E=" alt="" className='h-[80%] rounded-2xl lg:block hidden' />
       <div className='app__login-form rounded-2xl shadow-2xl border-white border-2'>
         <form onSubmit={isGoogleLogin === false ? handleSubmit : handleRole} className='md:w-[500px] w-[90vw] flex flex-col justify-center items-center '>
+          <h2 className='text-3xl text-blue-500 font-bold mt-3'>Welcome Back</h2>
+          <p className='text-lg font-medium pb-5'>Please Enter Your Credentails to Login!</p>
           {
-            isGoogleLogin === false ? <> <p className=''>Name</p>
-              <input type="text" name="name" id="name" placeholder='Enter your name' required />
-              <p>Email</p>
-              <input type="email" name="email" id="email" placeholder='Enter your email here' required />
-              <p>Password</p>
-              <input type="password" name="password" id="password" placeholder='Enter your password' required /></> : null
+            isGoogleLogin === false ? <>
+              <input className='w-full border rounded-md bg-transparent border-gray-400 p-3' type="text" name="name" id="name" placeholder='Enter your name' required />
+              <input className='w-full border rounded-md bg-transparent border-gray-400 p-3' type="email" name="email" id="email" placeholder='Enter your email' required />
+              <input className='w-full border rounded-md bg-transparent border-gray-400 p-3' type="password" name="password" id="password" placeholder='Enter your password' required /></> : null
           }
           {
             isGoogleLogin === true ? <>
@@ -121,13 +121,13 @@ const Login = () => {
             </> : null
           }
           <br />
-          <input type="submit" value="Sign In" />
+          <input className='block bg-blue-500 hover:bg-black text-white w-full py-2 px-rounded rounded-md' type="submit" value="Login" />
 
           <small className='text-red-500'>{errorText}</small>
         </form>
-        <Link to={'/signup'} className='block mx-auto text-center text-blue-500 text-xl mb-5 mt-3'>Don't have an account? Sign Up</Link>
+        <Link to={'/signup'} className='block mx-auto text-center text-black text-lg mb-5 mt-3'>Don't have an account yet ? <span className='text-blue-500 cursor-pointer'>Sign Up!</span></Link>
         {
-          isGoogleLogin === false ? <button className='w-30 text-lg block mx-auto' onClick={handleGoogleLogin}><FcGoogle className='inline-block' />Sign with Google</button> : null
+          isGoogleLogin === false ? <button className='w-30 text-medium block bg-blue-500 hover:bg-black text-white w-full py-2 px-rounded rounded-md mx-auto' onClick={handleGoogleLogin}><FcGoogle className='inline-block' />Sign with Google</button> : null
         }
         <br />
         {/* <button onClick={() => signOut(auth)}>Sign out</button> */}
