@@ -29,7 +29,7 @@ const Homepage = () => {
       </Helmet>
       {/* navbar added by ovilash */}
 
-
+      <NavigationBar isHome={true} />
       {/* banner added by forhad & anik */}
       <Banner />
 
@@ -84,7 +84,6 @@ const Homepage = () => {
         <Faq></Faq>
       </div>
       <Footer />
-
     </div>
   );
 };

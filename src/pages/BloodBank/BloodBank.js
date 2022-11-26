@@ -1,7 +1,7 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { Footer } from '../../shared/Footer/Footer';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
-import { v4 as uuidv4 } from 'uuid';
 import { Helmet } from 'react-helmet';
 const BloodBank = () => {
     const bloodGroup = ["A+", "A-", "O+", "O-", "AB-", "AB+", "B+", "B-", "ALL"];
@@ -37,7 +37,7 @@ const BloodBank = () => {
             </Helmet>
             <NavigationBar isHome={true} />
             <div className='flex absolute top-[18%] md:left-[23%] flex-wrap justify-center'>
-                {bloodGroup.map(elem => <button className='btn md:mx-5' onClick={() => handleFilter(elem)} key={uuidv4()}>{elem}</button>)}
+                {bloodGroup.map(elem => <p className='btn md:mx-5' onClick={() => handleFilter(elem)} key={uuidv4()}>{elem}</p>)}
             </div>
             <section className='md:mx-10 pt-60 pb-10'>
                 <div className="overflow-x-auto" >

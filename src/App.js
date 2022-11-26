@@ -152,12 +152,6 @@ function App() {
       )
     },
     {
-      path: "/news",
-      element: (
-        <News></News>
-      )
-    },
-    {
       path: "/medcheckout/:id",
       element: (<Phercheckout></Phercheckout>)
     },

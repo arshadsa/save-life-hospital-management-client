@@ -6,8 +6,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
-import { Footer } from '../../shared/Footer/Footer';
 
 const News = () => {
   const [tools, setTools] = useState([])
@@ -18,7 +16,6 @@ const News = () => {
   }, [])
   return (
     <>
-      <NavigationBar isHome={true} />
       <section className='md:mx-10 pt-40 pb-10'>
         <div className='container mx-auto px-6 p-3 mt-[80px]' >
           <p className='text-center text-4xl uppercase font-bold  '>Our Popoular <span className='text-[#1b82e2]'> (Blogs) </span> </p>
@@ -79,7 +76,6 @@ const News = () => {
 
         </div>
       </section>
-      <Footer />
     </>
   )
 }

@@ -1,10 +1,10 @@
-import moment from "moment";
+import moment from 'moment-timezone';
 import React from 'react';
 const AppointmentService = ({ service, setTreatment, date }) => {
   const { name, availableSlots } = service;
-  console.log("selected date", moment(date).format('l'));
+  console.log("selected date", moment(date).tz("Asia/Dhaka").format('L'));
   console.log("availableSlots", availableSlots);
-  let d = moment(date).format('l')
+  let d = moment(date).tz("Asia/Dhaka").format('L')
   console.log("availableSlots on selected date", availableSlots[d]);
   // console.log("formating date with moment js", moment(availableSlots[date]).format('l'));
   return (
