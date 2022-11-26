@@ -4,14 +4,14 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import { Navigate, useNavigate } from 'react-router-dom';
-import moment from 'moment';
+import moment from 'moment-timezone';
 const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
   const { _id, name, fees, availableSlots, email } = treatment;
   console.log("doctor name", name)
   console.log("avaialble slots from the modal", availableSlots);
   const Navigate = useNavigate();
   const [userInfo] = useAuthState(auth);
-  const formatedDate = moment(date).format('L');
+  const formatedDate = moment(date).tz("Asia/Dhaka").format('L');
   console.log("formatedDate", formatedDate);
   const availableAppointments = availableSlots[formatedDate].filter(elem => elem !== formatedDate);
   console.log("avaiable", availableSlots[formatedDate]);
@@ -77,7 +77,7 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
 
   }
   // date ------
-  let d = moment(date).format('l')
+  let d = moment(date).tz("Asia/Dhaka").format('L')
   return (
     <div>
 
