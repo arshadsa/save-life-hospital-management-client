@@ -37,7 +37,7 @@ const BloodBank = () => {
             </Helmet>
             <NavigationBar isHome={true} />
             <div className='flex absolute top-[18%] md:left-[23%] flex-wrap justify-center'>
-                {bloodGroup.map(elem => <p className='btn md:mx-5' onClick={() => handleFilter(elem)} key={uuidv4()}>{elem}</p>)}
+                {bloodGroup.map(elem => <p className='btn md:mx-5' role="button" onClick={() => handleFilter(elem)} key={uuidv4()}>{elem}</p>)}
             </div>
             <section className='md:mx-10 pt-60 pb-10'>
                 <div className="overflow-x-auto" >

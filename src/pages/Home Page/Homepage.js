@@ -72,9 +72,6 @@ const Homepage = () => {
 
       {/* Newsletter yaesin*/}
       <div className="mt-[100px]">
-        <NewsLetter></NewsLetter>
-      </div>
-      <div className="mt-[100px]">
         <News></News>
       </div>
       <div className="mt-[70px]" >
@@ -82,6 +79,9 @@ const Homepage = () => {
       </div>
       <div className="mt-[100px]">
         <Faq></Faq>
+      </div>
+      <div className="mt-[100px]">
+        <NewsLetter></NewsLetter>
       </div>
       <Footer />
     </div>

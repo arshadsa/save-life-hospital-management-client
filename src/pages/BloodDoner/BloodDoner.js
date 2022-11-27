@@ -1,15 +1,17 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
-import { Footer } from '../../shared/Footer/Footer';
+
 
 const BloodDoner = () => {
     const bloodGroup = ["A+", "A-", "O+", "O-", "AB-", "AB+", "B+", "B-"];
     const [userInfo, loading] = useAuthState(auth);
     const [isBloodGroupSelect, setIsBloodGroupSelect] = React.useState(false)
     const [userBloodGroup, setUserBloodGroup] = React.useState('')
+    const navigate = useNavigate();
     const handleBloodGroup = (e) => {
         e.preventDefault();
         setIsBloodGroupSelect(true)
@@ -17,8 +19,8 @@ const BloodDoner = () => {
     const handleBloodDonerInfo = (e) => {
         e.preventDefault()
         // Post the donner info to the server
-        console.log(e?.target?.bloodGroup?.value);
-        console.log(e?.target?.name?.value);
+        // console.log(e?.target?.bloodGroup?.value);
+        // console.log(e?.target?.name?.value);
         const donerInfo = {
             name: e?.target?.name?.value,
             bloodGroup: e?.target?.bloodGroup?.value,
@@ -27,7 +29,7 @@ const BloodDoner = () => {
             phone: e?.target?.telephone?.value,
             age: e?.target?.age?.value,
         }
-        console.log(donerInfo)
+        // console.log(donerInfo)
         fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/bloodDoner`, {
             method: 'POST',
             headers: {
@@ -35,7 +37,7 @@ const BloodDoner = () => {
             },
             body: JSON.stringify(donerInfo)
         }).then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => navigate("/bloodBank"))
 
     }
     console.log(userBloodGroup);
