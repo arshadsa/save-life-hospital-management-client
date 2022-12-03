@@ -2,7 +2,7 @@ import React from 'react';
 import './UseWebsite.css';
 export const UseWebsite = () => {
   return (
-    <div className='mt-[150px] container mx-auto px-6'>
+    <div className='mt-[150px] container mx-auto'>
       <p className='text-center text-4xl mb-12 uppercase font-bold  '>Our <span className='text-[#1b82e2]'> Health Care </span>  & <span className='text-[#1b82e2]'> Protection </span> Plans </p>
       <div className='grid lg:grid-cols-3 sm:grid-cols-1 justify-items-center'>
         <div className="card use-image w-96">

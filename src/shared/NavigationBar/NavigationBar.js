@@ -68,7 +68,7 @@ export const NavigationBar = ({ isHome }) => {
                                 {
                                     role === "Admin" ? <>
                                         {/* Put all other route using Link inside li */}
-                                        <li><Link to="/makeAdmin">Make Admin</Link></li>
+                                        <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
                                     </> : null
                                 }
                                 {
@@ -87,7 +87,6 @@ export const NavigationBar = ({ isHome }) => {
                                         </li>
                                     </> : null
                                 }
-                                <li><a>Submenu 2</a></li>
                             </ul>
                         </li>
                         <li tabIndex={4}>
@@ -97,7 +96,7 @@ export const NavigationBar = ({ isHome }) => {
                         </li>
                     </ul>
                 </div>
-                <a className=""><img src={Logo} alt="logo" className='w-1/2' /></a>
+                <Link to="/"><img src={Logo} alt="logo" className='w-1/2' /></Link>
             </div>
             <div className="navbar-center hidden lg:flex z-50">
                 <ul className="menu menu-horizontal p-0">
@@ -146,7 +145,7 @@ export const NavigationBar = ({ isHome }) => {
                             {
                                 role === "Admin" ? <>
                                     {/* Put all other route using Link inside li */}
-                                    <li><Link to="/makeAdmin">Make Admin</Link></li>
+                                    <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
                                 </> : null
                             }
                             {
