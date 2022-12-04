@@ -18,7 +18,7 @@ const Unique = (props) => {
     <div>
       <div className="card bb lg:max-w-lg bg-base-100">
         <figure className=" ">
-          <img src={blogImage} alt="Shoes" className="rounded-xl" />
+          <img src={blogImage} alt="Shoes" className="rounded-xl mx-auto" />
         </figure>
         <div className="card-body ">
           <div className="grid lg:grid-cols-2 sm:grid-cols-2">
@@ -42,9 +42,8 @@ const Unique = (props) => {
           </div>
           <div className="grid lg:grid-cols-2 sm:grid-cols-2">
             <Link to={`/news/${_id}`}>
-              <button className="font-bold text-xl mt-[10px]">
-                <i class="fa-solid fa-eye"></i> Read More{" "}
-                {/* <i class="fa-solid fa-arrow-right"></i> */}
+            <button className='font-bold w-full mt-2 ml-4'>
+              <i class="fa-solid fa-eye"></i> Read More
               </button>
             </Link>
           </div>
