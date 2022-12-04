@@ -1,5 +1,5 @@
 import React from "react";
-import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,7 +11,6 @@ import "swiper/css/scrollbar";
 import "./Homecomponents.css";
 
 // image for banner
-import scbannerimage from "../../assets/Banner Image/scbi.png";
 
 const Banner = () => {
   return (
@@ -35,13 +34,13 @@ const Banner = () => {
         <div className="">
             <div className="bannerbg flex justify-end items-center ">
               <div className="flex">
-                <div className="mr-[30px] text-[33px] text-left font-extrabold text-white uppercase container p-2">
-                  <p >
-                    our best doctor are ready for you
-                    <br /> just make an{" "}
+                <div className="mr-[30px] text-[37px] text-left font-extrabold text-white uppercase container p-2">
+                  <p>
+                    our best doctor are ready
+                    <br />for you just make an {" "} <br />
                     <span className="text-[#0071DC]">appoinment </span>{" "}
                   </p>
-                  <button className="btn btn-outline btn-primary mt-3">
+                  <button className="btn bg-[#0071DC] hover:bg-black btn-outline mt-5 w-40 items-center justify-center text-center ">
                     visit Doctors{" "}
                   </button>
                 </div>

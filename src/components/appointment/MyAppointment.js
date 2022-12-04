@@ -2,9 +2,11 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import RouteAthenication from '../../HOC/RouteAthenication';
+import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
 
 const MyAppointment = () => {
   const [appointments, setAppointments] = useState([]);
@@ -21,7 +23,13 @@ const MyAppointment = () => {
   }
   return (
     <div>
-      <section className='md:mx-10'>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Patient Appointment</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <NavigationBar isHome={true} />
+      <section className='md:mx-10 mt-[100px] mb-10'>
         <h1>My Appointments: {appointments.length}</h1>
         <div className="overflow-x-auto">
           <table className="table w-full">
@@ -38,23 +46,32 @@ const MyAppointment = () => {
             </thead>
             <tbody>
               {
-                appointments?.map((a, index) => <tr>
+                appointments?.map((a, index) => <tr key={a?._id}>
                   <th>{index + 1}</th>
-                  <td>{a.treatment}</td>
+                  <td>{a.doctorName}</td>
                   <td>{a.date}</td>
                   <td>{a.slot}</td>
                   <td>{a.fees}</td>
                   <td className='text-center'>
-            {(a.fees && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn bg-blue-500 text-light-400'>Pay</button></Link>}
-            {(a.fees && a.paid) && <p className='text-green-400'>Paid</p>}
-            </td>
+                    {
+                      (a?.token && a?.channelName) ? <Link to={`/videocall/${a._id}`} className="ml-12">
+                        <button className="btn btn-secondary">Start VideoCall</button>
+                      </Link> : <>
+                        {a.paymentStatus === "unpaid" ? <Link to={`/dashboard/payment/${a._id}`}><button className='btn bg-blue-500 text-light-400'>Pay</button></Link> :
+                          <div>
+                            <p className='text-green-400'>Paid</p>
+                            <p className='text-green-400'>Wait for your doctor to create videoCall</p>
+                          </div>
+                        }</>
+                    }
+                  </td>
                 </tr>)
               }
             </tbody>
           </table>
         </div>
       </section>
-     
+
     </div>
 
   )

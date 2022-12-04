@@ -42,7 +42,7 @@ const Unique = (props) => {
           </div>
           <div className="grid lg:grid-cols-2 sm:grid-cols-2">
             <Link to={`/news/${_id}`}>
-              <button className="font-bold text-[#1b82e2] text-xl mt-[10px]">
+              <button className="font-bold text-xl mt-[10px]">
                 <i class="fa-solid fa-eye"></i> Read More{" "}
                 {/* <i class="fa-solid fa-arrow-right"></i> */}
               </button>
@@ -51,7 +51,7 @@ const Unique = (props) => {
         </div>
       </div>
 
-     
+
 
     </div>
   );

@@ -2,7 +2,7 @@
 // book our doctors swiper slider  dynamic
 
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Rings } from 'react-loader-spinner';
 // swiper imports
 import { A11y, Autoplay, Navigation, Pagination, Scrollbar, Zoom } from 'swiper';
 import 'swiper/css';
@@ -177,52 +177,86 @@ const Doctor = () => {
   return (
     <div className='mt-[150px] container mx-auto px-6'>
       <div className='mb-[100px] '>
-        <p className='text-center text-4xl uppercase font-bold  '>Book Our Best Super Herros <span className='text-[#1b82e2]'> (docotrs) </span> </p>
-        <p className='text-center mt-1'> Lorem ipsumaudantium saepe fuga. Veritatis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, distinctio. </p>
+        <p className='text-center text-4xl uppercase font-bold  '>Book Our Best Super Heroes <span className='text-[#1b82e2]'> (docotrs) </span> </p>
+        {/* <p className='text-center mt-1'> Lorem ipsumaudantium saepe fuga. Veritatis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, distinctio. </p> */}
       </div>
-      <div>
-        <Swiper
-          modules={[Navigation, Autoplay, Pagination, Scrollbar, Zoom, A11y]}
-          spaceBetween={20}
-          // slidesPerView={3}
-          centeredslide="true"
-          navigation
-          key={doctors.length}
-          autoplay={true}
-          breakpoints={{
-            300: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            500: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 40,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 50,
-            },
-          }}
-        >
+      {
+        doctors ? <div>
+          <Swiper
+            modules={[Navigation, Autoplay, Pagination, Scrollbar, Zoom, A11y]}
+            spaceBetween={20}
+            // slidesPerView={3}
+            centeredslide="true"
+            navigation
+            key={doctors.length}
+            autoplay={true}
+            breakpoints={{
+              300: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              500: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+            }}
+          >
 
-          {
-            doctors.map((doctor, index) => (
-              <SwiperSlide key={index} >
-                <Doctors key={doctor._id} doctor={doctor} ></Doctors>
-              </SwiperSlide>
-            ))
-          }
+            {
+              doctors.map((doctor, index) => (
+                <SwiperSlide key={index} >
+                  <Doctors key={doctor._id} doctor={doctor} ></Doctors>
+                </SwiperSlide>
+              ))
+            }
 
-        </Swiper>
-      </div>
+          </Swiper>
+        </div> : <div className='flex justify-center'>
+          <Rings
+            height="100"
+            width="100"
+            color="#4fa94d"
+            radius="6"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+            ariaLabel="rings-loading"
+          />
+          <Rings
+            height="100"
+            width="100"
+            color="#4fa94d"
+            radius="6"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+            ariaLabel="rings-loading"
+          />
+          <Rings
+            height="100"
+            width="100"
+            color="#4fa94d"
+            radius="6"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+            ariaLabel="rings-loading"
+          />
+        </div>
+      }
+
     </div>
   )
 }

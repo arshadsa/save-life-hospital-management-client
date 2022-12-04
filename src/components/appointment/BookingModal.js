@@ -4,26 +4,34 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import { Navigate, useNavigate } from 'react-router-dom';
-const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
-  const { _id, name, fees, slots } = treatment;
+import moment from 'moment-timezone';
+const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
+  const { _id, name, fees, availableSlots, email } = treatment;
+  console.log("doctor name", name)
+  console.log("avaialble slots from the modal", availableSlots);
   const Navigate = useNavigate();
   const [userInfo] = useAuthState(auth);
-  const formatedDate = format(date, 'PP');
+  const formatedDate = moment(date).tz("Asia/Dhaka").format('L');
+  console.log("formatedDate", formatedDate);
+  const availableAppointments = availableSlots[formatedDate].filter(elem => elem !== formatedDate);
+  console.log("avaiable", availableSlots[formatedDate]);
+  console.log("availableAppointments", availableAppointments);
   const handleBooking = event => {
     event.preventDefault();
     const slot = event.target.slot.value;
     console.log(_id, name, slot);
     const booking = {
       treatmentId: _id,
-      treatment: name,
+      doctorName: name,
       date: formatedDate,
+      doctorEmail: email,
       fees: fees,
       slot,
       patient: userInfo.email,
       patientName: userInfo.displayName,
-      phone: event.target.phone.value
+      phone: event.target.phone.value,
+      paymentStatus: "unpaid"
     }
-
     fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking`, {
       method: 'POST',
       headers: {
@@ -41,12 +49,35 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
         else {
           toast.error(`You already have an ppointment on,${data.booking?.date} at ${data.booking?.slot}`)
         }
+        // Update doctors aviablable slots here
+        const availableAppointments = availableSlots[formatedDate].filter(elem => elem !== slot);
+        console.log("availableAppointments", availableAppointments);
+        const newDocotor = {
+          ...treatment,
+          availableSlots: { ...availableSlots, [formatedDate]: availableAppointments }
+        }
+
+        // const treatment[availableSlots]={...treatment[availableSlots],`${formatedDate}`:availableAppointments}
+        // delete newDocotor[_id]
+        // const newDocotor = { ...treatment, treatment[formatedDate]: availableAppointments }
+        // console.log("new updated docotr ", newDocotor);
+        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/updatedoctoravailableslots?date=${formatedDate}&email=${email}`, {
+          method: 'PUT',
+          headers: {
+            'content-type': 'application/json',
+            id: _id
+          },
+          body: JSON.stringify(newDocotor)
+        })
+          .then(res => res.json())
+          .then(data => console.log(data))
         refetch();
         setTreatment(null);
       })
 
   }
-
+  // date ------
+  let d = moment(date).tz("Asia/Dhaka").format('L')
   return (
     <div>
 
@@ -57,9 +88,9 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
           <h3 className="font-bold text-lg">Booking for {name}</h3>
           <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
             <input type="text" value={format(date, 'PP')} disabled className="input input-bordered w-full max-w-xs" />
-            <select name="slot" className="select select-bordered w-full max-w-xs">
+            <select name="slot" className="select select-bordered w-full max-w-xs" required>
               {
-                slots.map(slot => <option value={slot}>{slot}</option>)
+                availableSlots[d].map(slot => <option value={slot}>{slot}</option>)
               }
 
             </select>

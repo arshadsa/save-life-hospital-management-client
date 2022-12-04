@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./Details.css";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
+import { Footer } from "../../shared/Footer/Footer";
 
 const Details = () => {
   const { id } = useParams();
@@ -84,17 +85,10 @@ const Details = () => {
               <button className="btn btn-primary">Book Appointment</button>
 
             </Link>
-            <Link to="/videocall" className="ml-12">
-
-              <button className="btn btn-secondary">Make Video Calling</button>
-
-            </Link>
           </div>
         </div>
       </div>
-      <div>
-
-      </div>
+      <Footer />
     </div>
   );
 };

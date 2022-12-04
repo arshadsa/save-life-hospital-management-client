@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react'
-import AppointmentService from '../AppointmentService';
+import AppointmentService from './AppointmentService';
 import BookingModal from './BookingModal';
 
 const AvailableAppointments = ({ date, setDate }) => {
@@ -20,13 +20,13 @@ const AvailableAppointments = ({ date, setDate }) => {
             key={service._id}
             service={service}
             setTreatment={setTreatment}
-
+            date={date}
           >
 
           </AppointmentService>)
         }
       </div>
-      {treatment && <BookingModal treatment={treatment} setTreatment={setTreatment} date={date}></BookingModal>}
+      {treatment && <BookingModal treatment={treatment} setTreatment={setTreatment} services={services} date={date}></BookingModal>}
     </div>
   )
 }

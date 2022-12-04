@@ -68,27 +68,35 @@ export const NavigationBar = ({ isHome }) => {
                                 {
                                     role === "Admin" ? <>
                                         {/* Put all other route using Link inside li */}
-                                        <li><Link to="/makeAdmin">Make Admin</Link></li>
+                                        <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
                                     </> : null
                                 }
                                 {
                                     role === "Doctor" ? <>
                                         {/* Put all other route using Link inside li */}
-                                        <li><Link to="/makeAdmin"></Link></li>
+                                        <li><Link to={`/dashboard/doctorAppointment`}>Patient Visit</Link></li>
+                                        <li><Link to={`/dashboard/bloodDoner`}>Donate Blood</Link></li>
                                     </> : null
                                 }
                                 {
                                     role === "Patient" ? <>
                                         {/* Put all other route using Link inside li */}
-                                        <li><Link to="/makeAdmin">Make Admin</Link></li>
+                                        <li>
+                                            <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link>
+                                            <Link to={`/dashboard/myappointments`}>My Appointment</Link>
+                                        </li>
                                     </> : null
                                 }
-                                <li><a>Submenu 2</a></li>
                             </ul>
+                        </li>
+                        <li tabIndex={4}>
+                            <Link to='/bloodBank' className="justify-between">
+                                Blood Bank
+                            </Link>
                         </li>
                     </ul>
                 </div>
-                <a className=""><img src={Logo} alt="logo" className='w-1/2' /></a>
+                <Link to="/"><img src={Logo} alt="logo" className='w-1/2' /></Link>
             </div>
             <div className="navbar-center hidden lg:flex z-50">
                 <ul className="menu menu-horizontal p-0">
@@ -137,7 +145,7 @@ export const NavigationBar = ({ isHome }) => {
                             {
                                 role === "Admin" ? <>
                                     {/* Put all other route using Link inside li */}
-                                    <li><Link to="/makeAdmin">Make Admin</Link></li>
+                                    <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
                                 </> : null
                             }
                             {
@@ -145,7 +153,7 @@ export const NavigationBar = ({ isHome }) => {
                                     {/* Put all other route using Link inside li */}
 
                                     <li>
-                                        <Link to={`/dashboard/myappointments`}>My Appointment</Link></li>
+                                        <Link to={`/dashboard/doctorAppointment`}>Patient Visit</Link></li>
                                     <li>  <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link></li>
                                 </> : null
                             }
@@ -153,10 +161,17 @@ export const NavigationBar = ({ isHome }) => {
                                 role === "Patient" ? <>
                                     {/* Put all other route using Link inside li */}
                                     <li>
-                                        <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link></li>
+                                        <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link>
+                                        <Link to={`/dashboard/myappointments`}>My Appointment</Link>
+                                    </li>
                                 </> : null
                             }
                         </ul>
+                    </li>
+                    <li tabIndex={4}>
+                        <Link to='/bloodBank' className="justify-between">
+                            Blood Bank
+                        </Link>
                     </li>
                 </ul>
             </div>

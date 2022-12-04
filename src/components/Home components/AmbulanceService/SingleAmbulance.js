@@ -1,9 +1,8 @@
-import React from 'react'
-import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
-import './SingleAmbulance.css';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import './SingleAmbulance.css';
 const SingleAmbulance = ({ ambulances }) => {
   const { register, handleSubmit, reset } = useForm();
 
@@ -33,7 +32,7 @@ const SingleAmbulance = ({ ambulances }) => {
           </div>
           <div className="card-actions justify-center">
 
-            <label htmlFor="my-modal-3" className="btn btn-primary w-full">open modal</label>
+            <label htmlFor="my-modal-3" className="btn bg-[#0071DC] hover:bg-black w-full">open modal</label>
             <input type="checkbox" id="my-modal-3" className="modal-toggle" />
 
             <div className="modal">
@@ -65,7 +64,7 @@ const SingleAmbulance = ({ ambulances }) => {
 
 
 
-                  <input type="submit" className='w-80 btn btn-primary shadow-banner' value='Book Ambulance' />
+                  <input type="submit" className='w-80 btn bg-[#0071DC] hover:bg-black shadow-banner' value='Book Ambulance' />
                 </form>
               </div>
             </div>

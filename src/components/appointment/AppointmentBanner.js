@@ -5,10 +5,9 @@ import 'react-day-picker/dist/style.css';
 import { useState } from 'react';
 import { format } from 'date-fns';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
-
+import moment from "moment";
 const AppointmentBanner = ({ date, setDate }) => {
-
-
+  const date1 = new Date()
   return (
     <div>
       <div className='navbar'>
@@ -19,6 +18,9 @@ const AppointmentBanner = ({ date, setDate }) => {
         <div className='mx-auto mt-24 w-96'>
           <DayPicker
             mode="single"
+            defaultMonth={new Date()}
+            fromDate={new Date()}
+            toDate={new Date(date1.setDate(date1.getDate() + 4))}
             selected={date}
             onSelect={setDate}
           />
