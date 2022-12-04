@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 
 // icon import
-import { MdOutlineWatchLater } from "react-icons/md";
-import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
 const Doctors = ({ doctor }) => {
@@ -95,7 +93,7 @@ const Doctors = ({ doctor }) => {
                 outline outline-[#1b82e2] hover:bg-[#1b82e2] w-[130px] h-[46px]  rounded-lg text-black font-[600] transition ease-in-out delay-100 hover:text-white 
                 hover:translate-y-1 "
                 >
-                  <span className=" text-[11px]  ">
+                  <span className=" text-[12px]  ">
                     <Link to={`/websitedoctors/${_id}`}>
                       <i class="fa-solid fa-eye"></i> View Profile
                     </Link>
@@ -106,10 +104,10 @@ const Doctors = ({ doctor }) => {
                 {/* use useNavigaein this buttton where you wanna go*/}
                 <button
                   onClick={() => navigate("/appointment")}
-                  class="text-1xl mt-4 mx-5 bg-[#4506cb]
-                w-[130px] h-[50px]  rounded-lg text-black font-[600] transition ease-in-out delay-100 hover:translate-y-1  "
+                  class="text-1xl mt-4 mx-5 bg-[#0071DC]
+                w-[130px] h-[50px] rounded-lg text-black font-[600] transition ease-in-out delay-100 hover:translate-y-1  "
                 >
-                  <span className="mx-2 text-[11px] text-white ">
+                  <span className="mx-2 text-[12px] text-white ">
                     <i class="fa-regular fa-calendar-check"></i> Book Now
                   </span>
                 </button>
