@@ -49,7 +49,6 @@ const NewsDetails = () => {
 
             }}
           />
-
         </h1>
         <div className=' mt-16 ml-8'>
           <div className='grid lg:grid-cols-2 sm:grid-cols-1 bg-dark  mx-5  shadow-details '>
