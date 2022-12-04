@@ -94,6 +94,13 @@ export const NavigationBar = ({ isHome }) => {
                                 Blood Bank
                             </Link>
                         </li>
+                        {
+                            role === "Doctor" ? <li tabIndex={5}>
+                                <Link to='/doctor/add' className="justify-between">
+                                    Post My Slot
+                                </Link>
+                            </li> : null
+                        }
                     </ul>
                 </div>
                 <Link to="/"><img src={Logo} alt="logo" className='w-1/2' /></Link>
@@ -173,6 +180,14 @@ export const NavigationBar = ({ isHome }) => {
                             Blood Bank
                         </Link>
                     </li>
+                    {
+                        role === "Doctor" ? <li tabIndex={5}>
+                            <Link to='/doctor/add' className="justify-between">
+                                Post My Slot
+                            </Link>
+                        </li> : null
+                    }
+
                 </ul>
             </div>
             <div className="navbar-end">

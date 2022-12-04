@@ -11,14 +11,15 @@ const DoctorAppointment = () => {
     const [appointments, setAppointments] = useState([]);
     const [userInfo, loading] = useAuthState(auth);
     useEffect(() => {
-
-        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking/doctor?doctor=${userInfo?.email}`)
-            .then(res => res.json())
-            .then(data => setAppointments(data))
+        console.log("coming from doctor patient see", userInfo?.email);
+        if (userInfo?.email) {
+            fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/doctorsbooking/doctor?doctoremail=${userInfo?.email}`)
+                .then(res => res.json())
+                .then(data => setAppointments(data))
+        }
     }, [userInfo?.email])
-    if (loading === true) {
-        return
-    }
+    console.log(appointments);
+    if (loading === true) return
     return (<>
         <Helmet>
             <meta charSet="utf-8" />
