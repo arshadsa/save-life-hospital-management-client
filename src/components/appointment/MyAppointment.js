@@ -21,6 +21,7 @@ const MyAppointment = () => {
   if (loading === true) {
     return
   }
+  console.log(appointments);
   return (
     <div>
       <Helmet>
