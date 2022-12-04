@@ -8,7 +8,7 @@ export const UseWebsite = () => {
         <div className="card use-image w-96">
           <div className="card-body">
             <div className='grid lg:grid-cols-2 sm:grid-cols-2'>
-              <h2 className="text-2xl text-primary font-bold">Our Care
+              <h2 className="text-2xl text-[#0071DC] font-bold">Our Care
               </h2>
               <img src='https://i.ibb.co/47PwHqK/xxinf-MFk1xal-Wu454xt8-Yt1t-VFat-PI1-Gg1b90-Hom.png' className='w-12 ml-24'></img>
             </div>
@@ -24,7 +24,7 @@ export const UseWebsite = () => {
               <li> <i class="fa-solid fa-check"></i> $ 40,000 cashback on health & life insurance.</li>
             </ul>
             <div className="card-actions">
-              <button className="btn btn-primary"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
+              <button className="btn bg-[#0071DC] text-white hover:bg-black"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
             </div>
           </div>
 
@@ -32,7 +32,7 @@ export const UseWebsite = () => {
         <div className="card w-96 use-image ">
           <div className="card-body">
             <div className='grid lg:grid-cols-2 sm:grid-cols-2'>
-              <h2 className="text-2xl text-primary font-bold">Our Care Plus
+              <h2 className="text-2xl text-[#0071DC] font-bold">Our Care Plus
               </h2>
               <img src='https://i.ibb.co/47PwHqK/xxinf-MFk1xal-Wu454xt8-Yt1t-VFat-PI1-Gg1b90-Hom.png' className='w-12 ml-24'></img>
             </div>
@@ -48,7 +48,7 @@ export const UseWebsite = () => {
               <li> <i class="fa-solid fa-check"></i> $ 40,000 cashback on health & life insurance.</li>
             </ul>
             <div className="card-actions">
-              <button className="btn btn-primary"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
+              <button className="btn bg-[#0071DC] text-white hover:bg-black"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
             </div>
           </div>
 
@@ -56,7 +56,7 @@ export const UseWebsite = () => {
         <div className="card w-96 use-image ">
           <div className="card-body">
             <div className='grid lg:grid-cols-2 sm:grid-cols-2'>
-              <h2 className="text-2xl text-primary font-bold">Family Care
+              <h2 className="text-2xl text-[#0071DC] font-bold">Family Care
               </h2>
               <img src='https://i.ibb.co/47PwHqK/xxinf-MFk1xal-Wu454xt8-Yt1t-VFat-PI1-Gg1b90-Hom.png' className='w-12 ml-24'></img>
             </div>
@@ -72,7 +72,7 @@ export const UseWebsite = () => {
               <li> <i class="fa-solid fa-check"></i> $ 40,000 cashback on health & life insurance.</li>
             </ul>
             <div className="card-actions">
-              <button className="btn btn-primary"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
+              <button className="btn bg-[#0071DC] text-white hover:bg-black"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
             </div>
           </div>
 
@@ -80,7 +80,7 @@ export const UseWebsite = () => {
         <div className="card w-96 use-image ">
           <div className="card-body">
             <div className='grid lg:grid-cols-2 sm:grid-cols-2'>
-              <h2 className="text-2xl text-primary font-bold">Special Care
+              <h2 className="text-2xl text-[#0071DC] font-bold">Special Care
               </h2>
               <img src='https://i.ibb.co/47PwHqK/xxinf-MFk1xal-Wu454xt8-Yt1t-VFat-PI1-Gg1b90-Hom.png' className='w-12 ml-24'></img>
             </div>
@@ -96,7 +96,7 @@ export const UseWebsite = () => {
               <li> <i class="fa-solid fa-check"></i> $ 40,000 cashback on health & life insurance.</li>
             </ul>
             <div className="card-actions">
-              <button className="btn btn-primary"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
+              <button className="btn bg-[#0071DC] text-white hover:bg-black"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
             </div>
           </div>
 
@@ -105,7 +105,7 @@ export const UseWebsite = () => {
         <div className="card w-96 use-image ">
           <div className="card-body">
             <div className='grid lg:grid-cols-2 sm:grid-cols-2'>
-              <h2 className="text-2xl text-primary font-bold">Normal Care
+              <h2 className="text-2xl text-[#0071DC] font-bold">Normal Care
               </h2>
               <img src='https://i.ibb.co/47PwHqK/xxinf-MFk1xal-Wu454xt8-Yt1t-VFat-PI1-Gg1b90-Hom.png' className='w-12 ml-24'></img>
             </div>
@@ -121,7 +121,7 @@ export const UseWebsite = () => {
               <li> <i class="fa-solid fa-check"></i> $ 40,000 cashback on health & life insurance.</li>
             </ul>
             <div className="card-actions">
-              <button className="btn btn-primary"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
+              <button className="btn bg-[#0071DC] text-white hover:bg-black"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ export const UseWebsite = () => {
         <div className="card w-96 use-image ">
           <div className="card-body">
             <div className='grid lg:grid-cols-2 sm:grid-cols-2'>
-              <h2 className="text-2xl text-primary font-bold">Free Care
+              <h2 className="text-2xl text-[#0071DC] font-bold">Free Care
               </h2>
               <img src='https://i.ibb.co/47PwHqK/xxinf-MFk1xal-Wu454xt8-Yt1t-VFat-PI1-Gg1b90-Hom.png' className='w-12 ml-24'></img>
             </div>
@@ -146,7 +146,7 @@ export const UseWebsite = () => {
               <li> <i class="fa-solid fa-check"></i> $ 40,000 cashback on health & life insurance.</li>
             </ul>
             <div className="card-actions">
-              <button className="btn btn-primary"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
+              <button className="btn bg-[#0071DC] text-white hover:bg-black"> <i class="fa-regular fa-bell mr-2"></i> Subscribe Now </button>
             </div>
           </div>
 

@@ -3,7 +3,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { Rings } from 'react-loader-spinner';
-import { useLoaderData } from 'react-router-dom';
 // swiper imports
 import { A11y, Autoplay, Navigation, Pagination, Scrollbar, Zoom } from 'swiper';
 import 'swiper/css';
@@ -11,7 +10,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import ProtectedRoute from '../../../pages/ProtectedRoute/ProtectedRoute'
 // Routing page
 import Doctors from './Doctors';
 // import phto
@@ -179,7 +177,7 @@ const Doctor = () => {
   return (
     <div className='mt-[150px] container mx-auto px-6'>
       <div className='mb-[100px] '>
-        <p className='text-center text-4xl uppercase font-bold  '>Book Our Best Super Herros <span className='text-[#1b82e2]'> (docotrs) </span> </p>
+        <p className='text-center text-4xl uppercase font-bold  '>Book Our Best Super Heroes <span className='text-[#1b82e2]'> (docotrs) </span> </p>
         {/* <p className='text-center mt-1'> Lorem ipsumaudantium saepe fuga. Veritatis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, distinctio. </p> */}
       </div>
       {
