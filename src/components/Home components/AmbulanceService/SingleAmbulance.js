@@ -32,7 +32,7 @@ const SingleAmbulance = ({ ambulances }) => {
           </div>
           <div className="card-actions justify-center">
 
-            <label htmlFor="my-modal-3" className="btn bg-[#0071DC] hover:bg-black w-full">open modal</label>
+            <label htmlFor="my-modal-3" className="btn bg-[#0071DC] hover:bg-black w-full">Book Ambulance</label>
             <input type="checkbox" id="my-modal-3" className="modal-toggle" />
 
             <div className="modal">

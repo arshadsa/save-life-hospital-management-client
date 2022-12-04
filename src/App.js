@@ -30,6 +30,7 @@ import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
 import Notfound from "./Loadandnotf/Notfound";
 import AddAmbulance from "./components/addambulance/AddAmbulance";
 import DoctorAppointment from "./components/appointment/DoctorAppointment";
+import AmbulanceDetails from "./components/Home components/AmbulanceService/AmbulanceDetails";
 
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
@@ -139,6 +140,12 @@ function App() {
       element: <ProtectedRoute><Details></Details></ProtectedRoute>,
     },
 
+    {
+      path: "/amdetails/:id",
+      element: (
+        <AmbulanceDetails></AmbulanceDetails>
+      )
+    },
     {
       path: "/addnews",
       element: (
