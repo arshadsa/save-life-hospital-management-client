@@ -18,11 +18,7 @@ const EditNurse = () => {
   });
 
   useEffect(() => {
-<<<<<<< HEAD
-    fetch(`http://localhost:5001/nurse/${id}`)
-=======
     fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/nurse/${id}`)
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
       .then((res) => res.json())
       .then(data => {
         SetNurseForm({

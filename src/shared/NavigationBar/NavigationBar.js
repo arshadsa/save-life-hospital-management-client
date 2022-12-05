@@ -191,7 +191,6 @@ export const NavigationBar = ({ isHome }) => {
                             }
                         </ul>
                     </li>
-
                 </ul>
             </div>
             <div className="navbar-end">

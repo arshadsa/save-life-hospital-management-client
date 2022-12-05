@@ -8,17 +8,6 @@ import './NewsDetails.css';
 import { Footer } from '../../shared/Footer/Footer';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
 const NewsDetails = () => {
-<<<<<<< HEAD
-   
-    const {id} = useParams();
-    const [parts,setParts] = useState({})
-    const [disable, setDisable] = useState(false);
-     useEffect(()=>{
-         fetch(`http://localhost:5001/news/${id}`)
-       .then(res=>res.json())
-        .then(data=>setParts(data))
-=======
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
 
   const { id } = useParams();
   const [parts, setParts] = useState({})

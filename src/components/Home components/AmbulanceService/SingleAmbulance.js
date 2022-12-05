@@ -6,20 +6,6 @@ import './SingleAmbulance.css';
 const SingleAmbulance = ({ ambulances }) => {
   const { register, handleSubmit, reset } = useForm();
 
-<<<<<<< HEAD
-    const onSubmit = data =>{
-        console.log(data);
-        axios.post("http://localhost:5001/ambooking",data)
-        .then(res=>{
-            
-             toast('Added Ambulance Successfully')
-                reset();
-               
-                
-            
-        })
-    } 
-=======
   const onSubmit = data => {
     console.log(data);
     axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/ambooking`, data)
@@ -32,7 +18,6 @@ const SingleAmbulance = ({ ambulances }) => {
 
       })
   }
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
 
   return (
     <div>
