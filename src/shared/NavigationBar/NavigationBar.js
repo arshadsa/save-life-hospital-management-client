@@ -16,7 +16,7 @@ export const NavigationBar = ({ isHome }) => {
     }
     if (loading) return
     return (
-        <div className={`${isHome === true ? 'md:w-[80vw] md:rounded-full md:absolute md:top-[6%] md:left-[10%] ' : "w-screen "}navbar w-screen text-black bg-slate-100  mx-auto z-50 h-[60px]`} >
+        <div className='md:w-[80vw] md:rounded-full md:absolute md:top-[6%] md:left-[10%] navbar w-screen text-black bg-slate-100  mx-auto z-50 h-[60px]' >
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

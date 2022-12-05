@@ -2,9 +2,7 @@
 // doctors booking card page ////
 import React, { useState } from "react";
 
-// icon import
-import { MdOutlineWatchLater } from "react-icons/md";
-import { FaRegMoneyBillAlt } from "react-icons/fa";
+
 import { Link, useNavigate } from "react-router-dom";
 
 const Doctors = ({ doctor }) => {

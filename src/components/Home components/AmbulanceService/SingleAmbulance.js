@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 
     const onSubmit = data =>{
         console.log(data);
-        axios.post("http://localhost:5000/ambooking",data)
+        axios.post("http://localhost:5001/ambooking",data)
         .then(res=>{
             
              toast('Added Ambulance Successfully')

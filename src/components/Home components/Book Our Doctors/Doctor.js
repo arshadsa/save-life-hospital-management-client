@@ -167,7 +167,7 @@ const Doctor = () => {
 
 const [doctors,setDoctors] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/hospitaldoctors')
+        fetch('http://localhost:5001/hospitaldoctors')
         .then(res => res.json())
         .then(data => setDoctors(data))
     },[])
@@ -227,4 +227,4 @@ const [doctors,setDoctors] = useState([])
   )
 }
 
-export default Doctor
+export default Doctor;

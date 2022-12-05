@@ -11,7 +11,7 @@ const NewsDetails = () => {
     const [parts,setParts] = useState({})
     const [disable, setDisable] = useState(false);
      useEffect(()=>{
-         fetch(`http://localhost:5000/news/${id}`)
+         fetch(`http://localhost:5001/news/${id}`)
        .then(res=>res.json())
         .then(data=>setParts(data))
 

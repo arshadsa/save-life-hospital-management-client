@@ -11,7 +11,7 @@ const MyAppointment = () => {
   const [userInfo, loading] = useAuthState(auth);
   useEffect(() => {
 
-    fetch(`http://localhost:5000/hospitaldoctorsbooking?patient=${userInfo.email}`)
+    fetch(`http://localhost:5001/hospitaldoctorsbooking?patient=${userInfo.email}`)
       .then(res => res.json())
       .then(data => setAppointments(data))
 

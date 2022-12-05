@@ -18,7 +18,7 @@ const EditNurse = () => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:5000/nurse/${id}`)
+    fetch(`http://localhost:5001/nurse/${id}`)
       .then((res) => res.json())
       .then(data=>
         { 

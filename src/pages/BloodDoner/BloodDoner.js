@@ -27,7 +27,7 @@ const BloodDoner = () => {
             age: e?.target?.age?.value,
         }
         console.log(donerInfo)
-        fetch('http://localhost:5000/bloodDoner', {
+        fetch('http://localhost:5001/bloodDoner', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
