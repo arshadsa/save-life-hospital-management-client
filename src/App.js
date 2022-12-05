@@ -31,6 +31,7 @@ import Notfound from "./Loadandnotf/Notfound";
 import AddAmbulance from "./components/addambulance/AddAmbulance";
 import DoctorAppointment from "./components/appointment/DoctorAppointment";
 import AmbulanceDetails from "./components/Home components/AmbulanceService/AmbulanceDetails";
+import { Contact } from "./components/Contact";
 
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
@@ -59,10 +60,21 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
+    {
+      path: "/email",
+      element: (
+        <Contact></Contact>
+      ),
+    },
 
     {
       path: "/doctor",
       element: <Speciality></Speciality>,
+    },
+
+    {
+      path: "/addambulance",
+      element: <AddAmbulance></AddAmbulance>,
     },
 
     {
