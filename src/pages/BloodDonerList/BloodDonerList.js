@@ -5,11 +5,7 @@ import { Footer } from '../../shared/Footer/Footer';
 const BloodDonerList = () => {
     const [donerList, setDonerList] = React.useState([])
     useEffect(() => {
-<<<<<<< HEAD
-        fetch("http://localhost:5001/bloodDonerList")
-=======
         fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/bloodDonerList`)
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
             .then(res => res.json())
             .then(data => setDonerList(data))
     }, [])

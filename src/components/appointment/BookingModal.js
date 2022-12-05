@@ -57,12 +57,6 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
           availableSlots: { ...availableSlots, [formatedDate]: availableAppointments }
         }
 
-<<<<<<< HEAD
-        fetch('http://localhost:5001/hospitaldoctorsbooking',{
-          method: 'POST',
-          headers:{
-            'content-type': 'application/json'
-=======
         // const treatment[availableSlots]={...treatment[availableSlots],`${formatedDate}`:availableAppointments}
         // delete newDocotor[_id]
         // const newDocotor = { ...treatment, treatment[formatedDate]: availableAppointments }
@@ -72,7 +66,6 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
           headers: {
             'content-type': 'application/json',
             id: _id
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
           },
           body: JSON.stringify(newDocotor)
         })

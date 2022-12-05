@@ -32,11 +32,7 @@ const Login = () => {
   useEffect(() => {
     if (userInfo) {
       console.log("google user", userInfo?.email);
-<<<<<<< HEAD
-      fetch(`http://localhost:5001/api/user/?email=${userInfo?.email}`)
-=======
       fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/user/?email=${userInfo?.email}`)
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
         .then(res => res.json())
         .then(data => {
           console.log(data)
@@ -57,11 +53,7 @@ const Login = () => {
       role = "Patient"
     }
     const user = { "name": userInfo?.displayName, "email": userInfo?.email, "role": role }
-<<<<<<< HEAD
-    fetch("http://localhost:5001/api/users", {
-=======
     fetch("${process.env.REACT_APP_SERVER_BASE_URL}/api/users", {
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user)
@@ -90,11 +82,7 @@ const Login = () => {
     if (errorGoogle) return
     if (userInfo) {
       console.log("google user", userInfo?.email);
-<<<<<<< HEAD
-      fetch(`http://localhost:5001/api/user/?email=${userInfo?.email}`)
-=======
       fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/user/?email=${userInfo?.email}`)
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
         .then(res => res.json())
         .then(data => {
           console.log(data)

@@ -9,15 +9,6 @@ const AddAmbulance = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-<<<<<<< HEAD
-        axios.post('http://localhost:5001/ambulance',data)
-        .then(res=>{
-           if(res.data.insertedId){
-               alert('Added Successfully');
-               reset();
-           }
-        })
-=======
         axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/ambulance`, data)
             .then(res => {
                 if (res.data.insertedId) {
@@ -25,7 +16,6 @@ const AddAmbulance = () => {
                     reset();
                 }
             })
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
     };
     return (
         <div>

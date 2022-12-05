@@ -7,11 +7,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 const Payment = () => {
-<<<<<<< HEAD
-    const {id} = useParams();
-    const url = `http://localhost:5001/hospitaldoctorsbooking/${id}`;
-    const {data:coursebooking,isLoading} = useQuery(['hospitaldoctorsbooking',id], ()=>fetch(url).then(res=>res.json()))
-=======
   const [clientSecret, setClientSecret] = useState("");
   let params = useParams();
   let serviceId = params.id;
@@ -46,7 +41,6 @@ const Payment = () => {
         setClientSecret(data.clientSecret)
       });
   }, []);
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
 
   const appearance = {
     theme: 'stripe',

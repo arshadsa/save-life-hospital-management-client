@@ -6,18 +6,6 @@ import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 import { Footer } from "../../shared/Footer/Footer";
 
 const Details = () => {
-<<<<<<< HEAD
-    const {id} = useParams();
-    const [docs,setDocs] = useState({})
-    const [disable, setDisable] = useState(false);
-     useEffect(()=>{
-         fetch(`http://localhost:5001/hospitaldoctors/${id}`)
-       .then(res=>res.json())
-        .then(data=>setDocs(data))
-     },[])
-     const { register, handleSubmit, reset } = useForm();    
-const handleChange = event => {
-=======
   const { id } = useParams();
   const [docs, setDocs] = useState({})
   const [disable, setDisable] = useState(false);
@@ -28,7 +16,6 @@ const handleChange = event => {
   }, [])
   const { register, handleSubmit, reset } = useForm();
   const handleChange = event => {
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
     const disable = event.target.value;
     setDisable(disable);
   };
