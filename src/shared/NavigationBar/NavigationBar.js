@@ -177,6 +177,7 @@ export const NavigationBar = ({ isHome }) => {
                                     <li>
                                         <Link to={`/dashboard/doctorAppointment`}>Patient Visit</Link></li>
                                     <li>  <Link to={`/addnews`}>Add Blog</Link></li>
+                                    <li><Link to="/doctor/add">Add Me as Doctor</Link></li>
                                 </> : null
                             }
                             {
