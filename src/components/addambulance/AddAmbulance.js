@@ -20,20 +20,23 @@ const AddAmbulance = () => {
     return (
         <div>
             <NavigationBar isHome={true}></NavigationBar>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <h1 className='text-center text-4xl  mb-4  text-primary'>  <Typewriter
                 options={{
                     strings: [' Please add an ambulance  : '],
                     autoStart: true,
                     loop: true,
-
                 }}
             /></h1>
-            <div className='ml-72'>
-
-
+            <div className='ml-96'>
 
                 <div className="lg:max-w-lg bg-base-100  shadow-xl">
-                    <figure><img src="https://thumbs.dreamstime.com/b/word-blog-colourful-letters-15012227.jpg" className='w-96' alt="Shoes" /></figure>
+                  
                     <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
 

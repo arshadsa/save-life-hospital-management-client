@@ -53,7 +53,8 @@ const Details = () => {
             <li className="text-t ml-24">
               <b>Location:</b> {docs.location}
             </li>
-
+           
+           
           </ul>
         </div>
         <div className="mt-[30px] md:mt-0">

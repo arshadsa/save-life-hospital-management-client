@@ -32,9 +32,14 @@ const NewsDetails = () => {
   return (
     <div className=''>
       <NavigationBar isHome={true} />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className='grid lg:grid-cols-1 sm:grid-cols-1 mt-[100] mb-10'>
-        <img src='https://weblearnbd.net/wp/epora/wp-content/uploads/2022/07/breadcrumb-bg-1.jpg' className='mx-auto mt-5'></img>
-        <h1 className='font-bold text-center text-3xl mt-5 text-title pb-2'>
+
+        <h1 className='text-center text-3xl mt-5 text-primary pb-2'>
 
           <Typewriter
             options={{
@@ -44,9 +49,8 @@ const NewsDetails = () => {
 
             }}
           />
-
         </h1>
-        <div className=' mt-16'>
+        <div className=' mt-16 ml-8'>
           <div className='grid lg:grid-cols-2 sm:grid-cols-1 bg-dark  mx-5  shadow-details '>
             <div>
               <h1 className='font-bold text-2xl mt-2 mb-2'>{parts.name}</h1>

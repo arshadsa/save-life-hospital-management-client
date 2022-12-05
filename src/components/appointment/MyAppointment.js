@@ -43,6 +43,7 @@ const MyAppointment = () => {
                 <th>Slot</th>
                 <th>Fees</th>
                 <th>Pay</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -62,6 +63,9 @@ const MyAppointment = () => {
                           <div>
                             <p className='text-green-400'>Paid</p>
                             <p className='text-green-400'>Wait for your doctor to create videoCall</p>
+                            <Link to='/email'>
+                            <button className='btn bg-blue-500 text-light-400 w-40'>Email Doctor</button>
+                            </Link>
                           </div>
                         }</>
                     }
