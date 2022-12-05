@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { signOut } from 'firebase/auth';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init'
-import './Login.css'
+import React, { useEffect, useState } from 'react';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { FcGoogle } from "react-icons/fc";
-import { async } from '@firebase/util';
 import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import auth from '../../firebase.init';
+import './Login.css';
 const Login = () => {
   const navigate = useNavigate()
   const [
@@ -34,7 +32,11 @@ const Login = () => {
   useEffect(() => {
     if (userInfo) {
       console.log("google user", userInfo?.email);
+<<<<<<< HEAD
       fetch(`http://localhost:5001/api/user/?email=${userInfo?.email}`)
+=======
+      fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/user/?email=${userInfo?.email}`)
+>>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
         .then(res => res.json())
         .then(data => {
           console.log(data)
@@ -55,7 +57,11 @@ const Login = () => {
       role = "Patient"
     }
     const user = { "name": userInfo?.displayName, "email": userInfo?.email, "role": role }
+<<<<<<< HEAD
     fetch("http://localhost:5001/api/users", {
+=======
+    fetch("${process.env.REACT_APP_SERVER_BASE_URL}/api/users", {
+>>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user)
@@ -84,7 +90,11 @@ const Login = () => {
     if (errorGoogle) return
     if (userInfo) {
       console.log("google user", userInfo?.email);
+<<<<<<< HEAD
       fetch(`http://localhost:5001/api/user/?email=${userInfo?.email}`)
+=======
+      fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/user/?email=${userInfo?.email}`)
+>>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
         .then(res => res.json())
         .then(data => {
           console.log(data)
@@ -98,17 +108,22 @@ const Login = () => {
   }
   console.log("google error", errorGoogle)
   return (
-    <div className='flex h-[80vh] flex-col lg:flex-row items-center justify-center pt-52'>
-      <img src="https://media.istockphoto.com/vectors/parents-visit-sick-son-in-bed-at-hospital-ward-vector-id1215582607?b=1&k=20&m=1215582607&s=170667a&w=0&h=ueFzXWP3WlCgZpyD_rZ8txBN6XFqrHwp6CK8w6FPb7E=" alt="" className='h-[67%] rounded-2xl lg:block hidden' />
+    <div className='flex h-[80vh] flex-col lg:flex-row items-center justify-center pt-52 gap-20'>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Login</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <img src="https://media.istockphoto.com/vectors/parents-visit-sick-son-in-bed-at-hospital-ward-vector-id1215582607?b=1&k=20&m=1215582607&s=170667a&w=0&h=ueFzXWP3WlCgZpyD_rZ8txBN6XFqrHwp6CK8w6FPb7E=" alt="" className='h-[80%] rounded-2xl lg:block hidden' />
       <div className='app__login-form rounded-2xl shadow-2xl border-white border-2'>
         <form onSubmit={isGoogleLogin === false ? handleSubmit : handleRole} className='md:w-[500px] w-[90vw] flex flex-col justify-center items-center '>
+          <h2 className='text-3xl text-blue-500 font-bold mt-3'>Welcome Back</h2>
+          <p className='text-lg font-medium pb-5'>Please Enter Your Credentails to Login!</p>
           {
-            isGoogleLogin === false ? <> <p className=''>Name</p>
-              <input type="text" name="name" id="name" placeholder='Enter your name' required />
-              <p>Email</p>
-              <input type="email" name="email" id="email" placeholder='Enter your email here' required />
-              <p>Password</p>
-              <input type="password" name="password" id="password" placeholder='Enter your password' required /></> : null
+            isGoogleLogin === false ? <>
+              <input className='w-full border rounded-md bg-transparent border-gray-400 p-3' type="text" name="name" id="name" placeholder='Enter your name' required />
+              <input className='w-full border rounded-md bg-transparent border-gray-400 p-3' type="email" name="email" id="email" placeholder='Enter your email' required />
+              <input className='w-full border rounded-md bg-transparent border-gray-400 p-3' type="password" name="password" id="password" placeholder='Enter your password' required /></> : null
           }
           {
             isGoogleLogin === true ? <>
@@ -124,13 +139,13 @@ const Login = () => {
             </> : null
           }
           <br />
-          <input type="submit" value="Sign In" />
+          <input className='block bg-blue-500 hover:bg-black text-white w-full py-2 px-rounded rounded-md' type="submit" value="Login" />
 
           <small className='text-red-500'>{errorText}</small>
         </form>
-        <Link to={'/signup'} className='block mx-auto text-center text-blue-500'>Don't have an account? Sign Up</Link>
+        <Link to={'/signup'} className='block mx-auto text-center text-black text-lg mb-5 mt-3'>Don't have an account yet ? <span className='text-blue-500 cursor-pointer'>Sign Up!</span></Link>
         {
-          isGoogleLogin === false ? <button className='w-40 block mx-auto' onClick={handleGoogleLogin}><FcGoogle className='inline-block' />Sign with Google</button> : null
+          isGoogleLogin === false ? <button className='w-30 text-medium block bg-blue-500 hover:bg-black text-white w-full py-2 px-rounded rounded-md mx-auto' onClick={handleGoogleLogin}><FcGoogle className='inline-block' />Sign with Google</button> : null
         }
         <br />
         {/* <button onClick={() => signOut(auth)}>Sign out</button> */}

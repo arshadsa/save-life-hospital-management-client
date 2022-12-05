@@ -6,7 +6,6 @@ import Chat from "./components/Msngrchat/Chat";
 import AddDoctors from "./components/adddoctors/AddDoctors";
 import Details from "./components/details/Details";
 import Pharmacy from "./components/Home components/What are u looking fr/Pharmacy";
-import { QueryClient, QueryClientProvider } from "react-query";
 import Phercheckout from "./components/Pharheckout/Phercheckout";
 import Appointment from "./components/appointment/Appointment";
 import AddNews from "./components/addnews/AddNews";
@@ -20,7 +19,6 @@ import ShowAllNurse from "./pages/Nurse/ShowAllNurse";
 import ShowStaffsByDepartment from "./pages/Staffs/ShowStaffsByDepartment";
 import ShowNurseByDepartment from "./pages/Nurse/ShowNurseByDepartment";
 import ShowNurseDepartments from "./pages/Nurse/ShowNurseDepartments";
-import VideoCall from "./pages/VideoCall/VideoCall";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
@@ -31,6 +29,8 @@ import { CheckoutForm } from "./components/appointment/CheckoutForm";
 import { NavigationBar } from "./shared/NavigationBar/NavigationBar";
 import Notfound from "./Loadandnotf/Notfound";
 import AddAmbulance from "./components/addambulance/AddAmbulance";
+import DoctorAppointment from "./components/appointment/DoctorAppointment";
+import AmbulanceDetails from "./components/Home components/AmbulanceService/AmbulanceDetails";
 
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
@@ -44,6 +44,7 @@ const BloodDonerList = lazy(() => import("./pages/BloodDonerList/BloodDonerList"
 const BloodBank = lazy(() => import("./pages/BloodBank/BloodBank"));
 const ProtectedRoute = lazy(() => import("./pages/ProtectedRoute/ProtectedRoute"));
 const SpecialistDoctors = lazy(() => import("./pages/SpecialistDoctors/SpecialistDoctors"));
+const VideoCall = lazy(() => import("./pages/VideoCall/VideoCall"));
 function App() {
   const [userInfo] = useAuthState(auth);
   const role = useRole(userInfo?.email);
@@ -58,7 +59,7 @@ function App() {
         <AddDoctors></AddDoctors>
       ),
     },
-   
+
     {
       path: "/doctor",
       element: <Speciality></Speciality>,
@@ -101,24 +102,11 @@ function App() {
       )
     },
     {
-      path: "/websitedoctors/:id",
-      element: (
-        <Details></Details>
-      ),
-    },
-    {
       path: "/news/:id",
       element: (
         <NewsDetails></NewsDetails>
       ),
     },
-    {
-      path: "/websitedoctors/:id",
-      element: (
-        <Details></Details>
-      ),
-    },
-
     {
       path: "*",
       element: (
@@ -135,20 +123,6 @@ function App() {
       path: "/signup",
       element: (<SignUp />),
     },
-    // {
-    //   path: "/makeAdmin",
-    //   element: (
-    //     <MakeAdmin />
-    //   )
-    // },
-    // {
-    //   path: "/bloodDoner",
-    //   element: (
-    //     <ProtectedRoute>
-    //       <BloodDoner />
-    //     </ProtectedRoute>
-    //   )
-    // },
     {
       path: "/bloodDonerList",
       element: (
@@ -163,9 +137,15 @@ function App() {
     },
     {
       path: "/websitedoctors/:id",
-      element: <Details></Details>,
+      element: <ProtectedRoute><Details></Details></ProtectedRoute>,
     },
-    
+
+    {
+      path: "/amdetails/:id",
+      element: (
+        <AmbulanceDetails></AmbulanceDetails>
+      )
+    },
     {
       path: "/addnews",
       element: (
@@ -179,17 +159,11 @@ function App() {
       )
     },
     {
-      path: "/news",
-      element: (
-        <News></News>
-      )
-    },
-    {
       path: "/medcheckout/:id",
       element: (<Phercheckout></Phercheckout>)
     },
     {
-      path: "/videoCall",
+      path: "/videoCall/:id",
       element: (<VideoCall />)
     },
     {
@@ -202,10 +176,8 @@ function App() {
     },
     {
       path: "/appointment",
-      element: (<Appointment></Appointment>)
+      element: (<ProtectedRoute><Appointment></Appointment></ProtectedRoute>)
     },
-
-   
     {
       path: "dashboard",
       element: (<Dashboard />),
@@ -216,7 +188,7 @@ function App() {
         },
         {
           path: "addnurse",
-          element: (<AddNurse/>)
+          element: (<AddNurse />)
         },
         {
           path: "addambulance",
@@ -235,6 +207,10 @@ function App() {
           element: <MyAppointment></MyAppointment>,
         },
         {
+          path: "doctorAppointment",
+          element: <DoctorAppointment />,
+        },
+        {
           path: "bloodDoner",
           element: (
             <ProtectedRoute>
@@ -242,18 +218,8 @@ function App() {
             </ProtectedRoute>
           ),
         },
-        // {
-        //   path: "logout",
-        //   action: logoutUser,
-        // },
       ],
     },
-
-    // {
-    //   path: "/medcheckout/:id",
-    //   element: <Phercheckout></Phercheckout>
-    // },
-
     {
       path: "/nurse",
       element: (<ShowNurseDepartments />)

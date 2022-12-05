@@ -20,7 +20,7 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button fixed bottom-4 right-0"><BsFillArrowLeftCircleFill />Open</label>
             </div>
             <div className="drawer-side">
-                <label htmlFor="my-drawer-2" className="drawer-overlay btn fixed bottom-4 left-[1151px] text-green-400"><BsFillArrowRightCircleFill className='text-white' />Close</label>
+                <label htmlFor="my-drawer-2" className="drawer-overlay bg-black btn z-50 fixed bottom-4 lg:left-[1151px] left-[10vw]text-green-400"><BsFillArrowRightCircleFill className='text-white' />Close</label>
                 {/* <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button fixed bottom-4 right-0"><BsFillArrowLeftCircleFill />Open</label> */}
                 <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}

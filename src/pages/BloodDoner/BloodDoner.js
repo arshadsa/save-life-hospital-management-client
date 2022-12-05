@@ -1,14 +1,17 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
-import { Footer } from '../../shared/Footer/Footer';
+
 
 const BloodDoner = () => {
     const bloodGroup = ["A+", "A-", "O+", "O-", "AB-", "AB+", "B+", "B-"];
     const [userInfo, loading] = useAuthState(auth);
     const [isBloodGroupSelect, setIsBloodGroupSelect] = React.useState(false)
     const [userBloodGroup, setUserBloodGroup] = React.useState('')
+    const navigate = useNavigate();
     const handleBloodGroup = (e) => {
         e.preventDefault();
         setIsBloodGroupSelect(true)
@@ -16,8 +19,8 @@ const BloodDoner = () => {
     const handleBloodDonerInfo = (e) => {
         e.preventDefault()
         // Post the donner info to the server
-        console.log(e?.target?.bloodGroup?.value);
-        console.log(e?.target?.name?.value);
+        // console.log(e?.target?.bloodGroup?.value);
+        // console.log(e?.target?.name?.value);
         const donerInfo = {
             name: e?.target?.name?.value,
             bloodGroup: e?.target?.bloodGroup?.value,
@@ -26,20 +29,30 @@ const BloodDoner = () => {
             phone: e?.target?.telephone?.value,
             age: e?.target?.age?.value,
         }
+<<<<<<< HEAD
         console.log(donerInfo)
         fetch('http://localhost:5001/bloodDoner', {
+=======
+        // console.log(donerInfo)
+        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/bloodDoner`, {
+>>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(donerInfo)
         }).then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => navigate("/bloodBank"))
 
     }
     console.log(userBloodGroup);
     return (
         <div className='flex h-[80vh] flex-col lg:flex-row items-center justify-center pt-52'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Bloodn Donate Form</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <img src="https://www.seekpng.com/png/detail/21-214042_for-developers-blood-clipart-blood-donation-png.png" alt="" className='h-[67%] rounded-2xl lg:block hidden' />
             <form onSubmit={isBloodGroupSelect === false ? handleBloodGroup : handleBloodDonerInfo} className="md:w-[500px] w-[90vw] flex flex-col justify-center items-center app__login-form rounded">
                 {

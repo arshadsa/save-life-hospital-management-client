@@ -2,7 +2,11 @@
 // doctors booking card page ////
 import React, { useState } from "react";
 
+<<<<<<< HEAD
 
+=======
+// icon import
+>>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
 import { Link, useNavigate } from "react-router-dom";
 
 const Doctors = ({ doctor }) => {
@@ -35,7 +39,7 @@ const Doctors = ({ doctor }) => {
     setDescriptionCollapse(false);
   };
 
-   const navigate = useNavigate()
+  const navigate = useNavigate()
 
 
   return (
@@ -93,32 +97,23 @@ const Doctors = ({ doctor }) => {
                 outline outline-[#1b82e2] hover:bg-[#1b82e2] w-[130px] h-[46px]  rounded-lg text-black font-[600] transition ease-in-out delay-100 hover:text-white 
                 hover:translate-y-1 "
                 >
-                  {" "}
-                  <span className="text-[20px] text-white ">
-                    {/* <AiFillCalendar></AiFillCalendar> */}
-                  </span>{" "}
-                  <span className="mx-2 text-[16px]  ">
+                  <span className=" text-[12px]  ">
                     <Link to={`/websitedoctors/${_id}`}>
                       <i class="fa-solid fa-eye"></i> View Profile
                     </Link>
-                  </span>{" "}
+                  </span>
                 </button>
 
                 {/* book now button */}
                 {/* use useNavigaein this buttton where you wanna go*/}
                 <button
-                onClick={()=>navigate("/appointment")}
-                  class="text-1xl mt-4 mx-5 bg-[#4506cb]
-                w-[130px] h-[50px]  rounded-lg text-black font-[600] transition ease-in-out delay-100 hover:translate-y-1  "
+                  onClick={() => navigate("/appointment")}
+                  class="text-1xl mt-4 mx-5 bg-[#0071DC]
+                w-[130px] h-[50px] rounded-lg text-black font-[600] transition ease-in-out delay-100 hover:translate-y-1  "
                 >
-                  {" "}
-                  <span className="text-[20px] text-white ">
-                    {/* <AiFillCalendar></AiFillCalendar> */}
-                  </span>{" "}
-                  <span className="mx-2 text-[16px] text-white ">
-                    {" "}
+                  <span className="mx-2 text-[12px] text-white ">
                     <i class="fa-regular fa-calendar-check"></i> Book Now
-                  </span>{" "}
+                  </span>
                 </button>
               </div>
             </div>
