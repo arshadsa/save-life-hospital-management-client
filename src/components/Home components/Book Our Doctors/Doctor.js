@@ -181,7 +181,7 @@ const Doctor = () => {
         {/* <p className='text-center mt-1'> Lorem ipsumaudantium saepe fuga. Veritatis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, distinctio. </p> */}
       </div>
       {
-        doctors ? <div>
+        doctors !== [] ? <div>
           <Swiper
             modules={[Navigation, Autoplay, Pagination, Scrollbar, Zoom, A11y]}
             spaceBetween={20}

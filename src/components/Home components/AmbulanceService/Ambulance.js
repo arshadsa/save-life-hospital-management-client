@@ -18,7 +18,7 @@ const Ambulance = () => {
       </div>
 
       {
-        ambulance ?
+        ambulance !== [] ?
           <div className='container mx-auto px-6 p-3 mt-[80px]'>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
 

@@ -21,7 +21,7 @@ const News = () => {
         <div className='container mx-auto px-6 p-3 mt-[80px]' >
           <p className='text-center text-4xl uppercase font-bold  '>Our Popoular <span className='text-[#1b82e2]'> (Blogs) </span> </p>
           {
-            tools ?
+            tools !== [] ?
               <div className='mt-[80px]' >
 
                 <Swiper

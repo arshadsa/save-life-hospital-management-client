@@ -27,7 +27,7 @@ const DoctorAppointment = () => {
             <link rel="canonical" href="http://mysite.com/example" />
         </Helmet>
         <NavigationBar isHome={true} />
-        <section className='md:mx-10 mt-[100] mb-8'>
+        <section className='md:mx-10 mt-[100px] mb-8'>
             <h1>My Appointments: {appointments.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table w-full">
@@ -54,7 +54,7 @@ const DoctorAppointment = () => {
                                 <td className='text-center'>
                                     {(a.paymentStatus === "unpaid") && <p className='btn bg-blue-500 text-light-400'>Unpaid</p>}
                                     {(a.paymentStatus === "paid") && <Link to={`/videocall/${a._id}`} className="ml-12">
-                                        <button className="btn btn-secondary">Start VideoCall</button>
+                                        <button className="btn btn-secondary h-6">Start VideoCall</button>
                                     </Link>}
                                 </td>
                             </tr>)
