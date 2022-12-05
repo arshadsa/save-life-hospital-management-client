@@ -43,7 +43,7 @@ const Dashboard = () => {
                     {
                         role === "Patient" ? <><li>
 
-                            <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link></li>
+                            <Link to={`/dashboard/bloodDoner`}>Donate BloOD</Link></li>
 
                         </> : null
                     }
