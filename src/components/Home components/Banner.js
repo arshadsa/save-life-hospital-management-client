@@ -4,6 +4,7 @@ import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // import swiper styles
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -42,6 +43,8 @@ const Banner = () => {
                   </p>
                   <button className="btn bg-[#0071DC] hover:bg-black btn-outline mt-5 w-40 items-center justify-center text-center ">
                     visit Doctors{" "}
+                    <Link to={`/websitedoctors`}>
+                    </Link>
                   </button>
                 </div>
               </div>
