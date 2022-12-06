@@ -187,6 +187,7 @@ export const NavigationBar = ({ isHome }) => {
                                     <li>
                                         <Link to={`/dashboard/doctorAppointment`}>Patient Visit</Link></li>
                                     <li>  <Link to={`/addnews`}>Add Blog</Link></li>
+                                    <li><Link to="/doctor/add">Add Me as Doctor</Link></li>
                                 </> : null
                             }
                             {
@@ -194,6 +195,8 @@ export const NavigationBar = ({ isHome }) => {
                                     {/* Put all other route using Link inside li */}
                                     <li>
                                         <Link to={`/dashboard/bloodDoner`}>Donate Blood</Link>
+                                        <Link to={`/doctors/all`}>Show All Doctors</Link>
+                                        <Link to={`/nurse/all`}>Show All Stuffs</Link>
                                         <Link to={`/appointment`}>Book Appointment</Link>
                                         <Link to={`/dashboard/myappointments`}>My Appointments</Link>
                                     </li>

@@ -20,10 +20,9 @@ const DepartmentCard = ({department}) => {
       <Link to={`/nurse/department/${department}`}>
         <div class="cursor-pointer p-4 flex max-w-md bg-white shadow-xl rounded-lg overflow-hidden">
           <div class="w-1/3 bg-cover bg-landscape flex align-items-center">
-            <img className="w-full p-4" src={getImg()} alt="" />
           </div>
           <div class="w-2/3 p-4 mb-2">
-            <h1 class="text-gray-900 font-bold text-2xl">{department}</h1>
+            <h1 class="text-gray-900  text-2xl pt-3">{department}</h1>
             <p class="mt-2 text-gray-600 text-sm">
               {/* {def["0"]?.Description} */}
             </p>

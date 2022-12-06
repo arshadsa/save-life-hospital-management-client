@@ -345,7 +345,7 @@ const EditDoctor = () => {
               <button
                 href="#!"
                 type="button"
-                className="btn bg-red-500 ml-2 hover:bg-yellow-600"
+                className="btn bg-red-500  mt-5 hover:bg-yellow-600"
                 onClick={() => (onDelete())}
                 value="Add Product"
               >
