@@ -41,7 +41,7 @@ const AddDoctor = () => {
     console.log({ ...doctorForm, edititem: true });
     doctorForm = { ...doctorForm, email: mail }
     console.log(doctorForm);
-    const url = `http://localhost:5000/websitedoctors`;
+    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/websitedoctors`;
     fetch(url, {
       method: "POST",
       headers: {

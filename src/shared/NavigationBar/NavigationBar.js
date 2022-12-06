@@ -39,8 +39,12 @@ export const NavigationBar = ({ isHome }) => {
                                 Blog
                             </Link>
                         </li>
-
                         <li tabIndex={3}>
+                            <Link to='/pharmacy' className="justify-between">
+                                Pharmacy
+                            </Link>
+                        </li>
+                        <li tabIndex={6}>
                             {/* Make the default route for differnt Role */}
                             {
                                 role === "Admin" ? <Link to={"/dashboard/makeadmin"}>
@@ -118,23 +122,29 @@ export const NavigationBar = ({ isHome }) => {
                             Specialties
                         </Link>
                     </li>
-                    <li tabIndex={1}>
+                    <li tabIndex={2}>
                         <Link to='/pharmacy' className="justify-between">
                             Pharmacy
                         </Link>
                     </li>
-                    <li tabIndex={4}>
+                    <li tabIndex={3}>
                         <Link to='/bloodBank' className="justify-between">
                             Blood Bank
                         </Link>
                     </li>
-                    <li tabIndex={2}>
+                    <li tabIndex={4}>
                         <Link to='/blog' className="justify-between">
                             Blog
                         </Link>
                     </li>
-
-                    <li tabIndex={3}>
+                    {
+                        role === "Doctor" ? <li tabIndex={5}>
+                            <Link to='/doctor/add' className="justify-between">
+                                Post My Slot
+                            </Link>
+                        </li> : null
+                    }
+                    <li tabIndex={6}>
                         {/* Make the default route for differnt Role */}
                         {
                             role === "Admin" ? <Link to={"/dashboard/makeadmin"}>
@@ -167,7 +177,7 @@ export const NavigationBar = ({ isHome }) => {
                                     <li><Link to="/nurse/add">Add Stuffs</Link></li>
                                     <li><Link to="/doctor/add">Add Speciality</Link></li>
                                     <li><Link to="/addambulance">Add Ambulance</Link></li>
-                                    
+
                                 </> : null
                             }
                             {
