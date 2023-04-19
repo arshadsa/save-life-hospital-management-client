@@ -3,6 +3,15 @@ import DoctorCard from "../../components/DoctorCard/DoctorCard";
 import useSpecialities from "../../hooks/useSpeciality";
 const Speciality = () => {
   const [specialities, specialitiesDef] = useSpecialities();
+  if(specialities){
+    return <div class=" shadow rounded-md p-4 max-w-lg mt-72  w-full mx-auto">
+    <div class="animate-pulse  flex space-x-4 ">
+      <div class="rounded-full border  bg-[#1b82e2] h-20 ml-40 w-20"></div>
+    
+     
+    </div>
+  </div>
+  }
   return (
     <>
       <div className="mt-[150px] container mx-auto">
