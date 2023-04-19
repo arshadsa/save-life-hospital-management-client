@@ -81,9 +81,9 @@ const Homepage = () => {
         <Faq></Faq>
       </div>
       <div className="mt-[100px]">
-        <NewsLetter></NewsLetter>
-      </div>
       <Footer />
+      </div>
+     
     </div>
   );
 };
