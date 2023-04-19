@@ -5,17 +5,16 @@ import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import { Navigate, useNavigate } from 'react-router-dom';
 import moment from 'moment-timezone';
+
 const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
   const { _id, name, fees, availableSlots, email } = treatment;
   console.log("doctor name", name)
   console.log("avaialble slots from the modal", availableSlots);
   const Navigate = useNavigate();
   const [userInfo] = useAuthState(auth);
-  const formatedDate = moment(date).tz("Asia/Dhaka").format('L');
-  console.log("formatedDate", formatedDate);
-  const availableAppointments = availableSlots[formatedDate].filter(elem => elem !== formatedDate);
-  console.log("avaiable", availableSlots[formatedDate]);
-  console.log("availableAppointments", availableAppointments);
+
+
+
   const handleBooking = event => {
     event.preventDefault();
     const slot = event.target.slot.value;
@@ -23,7 +22,7 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
     const booking = {
       treatmentId: _id,
       doctorName: name,
-      date: formatedDate,
+ 
       doctorEmail: email,
       fees: fees,
       slot,
@@ -44,24 +43,24 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
         console.log(data);
         if (data.success) {
           Navigate('/dashboard/myappointments');
-          toast(`Appointment is set,${formatedDate} at ${slot}`)
+          toast(`Appointment is set, at ${slot}`)
         }
         else {
           toast.error(`You already have an ppointment on,${data.booking?.date} at ${data.booking?.slot}`)
         }
         // Update doctors aviablable slots here
-        const availableAppointments = availableSlots[formatedDate].filter(elem => elem !== slot);
+        const availableAppointments = availableSlots.filter(elem => elem !== slot);
         console.log("availableAppointments", availableAppointments);
         const newDocotor = {
           ...treatment,
-          availableSlots: { ...availableSlots, [formatedDate]: availableAppointments }
+          availableSlots: { ...availableSlots,  availableAppointments }
         }
 
         // const treatment[availableSlots]={...treatment[availableSlots],`${formatedDate}`:availableAppointments}
         // delete newDocotor[_id]
         // const newDocotor = { ...treatment, treatment[formatedDate]: availableAppointments }
         // console.log("new updated docotr ", newDocotor);
-        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/updatedoctoravailableslots?date=${formatedDate}&email=${email}`, {
+        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/updatedoctoravailableslots?email=${email}`, {
           method: 'PUT',
           headers: {
             'content-type': 'application/json',
@@ -76,8 +75,7 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
       })
 
   }
-  // date ------
-  let d = moment(date).tz("Asia/Dhaka").format('L')
+ 
   return (
     <div>
 
@@ -88,12 +86,12 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
           <h3 className="font-bold text-lg">Booking for {name}</h3>
           <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
             <input type="text" value={format(date, 'PP')} disabled className="input input-bordered w-full max-w-xs" />
-            <select name="slot" className="select select-bordered w-full max-w-xs" required>
+            {/* <select name="slot" className="select select-bordered w-full max-w-xs" required>
               {
-                availableSlots[d].map(slot => <option value={slot}>{slot}</option>)
+                availableSlots?.map(slot => <option value={slot}>{slot}</option>)
               }
 
-            </select>
+            </select> */}
             <input type="number" name='fees' className="input input-bordered w-full max-w-xs" defaultValue={fees} />
             <input type="text" name='name' className="input input-bordered w-full max-w-xs" defaultValue={userInfo.displayName} />
             <input type="email" name='email' placeholder='Email Address' className="input input-bordered w-full max-w-xs" defaultValue={userInfo.email} />

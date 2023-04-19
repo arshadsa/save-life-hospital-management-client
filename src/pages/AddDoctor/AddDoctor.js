@@ -60,8 +60,7 @@ const AddDoctor = () => {
   return (
     <>
       <NavigationBar isHome={true} />
-      {
-        data?.found === false ? <div className="mt-[100px] container mx-auto">
+      <div className="mt-[100px] container mx-auto">
           <div class="relative mx-auto w-[50vw]">
             <h1 className="text-4xl font-extrabold py-10">
               Register as a Doctor
@@ -294,15 +293,8 @@ const AddDoctor = () => {
               </div>
             </form>
           </div>
-        </div> : <div className="flex w-screen h-screen justify-center items-center">
-          <div className="card w-96 bg-base-100 shadow-xl">
-            <div className="card-body mx-auto">
-              <h2 className="card-title text-red-500">Alert</h2>
-              <p>Your Slot is already Active</p>
-            </div>
-          </div>
-        </div>
-      }
+        </div> 
+      
 
     </>
   );

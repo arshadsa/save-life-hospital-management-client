@@ -4,11 +4,13 @@ import {
     useStripe,
     useElements
 } from "@stripe/react-stripe-js";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 export default function CheckoutForm({ serviceId }) {
     const stripe = useStripe();
     const elements = useElements();
-
+    const [userInfo, loading] = useAuthState(auth);
     const [message, setMessage] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -54,14 +56,14 @@ export default function CheckoutForm({ serviceId }) {
         }
 
         setIsLoading(true);
-        const { error } = await stripe.confirmPayment({
+        const { error, paymentMethod } = await stripe.confirmPayment({
             elements,
             confirmParams: {
                 // ================================
 
                 // ================================
                 // Make sure to change this to your payment completion page
-                return_url: "https://hospital-management-syst-79467.web.app/dashboard/myappointments",
+                return_url: `${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking?patient=${userInfo.email}`,
             },
         });
 

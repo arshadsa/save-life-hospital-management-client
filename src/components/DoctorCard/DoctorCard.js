@@ -9,29 +9,30 @@ const DoctorCard = ({ speciality, specialitiesDef }) => {
     return specialitiesDef.short === speciality.replace(/\s+/g, '')
   }
 
-  function getImg() {
-    try {
-      const image = require(`../../assets/Speciality-img/${speciality.replace(/\s+/g, '')}.png`)
-      return image;
-    } catch (e) {
-      const image = require(`../../assets/Speciality-img/child.png`)
-      return image;
-    }
-  }
+
 
   return (
-    <div>
+    <div className="lg:max-w-lg">
       <Link to={`/doctors/${speciality.replace(/\s+/g, '')}`}>
-        <div class="cursor-pointer py-4 px-[10px] flex max-w-md bg-white shadow-xl rounded-lg overflow-hidden">
-          <div class="w-1/3 bg-cover bg-landscape flex align-items-center">
-            <img className="w-full p-4" src={getImg()} alt="" />
-          </div>
-          <div class="w-2/3 p-4 mb-2">
-            <h1 class="text-[#1b82e2] font-bold text-xl">{speciality}</h1>
-            <i class="fa-solid fa-arrow-right text-[#1b82e2] font-bold text-xl ml-56"></i>
+
+      <div className="card">
+  <div className="card-body">
+    <h2 className="card-title">{speciality}</h2>
+    <div className="card-actions justify-end">
+      <button className="btn bg-[#1b82e2]">Show Doctors</button>
+    </div>
+  </div>
+</div>
+
+
+        {/* <div class="cursor-pointer py-4 px-[10px] flex max-w-md bg-white shadow-xl rounded-lg overflow-hidden">
+          
+          <div class="lg:max-w-lg p-4 mb-2">
+            <h1 class="text-[#1b82e2] font-bold text-2xl">{speciality}   </h1>
+            <i class="fa-solid fa-arrow-right text-[#1b82e2]  text-2xl ml-72"></i>
           </div>
 
-        </div>
+        </div> */}
 
       </Link>
     </div>

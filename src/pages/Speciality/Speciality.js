@@ -9,14 +9,20 @@ const Speciality = () => {
         <h1 className="font-extrabold text-4xl text-center uppercase">
           Select a <span className="text-[#1b82e2]">(Speciality)</span> for you
         </h1>
-        <div className="mt-[50px] grid md:grid-cols-3 gap-6 mx-auto justify-items-center sm:px-10">
-          {specialities.map((speciality) => (
+        <div className="grid lg:grid-cols-2">
+          <img src="https://doccure.dreamguystech.com/html/template/assets/img/dr-slider.png" className="lg:max-w-lg"></img>
+          
+          <div className="mt-[50px]   grid lg:grid-cols-2 gap-6">
+
+          {specialities.slice(0,4).map((speciality) => (
             <DoctorCard
               speciality={speciality}
               specialitiesDef={specialitiesDef}
             ></DoctorCard>
           ))}
         </div>
+        </div>
+       
       </div>
     </>
   );

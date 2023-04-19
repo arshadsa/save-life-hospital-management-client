@@ -30,7 +30,7 @@
       "location":"California,USA",
       "hospital":"Mugda Medical College & Hospital",
       "department":"Department of Endocrinology",
-      "image":"https://doccure-react.dreamguystech.com/template/82a70aca5403c6ff499b0ac2a729e670.jpg",
+      "image":"https://doccure.dreamguystech.com/html/template/assets/img/doctors/book-doctor-13.jpg",
       "specialization":"Medicine, Diabetes, Thyroid & Hormone Specialist",
       "slots": [
         "08.00 AM - 08.30 AM",
@@ -74,7 +74,7 @@
       "location":"Newyork, USA",
       "hospital":"Ex- VLCC Healthcare & VIBES Healthcare",
       "department":"Surecell Medical BD",
-      "image":"https://doccure-react.dreamguystech.com/template/e7c74a698df7da05026e7a78cfe2eb75.jpg",
+      "image":"https://doccure.dreamguystech.com/html/template/assets/img/doctors/book-doctor-14.jpg",
       "specialization":"Nutrition and Food Science",
       "slots": [
         "08.00 AM - 08.30 AM",
@@ -117,7 +117,7 @@
       "location":"California,USA",
       "hospital":"ASGAR ALI HOSPITAL",
       "department":"Department of Respiratory Medicine",
-      "image":"https://doccure-react.dreamguystech.com/template/81f237c60c9af3153ecf4340f772db98.jpg",
+      "image":"https://doccure.dreamguystech.com/html/template/assets/img/doctors/book-doctor-15.jpg",
       "specialization":"Medicine & Chest Specialist and Interventional Pulmonologist",
       "slots": [
         "08.00 AM - 08.30 AM",
@@ -138,7 +138,7 @@
       ]
     },
     { 
-      "name": "Dr. Salahuddin Mahmud",
+      "name": "Dr. Salina Mahmud",
       "designation":"Associate Professor",
       "reviews":36,
       "education": [
@@ -159,7 +159,7 @@
       "location":"California,USA",
       "hospital":"Dhaka Shishu (Children) Hospital",
       "department":"Department of Pediatric  Gastroenterology",
-      "image":"https://doccure-react.dreamguystech.com/template/4c4edf4d3fc07e7acd8f249becdbcc04.jpg",
+      "image":"https://doccure.dreamguystech.com/html/template/assets/img/doctors/book-doctor-16.jpg",
       "specialization":"Neonate & Child Specialist",
       "slots": [
         "08.00 AM - 08.30 AM",
@@ -203,7 +203,7 @@
       "location":"California,USA",
       "hospital":"SSMC Mitford Hospital, Dhaka",
       "department":"Skin & VD Department",
-      "image":"https://doccure-react.dreamguystech.com/template/9109ec39a7b4d06af126b0d5cec32273.jpg",
+      "image":"https://doccure.dreamguystech.com/html/template/assets/img/doctors/book-doctor-16.jpg",
       "specialization":"Dermatologist (Skin, Allergy, Hair, Sex)",
       "slots": [
         "08.00 AM - 08.30 AM",
@@ -240,7 +240,7 @@
       "location":"California,USA",
       "hospital":"Prescription Point, Banani",
       "department":"Department of Ears, Nose and Throat",
-      "image":"https://doccure-react.dreamguystech.com/template/4c4edf4d3fc07e7acd8f249becdbcc04.jpg",
+      "image":"https://doccure.dreamguystech.com/html/template/assets/img/doctors/book-doctor-15.jpg",
       "specialization":"Ears, Nose and Throat (ENT) Specialist",
       "slots": [
         "08.00 AM - 08.30 AM",
