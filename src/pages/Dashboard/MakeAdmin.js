@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     const [userInfo, userLoading] = useAuthState(auth);
     // console.log(role)
     const { isLoading, error, data, refetch } = useQuery('alluser', () =>
-        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/allUsers`).then(res =>
+        fetch(`http://localhost:5000/api/allUsers`).then(res =>
             res.json()
         )
     )
@@ -26,7 +26,7 @@ const MakeAdmin = () => {
 
 
     const handleMakeAdmin = (email) => {
-        const url = `${process.env.REACT_APP_SERVER_BASE_URL}/api/allUsers/?email=${email}`
+        const url = `http://localhost:5000/api/allUsers/?email=${email}`
         fetch(url, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },

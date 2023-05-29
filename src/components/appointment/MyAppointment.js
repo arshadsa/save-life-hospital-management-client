@@ -13,7 +13,7 @@ const MyAppointment = () => {
   const [userInfo, loading] = useAuthState(auth);
   useEffect(() => {
 
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking?patient=${userInfo.email}`)
+    fetch(`http://localhost:5000/hospitaldoctorsbooking?patient=${userInfo.email}`)
       .then(res => res.json())
       .then(data => setAppointments(data))
 

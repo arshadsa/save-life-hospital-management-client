@@ -14,7 +14,7 @@ const Payment = () => {
   const stripePromise = loadStripe("pk_test_51L1c26AQe13D7JV4qkbk7P4B1hqD11LQp1f43VnqQ4E1kxBnQhUObvyRLxAHAEesfzQw9eCsyOUivrnIV5z5AkKG00S04v3xro");
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/create-payment-intent`, {
+    fetch(`http://localhost:5000/create-payment-intent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id: serviceId }),
@@ -26,7 +26,7 @@ const Payment = () => {
             paymentStatus: "paid",
             serviceId: serviceId
           }
-          fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/updatepayment`, {
+          fetch(`http://localhost:5000/updatepayment`, {
             method: 'PUT',
             headers: {
               'content-type': 'application/json'

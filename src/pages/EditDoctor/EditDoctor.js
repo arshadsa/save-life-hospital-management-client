@@ -25,7 +25,7 @@ const EditDoctor = () => {
   });
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctors/${id}`)
+    fetch(`http://localhost:5000/hospitaldoctors/${id}`)
       .then((res) => res.json())
       .then(data => {
         SetDoctorForm({
@@ -52,7 +52,7 @@ const EditDoctor = () => {
     "rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparenta";
 
   const onDelete = () => {
-    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/doctors/${id}`;
+    const url = `http://localhost:5000/doctors/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {
@@ -70,7 +70,7 @@ const EditDoctor = () => {
 
   const onSubmit = () => {
     console.log({ ...doctorForm, edititem: true });
-    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/doctors/${id}`;
+    const url = `http://localhost:5000/doctors/${id}`;
     fetch(url, {
       method: "POST",
       headers: {

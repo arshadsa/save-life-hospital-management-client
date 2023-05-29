@@ -2,15 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { Rings } from 'react-loader-spinner';
 
 import SingleAmbulance from './SingleAmbulance';
+import { useGetJobsQuery } from '../../../features/job/jobApi';
 
 
 const Ambulance = () => {
   const [ambulance, setAmbulance] = useState([])
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/ambulance`)
-      .then(res => res.json())
-      .then(data => setAmbulance(data))
-  }, [])
+  const {data, isLoading,isError} = useGetJobsQuery();
+  console.log(data);
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/ambulance`)
+  //     .then(res => res.json())
+  //     .then(data => setAmbulance(data))
+  // }, [])
   return (
     <div className='Container pb-12 mx-auto max-w-lg sm:px-6 md:max-w-2xl md:px-8 lg:max-w-5xl xl:max-w-7xl 2xl:container'>
       <div>
@@ -18,12 +22,12 @@ const Ambulance = () => {
       </div>
 
       {
-        ambulance !== [] ?
+        data !== [] ?
           <div className='container  px-6 p-3 mt-[80px]'>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
 
               {
-                ambulance.map(ambulances => <SingleAmbulance key={ambulances._id} ambulances={ambulances}>
+                data?.map(ambulances => <SingleAmbulance key={ambulances._id} ambulances={ambulances}>
 
                 </SingleAmbulance>
 

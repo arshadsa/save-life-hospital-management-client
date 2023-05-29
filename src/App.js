@@ -16,7 +16,6 @@ import { lazy, Suspense } from "react";
 import AddNurse from "./pages/Nurse/AddNurse";
 import EditNurse from "./pages/Nurse/EditNurse";
 import ShowAllNurse from "./pages/Nurse/ShowAllNurse";
-import ShowStaffsByDepartment from "./pages/Staffs/ShowStaffsByDepartment";
 import ShowNurseByDepartment from "./pages/Nurse/ShowNurseByDepartment";
 import ShowNurseDepartments from "./pages/Nurse/ShowNurseDepartments";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -32,6 +31,10 @@ import AddAmbulance from "./components/addambulance/AddAmbulance";
 import DoctorAppointment from "./components/appointment/DoctorAppointment";
 import AmbulanceDetails from "./components/Home components/AmbulanceService/AmbulanceDetails";
 import { Contact } from "./components/Contact";
+import { Provider } from "react-redux";
+import store from "./app/store";
+import Ambulance from "./components/Home components/AmbulanceService/Ambulance";
+
 
 const Homepage = lazy(() => import("./pages/Home Page/Homepage"));
 const AddDoctor = lazy(() => import("./pages/AddDoctor/AddDoctor"));
@@ -75,6 +78,10 @@ function App() {
     {
       path: "/addambulance",
       element: <AddAmbulance></AddAmbulance>,
+    },
+    {
+      path: "/ambulance",
+      element: <Ambulance></Ambulance>,
     },
 
     {
@@ -264,13 +271,22 @@ function App() {
 
   ]);
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div class=" shadow rounded-md p-4 max-w-lg mt-72  w-full mx-auto">
+    <div class="animate-pulse  flex space-x-4 ">
+      <div class="rounded-full border  bg-[#1b82e2] h-20 ml-40 w-20"></div>
+    
+     
+    </div>
+  </div>}>
       <div className="App bg-white">
-        <RouterProvider router={router} />
+        <Provider store={store}>
+        <RouterProvider  router={router} />
         {/* <NavigationBar isHome={true} /> */}
         <div className="mb-[150px]">
           <Chat></Chat>
         </div>
+        </Provider>
+       
       </div>
       <ToastContainer></ToastContainer>
     </Suspense>

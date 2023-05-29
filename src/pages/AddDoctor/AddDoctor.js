@@ -11,7 +11,7 @@ const AddDoctor = () => {
   const { register, handleSubmit } = useForm();
   console.log(user?.email)
   const { isLoading, error, data, refetch } = useQuery('repoData', () =>
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/websitedoctors/findEmail?email=${user?.email}`).then(res =>
+    fetch(`http://localhost:5000/websitedoctors/findEmail?email=${user?.email}`).then(res =>
       res.json()
     )
   )
@@ -41,7 +41,7 @@ const AddDoctor = () => {
     console.log({ ...doctorForm, edititem: true });
     doctorForm = { ...doctorForm, email: mail }
     console.log(doctorForm);
-    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/websitedoctors`;
+    const url = `http://localhost:5000/websitedoctors`;
     fetch(url, {
       method: "POST",
       headers: {

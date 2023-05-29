@@ -10,7 +10,7 @@ const Details = () => {
   const [docs, setDocs] = useState({})
   const [disable, setDisable] = useState(false);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctors/${id}`)
+    fetch(`http://localhost:5000/hospitaldoctors/${id}`)
       .then(res => res.json())
       .then(data => setDocs(data))
   }, [])

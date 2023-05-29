@@ -11,7 +11,7 @@ const BloodBank = () => {
     });
     const [donerList, setDonerList] = React.useState([])
     React.useEffect(() => {
-        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/bloodDonerList`)
+        fetch(`http://localhost:5000/bloodDonerList`)
             .then(res => res.json())
             .then(data => setDonerList(data))
     }, [])

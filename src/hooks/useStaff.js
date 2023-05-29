@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const useStaffs = () => {
   const [staff, setStaff] = useState([]);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/staff`)
+    fetch(`http://localhost:5000/staff`)
       .then(res => res.json())
       .then(data => setStaff(data))
   }, [])

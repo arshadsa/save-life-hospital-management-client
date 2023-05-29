@@ -13,7 +13,7 @@ const NewsDetails = () => {
   const [parts, setParts] = useState({})
   const [disable, setDisable] = useState(false);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/news/${id}`)
+    fetch(`http://localhost:5000/news/${id}`)
       .then(res => res.json())
       .then(data => setParts(data))
 
@@ -72,10 +72,6 @@ const NewsDetails = () => {
               <div className="card w-96 bg-base-100 shadow-xl mx-auto">
                 <img src={parts.blogImage} className='w-full'></img>
                 <div className="card-body">
-
-
-
-
 
                   <div className='grid lg:grid-cols-2 sm:grid-cols-1  pt-10 pb-10'>
 

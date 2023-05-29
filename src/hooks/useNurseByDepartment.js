@@ -4,7 +4,7 @@ const useNurseByDepartment = () => {
   const [nurseByDepartment, setNurseByDepartment] = useState([]);
   
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/nurse/byDepartment`)
+    fetch(`http://localhost:5000/nurse/byDepartment`)
       .then((res) => res.json())
       .then((data) => {
         setNurseByDepartment(data);

@@ -21,7 +21,7 @@ const AddNurse = () => {
     const navigate= useNavigate();
   const onSubmit = () => {
     console.log({...nurseForm, edititem: true});
-    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/nurse`;
+    const url = `http://localhost:5000/nurse`;
     
     fetch(url, {
       method: "POST",

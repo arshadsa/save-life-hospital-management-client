@@ -8,10 +8,11 @@ const Chat = () => {
 
   return (
     <div>
-     <MessengerCustomerChat
-      pageId="101010511967331"
-      appId="3000713826817424"
-     ></MessengerCustomerChat>
+  <MessengerCustomerChat
+    pageId="446718079220263"
+    appId="1869373416782881"
+    
+  />,
     </div>
   )
 }

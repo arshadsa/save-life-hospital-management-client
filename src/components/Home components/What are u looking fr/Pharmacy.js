@@ -14,7 +14,7 @@ const Pharmacy = () => {
   const [medicine, setMedicine] = useState([])
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/medicines`)
+    fetch(`http://localhost:5000/api/medicines`)
       .then(res => res.json())
       .then(data => setMedicine(data))
   }, [])

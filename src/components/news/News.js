@@ -11,7 +11,7 @@ import { Rings } from 'react-loader-spinner';
 const News = () => {
   const [tools, setTools] = useState([])
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/news`)
+    fetch(`http://localhost:5000/news`)
       .then(res => res.json())
       .then(data => setTools(data))
   }, [])

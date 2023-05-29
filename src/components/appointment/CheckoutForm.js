@@ -63,7 +63,7 @@ export default function CheckoutForm({ serviceId }) {
 
                 // ================================
                 // Make sure to change this to your payment completion page
-                return_url: `${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking?patient=${userInfo.email}`,
+                return_url: `http://localhost:3000/dashboard/myappointments`,
             },
         });
 

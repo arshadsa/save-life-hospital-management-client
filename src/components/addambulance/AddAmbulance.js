@@ -4,19 +4,16 @@ import { useForm } from "react-hook-form";
 import Typewriter from 'typewriter-effect';
 import './AddAmbulance.css';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
+import { usePostJobMutation } from '../../features/job/jobApi';
 
 const AddAmbulance = () => {
     const { register, handleSubmit, reset } = useForm();
-    const onSubmit = data => {
+    const [  postJob, {isLoading, isError} ] = usePostJobMutation();
+
+    const onSubmit = (data) => {
         console.log(data);
-        axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/ambulance`, data)
-            .then(res => {
-                if (res.data.insertedId) {
-                    alert('Added Successfully');
-                    reset();
-                }
-            })
-    };
+        postJob(data);   
+    }
     return (
         <div>
             <NavigationBar isHome={true}></NavigationBar>

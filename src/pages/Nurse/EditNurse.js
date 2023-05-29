@@ -18,7 +18,7 @@ const EditNurse = () => {
   });
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/nurse/${id}`)
+    fetch(`http://localhost:5000/nurse/${id}`)
       .then((res) => res.json())
       .then(data => {
         SetNurseForm({
@@ -39,7 +39,7 @@ const EditNurse = () => {
 
   const onSubmit = () => {
     console.log({ ...nurseForm, edititem: true });
-    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/nurse/${id}`;
+    const url = `http://localhost:5000/nurse/${id}`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -55,7 +55,7 @@ const EditNurse = () => {
   };
 
   const onDelete = () => {
-    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/nurse/${id}`;
+    const url = `http://localhost:5000/nurse/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {

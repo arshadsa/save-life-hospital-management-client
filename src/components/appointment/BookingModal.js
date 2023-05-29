@@ -31,7 +31,7 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
       phone: event.target.phone.value,
       paymentStatus: "unpaid"
     }
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctorsbooking`, {
+    fetch(`http://localhost:5000/hospitaldoctorsbooking`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -60,7 +60,7 @@ const BookingModal = ({ treatment, date, setTreatment, refetch, services }) => {
         // delete newDocotor[_id]
         // const newDocotor = { ...treatment, treatment[formatedDate]: availableAppointments }
         // console.log("new updated docotr ", newDocotor);
-        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/updatedoctoravailableslots?email=${email}`, {
+        fetch(`http://localhost:5000/updatedoctoravailableslots?email=${email}`, {
           method: 'PUT',
           headers: {
             'content-type': 'application/json',

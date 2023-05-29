@@ -13,7 +13,7 @@ const DoctorAppointment = () => {
     useEffect(() => {
         console.log("coming from doctor patient see", userInfo?.email);
         if (userInfo?.email) {
-            fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/doctorsbooking/doctor?doctoremail=${userInfo?.email}`)
+            fetch(`http://localhost:5000/doctorsbooking/doctor?doctoremail=${userInfo?.email}`)
                 .then(res => res.json())
                 .then(data => setAppointments(data))
         }

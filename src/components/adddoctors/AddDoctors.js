@@ -9,7 +9,7 @@ const AddDoctors = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}`, data)
+        axios.post(`http://localhost:5000`, data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added Successfully');
