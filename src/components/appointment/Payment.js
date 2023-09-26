@@ -1,68 +1,52 @@
-import React from 'react'
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "./CheckoutForm";
-import "../../App.css";
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
+import React from 'react';
+import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-const Payment = () => {
-<<<<<<< HEAD
-    const {id} = useParams();
-    const url = `http://localhost:5001/hospitaldoctorsbooking/${id}`;
-    const {data:coursebooking,isLoading} = useQuery(['hospitaldoctorsbooking',id], ()=>fetch(url).then(res=>res.json()))
-=======
-  const [clientSecret, setClientSecret] = useState("");
-  let params = useParams();
-  let serviceId = params.id;
-  const [id, setId] = useState(serviceId);
-  const stripePromise = loadStripe("pk_test_51L1c26AQe13D7JV4qkbk7P4B1hqD11LQp1f43VnqQ4E1kxBnQhUObvyRLxAHAEesfzQw9eCsyOUivrnIV5z5AkKG00S04v3xro");
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/create-payment-intent`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id: serviceId }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.clientSecret) {
-          const booking = {
-            paymentStatus: "paid",
-            serviceId: serviceId
-          }
-          fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/updatepayment`, {
-            method: 'PUT',
-            headers: {
-              'content-type': 'application/json'
-            },
-            body: JSON.stringify(booking)
-          })
-            .then(res => res.json())
-            .then(data => {
-              console.log(data);
-            })
-        }
-        setClientSecret(data.clientSecret)
-      });
-  }, []);
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
+import { toast } from 'react-toastify';
 
-  const appearance = {
-    theme: 'stripe',
+const stripePromise = loadStripe('pk_test_51KrL8sH9U1rucFvVxdtUNWHMaDPPIT6mfxHqfV3OQ6U0yofozFclZc1gmS3VbwMGTwBluXRI3biFxPikM7eJ7dU0004eYdGiJq');
+
+const Payment = () => {
+  const { id } = useParams();
+  const url = `http://localhost:5000/hospitaldoctorsbooking/${id}`;
+  const { data: coursebooking, isLoading } = useQuery(['hospitaldoctorsbooking', id], () =>
+    fetch(url).then((res) => res.json())
+  );
+
+  const handleSubmit = () => {
+    toast('Payment is Successful');
   };
-  const options = {
-    clientSecret,
-    appearance,
-  };
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div>
-      {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm serviceId={serviceId} />
-        </Elements>
-      )}
+      <h2>Payment Id is {id}</h2>
+
+      <div className="card w-96 bg-myorder mx-auto mt-12 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title font-bold">
+            Hello! <span className="">{coursebooking.patientName}</span>
+          </h2>
+          <h2 className="font-bold text-green-300">
+            Please pay for Dr. <b className="">{coursebooking.treatment}</b>
+          </h2>
+          <p>
+            Please Pay $ <span className="font-bold text-secondary">{coursebooking.fees}</span>
+          </p>
+          <button onClick={handleSubmit} className="btn btn-primary w-48 mx-auto">
+            Pay Now
+          </button>
+        </div>
+      </div>
+
+      {/* <Elements stripe={stripePromise}>
+        <CheckoutForm coursebooking={coursebooking} />
+      </Elements> */}
     </div>
-  )
-}
+  );
+};
+
 export default Payment;

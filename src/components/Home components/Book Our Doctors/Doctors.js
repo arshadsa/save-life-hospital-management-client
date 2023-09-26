@@ -2,11 +2,7 @@
 // doctors booking card page ////
 import React, { useState } from "react";
 
-<<<<<<< HEAD
-
-=======
 // icon import
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
 import { Link, useNavigate } from "react-router-dom";
 
 const Doctors = ({ doctor }) => {
@@ -67,19 +63,19 @@ const Doctors = ({ doctor }) => {
             <div className="mt-5 grid lg:grid-cols-3 sm:grid-cols-1">
               <div className="flex items-center gap-2">
                 <h6 className="hospital text-[15px] font-[600]">
-                  <i class="fa-solid fa-user text-primary"></i> {designation}
+                  <i class="fa-solid fa-user text-[#0071DC]"></i> {designation}
                 </h6>
               </div>
 
               <div className="flex items-center gap-2">
                 <h6 className="hospital text-[15px] font-[600]">
-                  <i class="fa-solid fa-location-pin text-primary"></i>{" "}
+                  <i class="fa-solid fa-location-pin text-[#0071DC]y"></i>{" "}
                   {location}
                 </h6>
               </div>
               <div className="flex items-center gap-2">
                 <h6 className="hospital text-[15px] font-[600]">
-                  <i class="fa-solid fa-dollar-sign text-primary"></i> {fees}.00
+                  <i class="fa-solid fa-dollar-sign text-[#0071DC]"></i> {fees}.00
                 </h6>
               </div>
 

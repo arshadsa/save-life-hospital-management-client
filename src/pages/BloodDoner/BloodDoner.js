@@ -29,13 +29,8 @@ const BloodDoner = () => {
             phone: e?.target?.telephone?.value,
             age: e?.target?.age?.value,
         }
-<<<<<<< HEAD
         console.log(donerInfo)
         fetch('http://localhost:5001/bloodDoner', {
-=======
-        // console.log(donerInfo)
-        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/bloodDoner`, {
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

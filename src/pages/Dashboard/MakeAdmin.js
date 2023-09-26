@@ -1,23 +1,17 @@
-import React from 'react';
-import useRole from '../../hooks/useRole';
+import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
 import { useQuery } from 'react-query';
-import { v4 as uuidv4 } from 'uuid';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { v4 as uuidv4 } from 'uuid';
 import RouteAthenication from '../../HOC/RouteAthenication';
-import Dashboard from './Dashboard';
-import { useEffect } from 'react';
+import auth from '../../firebase.init';
+import useRole from '../../hooks/useRole';
 const MakeAdmin = () => {
     const [userInfo, userLoading] = useAuthState(auth);
     // console.log(role)
     const { isLoading, error, data, refetch } = useQuery('alluser', () =>
-<<<<<<< HEAD
-        fetch('http://localhost:5001/api/allUsers').then(res =>
-=======
-        fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/allUsers`).then(res =>
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
+        fetch('http://localhost:5000/api/allUsers').then(res =>
             res.json()
         )
     )
@@ -30,11 +24,7 @@ const MakeAdmin = () => {
 
 
     const handleMakeAdmin = (email) => {
-<<<<<<< HEAD
-        const url = `http://localhost:5001/api/allUsers/?email=${email}`
-=======
-        const url = `${process.env.REACT_APP_SERVER_BASE_URL}/api/allUsers/?email=${email}`
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
+        const url = `http://localhost:5000/api/allUsers/?email=${email}`
         fetch(url, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },

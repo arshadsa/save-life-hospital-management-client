@@ -5,8 +5,6 @@ import { toast } from 'react-toastify';
 import './SingleAmbulance.css';
 const SingleAmbulance = ({ ambulances }) => {
   const { register, handleSubmit, reset } = useForm();
-
-<<<<<<< HEAD
     const onSubmit = data =>{
         console.log(data);
         axios.post("http://localhost:5001/ambooking",data)
@@ -14,29 +12,13 @@ const SingleAmbulance = ({ ambulances }) => {
             
              toast('Added Ambulance Successfully')
                 reset();
-               
-                
+  
             
         })
     } 
-=======
-  const onSubmit = data => {
-    console.log(data);
-    axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/ambooking`, data)
-      .then(res => {
-
-        toast('Added Ambulance Successfully')
-        reset();
-
-
-
-      })
-  }
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
-
   return (
     <div>
-      <div className="card ambulancecard lg:max-w-lg bg-base-100">
+      <div className="card ambulance-card lg:max-w-lg bg-base-100">
         <figure><img src={ambulances.image} className='lg:max-w-lg' alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">{ambulances.name}</h2>
@@ -71,13 +53,7 @@ const SingleAmbulance = ({ ambulances }) => {
                   <input {...register("image", { required: true, maxLength: 1920 })} placeholder="Course Image" className='input input-bordered w-full max-w-xs drop-shadow-lg mb-1' />
 
 
-
-
-
                   <input {...register("address", { required: true, })} placeholder="User Address" className='input input-bordered w-full max-w-xs drop-shadow-lg' />
-
-
-
 
                   <input type="submit" className='w-80 btn bg-[#0071DC] hover:bg-black shadow-banner' value='Book Ambulance' />
                 </form>

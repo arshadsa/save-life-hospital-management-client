@@ -1,10 +1,4 @@
 import React from 'react';
-import operationimage from '../../../assets/Features-images/img7.svg';
-import medicalimage from '../../../assets/Features-images/img8.svg';
-import patientimage from '../../../assets/Features-images/img9.svg';
-import testimage from '../../../assets/Features-images/img10.svg';
-import icuimage from '../../../assets/Features-images/img11.svg';
-import labimage from '../../../assets/Features-images/img12.svg';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -68,7 +62,7 @@ const AvailableFeatures = () => {
       </div>
 <div className='grid lg:grid-cols-2 sm:grid-cols-1 container mx-auto px-6 mb-[130px]'>
 <div>
-<img src='https://doccure-react.dreamguystech.com/template/389ad37182b22862cc747163aa14547e.png' className='lg:max-w-lg'></img>
+<img src='https://i.ibb.co/f2vQr83/feature.png' className='lg:max-w-lg'></img>
 </div>
 <div>
 <Swiper
@@ -82,38 +76,40 @@ const AvailableFeatures = () => {
       >
         <SwiperSlide>
           <div>
-            <img src='https://doccure-react.dreamguystech.com/template/5f512084522e55e7d0b0558624d98a9a.jpg' className='w-56 a-image'></img>
-            <h1 className='text-primary font-bold text-center text-xl'>Test room</h1>
+            <img src='https://i.ibb.co/5jjR7Mz/Test-feature-02.jpg' className='w-36 a-image'></img>
+            <h1 className='text-[#0071DC] font-bold text-center text-xl pt-3'>Test room</h1>
+          </div>
+          <br/>
+          <br/>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div>
+            <img src='https://i.ibb.co/ftrDv5Q/feature-06.jpg' className='w-36 a-image'></img>
+            <h1 className='text-[#0071DC] font-bold ml-12 text-xl pt-3'>Medical</h1>
           </div>
         </SwiperSlide>
         <SwiperSlide>
         <div>
-            <img src='https://doccure-react.dreamguystech.com/template/6962bf596e4125886d79ad2872e3d47e.jpg' className='w-40 a-image'></img>
-            <h1 className='text-primary font-bold ml-12 text-xl'>Medical</h1>
+            <img src='https://i.ibb.co/N1YmGWL/feature-01.jpg' className='w-36 a-image'></img>
+            <h1 className='text-[#0071DC] font-bold ml-8 text-xl pt-3'>Patient Ward</h1>
           </div>
         </SwiperSlide>
         <SwiperSlide>
         <div>
-            <img src='https://doccure-react.dreamguystech.com/template/1eb95d47909144cd3761c65e9c4c776c.jpg' className='w-56 a-image'></img>
-            <h1 className='text-primary font-bold ml-8 text-xl'>Patient Ward</h1>
+            <img src='https://i.ibb.co/PwsBg2Y/feature-03.jpg' className='w-36 a-image'></img>
+            <h1 className='text-[#0071DC] font-bold ml-8 text-xl pt-3'>ICU</h1>
           </div>
         </SwiperSlide>
         <SwiperSlide>
         <div>
-            <img src='https://doccure-react.dreamguystech.com/template/83604bf3f6914c5df51fe23d9df9098f.jpg' className='w-36 a-image'></img>
-            <h1 className='text-primary font-bold ml-8 text-xl'>ICU</h1>
+            <img src='https://i.ibb.co/sjfP4nX/lab-feature-04.jpg' className='w-36 a-image'></img>
+            <h1 className='text-[#0071DC] font-bold ml-8 text-xl pt-3'>Laboratory</h1>
           </div>
         </SwiperSlide>
         <SwiperSlide>
         <div>
-            <img src='https://doccure-react.dreamguystech.com/template/1f1ad77261b62c3930f3f5e97cb75efd.jpg' className='w-36 a-image'></img>
-            <h1 className='text-primary font-bold ml-8 text-xl'>Laboratory</h1>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div>
-            <img src='https://doccure-react.dreamguystech.com/template/bf33350e232bcb1c47c9b10ab9626ca6.jpg' className='w-36 a-image'></img>
-            <h1 className='text-primary font-bold ml-8 text-xl'>Operation</h1>
+            <img src='https://i.ibb.co/9yXQsRT/operation-feature-05.jpg' className='w-36 a-image'></img>
+            <h1 className='text-[#0071DC] font-bold ml-8 text-xl pt-3'>Operation</h1>
           </div>
         </SwiperSlide>
         

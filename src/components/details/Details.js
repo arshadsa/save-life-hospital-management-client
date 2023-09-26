@@ -1,34 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import "./Details.css";
+import { Link, useParams } from "react-router-dom";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
-import { Footer } from "../../shared/Footer/Footer";
+import "./Details.css";
 
 const Details = () => {
-<<<<<<< HEAD
     const {id} = useParams();
     const [docs,setDocs] = useState({})
     const [disable, setDisable] = useState(false);
      useEffect(()=>{
-         fetch(`http://localhost:5001/hospitaldoctors/${id}`)
+         fetch(`http://localhost:5000/hospitaldoctors/${id}`)
        .then(res=>res.json())
         .then(data=>setDocs(data))
      },[])
      const { register, handleSubmit, reset } = useForm();    
 const handleChange = event => {
-=======
-  const { id } = useParams();
-  const [docs, setDocs] = useState({})
-  const [disable, setDisable] = useState(false);
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctors/${id}`)
-      .then(res => res.json())
-      .then(data => setDocs(data))
-  }, [])
-  const { register, handleSubmit, reset } = useForm();
-  const handleChange = event => {
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
     const disable = event.target.value;
     setDisable(disable);
   };
@@ -36,17 +22,17 @@ const handleChange = event => {
   return (
     <div className="">
       <div className="navbar ">
-        <NavigationBar isHome={true}></NavigationBar>
+      <NavigationBar></NavigationBar>
       </div>
       <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mt-[100px] container mx-auto p-3 px-6 ">
         <div className="text-d">
-          <div className="w-[300px] h-[300px]">
-            <img
-              src={docs.image}
-              className="flex-shrink-0 rounded-[50%] h-[96%] w-[100%] mx-14 object-cover"
-            ></img>
+          <div className="w-[300px] h-[300px]"> 
+          <img
+            src={docs.image}
+            className="flex-shrink-0 rounded-[50%] h-[96%] w-[100%] mx-14 object-cover"
+          ></img>
           </div>
-
+         
           <h1 className="font-bold text-primary ml-20 mt-5 text-3xl">
             {docs.name}
           </h1>
@@ -66,7 +52,7 @@ const handleChange = event => {
             <li className="text-t ml-24">
               <b>Location:</b> {docs.location}
             </li>
-
+            
           </ul>
         </div>
         <div className="mt-[30px] md:mt-0">
@@ -89,19 +75,26 @@ const handleChange = event => {
               Books Authored/Research Papers published
             </h1>
             <p>{docs.books}</p>
-            <br></br>
-            <br></br>
-            <br></br>
+<br></br>
+<br></br>
+<br></br>
 
             <Link to="/appointment">
-
-              <button className="btn btn-primary">Book Appointment</button>
-
-            </Link>
+              
+             <button className="btn btn-primary">Book Appointment</button>
+            
+          </Link>
+            <Link to="/videocall" className="ml-12">
+              
+             <button className="btn btn-secondary">Make Video Calling</button>
+            
+          </Link>
           </div>
         </div>
       </div>
-      <Footer />
+      <div>
+     
+      </div>
     </div>
   );
 };

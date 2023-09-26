@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar'
 import Purchase from './Purchase'
@@ -9,24 +8,12 @@ const Phercheckout = () => {
 
   const { id } = useParams()
 
-  // usestate handel
-<<<<<<< HEAD
-    const [medicine , setMedicine] = useState({})
-    // useffecrt handel
-    useEffect(()=> {
-      const url = `http://localhost:5001/api/medicine/${id}`
-      console.log(url, "aa")
-      fetch(url)
-      .then(res =>  res.json())
-=======
   const [medicine, setMedicine] = useState({})
-  // useffecrt handel
+  // useffect handel
   useEffect(() => {
     const url = `${process.env.REACT_APP_SERVER_BASE_URL}/api/medicine/${id}`
     console.log(url, "aa")
     fetch(url)
-      .then(res => res.json())
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
       .then(data => setMedicine(data, "got it"))
   }, [])
 

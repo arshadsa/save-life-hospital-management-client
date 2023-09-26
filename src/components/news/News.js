@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import Unique from '../uniquenews/Unique'
+import React, { useEffect, useState } from 'react';
+import { Rings } from 'react-loader-spinner';
 import { A11y, Autoplay, Navigation, Pagination, Scrollbar, Zoom } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Rings } from 'react-loader-spinner';
+import Unique from '../uniquenews/Unique';
 
 const News = () => {
   const [tools, setTools] = useState([])
   useEffect(() => {
-<<<<<<< HEAD
     fetch('http://localhost:5001/news')
-=======
     fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/news`)
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
       .then(res => res.json())
       .then(data => setTools(data))
   }, [])

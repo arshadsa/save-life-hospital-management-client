@@ -1,8 +1,8 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { v4 as uuidv4 } from 'uuid';
 import { Footer } from '../../shared/Footer/Footer';
 import { NavigationBar } from '../../shared/NavigationBar/NavigationBar';
-import { Helmet } from 'react-helmet';
 const BloodBank = () => {
     const bloodGroup = ["A+", "A-", "O+", "O-", "AB-", "AB+", "B+", "B-", "ALL"];
     const [filteredList, setFilteredList] = React.useState({
@@ -11,11 +11,8 @@ const BloodBank = () => {
     });
     const [donerList, setDonerList] = React.useState([])
     React.useEffect(() => {
-<<<<<<< HEAD
         fetch("http://localhost:5001/bloodDonerList")
-=======
         fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/bloodDonerList`)
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
             .then(res => res.json())
             .then(data => setDonerList(data))
     }, [])

@@ -165,23 +165,12 @@ const Doctor = () => {
   //     }
   // ];
 
-<<<<<<< HEAD
-const [doctors,setDoctors] = useState([])
-    useEffect(()=>{
-        fetch('http://localhost:5001/hospitaldoctors')
-        .then(res => res.json())
-        .then(data => setDoctors(data))
-    },[])
-=======
   const [doctors, setDoctors] = useState([])
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/hospitaldoctors`)
       .then(res => res.json())
       .then(data => setDoctors(data))
   }, [])
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
-
-
 
   return (
     <div className='mt-[150px] container mx-auto px-6'>

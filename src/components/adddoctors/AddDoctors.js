@@ -1,147 +1,286 @@
-import React from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import Typewriter from 'typewriter-effect';
-import './AddDoctors.css';
+import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
 
+const AddDoctor = () => {
+  const { register, handleSubmit } = useForm();
 
-const AddDoctors = () => {
-    const { register, handleSubmit, reset } = useForm();
-    const onSubmit = data => {
-        console.log(data);
-<<<<<<< HEAD
-        axios.post('http://localhost:5001/websitedoctors',data)
-        .then(res=>{
-           if(res.data.insertedId){
-               alert('Added Successfully');
-               reset();
-           }
-        })
-=======
-        axios.post(`http://localhost:5000/websitedoctors`, data)
-            .then(res => {
-                if (res.data.insertedId) {
-                    alert('Added Successfully');
-                    reset();
-                }
-            })
->>>>>>> e7a8f3fb5446424676e3fa984ca5bfde391bd784
-    };
-    return (
-        <div className='container-fluid add-courses'>
-            <h1 className='text-center text-2xl  mb-4  text-title'>  <Typewriter
-                options={{
-                    strings: [' Please add a Doctor with All information : '],
-                    autoStart: true,
-                    loop: true,
+  const [doctorForm, SetDoctorForm] = useState({
+    name: "",
+    designation: "",
+    reviews:'',
+    education:[],
+    experience:[],
+    training:[],
+    books:[],
+    fees: "",
+    location:'',
+    hospital: "",
+    department: "",
+    image:'',
+    specialization:'',
+    slots:[]
+  });
 
+  const inputClass =
+    "rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparenta";
+    
+  const onSubmit = () => {
+    console.log({...doctorForm, edititem: true});
+    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/doctors`;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ ...doctorForm }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        // console.log(result);
+        // navigate(from);
+      });
+  };
+
+  return (
+    <>
+      <NavigationBar isHome={true} />
+      <div className="mt-[100px] container mx-auto">
+        <div class="relative mx-auto w-[50vw]">
+          <h1 className="text-4xl font-extrabold py-10">
+            Register as a Doctor
+          </h1>
+
+          <form
+            className="d-flex flex-column"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Name
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.name}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, name: e.target.value });
                 }}
-            /></h1>
+              />
+            </div>
 
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Designation
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.designation}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, designation: e.target.value });
+                }}
+              />
+            </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className='text-center'>
-                <input {...register("displayname",)} placeholder="Name" />
-                <br></br>
-                <br></br>
-                <input {...register("name",)} placeholder="Doctor Name" />
-                <br></br>
-                <br></br>
-                <input {...register("designation",)} placeholder="Doctor Designation" />
-                <br></br>
-                <br></br>
-                <input {...register("reviews",)} placeholder="Doctor's total Reviews" />
-                <br></br>
-                <br></br>
-                <input {...register("category",)} placeholder="Category" />
-                <br></br>
-                <br></br>
-                <input {...register("education",)} placeholder=" Education" />
-                <br></br>
-                <br></br>
-                <input type="number" {...register("fees",)} placeholder="Total Fees" />
-                <br></br>
-                <br></br>
-                <input {...register("location",)} placeholder=" Doctor's Location" />
-                <br></br>
-                <br></br>
-                <input {...register("hospital",)} placeholder=" Doctor's Hospital" />
-                <br></br>
-                <br></br>
-                <input {...register("Awards1",)} placeholder=" Doctor's Awards 1" />
-                <br></br>
-                <br></br>
-                <input {...register("Awards2",)} placeholder=" Doctor's Awards 2" />
-                <br></br>
-                <br></br>
-                <input {...register("Awards3",)} placeholder=" Doctor's Awards 3" />
-                <br></br>
-                <br></br>
-                <input {...register("Services1",)} placeholder="Doctor's Services 1" />
-                <br></br>
-                <br></br>
-                <input {...register("Services2",)} placeholder="Doctor's Services 2" />
-                <br></br>
-                <br></br>
-                <input {...register("Services3",)} placeholder="Doctor's Services 3" />
-                <br></br>
-                <br></br>
-                <input {...register("Services4",)} placeholder="Doctor's Services 4" />
-                <br></br>
-                <br></br>
-                <input {...register("Services5",)} placeholder="Doctor's Services 5" />
-                <br></br>
-                <br></br>
-                <input {...register("Services6",)} placeholder="Doctor's Services 6" />
-                <br></br>
-                <br></br>
-                <input {...register("Specialization1",)} placeholder="Doctor's Specialization 1" />
-                <br></br>
-                <br></br>
-                <input {...register("Specialization2",)} placeholder="Doctor's Specialization 2" />
-                <br></br>
-                <br></br>
-                <input {...register("Specialization3",)} placeholder="Doctor's Specialization 3" />
-                <br></br>
-                <br></br>
-                <input {...register("Specialization4",)} placeholder="Doctor's Specialization 4" />
-                <br></br>
-                <br></br>
-                <input {...register("Specialization5",)} placeholder="Doctor's Specialization 5" />
-                <br></br>
-                <br></br>
-                <input {...register("Specialization6",)} placeholder="Doctor's Specialization 6" />
-                <br></br>
-                <br></br>
-                <input {...register("image",)} placeholder="Doctor's Image" />
-                <br></br>
-                <br></br>
-                <input {...register("slot1",)} placeholder=" Available slot 1" />
-                <br></br>
-                <br></br>
-                <input {...register("slot2",)} placeholder=" Available slot 2" />
-                <br></br>
-                <br></br>
-                <input {...register("slot3",)} placeholder=" Available slot 3" />
-                <br></br>
-                <br></br>
-                <input {...register("slot4",)} placeholder=" Available slot 4" />
-                <br></br>
-                <br></br>
-                <input {...register("slot5",)} placeholder=" Available slot 5" />
-                <br></br>
-                <br></br>
-                <input {...register("slot6",)} placeholder=" Available slot 6" />
-                <br></br>
-                <br></br>
-                <button className="btn lg:max-w-lg btn-primary">Add Doctor</button>
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Reviews
+              </label>
+              <input
+                type="number"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.reviews}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, reviews: parseInt(e.target.value) });
+                }}
+              />
+            </div>
 
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Education
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.education.join(', ').toString()}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, education: e.target.value.split(',').map(s=>s.trim()) });
+                }}
+              />
+            </div>
 
-            </form>
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Experience
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.experience.join(', ').toString()}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, experience: e.target.value.split(',').map(s=>s.trim()) });
+                }}
+              />
+            </div>
 
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Training
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.training.join(', ').toString()}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, training: e.target.value.split(',').map(s=>s.trim()) });
+                }}
+              />
+            </div>
 
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Books
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.books.join(', ').toString()}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, books: e.target.value.split(',').map(s=>s.trim()) });
+                }}
+              />
+            </div>
 
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Fees
+              </label>
+              <input
+                type="number"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.fees}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, fees: parseInt(e.target.value) });
+                }}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Location
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.location}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, location: e.target.value });
+                }}
+              />
+            </div>
+            
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Hospital
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.hospital}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, hospital: e.target.value });
+                }}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Department
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.department}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, department: e.target.value });
+                }}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Image
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.image}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, image: e.target.value });
+                }}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Specialization
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.specialization}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, specialization: e.target.value });
+                }}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label for="name-with-label" class="text-gray-700 me-4">
+                Slots
+              </label>
+              <input
+                type="text"
+                className={`form-control ${inputClass}`}
+                aria-describedby="basic-addon3"
+                value={doctorForm.slots.join(', ').toString()}
+                onChange={(e) => {
+                  SetDoctorForm({ ...doctorForm, slots: e.target.value.split(',').map(s=>s.trim()) });
+                }}
+              />
+            </div>
+
+            <br />
+            <div className="d-flex ms-auto">
+              <button
+                href="#!"
+                className="btn btn-primary"
+                type="submit"
+                value="Add Product"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
-    );
+      </div>
+    </>
+  );
 };
 
-export default AddDoctors;
+export default AddDoctor;

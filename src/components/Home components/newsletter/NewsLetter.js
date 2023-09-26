@@ -13,7 +13,7 @@ export const NewsLetter = () => {
           </div>
         </div>
         <div className='hidden lg:visible lg:block'>
-          <img src='https://doccure-react.dreamguystech.com/template/6533b030d020461e359bc2a66db3cb82.png' className='lg:max-w-lg news-image mx-auto'></img>
+          <img src='https://i.ibb.co/nCxrSCr/news-img.png' className='lg:max-w-lg news-image mx-auto'></img>
         </div>
       </div>
     </div>

@@ -1,18 +1,17 @@
 // here we will add all of our home page components file if you cannot understand please read our componennts text.txt file
 import React from "react";
 import { Helmet } from "react-helmet";
-import DoctorCard from "../../components/DoctorCard/DoctorCard";
 import Faq from "../../components/Faq/Faq";
 import Ambulance from "../../components/Home components/AmbulanceService/Ambulance";
 import AvailableFeatures from "../../components/Home components/AvailableFeatures/AvailableFeatures";
 import Banner from "../../components/Home components/Banner";
 import Doctor from "../../components/Home components/Book Our Doctors/Doctor";
+import Services from "../../components/Home components/What are u looking fr/Services";
 import { NewsLetter } from "../../components/Home components/newsletter/NewsLetter";
 import { Use } from "../../components/Home components/use/Use";
-import Services from "../../components/Home components/What are u looking fr/Services";
+import Reviewda from "../../components/Review/Reviewda";
 import HomeLogin from "../../components/homelogin/HomeLogin";
 import News from "../../components/news/News";
-import Reviewda from "../../components/Review/Reviewda";
 import { UseWebsite } from "../../components/usewebsite/UseWebsite";
 import { Footer } from "../../shared/Footer/Footer";
 import { NavigationBar } from "../../shared/NavigationBar/NavigationBar";
